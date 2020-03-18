@@ -8,7 +8,10 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "eslint lib && ava -v"
+    "lint": "eslint lib",
+    "unit": "ava -v",
+    "test": "npm run doc && catch-uncommitted --skip-node-versionbot-changes && npm run lint && npm run unit",
+    "doc": "jsdoc2md --template doc/README.hbs lib/index.js lib/auth.js lib/card.js lib/event.js > README.md"
   },
   "author": "Balena.io. <hello@balena.io>",
   "license": "UNLICENSED",
@@ -25,6 +28,7 @@
   },
   "devDependencies": {
     "ava": "^3.5.0",
+    "catch-uncommitted": "^1.5.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
@@ -33,6 +37,7 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "jsdoc-to-markdown": "^5.0.3",
     "nock": "^12.0.3"
   }
 }
