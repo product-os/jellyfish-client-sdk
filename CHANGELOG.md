@@ -4,6 +4,12 @@
 * Initial bootstrap of package from source code in the Jellyfish project [Lucian Buzzo]
 
 # v0.0.3
+
+# v0.1.0
+## (2020-03-27)
+
+* Update link constraints with latest changes from upstream [Lucian Buzzo]
+
 ## (2020-03-24)
 
 * Configure package so that balenaCI will auto-publish package to npm [Lucian Buzzo]
