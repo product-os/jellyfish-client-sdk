@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v0.2.0
+## (2020-04-03)
+
+* Update to latest changes in core project [Lucian Buzzo]
+
 # v0.1.0
 ## (2020-03-27)
 
