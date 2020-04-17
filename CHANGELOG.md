@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v0.2.1
+## (2020-04-17)
+
+* Expose link constraints in module interface [Lucian Buzzo]
+
 # v0.2.0
 ## (2020-04-03)
 
