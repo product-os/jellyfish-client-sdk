@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v0.2.2
+## (2020-05-01)
+
+* Remove unnecessary enum in link queries [Lucian Buzzo]
+
 # v0.2.1
 ## (2020-04-17)
 
