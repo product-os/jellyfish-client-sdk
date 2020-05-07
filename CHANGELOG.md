@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v0.3.0
+## (2020-05-07)
+
+* Add support for 'is owned by' links for sales threads [Graham McCulloch]
+
 # v0.2.4
 ## (2020-05-07)
 
