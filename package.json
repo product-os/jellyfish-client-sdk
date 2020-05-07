@@ -1,6 +1,6 @@
 {
   "name": "@balena/jellyfish-client-sdk",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "HTTP client SDK for Jellyfish",
   "main": "lib/index.js",
   "directories": {

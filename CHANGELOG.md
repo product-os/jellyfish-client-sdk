@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v0.2.4
+## (2020-05-07)
+
+* Fix uuid require statements [Graham McCulloch]
+
 # v0.2.3
 ## (2020-05-05)
 
