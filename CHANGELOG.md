@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v0.4.0
+## (2020-05-11)
+
+* Define a relationship between repository and thread [Lucian Buzzo]
+
 # v0.3.0
 ## (2020-05-07)
 
