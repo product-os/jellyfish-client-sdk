@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v0.5.0
+## (2020-05-28)
+
+* Define a relationship between groups and users [Graham McCulloch]
+
 # v0.4.0
 ## (2020-05-11)
 
