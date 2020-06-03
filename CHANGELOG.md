@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v0.6.0
+## (2020-06-03)
+
+* Define a relationship between users and web-push-subscriptions [Graham McCulloch]
+
 # v0.5.0
 ## (2020-05-28)
 
