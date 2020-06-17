@@ -49,7 +49,7 @@ const card = await sdk.card.get('b1d31eca-6182-4c34-8a74-f89f1c3e4e26')
         * [.create(card)](#JellyfishSDK.card.create) ⇒ <code>Promise</code>
         * [.update(id, type, patch)](#JellyfishSDK.card.update) ⇒ <code>Promise</code>
         * [.remove(id, type)](#JellyfishSDK.card.remove) ⇒ <code>Promise</code>
-        * [.remove(fromCard, toCard, verb)](#JellyfishSDK.card.remove) ⇒ <code>Promise</code>
+        * [.link(fromCard, toCard, verb)](#JellyfishSDK.card.link) ⇒ <code>Promise</code>
         * [.unlink(fromCard, toCard, verb)](#JellyfishSDK.card.unlink) ⇒ <code>Promise</code>
         * [.markAsRead(userSlug, card)](#JellyfishSDK.card.markAsRead) ⇒ <code>Promise</code>
         * [.markAsUnread(userSlug, card)](#JellyfishSDK.card.markAsUnread) ⇒ <code>Promise</code>
@@ -239,7 +239,7 @@ sdk.auth.logout()
     * [.create(card)](#JellyfishSDK.card.create) ⇒ <code>Promise</code>
     * [.update(id, type, patch)](#JellyfishSDK.card.update) ⇒ <code>Promise</code>
     * [.remove(id, type)](#JellyfishSDK.card.remove) ⇒ <code>Promise</code>
-    * [.remove(fromCard, toCard, verb)](#JellyfishSDK.card.remove) ⇒ <code>Promise</code>
+    * [.link(fromCard, toCard, verb)](#JellyfishSDK.card.link) ⇒ <code>Promise</code>
     * [.unlink(fromCard, toCard, verb)](#JellyfishSDK.card.unlink) ⇒ <code>Promise</code>
     * [.markAsRead(userSlug, card)](#JellyfishSDK.card.markAsRead) ⇒ <code>Promise</code>
     * [.markAsUnread(userSlug, card)](#JellyfishSDK.card.markAsUnread) ⇒ <code>Promise</code>
@@ -420,9 +420,9 @@ Send an action request to remove a card
 ```js
 sdk.card.remove('8b465c9a-b4cb-44c1-9df9-632649d7c4c3', 'card')
 ```
-<a name="JellyfishSDK.card.remove"></a>
+<a name="JellyfishSDK.card.link"></a>
 
-#### card.remove(fromCard, toCard, verb) ⇒ <code>Promise</code>
+#### card.link(fromCard, toCard, verb) ⇒ <code>Promise</code>
 Link two cards together
 
 **Kind**: static method of [<code>card</code>](#JellyfishSDK.card)  
