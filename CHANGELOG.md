@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v0.7.0
+## (2020-06-17)
+
+* Allow to mark summary card as read [Kakhaber]
+
 # v0.6.1
 ## (2020-06-17)
 
