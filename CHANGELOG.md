@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v0.6.1
+## (2020-06-17)
+
+* docs: Fix minor documentation issue. [James Harton]
+
 # v0.6.0
 ## (2020-06-03)
 
