@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v1.0.0
+## (2020-06-18)
+
+* Update getWithTimeline to allow for more flexible queries - Remove code related to versioning now that versions can be relied on   in our cards - Allow queryOptions to be passed through the options - Removes type from options [Lucy-Jane Walsh]
+
 # v0.7.0
 ## (2020-06-17)
 
