@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v1.1.0
+## (2020-06-19)
+
+* Add support for marking as read if user's group is mentioned [Graham McCulloch]
+
 # v1.0.0
 ## (2020-06-18)
 
