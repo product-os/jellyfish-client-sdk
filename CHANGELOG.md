@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v1.1.1
+## (2020-06-23)
+
+* link-constraints: Add form response constraints [Marios Balamatsias]
+
 # v1.1.0
 ## (2020-06-19)
 
