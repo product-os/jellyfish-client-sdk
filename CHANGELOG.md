@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v1.2.0
+## (2020-07-20)
+
+* card: add support for marking 1-to-1 conversations as read/unread [Graham McCulloch]
+
 # v1.1.1
 ## (2020-06-23)
 
