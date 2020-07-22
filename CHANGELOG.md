@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v1.3.0
+## (2020-07-22)
+
+* Add support thread to pattern link constraints [Kakhaber]
+
 # v1.2.0
 ## (2020-07-20)
 
