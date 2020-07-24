@@ -5,6 +5,12 @@
 
 # v0.0.3
 
+# v1.4.0
+## (2020-07-24)
+
+* Fixup jsdoc options param [StefKors]
+* Add an `options` argument when creating streams [Carol Schulze]
+
 # v1.3.0
 ## (2020-07-22)
 
