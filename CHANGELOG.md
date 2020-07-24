@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v1.5.0
+## (2020-07-24)
+
+* Add product improvement link constraints [Kakhaber]
+
 # v1.4.0
 ## (2020-07-24)
 
