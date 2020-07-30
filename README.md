@@ -73,7 +73,7 @@ const card = await sdk.card.get('b1d31eca-6182-4c34-8a74-f89f1c3e4e26')
     * [.getById(id)](#JellyfishSDK.getById) ⇒ <code>Promise</code>
     * [.getBySlug(slug)](#JellyfishSDK.getBySlug) ⇒ <code>Promise</code>
     * [.action(body)](#JellyfishSDK.action) ⇒ <code>Promise</code>
-    * [.stream(query, options)](#JellyfishSDK.stream) ⇒ <code>Promise</code>
+    * [.stream(query)](#JellyfishSDK.stream) ⇒ <code>Promise</code>
 
 <a name="new_JellyfishSDK_new"></a>
 
@@ -845,7 +845,7 @@ sdk.action({
 ```
 <a name="JellyfishSDK.stream"></a>
 
-### JellyfishSDK.stream(query, options) ⇒ <code>Promise</code>
+### JellyfishSDK.stream(query) ⇒ <code>Promise</code>
 Stream updates and insertions for cards that match a JSON
 schema
 
@@ -857,8 +857,6 @@ schema
 | Param | Type | Description |
 | --- | --- | --- |
 | query | <code>Object</code> | The JSON schema to query with |
-| options | <code>Object</code> | A map of options |
-| options.populate | <code>function</code> | Perform an initial query and send        the results as an array to this function. All cards in this array        become eligible for the `unmatch` event |
 
 **Example**  
 ```js
