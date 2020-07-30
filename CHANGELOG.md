@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.0.0
+## (2020-07-30)
+
+* Revert "Add an `options` argument when creating streams" [Carol Schulze]
+
 # v1.5.1
 ## (2020-07-30)
 
