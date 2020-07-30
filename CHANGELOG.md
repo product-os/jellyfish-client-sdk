@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v1.5.1
+## (2020-07-30)
+
+* link-constraints: Add pattern and issue links to form responses [Marios Balamatsias]
+
 # v1.5.0
 ## (2020-07-24)
 
