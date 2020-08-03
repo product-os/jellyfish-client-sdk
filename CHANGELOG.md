@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.1.0
+## (2020-07-31)
+
+* link milestone to product improvement [StefKors]
+
 # v2.0.0
 ## (2020-07-30)
 
