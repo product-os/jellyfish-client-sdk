@@ -5,6 +5,14 @@
 
 # v0.0.3
 
+# v2.1.1
+## (2020-08-14)
+
+* Break up isMentionedInMessage() into multiple tests [Lucian Buzzo]
+* Escape slugs and groups in regex checks [Lucian Buzzo]
+* Match against username wrapped in markdown links [Lucian Buzzo]
+* Account for computed fields when marking messages as read [Lucian Buzzo]
+
 # v2.1.0
 ## (2020-07-31)
 
