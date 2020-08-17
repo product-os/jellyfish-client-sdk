@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.1.2
+## (2020-08-16)
+
+* ci: Add Renovate config [Josh Bowling]
+
 # v2.1.1
 ## (2020-08-14)
 
