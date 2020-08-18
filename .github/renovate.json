@@ -20,16 +20,6 @@
         "patch"
       ],
       "automerge": true
-    },
-    {
-      "groupName": "dev-major",
-      "depTypeList": [
-        "devDependencies"
-      ],
-      "updateTypes": [
-        "major"
-      ],
-      "automerge": true
     }
   ],
   "encrypted": {
