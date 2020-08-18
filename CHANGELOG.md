@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.1.3
+## (2020-08-18)
+
+* ci: Remove dev-major group from Renovate config [Josh Bowling]
+
 # v2.1.2
 ## (2020-08-16)
 
