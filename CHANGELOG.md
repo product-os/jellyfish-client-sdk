@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.1.4
+## (2020-08-20)
+
+* Remove console noise [Graham McCulloch]
+
 # v2.1.3
 ## (2020-08-18)
 
