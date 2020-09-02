@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.1.5
+## (2020-09-01)
+
+* patch: Update dependency eslint-plugin-lodash to v7 [Renovate Bot]
+
 # v2.1.4
 ## (2020-08-20)
 
