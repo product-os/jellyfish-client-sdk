@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.1.6
+## (2020-09-02)
+
+* patch: Update dependency uuid to v8 [Renovate Bot]
+
 # v2.1.5
 ## (2020-09-01)
 
