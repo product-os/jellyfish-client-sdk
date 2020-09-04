@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.1.11
+## (2020-09-03)
+
+* Remove link between agenda and discussion topic cards. Update discussion cards to balena-topic cards [Lucy-Jane]
+
 # v2.1.10
 ## (2020-09-03)
 
