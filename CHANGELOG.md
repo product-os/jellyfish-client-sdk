@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.1.20
+## (2020-09-16)
+
+* link-constraints: Add Pattern and Github Issue links to user-feedback [Marios Balamatsias]
+
 # v2.1.19
 ## (2020-09-16)
 
