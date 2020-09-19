@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.1.21
+## (2020-09-16)
+
+* patch: Update dependency jsdoc-to-markdown to v6 [Renovate Bot]
+
 # v2.1.20
 ## (2020-09-16)
 
