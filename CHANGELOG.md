@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.2.0
+## (2020-09-24)
+
+* Add link constraints for ui themes [Graham McCulloch]
+
 # v2.1.21
 ## (2020-09-16)
 
