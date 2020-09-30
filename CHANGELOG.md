@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.2.8
+## (2020-09-30)
+
+* patch: Update dependency socket.io-client to ^2.3.1 [Renovate Bot]
+
 # v2.2.7
 ## (2020-09-29)
 
