@@ -23,7 +23,7 @@
     "isuuid": "^0.1.0",
     "lodash": "^4.17.20",
     "socket.io-client": "^2.3.1",
-    "uuid": "^8.3.0"
+    "uuid": "^8.3.1"
   },
   "devDependencies": {
     "ava": "^3.13.0",
