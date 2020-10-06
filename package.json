@@ -38,6 +38,6 @@
     "eslint-plugin-standard": "^4.0.1",
     "jsdoc-to-markdown": "^6.0.1",
     "nock": "^13.0.4",
-    "sinon": "^9.1.0"
+    "sinon": "^9.2.0"
   }
 }
