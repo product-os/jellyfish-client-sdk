@@ -5,6 +5,15 @@
 
 # v0.0.3
 
+# v2.3.0
+## (2020-10-22)
+
+* Add link constraints between support threads and pull requests [Graham McCulloch]
+* patch: Update dependency eslint-plugin-jsdoc to ^30.7.3 [Renovate Bot]
+* patch: Update dependency eslint-plugin-jsdoc to ^30.7.2 [Renovate Bot]
+* patch: Update dependency eslint-plugin-jsdoc to ^30.7.1 [Renovate Bot]
+* patch: Update dependency eslint-plugin-jsdoc to ^30.6.5 [Renovate Bot]
+
 # v2.2.13
 ## (2020-10-09)
 
