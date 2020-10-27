@@ -5,6 +5,15 @@
 
 # v0.0.3
 
+# v2.4.0
+## (2020-10-27)
+
+* Add link constraint between contribution score and user [StefKors]
+* patch: Update dependency eslint to ^7.12.0 [Renovate Bot]
+* patch: Update dependency axios to ^0.21.0 [Renovate Bot]
+* patch: Update dependency eslint-config-standard to v15 [Renovate Bot]
+* patch: Update dependency eslint-plugin-standard to ^4.0.2 [Renovate Bot]
+
 # v2.3.0
 ## (2020-10-22)
 
