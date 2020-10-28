@@ -5,6 +5,14 @@
 
 # v0.0.3
 
+# v2.4.1
+## (2020-10-28)
+
+* Update readme [Josh Bowling]
+* patch: Update dependency sinon to ^9.2.1 [Renovate Bot]
+* patch: Update dependency eslint-config-standard to ^15.0.1 [Renovate Bot]
+* patch: Update dependency eslint to ^7.12.1 [Renovate Bot]
+
 # v2.4.0
 ## (2020-10-27)
 
