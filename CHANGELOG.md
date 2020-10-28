@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.4.2
+## (2020-10-28)
+
+* Renovate config set pruneStaleBranches to false [Marios Balamatsias]
+
 # v2.4.1
 ## (2020-10-28)
 
