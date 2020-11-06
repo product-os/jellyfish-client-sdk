@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.4.7
+## (2020-11-06)
+
+* Force Renovate to use node 14 and npm 6 [Josh Bowling]
+
 # v2.4.6
 ## (2020-11-05)
 
