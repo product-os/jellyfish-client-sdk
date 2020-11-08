@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.4.9
+## (2020-11-08)
+
+* Add repository section to package.json [Josh Bowling]
+
 # v2.4.8
 ## (2020-11-07)
 
