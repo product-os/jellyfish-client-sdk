@@ -1,6 +1,10 @@
 {
   "name": "@balena/jellyfish-client-sdk",
   "version": "2.4.8",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/product-os/jellyfish-client-sdk.git"
+  },
   "description": "HTTP client SDK for Jellyfish",
   "main": "lib/index.js",
   "directories": {
