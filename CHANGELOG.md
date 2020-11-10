@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.4.10
+## (2020-11-10)
+
+* patch: Update dependency eslint-plugin-standard to ^4.1.0 [Renovate Bot]
+
 # v2.4.9
 ## (2020-11-08)
 
