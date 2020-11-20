@@ -35,7 +35,7 @@
   "devDependencies": {
     "ava": "^3.13.0",
     "catch-uncommitted": "^1.6.2",
-    "eslint": "^7.13.0",
+    "eslint": "^7.14.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsdoc": "^30.7.8",
