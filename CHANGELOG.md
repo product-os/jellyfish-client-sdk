@@ -5,6 +5,12 @@
 
 # v0.0.3
 
+# v2.5.1
+## (2020-11-20)
+
+* patch: Update dependency eslint to ^7.14.0 [Renovate Bot]
+* patch: Update dependency eslint-config-standard to ^16.0.2 [Renovate Bot]
+
 # v2.5.0
 ## (2020-11-17)
 
