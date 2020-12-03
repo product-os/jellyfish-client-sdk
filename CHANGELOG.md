@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.6.0
+## (2020-12-03)
+
+* Add rating constraints [Kakhaber]
+
 # v2.5.2
 ## (2020-11-23)
 
