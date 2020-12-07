@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.6.2
+## (2020-12-07)
+
+* patch: Update dependency ava to ^3.14.0 [Renovate Bot]
+
 # v2.6.1
 ## (2020-12-05)
 
