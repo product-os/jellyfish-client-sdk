@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.7.0
+## (2020-12-11)
+
+* Added transformer-related link constraints [Graham McCulloch]
+
 # v2.6.4
 ## (2020-12-11)
 
