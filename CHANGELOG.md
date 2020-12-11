@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.6.4
+## (2020-12-11)
+
+* Set as root in eslint config file [Graham McCulloch]
+
 # v2.6.3
 ## (2020-12-08)
 
