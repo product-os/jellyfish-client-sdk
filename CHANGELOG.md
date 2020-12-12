@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.7.2
+## (2020-12-12)
+
+* patch: Update dependency sinon to ^9.2.2 [Renovate Bot]
+
 # v2.7.1
 ## (2020-12-12)
 
