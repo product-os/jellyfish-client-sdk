@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.7.1
+## (2020-12-12)
+
+* renovate: Ignore node version bumps [Josh Bowling]
+
 # v2.7.0
 ## (2020-12-11)
 
