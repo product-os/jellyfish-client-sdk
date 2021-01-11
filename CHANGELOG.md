@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.7.7
+## (2021-01-11)
+
+* Use company token for renovate [Josh Bowling]
+
 # v2.7.6
 ## (2021-01-06)
 
