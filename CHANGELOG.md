@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.8.1
+## (2021-01-11)
+
+* Check for reverse links when unlinking cards [Graham McCulloch]
+
 # v2.8.0
 ## (2021-01-11)
 
