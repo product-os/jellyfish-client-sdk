@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.8.0
+## (2021-01-11)
+
+* Add link constraints between sales threads and issues [Graham McCulloch]
+
 # v2.7.7
 ## (2021-01-11)
 
