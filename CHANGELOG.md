@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.10.0
+## (2021-01-14)
+
+* Add link constraints for brainstorm-topic card [Graham McCulloch]
+
 # v2.9.1
 ## (2021-01-14)
 
