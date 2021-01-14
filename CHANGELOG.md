@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.9.0
+## (2021-01-13)
+
+* Add link between patterns and threads [Graham McCulloch]
+
 # v2.8.1
 ## (2021-01-11)
 
