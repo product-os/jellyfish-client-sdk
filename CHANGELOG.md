@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.11.0
+## (2021-01-15)
+
+* Add links between brainstorm topics and plain threads [Graham McCulloch]
+
 # v2.10.2
 ## (2021-01-15)
 
