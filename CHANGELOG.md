@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.11.5
+## (2021-01-20)
+
+* patch: Update dependency nock to ^13.0.6 [Renovate Bot]
+
 # v2.11.4
 ## (2021-01-20)
 
