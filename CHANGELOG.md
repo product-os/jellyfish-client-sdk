@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.12.0
+## (2021-01-25)
+
+* Add link constraints between patterns and sales threads [Graham McCulloch]
+
 # v2.11.12
 ## (2021-01-24)
 
