@@ -729,7 +729,7 @@ match the JSON schema are returned
 ```js
 const schema = {
 	type: 'object',
-	properies: {
+	properties: {
 		type: {
 			const: 'thread'
 		}
@@ -862,7 +862,7 @@ schema
 ```js
 const schema = {
 	type: 'object',
-	properies: {
+	properties: {
 		type: {
 			const: 'thread'
 		}
