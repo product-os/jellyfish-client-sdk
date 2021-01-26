@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.12.2
+## (2021-01-26)
+
+* fix typos in comment examples [Martin Rauscher]
+
 # v2.12.1
 ## (2021-01-25)
 
