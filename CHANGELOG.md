@@ -5,6 +5,12 @@
 
 # v0.0.3
 
+# v2.12.4
+## (2021-01-29)
+
+* Fix query for getting existing links [Graham McCulloch]
+* Add a limit to the query for existing links [Graham McCulloch]
+
 # v2.12.3
 ## (2021-01-27)
 
