@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.12.9
+## (2021-02-02)
+
+* Fix JSON schema for link query option [Graham McCulloch]
+
 # v2.12.8
 ## (2021-01-31)
 
