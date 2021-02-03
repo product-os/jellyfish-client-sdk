@@ -1,6 +1,13 @@
 {
   "name": "@balena/jellyfish-client-sdk",
-  "version": "0.0.3",
+  "version": "2.12.11",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/product-os/jellyfish-client-sdk.git"
+  },
+  "engines": {
+    "node": ">=14.2.0"
+  },
   "description": "HTTP client SDK for Jellyfish",
   "main": "lib/index.js",
   "directories": {
@@ -15,28 +22,29 @@
   "author": "Balena.io. <hello@balena.io>",
   "license": "UNLICENSED",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bluebird": "^3.7.2",
     "common-tags": "^1.8.0",
     "deep-copy": "^1.4.2",
     "fast-json-patch": "^3.0.0-1",
     "isuuid": "^0.1.0",
-    "lodash": "^4.17.15",
-    "socket.io-client": "^2.3.0",
-    "uuid": "^7.0.2"
+    "lodash": "^4.17.20",
+    "socket.io-client": "^2.4.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "ava": "^3.5.0",
-    "catch-uncommitted": "^1.5.0",
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsdoc": "^22.0.1",
-    "eslint-plugin-lodash": "^6.0.0",
-    "eslint-plugin-node": "^11.0.0",
+    "ava": "^3.15.0",
+    "catch-uncommitted": "^1.6.2",
+    "eslint": "^7.19.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^31.6.0",
+    "eslint-plugin-lodash": "^7.1.0",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "jsdoc-to-markdown": "^5.0.3",
-    "nock": "^12.0.3"
+    "eslint-plugin-standard": "^5.0.0",
+    "jsdoc-to-markdown": "^6.0.1",
+    "nock": "^13.0.7",
+    "sinon": "^9.2.4"
   }
 }

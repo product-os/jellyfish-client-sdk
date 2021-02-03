@@ -1,7 +1,7 @@
 # Jellyfish Client SDK
 
 The sdk is a client side library to interact with the Jellyfish infrastructure
-through its public interfaces (i.e. HTTP). Its meant to provide high level
+through its public interfaces (i.e. HTTP). It's meant to provide high level
 useful functionality to the web UI and any other clients.
 
 # Usage
@@ -49,10 +49,10 @@ const card = await sdk.card.get('b1d31eca-6182-4c34-8a74-f89f1c3e4e26')
         * [.create(card)](#JellyfishSDK.card.create) ⇒ <code>Promise</code>
         * [.update(id, type, patch)](#JellyfishSDK.card.update) ⇒ <code>Promise</code>
         * [.remove(id, type)](#JellyfishSDK.card.remove) ⇒ <code>Promise</code>
-        * [.remove(fromCard, toCard, verb)](#JellyfishSDK.card.remove) ⇒ <code>Promise</code>
+        * [.link(fromCard, toCard, verb)](#JellyfishSDK.card.link) ⇒ <code>Promise</code>
         * [.unlink(fromCard, toCard, verb)](#JellyfishSDK.card.unlink) ⇒ <code>Promise</code>
-        * [.markAsRead(userSlug, card)](#JellyfishSDK.card.markAsRead) ⇒ <code>Promise</code>
-        * [.markAsUnread(userSlug, card)](#JellyfishSDK.card.markAsUnread) ⇒ <code>Promise</code>
+        * [.markAsRead(userSlug, card, userGroups)](#JellyfishSDK.card.markAsRead) ⇒ <code>Promise</code>
+        * [.markAsUnread(userSlug, card, userGroups)](#JellyfishSDK.card.markAsUnread) ⇒ <code>Promise</code>
     * [.event](#JellyfishSDK.event) : <code>object</code>
         * [.create(event)](#JellyfishSDK.event.create) ⇒ <code>Promise</code>
     * [.getConfig()](#JellyfishSDK.getConfig) ⇒ <code>Promise</code>
@@ -239,10 +239,10 @@ sdk.auth.logout()
     * [.create(card)](#JellyfishSDK.card.create) ⇒ <code>Promise</code>
     * [.update(id, type, patch)](#JellyfishSDK.card.update) ⇒ <code>Promise</code>
     * [.remove(id, type)](#JellyfishSDK.card.remove) ⇒ <code>Promise</code>
-    * [.remove(fromCard, toCard, verb)](#JellyfishSDK.card.remove) ⇒ <code>Promise</code>
+    * [.link(fromCard, toCard, verb)](#JellyfishSDK.card.link) ⇒ <code>Promise</code>
     * [.unlink(fromCard, toCard, verb)](#JellyfishSDK.card.unlink) ⇒ <code>Promise</code>
-    * [.markAsRead(userSlug, card)](#JellyfishSDK.card.markAsRead) ⇒ <code>Promise</code>
-    * [.markAsUnread(userSlug, card)](#JellyfishSDK.card.markAsUnread) ⇒ <code>Promise</code>
+    * [.markAsRead(userSlug, card, userGroups)](#JellyfishSDK.card.markAsRead) ⇒ <code>Promise</code>
+    * [.markAsUnread(userSlug, card, userGroups)](#JellyfishSDK.card.markAsUnread) ⇒ <code>Promise</code>
 
 <a name="JellyfishSDK.card.get"></a>
 
@@ -420,9 +420,9 @@ Send an action request to remove a card
 ```js
 sdk.card.remove('8b465c9a-b4cb-44c1-9df9-632649d7c4c3', 'card')
 ```
-<a name="JellyfishSDK.card.remove"></a>
+<a name="JellyfishSDK.card.link"></a>
 
-#### card.remove(fromCard, toCard, verb) ⇒ <code>Promise</code>
+#### card.link(fromCard, toCard, verb) ⇒ <code>Promise</code>
 Link two cards together
 
 **Kind**: static method of [<code>card</code>](#JellyfishSDK.card)  
@@ -452,8 +452,8 @@ Un-link two cards
 
 <a name="JellyfishSDK.card.markAsRead"></a>
 
-#### card.markAsRead(userSlug, card) ⇒ <code>Promise</code>
-Link two cards together
+#### card.markAsRead(userSlug, card, userGroups) ⇒ <code>Promise</code>
+Adds the user slug to the data.readBy field of the card.
 
 **Kind**: static method of [<code>card</code>](#JellyfishSDK.card)  
 **Summary**: Mark a card as read  
@@ -463,11 +463,12 @@ Link two cards together
 | --- | --- | --- |
 | userSlug | <code>String</code> | The slug of the user who has read the card |
 | card | <code>String</code> | The card that should be marked as read |
+| userGroups | <code>Array</code> | An array of groups that the user is a member of |
 
 <a name="JellyfishSDK.card.markAsUnread"></a>
 
-#### card.markAsUnread(userSlug, card) ⇒ <code>Promise</code>
-Link two cards together
+#### card.markAsUnread(userSlug, card, userGroups) ⇒ <code>Promise</code>
+Removes the user slug from the data.readBy field of the card.
 
 **Kind**: static method of [<code>card</code>](#JellyfishSDK.card)  
 **Summary**: Mark a card as unread  
@@ -477,6 +478,7 @@ Link two cards together
 | --- | --- | --- |
 | userSlug | <code>String</code> | The slug of the user who has read the card |
 | card | <code>String</code> | The card that should be marked as unread |
+| userGroups | <code>Array</code> | An array of groups that the user is a member of |
 
 <a name="JellyfishSDK.event"></a>
 
@@ -727,7 +729,7 @@ match the JSON schema are returned
 ```js
 const schema = {
 	type: 'object',
-	properies: {
+	properties: {
 		type: {
 			const: 'thread'
 		}
@@ -860,7 +862,7 @@ schema
 ```js
 const schema = {
 	type: 'object',
-	properies: {
+	properties: {
 		type: {
 			const: 'thread'
 		}
