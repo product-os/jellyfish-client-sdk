@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.13.0
+## (2021-02-04)
+
+* Add options param to stream [StefKors]
+
 # v2.12.11
 ## (2021-02-03)
 
