@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.13.2
+## (2021-02-06)
+
+* Use shared renovate config base [Josh Bowling]
+
 # v2.13.1
 ## (2021-02-05)
 
