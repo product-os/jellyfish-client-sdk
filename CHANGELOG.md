@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.13.4
+## (2021-02-11)
+
+* patch: Update dependency eslint-plugin-promise to ^4.3.1 [Renovate Bot]
+
 # v2.13.3
 ## (2021-02-07)
 
