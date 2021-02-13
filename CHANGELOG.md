@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.13.5
+## (2021-02-13)
+
+* patch: Update dependency eslint to ^7.20.0 [Renovate Bot]
+
 # v2.13.4
 ## (2021-02-11)
 
