@@ -6,7 +6,7 @@ useful functionality to the web UI and any other clients.
 
 # Usage
 
-Below is an example how to use IceCave DB:
+Below is an example how to use JellyFish:
 
 ```js
 import {
