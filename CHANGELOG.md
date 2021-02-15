@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.13.6
+## (2021-02-15)
+
+* Remove IceCave references [Martin Rauscher]
+
 # v2.13.5
 ## (2021-02-13)
 
