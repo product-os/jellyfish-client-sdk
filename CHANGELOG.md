@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+# v2.14.0
+## (2021-02-18)
+
+* Add owner link constraint for user-feedback [Graham McCulloch]
+
 # v2.13.7
 ## (2021-02-16)
 
