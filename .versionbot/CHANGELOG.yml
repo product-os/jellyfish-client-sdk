@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency lodash to ^4.17.21'
+      hash: 4b5ab77805d72269773c1c1cd39593686e5b6bd6
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 2.14.2
+  date: 2021-02-20T17:23:47.722Z
+- commits:
     - subject: Add versionbot CHANGELOG.yml
       hash: fb9ad23d6ae5716830435e59f7cbeb1b44a1ea3f
       body: ''
