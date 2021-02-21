@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.14.3 - 2021-02-21
+
+* patch: Update dependency eslint-plugin-jsdoc to ^32.1.0 [Renovate Bot]
+
 ## 2.14.2 - 2021-02-20
 
 * patch: Update dependency lodash to ^4.17.21 [Renovate Bot]
