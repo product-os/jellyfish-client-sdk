@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency nock to ^13.0.8'
+      hash: b16f39082359ddc47635c2b8940b3790b0943acf
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 2.14.6
+  date: 2021-02-25T05:22:42.310Z
+- commits:
     - subject: 'patch: Update dependency eslint-plugin-jsdoc to ^32.2.0'
       hash: 7dc84a50639576e4759086b88236546d399d628f
       body: ''
