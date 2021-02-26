@@ -9,11 +9,12 @@
     "node": ">=14.2.0"
   },
   "description": "HTTP client SDK for Jellyfish",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "directories": {
-    "lib": "lib"
+    "lib": "dist"
   },
   "scripts": {
+    "build": "tsc",
     "lint": "eslint lib",
     "unit": "ava -v",
     "test": "npm run doc && catch-uncommitted --skip-node-versionbot-changes && npm run lint && npm run unit",
@@ -45,6 +46,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "jsdoc-to-markdown": "^6.0.1",
     "nock": "^13.0.8",
-    "sinon": "^9.2.4"
+    "sinon": "^9.2.4",
+    "typescript": "^4.2.2"
   }
 }

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "dist/",
+    "target": "es2019",
+    "strict": false,
+    "preserveConstEnums": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "allowJs": true,
+    "checkJs": false
+  },
+  "include": [
+    "./lib/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
