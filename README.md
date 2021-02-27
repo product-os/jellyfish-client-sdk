@@ -42,14 +42,14 @@ const card = await sdk.card.get('b1d31eca-6182-4c34-8a74-f89f1c3e4e26')
         * [.refreshToken()](#JellyfishSDK.auth.refreshToken) ⇒ <code>String</code>
         * [.logout()](#JellyfishSDK.auth.logout)
     * [.card](#JellyfishSDK.card) : <code>object</code>
-        * [.get(idOrSlug, options)](#JellyfishSDK.card.get) ⇒ <code>Promise</code>
+        * [.get(idOrSlug, options)](#JellyfishSDK.card.get) ⇒ <code>Promise.&lt;types.Contract&gt;</code>
         * [.get(idOrSlug, options)](#JellyfishSDK.card.get) ⇒ <code>Promise</code>
         * [.CardSdk#getWithLinks(idOrSlug, verbs, options)](#JellyfishSDK.card.CardSdk+getWithLinks) ⇒ <code>Promise</code>
         * [.getAllByType(cardType)](#JellyfishSDK.card.getAllByType) ⇒ <code>Promise</code>
-        * [.create(card)](#JellyfishSDK.card.create) ⇒ <code>Promise</code>
+        * [.create(card)](#JellyfishSDK.card.create) ⇒ <code>Promise.&lt;types.ActionResponse&gt;</code>
         * [.update(id, type, patch)](#JellyfishSDK.card.update) ⇒ <code>Promise</code>
         * [.remove(id, type)](#JellyfishSDK.card.remove) ⇒ <code>Promise</code>
-        * [.link(fromCard, toCard, verb)](#JellyfishSDK.card.link) ⇒ <code>Promise</code>
+        * [.link(fromCard, toCard, verb)](#JellyfishSDK.card.link) ⇒ <code>Promise.&lt;types.ActionResponse&gt;</code>
         * [.unlink(fromCard, toCard, verb)](#JellyfishSDK.card.unlink) ⇒ <code>Promise</code>
         * [.markAsRead(userSlug, card, userGroups)](#JellyfishSDK.card.markAsRead) ⇒ <code>Promise</code>
         * [.markAsUnread(userSlug, card, userGroups)](#JellyfishSDK.card.markAsUnread) ⇒ <code>Promise</code>
@@ -72,7 +72,7 @@ const card = await sdk.card.get('b1d31eca-6182-4c34-8a74-f89f1c3e4e26')
     * [.getByType(type)](#JellyfishSDK.getByType) ⇒ <code>Promise</code>
     * [.getById(id)](#JellyfishSDK.getById) ⇒ <code>Promise</code>
     * [.getBySlug(slug)](#JellyfishSDK.getBySlug) ⇒ <code>Promise</code>
-    * [.action(body)](#JellyfishSDK.action) ⇒ <code>Promise</code>
+    * [.action(body)](#JellyfishSDK.action) ⇒ [<code>Promise.&lt;ActionResponse&gt;</code>](#ActionResponse)
     * [.stream(query, options)](#JellyfishSDK.stream) ⇒ <code>Promise</code>
 
 <a name="new_JellyfishSDK_new"></a>
@@ -232,21 +232,21 @@ sdk.auth.logout()
 **Kind**: static namespace of [<code>JellyfishSDK</code>](#JellyfishSDK)  
 
 * [.card](#JellyfishSDK.card) : <code>object</code>
-    * [.get(idOrSlug, options)](#JellyfishSDK.card.get) ⇒ <code>Promise</code>
+    * [.get(idOrSlug, options)](#JellyfishSDK.card.get) ⇒ <code>Promise.&lt;types.Contract&gt;</code>
     * [.get(idOrSlug, options)](#JellyfishSDK.card.get) ⇒ <code>Promise</code>
     * [.CardSdk#getWithLinks(idOrSlug, verbs, options)](#JellyfishSDK.card.CardSdk+getWithLinks) ⇒ <code>Promise</code>
     * [.getAllByType(cardType)](#JellyfishSDK.card.getAllByType) ⇒ <code>Promise</code>
-    * [.create(card)](#JellyfishSDK.card.create) ⇒ <code>Promise</code>
+    * [.create(card)](#JellyfishSDK.card.create) ⇒ <code>Promise.&lt;types.ActionResponse&gt;</code>
     * [.update(id, type, patch)](#JellyfishSDK.card.update) ⇒ <code>Promise</code>
     * [.remove(id, type)](#JellyfishSDK.card.remove) ⇒ <code>Promise</code>
-    * [.link(fromCard, toCard, verb)](#JellyfishSDK.card.link) ⇒ <code>Promise</code>
+    * [.link(fromCard, toCard, verb)](#JellyfishSDK.card.link) ⇒ <code>Promise.&lt;types.ActionResponse&gt;</code>
     * [.unlink(fromCard, toCard, verb)](#JellyfishSDK.card.unlink) ⇒ <code>Promise</code>
     * [.markAsRead(userSlug, card, userGroups)](#JellyfishSDK.card.markAsRead) ⇒ <code>Promise</code>
     * [.markAsUnread(userSlug, card, userGroups)](#JellyfishSDK.card.markAsUnread) ⇒ <code>Promise</code>
 
 <a name="JellyfishSDK.card.get"></a>
 
-#### card.get(idOrSlug, options) ⇒ <code>Promise</code>
+#### card.get(idOrSlug, options) ⇒ <code>Promise.&lt;types.Contract&gt;</code>
 Get a card using an id or a slug
 
 **Kind**: static method of [<code>card</code>](#JellyfishSDK.card)  
@@ -350,17 +350,16 @@ sdk.card.getAllByType('view')
 ```
 <a name="JellyfishSDK.card.create"></a>
 
-#### card.create(card) ⇒ <code>Promise</code>
+#### card.create(card) ⇒ <code>Promise.&lt;types.ActionResponse&gt;</code>
 Send an action request to create a new card
 
 **Kind**: static method of [<code>card</code>](#JellyfishSDK.card)  
 **Summary**: Create a new card  
 **Access**: public  
-**Fulfil**: <code>Card</code> - The newly created card  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| card | <code>Object</code> | The card that should be created, must include a 'type' attribute. |
+| card | <code>types.PartialContract</code> | the contract to be created |
 
 **Example**  
 ```js
@@ -422,7 +421,7 @@ sdk.card.remove('8b465c9a-b4cb-44c1-9df9-632649d7c4c3', 'card')
 ```
 <a name="JellyfishSDK.card.link"></a>
 
-#### card.link(fromCard, toCard, verb) ⇒ <code>Promise</code>
+#### card.link(fromCard, toCard, verb) ⇒ <code>Promise.&lt;types.ActionResponse&gt;</code>
 Link two cards together
 
 **Kind**: static method of [<code>card</code>](#JellyfishSDK.card)  
@@ -431,8 +430,8 @@ Link two cards together
 
 | Param | Type | Description |
 | --- | --- | --- |
-| fromCard | <code>String</code> | The id of the card that should be linked from |
-| toCard | <code>String</code> | The id of the card that should be linked to |
+| fromCard | <code>PartialContract</code> | The card that should be linked from |
+| toCard | <code>PartialContract</code> | The card that should be linked to |
 | verb | <code>String</code> | The name of the relationship |
 
 <a name="JellyfishSDK.card.unlink"></a>
@@ -810,14 +809,13 @@ sdk.view('view-all-by-type@1.0.0', params)
 
 <a name="JellyfishSDK.action"></a>
 
-### JellyfishSDK.action(body) ⇒ <code>Promise</code>
+### JellyfishSDK.action(body) ⇒ [<code>Promise.&lt;ActionResponse&gt;</code>](#ActionResponse)
 Send an action to the API, the request will resolve
 once the action is complete
 
 **Kind**: static method of [<code>JellyfishSDK</code>](#JellyfishSDK)  
 **Summary**: Send an action to the API  
 **Access**: public  
-**Fulfil**: [<code>ActionResponse</code>](#ActionResponse) - An action response object  
 
 | Param | Type | Description |
 | --- | --- | --- |
