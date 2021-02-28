@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.14.8 - 2021-02-28
+
+* patch: Update dependency eslint to ^7.21.0 [Renovate Bot]
+
 ## 2.14.7 - 2021-02-27
 
 * patch: Update dependency nock to ^13.0.9 [Renovate Bot]

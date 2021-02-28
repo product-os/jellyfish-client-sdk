@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency eslint to ^7.21.0'
+      hash: 322f73d15aba0327b204df331626ceb6914c554e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 2.14.8
+  date: 2021-02-28T14:01:58.032Z
+- commits:
     - subject: 'patch: Update dependency nock to ^13.0.9'
       hash: fba38fdd12a7728567425368535d70ec2b74c655
       body: ''
