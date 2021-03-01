@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.16.0 - 2021-03-01
+
+* Add link constraints between brainstorm-topic and pattern [Graham McCulloch]
+
 ## 2.15.0 - 2021-03-01
 
 * Add link constraints between chart-configuration and view [Graham McCulloch]

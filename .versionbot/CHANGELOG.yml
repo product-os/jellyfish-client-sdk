@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add link constraints between brainstorm-topic and pattern
+      hash: 3dac95ed8d738662cf4015b6cd3a9b9a92ae6ef6
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 2.16.0
+  date: 2021-03-01T09:47:36.635Z
+- commits:
     - subject: Add link constraints between chart-configuration and view
       hash: 745b1e6fe04b1a500542ff186f4168998de297fd
       body: ''
