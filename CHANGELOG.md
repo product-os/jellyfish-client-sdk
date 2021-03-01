@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.15.0 - 2021-03-01
+
+* Add link constraints between chart-configuration and view [Graham McCulloch]
+
 ## 2.14.9 - 2021-02-28
 
 * patch: Update dependency jsdoc-to-markdown to v7 [Renovate Bot]

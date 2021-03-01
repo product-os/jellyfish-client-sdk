@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add link constraints between chart-configuration and view
+      hash: 745b1e6fe04b1a500542ff186f4168998de297fd
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 2.15.0
+  date: 2021-03-01T08:49:51.019Z
+- commits:
     - subject: 'patch: Update dependency jsdoc-to-markdown to v7'
       hash: 3fc6ebefb298ba6d9dea5fd34bb8480f5d669ecd
       body: ''
