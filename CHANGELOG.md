@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.14.9 - 2021-02-28
+
+* patch: Update dependency jsdoc-to-markdown to v7 [Renovate Bot]
+
 ## 2.14.8 - 2021-02-28
 
 * patch: Update dependency eslint to ^7.21.0 [Renovate Bot]
