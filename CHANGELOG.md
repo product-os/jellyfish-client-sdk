@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.16.1 - 2021-03-01
+
+* Remove link constraints referencing removed form-response type [Graham McCulloch]
+
 ## 2.16.0 - 2021-03-01
 
 * Add link constraints between brainstorm-topic and pattern [Graham McCulloch]

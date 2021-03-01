@@ -1,4 +1,17 @@
 - commits:
+    - subject: Remove link constraints referencing removed form-response type
+      hash: 491fbc6406c9cd6e8a83216b2d14470eeaa2a839
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 2.16.1
+  date: 2021-03-01T10:14:28.150Z
+- commits:
     - subject: Add link constraints between brainstorm-topic and pattern
       hash: 3dac95ed8d738662cf4015b6cd3a9b9a92ae6ef6
       body: ''
