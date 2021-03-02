@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.16.2 - 2021-03-02
+
+* patch: Update dependency nock to ^13.0.10 [Renovate Bot]
+
 ## 2.16.1 - 2021-03-01
 
 * Remove link constraints referencing removed form-response type [Graham McCulloch]
