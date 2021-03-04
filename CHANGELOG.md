@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.17.0 - 2021-03-03
+
+* Add oauth card constraints [Kakhaber]
+
 ## 2.16.2 - 2021-03-02
 
 * patch: Update dependency nock to ^13.0.10 [Renovate Bot]
