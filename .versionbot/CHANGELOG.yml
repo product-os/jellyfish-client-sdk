@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency nock to ^13.0.11'
+      hash: 3f5e15bc253e6d158e84c432ed100fade5885ca4
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 2.17.1
+  date: 2021-03-07T21:38:10.029Z
+- commits:
     - subject: Add oauth card constraints
       hash: 895387a1ae7993ee4a466eef65158db6d3741192
       body: ''
