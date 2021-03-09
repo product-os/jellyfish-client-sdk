@@ -1,4 +1,27 @@
 - commits:
+    - subject: add links for tasks and transformer artifacts
+      hash: 6bdf16172ec9acbc7ac9ce5399c24409180dcbed
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Martin Rauscher <martin@balena.io>
+        signed-off-by: Martin Rauscher <martin@balena.io>
+      author: Martin Rauscher
+      nested: []
+    - subject: allow any(*) in link constraints
+      hash: 96abd4547792f7bb9436c650f47e12bb54a76c70
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Martin Rauscher <martin@balena.io>
+        signed-off-by: Martin Rauscher <martin@balena.io>
+      author: Martin Rauscher
+      nested: []
+  version: 2.18.0
+  date: 2021-03-08T16:19:40.912Z
+- commits:
     - subject: 'patch: Update dependency nock to ^13.0.11'
       hash: 3f5e15bc253e6d158e84c432ed100fade5885ca4
       body: ''

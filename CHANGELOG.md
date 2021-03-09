@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 2.18.0 - 2021-03-08
+
+* add links for tasks and transformer artifacts [Martin Rauscher]
+* allow any(*) in link constraints [Martin Rauscher]
+
 ## 2.17.1 - 2021-03-07
 
 * patch: Update dependency nock to ^13.0.11 [Renovate Bot]
