@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency eslint-plugin-lodash to ^7.2.0'
+      hash: 422a31e359d41665f238a5848c188c1dbe9837c4
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 2.18.1
+  date: 2021-03-10T08:27:10.347Z
+- commits:
     - subject: add links for tasks and transformer artifacts
       hash: 6bdf16172ec9acbc7ac9ce5399c24409180dcbed
       body: ''

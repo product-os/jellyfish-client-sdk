@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.18.1 - 2021-03-10
+
+* patch: Update dependency eslint-plugin-lodash to ^7.2.0 [Renovate Bot]
+
 ## 2.18.0 - 2021-03-08
 
 * add links for tasks and transformer artifacts [Martin Rauscher]
