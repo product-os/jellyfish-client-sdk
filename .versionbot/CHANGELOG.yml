@@ -1,4 +1,17 @@
 - commits:
+    - subject: add contract-repository links
+      hash: be10b1f4dcab6911225fdf5d89ce972fdc58e55c
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Martin Rauscher <martin@balena.io>
+        signed-off-by: Martin Rauscher <martin@balena.io>
+      author: Martin Rauscher
+      nested: []
+  version: 2.18.2
+  date: 2021-03-11T12:03:20.528Z
+- commits:
     - subject: 'patch: Update dependency eslint-plugin-lodash to ^7.2.0'
       hash: 422a31e359d41665f238a5848c188c1dbe9837c4
       body: ''

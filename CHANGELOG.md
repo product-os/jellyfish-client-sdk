@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.18.2 - 2021-03-11
+
+* add contract-repository links [Martin Rauscher]
+
 ## 2.18.1 - 2021-03-10
 
 * patch: Update dependency eslint-plugin-lodash to ^7.2.0 [Renovate Bot]
