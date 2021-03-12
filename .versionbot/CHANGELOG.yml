@@ -1,4 +1,19 @@
 - commits:
+    - subject: Standardise on is-uuid
+      hash: 6286de013b572d7aa0d50ff0aac23a3965f8d32c
+      body: >
+        Other Jellyfish packages use is-uuid. Also it explicitly refers to v4
+        which should be safer/more accurate.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 2.18.3
+  date: 2021-03-12T03:05:57.494Z
+- commits:
     - subject: add contract-repository links
       hash: be10b1f4dcab6911225fdf5d89ce972fdc58e55c
       body: ''
