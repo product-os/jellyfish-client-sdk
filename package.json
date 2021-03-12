@@ -27,7 +27,7 @@
     "common-tags": "^1.8.0",
     "deep-copy": "^1.4.2",
     "fast-json-patch": "^3.0.0-1",
-    "isuuid": "^0.1.0",
+    "is-uuid": "^1.0.2",
     "lodash": "^4.17.21",
     "socket.io-client": "^2.4.0",
     "uuid": "^8.3.2"
