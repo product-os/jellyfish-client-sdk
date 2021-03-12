@@ -1,4 +1,17 @@
 - commits:
+    - subject: add loop-owns-repo links
+      hash: 23913e1c7673d70e7fdf1b1e63701ce1275d03cb
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Martin Rauscher <martin@balena.io>
+        signed-off-by: Martin Rauscher <martin@balena.io>
+      author: Martin Rauscher
+      nested: []
+  version: 2.18.4
+  date: 2021-03-12T10:56:10.545Z
+- commits:
     - subject: Standardise on is-uuid
       hash: 6286de013b572d7aa0d50ff0aac23a3965f8d32c
       body: >

@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.18.4 - 2021-03-12
+
+* add loop-owns-repo links [Martin Rauscher]
+
 ## 2.18.3 - 2021-03-12
 
 * Standardise on is-uuid [Graham McCulloch]
