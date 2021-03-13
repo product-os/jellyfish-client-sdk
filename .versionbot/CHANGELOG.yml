@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency eslint to ^7.22.0'
+      hash: f4e0e47d7276bba3432d9a4f1131c3d462720f26
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 2.18.5
+  date: 2021-03-13T00:09:40.950Z
+- commits:
     - subject: add loop-owns-repo links
       hash: 23913e1c7673d70e7fdf1b1e63701ce1275d03cb
       body: ''
