@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency eslint-plugin-jsdoc to ^32.3.0'
+      hash: 78106af6a5736dc4711de495b54a20c8451e2fbb
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 2.18.6
+  date: 2021-03-15T12:29:30.936Z
+- commits:
     - subject: 'patch: Update dependency eslint to ^7.22.0'
       hash: f4e0e47d7276bba3432d9a4f1131c3d462720f26
       body: ''
