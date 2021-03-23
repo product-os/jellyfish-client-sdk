@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.19.0 - 2021-03-23
+
+* Add link constraint between patterns and issues [Lucian Buzzo]
+
 ## 2.18.6 - 2021-03-15
 
 * patch: Update dependency eslint-plugin-jsdoc to ^32.3.0 [Renovate Bot]
