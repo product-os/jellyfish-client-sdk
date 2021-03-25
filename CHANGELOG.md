@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 2.19.1 - 2021-03-25
+
+* patch: Update dependency jsdoc-to-markdown to ^7.0.1 [Renovate Bot]
+
 ## 2.19.0 - 2021-03-23
 
 * Add link constraint between patterns and issues [Lucian Buzzo]

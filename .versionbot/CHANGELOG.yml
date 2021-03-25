@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency jsdoc-to-markdown to ^7.0.1'
+      hash: c409dd8564bb34cddd9207323fc6b266e2f5be5a
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 2.19.1
+  date: 2021-03-25T11:45:21.086Z
+- commits:
     - subject: Add link constraint between patterns and issues
       hash: 84580bd186540e4cc4a0e7c8fe717d11b14f9298
       body: ''
