@@ -23,12 +23,12 @@ import set from 'lodash/set';
 import includes from 'lodash/includes';
 import first from 'lodash/first';
 import without from 'lodash/without';
-import type { core } from '@balena/jellyfish-types';
+import type { core, JSONSchema } from '@balena/jellyfish-types';
 import { v4 as uuid } from 'uuid';
 import { v4 as isUUID } from 'is-uuid';
 import { getReverseConstraint } from './link-constraints';
 import type { JellyfishSDK } from '.';
-import type { JSONSchema, Message, QueryOptions } from './types';
+import type { Message, QueryOptions } from './types';
 
 const checkLinksExist = async (
 	sdk: JellyfishSDK,
