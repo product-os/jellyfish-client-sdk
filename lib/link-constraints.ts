@@ -3,21 +3,33 @@
  * Unauthorized copying of this file, via any medium is strictly prohibited.
  * Proprietary and confidential.
  */
-const _ = require('lodash')
+import memoize from 'lodash/memoize';
+import find from 'lodash/find';
+import type { core } from '@balena/jellyfish-types';
+import type { LinkConstraint } from './types';
 
-exports.supportsLink = _.memoize((cardType, linkName) => {
-	return Boolean(_.find(
-		exports.constraints,
-		// eslint-disable-next-line lodash/matches-shorthand
-		(link) => { return link.name === linkName && link.data.from === cardType.split('@')[0] }
-	))
-}, (cardType, linkName) => {
-	// Create a unique cache key from the link name and card type
-	return `${cardType}-${linkName}`
-})
+export const supportsLink = memoize(
+	(cardType: string, linkName: string) => {
+		return Boolean(
+			find(
+				constraints,
+				// eslint-disable-next-line lodash/matches-shorthand
+				(link) => {
+					return (
+						link.name === linkName && link.data.from === cardType.split('@')[0]
+					);
+				},
+			),
+		);
+	},
+	(cardType, linkName) => {
+		// Create a unique cache key from the link name and card type
+		return `${cardType}-${linkName}`;
+	},
+);
 
 // TODO Use 'LINK_CONSTRAINTS' on type cards instead of hardcoding lere
-exports.constraints = [
+export const constraints: LinkConstraint[] = [
 	{
 		slug: 'link-constraint-org-has-member',
 		name: 'has member',
@@ -25,8 +37,8 @@ exports.constraints = [
 			title: 'Member',
 			from: 'org',
 			to: 'user',
-			inverse: 'link-constraint-user-is-member-of'
-		}
+			inverse: 'link-constraint-user-is-member-of',
+		},
 	},
 	{
 		slug: 'link-constraint-user-is-member-of',
@@ -35,8 +47,8 @@ exports.constraints = [
 			title: 'Org',
 			from: 'user',
 			to: 'org',
-			inverse: 'link-constraint-org-has-member'
-		}
+			inverse: 'link-constraint-org-has-member',
+		},
 	},
 	{
 		slug: 'link-constraint-group-has-member-user',
@@ -45,8 +57,8 @@ exports.constraints = [
 			title: 'Member',
 			from: 'group',
 			to: 'user',
-			inverse: 'link-constraint-user-is-member-of-group'
-		}
+			inverse: 'link-constraint-user-is-member-of-group',
+		},
 	},
 	{
 		slug: 'link-constraint-user-is-member-of-group',
@@ -55,8 +67,8 @@ exports.constraints = [
 			title: 'Group',
 			from: 'user',
 			to: 'group',
-			inverse: 'link-constraint-group-has-member-user'
-		}
+			inverse: 'link-constraint-group-has-member-user',
+		},
 	},
 	{
 		slug: 'link-constraint-web-push-subscription-is-subscribed-for-user',
@@ -65,8 +77,8 @@ exports.constraints = [
 			title: 'Web push subscription user',
 			from: 'web-push-subscription',
 			to: 'user',
-			inverse: 'link-constraint-user-is-subscribed-with-web-push-subscription'
-		}
+			inverse: 'link-constraint-user-is-subscribed-with-web-push-subscription',
+		},
 	},
 	{
 		slug: 'link-constraint-user-is-subscribed-with-web-push-subscription',
@@ -75,8 +87,8 @@ exports.constraints = [
 			title: 'Web push subscription',
 			from: 'user',
 			to: 'web-push-subscription',
-			inverse: 'link-constraint-web-push-subscription-is-subscribed-for-user'
-		}
+			inverse: 'link-constraint-web-push-subscription-is-subscribed-for-user',
+		},
 	},
 	{
 		slug: 'link-constraint-user-has-attached-contact',
@@ -85,8 +97,8 @@ exports.constraints = [
 			title: 'Contact',
 			from: 'user',
 			to: 'contact',
-			inverse: 'link-constraint-contact-is-attached-to-user'
-		}
+			inverse: 'link-constraint-contact-is-attached-to-user',
+		},
 	},
 	{
 		slug: 'link-constraint-support-contribution-score-is-for-user',
@@ -95,8 +107,8 @@ exports.constraints = [
 			title: 'Support agent',
 			from: 'support-contribution-score',
 			to: 'user',
-			inverse: 'link-constraint-user-has-support-contribution-score'
-		}
+			inverse: 'link-constraint-user-has-support-contribution-score',
+		},
 	},
 	{
 		slug: 'link-constraint-user-has-support-contribution-score',
@@ -105,8 +117,8 @@ exports.constraints = [
 			title: 'Contribution score',
 			from: 'user',
 			to: 'support-contribution-score',
-			inverse: 'link-constraint-support-contribution-score-is-for-user'
-		}
+			inverse: 'link-constraint-support-contribution-score-is-for-user',
+		},
 	},
 	{
 		slug: 'link-constraint-support-thread-is-owned-by',
@@ -115,8 +127,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'support-thread',
 			to: 'user',
-			inverse: 'link-constraint-user-is-owner-of-support-thread'
-		}
+			inverse: 'link-constraint-user-is-owner-of-support-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-user-is-owner-of-support-thread',
@@ -125,8 +137,8 @@ exports.constraints = [
 			title: 'Support thread',
 			from: 'user',
 			to: 'support-thread',
-			inverse: 'link-constraint-support-thread-is-owned-by'
-		}
+			inverse: 'link-constraint-support-thread-is-owned-by',
+		},
 	},
 	{
 		slug: 'link-constraint-support-thread-is-attached-to-support-issue',
@@ -135,8 +147,8 @@ exports.constraints = [
 			title: 'Support issue',
 			from: 'support-thread',
 			to: 'support-issue',
-			inverse: 'link-constraint-support-issue-has-attached-support-thread'
-		}
+			inverse: 'link-constraint-support-issue-has-attached-support-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-support-thread-is-attached-to-issue',
@@ -145,8 +157,8 @@ exports.constraints = [
 			title: 'GitHub issue',
 			from: 'support-thread',
 			to: 'issue',
-			inverse: 'link-constraint-issue-has-attached-support-thread'
-		}
+			inverse: 'link-constraint-issue-has-attached-support-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-support-thread-is-attached-to-pull-request',
@@ -155,8 +167,8 @@ exports.constraints = [
 			title: 'Pull request',
 			from: 'support-thread',
 			to: 'pull-request',
-			inverse: 'link-constraint-pull-request-has-attached-support-thread'
-		}
+			inverse: 'link-constraint-pull-request-has-attached-support-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-support-issue-has-attached-support-thread',
@@ -165,8 +177,8 @@ exports.constraints = [
 			title: 'Support thread',
 			from: 'support-issue',
 			to: 'support-thread',
-			inverse: 'link-constraint-support-thread-is-attached-to-support-issue'
-		}
+			inverse: 'link-constraint-support-thread-is-attached-to-support-issue',
+		},
 	},
 	{
 		slug: 'link-constraint-pattern-is-attached-to-support-thread',
@@ -175,8 +187,8 @@ exports.constraints = [
 			title: 'Support thread',
 			from: 'pattern',
 			to: 'support-thread',
-			inverse: 'link-constraint-support-thread-has-attached-pattern'
-		}
+			inverse: 'link-constraint-support-thread-has-attached-pattern',
+		},
 	},
 	{
 		slug: 'link-constraint-support-thread-has-attached-pattern',
@@ -185,8 +197,8 @@ exports.constraints = [
 			title: 'Pattern',
 			from: 'support-thread',
 			to: 'pattern',
-			inverse: 'link-constraint-pattern-is-attached-to-support-thread'
-		}
+			inverse: 'link-constraint-pattern-is-attached-to-support-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-pattern-is-attached-to-sales-thread',
@@ -195,8 +207,8 @@ exports.constraints = [
 			title: 'Sales thread',
 			from: 'pattern',
 			to: 'sales-thread',
-			inverse: 'link-constraint-sales-thread-has-attached-pattern'
-		}
+			inverse: 'link-constraint-sales-thread-has-attached-pattern',
+		},
 	},
 	{
 		slug: 'link-constraint-sales-thread-has-attached-pattern',
@@ -205,8 +217,8 @@ exports.constraints = [
 			title: 'Pattern',
 			from: 'sales-thread',
 			to: 'pattern',
-			inverse: 'link-constraint-pattern-is-attached-to-sales-thread'
-		}
+			inverse: 'link-constraint-pattern-is-attached-to-sales-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-pattern-is-attached-to-thread',
@@ -215,8 +227,8 @@ exports.constraints = [
 			title: 'Thread',
 			from: 'pattern',
 			to: 'thread',
-			inverse: 'link-constraint-thread-has-attached-pattern'
-		}
+			inverse: 'link-constraint-thread-has-attached-pattern',
+		},
 	},
 	{
 		slug: 'link-constraint-thread-has-attached-pattern',
@@ -225,8 +237,8 @@ exports.constraints = [
 			title: 'Pattern',
 			from: 'thread',
 			to: 'pattern',
-			inverse: 'link-constraint-pattern-is-attached-to-thread'
-		}
+			inverse: 'link-constraint-pattern-is-attached-to-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-product-improvement-is-attached-to-pattern',
@@ -235,8 +247,8 @@ exports.constraints = [
 			title: 'Pattern',
 			from: 'product-improvement',
 			to: 'pattern',
-			inverse: 'link-constraint-pattern-has-attached-product-improvement'
-		}
+			inverse: 'link-constraint-pattern-has-attached-product-improvement',
+		},
 	},
 	{
 		slug: 'link-constraint-pattern-has-attached-product-improvement',
@@ -245,8 +257,8 @@ exports.constraints = [
 			title: 'Product improvement',
 			from: 'pattern',
 			to: 'product-improvement',
-			inverse: 'link-constraint-product-improvement-is-attached-to-pattern'
-		}
+			inverse: 'link-constraint-product-improvement-is-attached-to-pattern',
+		},
 	},
 	{
 		slug: 'link-constraint-product-improvement-is-owned-by-user',
@@ -255,8 +267,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'product-improvement',
 			to: 'user',
-			inverse: 'link-constraint-user-owns-product-improvement'
-		}
+			inverse: 'link-constraint-user-owns-product-improvement',
+		},
 	},
 	{
 		slug: 'link-constraint-user-owns-product-improvement',
@@ -265,8 +277,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'user',
 			to: 'product-improvement',
-			inverse: 'link-constraint-product-improvement-is-owned-by-user'
-		}
+			inverse: 'link-constraint-product-improvement-is-owned-by-user',
+		},
 	},
 	{
 		slug: 'link-constraint-support-issue-is-attached-to-issue',
@@ -275,8 +287,8 @@ exports.constraints = [
 			title: 'GitHub issue',
 			from: 'support-issue',
 			to: 'issue',
-			inverse: 'link-constraint-issue-has-attached-support-issue'
-		}
+			inverse: 'link-constraint-issue-has-attached-support-issue',
+		},
 	},
 	{
 		slug: 'link-constraint-issue-has-attached-support-thread',
@@ -285,8 +297,8 @@ exports.constraints = [
 			title: 'Support thread',
 			from: 'issue',
 			to: 'support-thread',
-			inverse: 'link-constraint-support-thread-is-attached-to-issue'
-		}
+			inverse: 'link-constraint-support-thread-is-attached-to-issue',
+		},
 	},
 	{
 		slug: 'link-constraint-pull-request-has-attached-support-thread',
@@ -295,8 +307,8 @@ exports.constraints = [
 			title: 'Support thread',
 			from: 'pull-request',
 			to: 'support-thread',
-			inverse: 'link-constraint-support-thread-is-attached-to-pull-request'
-		}
+			inverse: 'link-constraint-support-thread-is-attached-to-pull-request',
+		},
 	},
 	{
 		slug: 'link-constraint-issue-has-attached-support-issue',
@@ -305,8 +317,8 @@ exports.constraints = [
 			title: 'Support issue',
 			from: 'issue',
 			to: 'support-issue',
-			inverse: 'link-constraint-support-issue-is-attached-to-issue'
-		}
+			inverse: 'link-constraint-support-issue-is-attached-to-issue',
+		},
 	},
 	{
 		slug: 'link-constraint-account-has-contact',
@@ -315,8 +327,8 @@ exports.constraints = [
 			title: 'Contact',
 			from: 'account',
 			to: 'contact',
-			inverse: 'link-constraint-contact-is-member-of-account'
-		}
+			inverse: 'link-constraint-contact-is-member-of-account',
+		},
 	},
 	{
 		slug: 'link-constraint-contact-is-member-of-account',
@@ -325,8 +337,8 @@ exports.constraints = [
 			title: 'Account',
 			from: 'contact',
 			to: 'account',
-			inverse: 'link-constraint-account-has-contact'
-		}
+			inverse: 'link-constraint-account-has-contact',
+		},
 	},
 	{
 		slug: 'link-constraint-contact-is-attached-to-user',
@@ -335,8 +347,8 @@ exports.constraints = [
 			title: 'User',
 			from: 'contact',
 			to: 'user',
-			inverse: 'link-constraint-user-has-attached-contact'
-		}
+			inverse: 'link-constraint-user-has-attached-contact',
+		},
 	},
 	{
 		slug: 'link-constraint-contact-is-owned-by-user',
@@ -345,8 +357,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'contact',
 			to: 'user',
-			inverse: 'link-constraint-user-owns-contact'
-		}
+			inverse: 'link-constraint-user-owns-contact',
+		},
 	},
 	{
 		slug: 'link-constraint-user-owns-contact',
@@ -355,8 +367,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'user',
 			to: 'contact',
-			inverse: 'link-constraint-contact-is-owned-by-user'
-		}
+			inverse: 'link-constraint-contact-is-owned-by-user',
+		},
 	},
 	{
 		slug: 'link-constraint-contact-has-backup-owner',
@@ -365,8 +377,8 @@ exports.constraints = [
 			title: 'Backup owner',
 			from: 'contact',
 			to: 'user',
-			inverse: 'link-constraint-user-is-backup-owner-of-contact'
-		}
+			inverse: 'link-constraint-user-is-backup-owner-of-contact',
+		},
 	},
 	{
 		slug: 'link-constraint-user-is-backup-owner-of-contact',
@@ -375,8 +387,8 @@ exports.constraints = [
 			title: 'Backup owner',
 			from: 'user',
 			to: 'contact',
-			inverse: 'link-constraint-contact-has-backup-owner'
-		}
+			inverse: 'link-constraint-contact-has-backup-owner',
+		},
 	},
 	{
 		slug: 'link-constraint-account-is-owned-by-user',
@@ -385,8 +397,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'account',
 			to: 'user',
-			inverse: 'link-constraint-user-owns-account'
-		}
+			inverse: 'link-constraint-user-owns-account',
+		},
 	},
 	{
 		slug: 'link-constraint-user-owns-account',
@@ -395,8 +407,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'user',
 			to: 'account',
-			inverse: 'link-constraint-account-is-owned-by-user'
-		}
+			inverse: 'link-constraint-account-is-owned-by-user',
+		},
 	},
 	{
 		slug: 'link-constraint-account-has-backup-owner',
@@ -405,8 +417,8 @@ exports.constraints = [
 			title: 'Backup owner',
 			from: 'account',
 			to: 'user',
-			inverse: 'link-constraint-user-is-backup-owner-of-account'
-		}
+			inverse: 'link-constraint-user-is-backup-owner-of-account',
+		},
 	},
 	{
 		slug: 'link-constraint-user-is-backup-owner-of-account',
@@ -415,8 +427,8 @@ exports.constraints = [
 			title: 'Backup owner',
 			from: 'user',
 			to: 'account',
-			inverse: 'link-constraint-account-has-backup-owner'
-		}
+			inverse: 'link-constraint-account-has-backup-owner',
+		},
 	},
 	{
 		slug: 'link-constraint-opportunity-is-attached-to-account',
@@ -425,8 +437,8 @@ exports.constraints = [
 			title: 'Account',
 			from: 'opportunity',
 			to: 'account',
-			inverse: 'link-constraint-account-has-attached-opportunity'
-		}
+			inverse: 'link-constraint-account-has-attached-opportunity',
+		},
 	},
 	{
 		slug: 'link-constraint-account-has-attached-opportunity',
@@ -435,8 +447,8 @@ exports.constraints = [
 			title: 'Opportunity',
 			from: 'account',
 			to: 'opportunity',
-			inverse: 'link-constraint-opportunity-is-attached-to-account'
-		}
+			inverse: 'link-constraint-opportunity-is-attached-to-account',
+		},
 	},
 	{
 		slug: 'link-constraint-opportunity-is-owned-by-user',
@@ -445,8 +457,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'opportunity',
 			to: 'user',
-			inverse: 'link-constraint-user-owns-opportunity'
-		}
+			inverse: 'link-constraint-user-owns-opportunity',
+		},
 	},
 	{
 		slug: 'link-constraint-sales-thread-is-owned-by',
@@ -455,8 +467,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'sales-thread',
 			to: 'user',
-			inverse: 'link-constraint-user-is-owner-of-sales-thread'
-		}
+			inverse: 'link-constraint-user-is-owner-of-sales-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-user-is-owner-of-sales-thread',
@@ -465,8 +477,8 @@ exports.constraints = [
 			title: 'Sales thread',
 			from: 'user',
 			to: 'sales-thread',
-			inverse: 'link-constraint-sales-thread-is-owned-by'
-		}
+			inverse: 'link-constraint-sales-thread-is-owned-by',
+		},
 	},
 	{
 		slug: 'link-constraint-sales-thread-is-attached-to-opportunity',
@@ -475,8 +487,8 @@ exports.constraints = [
 			title: 'Opportunity',
 			from: 'sales-thread',
 			to: 'opportunity',
-			inverse: 'link-constraint-opportunity-has-attached-sales-thread'
-		}
+			inverse: 'link-constraint-opportunity-has-attached-sales-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-opportunity-has-attached-sales-thread',
@@ -485,8 +497,8 @@ exports.constraints = [
 			title: 'Sales thread',
 			from: 'opportunity',
 			to: 'sales-thread',
-			inverse: 'link-constraint-sales-thread-is-attached-to-opportunity'
-		}
+			inverse: 'link-constraint-sales-thread-is-attached-to-opportunity',
+		},
 	},
 	{
 		slug: 'link-constraint-sales-thread-is-attached-to-issue',
@@ -495,8 +507,8 @@ exports.constraints = [
 			title: 'GitHub issue',
 			from: 'sales-thread',
 			to: 'issue',
-			inverse: 'link-constraint-issue-has-attached-sales-thread'
-		}
+			inverse: 'link-constraint-issue-has-attached-sales-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-issue-has-attached-sales-thread',
@@ -505,8 +517,8 @@ exports.constraints = [
 			title: 'Sales thread',
 			from: 'issue',
 			to: 'sales-thread',
-			inverse: 'link-constraint-sales-thread-is-attached-to-issue'
-		}
+			inverse: 'link-constraint-sales-thread-is-attached-to-issue',
+		},
 	},
 	{
 		slug: 'link-constraint-user-owns-opportunity',
@@ -515,8 +527,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'user',
 			to: 'opportunity',
-			inverse: 'link-constraint-opportunity-is-owned-by-user'
-		}
+			inverse: 'link-constraint-opportunity-is-owned-by-user',
+		},
 	},
 	{
 		slug: 'link-constraint-opportunity-has-backup-owner',
@@ -525,8 +537,8 @@ exports.constraints = [
 			title: 'Backup owner',
 			from: 'opportunity',
 			to: 'user',
-			inverse: 'link-constraint-user-is-backup-owner-of-opportunity'
-		}
+			inverse: 'link-constraint-user-is-backup-owner-of-opportunity',
+		},
 	},
 	{
 		slug: 'link-constraint-user-is-backup-owner-of-opportunity',
@@ -535,8 +547,8 @@ exports.constraints = [
 			title: 'Backup owner',
 			from: 'user',
 			to: 'opportunity',
-			inverse: 'link-constraint-opportunity-has-backup-owner'
-		}
+			inverse: 'link-constraint-opportunity-has-backup-owner',
+		},
 	},
 	{
 		slug: 'link-constraint-support-thread-is-source-for-feedback-item',
@@ -545,8 +557,8 @@ exports.constraints = [
 			title: 'Feedback item',
 			from: 'support-thread',
 			to: 'feedback-item',
-			inverse: 'link-constraint-feedback-item-is-feedback-for-support-thread'
-		}
+			inverse: 'link-constraint-feedback-item-is-feedback-for-support-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-feedback-item-is-feedback-for-support-thread',
@@ -555,8 +567,8 @@ exports.constraints = [
 			title: 'Support thread',
 			from: 'feedback-item',
 			to: 'support-thread',
-			inverse: 'link-constraint-support-thread-is-source-for-feedback-item'
-		}
+			inverse: 'link-constraint-support-thread-is-source-for-feedback-item',
+		},
 	},
 	{
 		slug: 'link-constraint-feedback-item-is-feedback-for-user',
@@ -565,8 +577,8 @@ exports.constraints = [
 			title: 'User',
 			from: 'feedback-item',
 			to: 'user',
-			inverse: 'link-constraint-user-is-reviewed-with-feedback-item'
-		}
+			inverse: 'link-constraint-user-is-reviewed-with-feedback-item',
+		},
 	},
 	{
 		slug: 'link-constraint-user-is-reviewed-with-feedback-item',
@@ -575,8 +587,8 @@ exports.constraints = [
 			title: 'Feedback item',
 			from: 'user',
 			to: 'feedback-item',
-			inverse: 'link-constraint-feedback-item-is-feedback-for-user'
-		}
+			inverse: 'link-constraint-feedback-item-is-feedback-for-user',
+		},
 	},
 	{
 		slug: 'link-constraint-brainstorm-topic-has-attached-issue',
@@ -585,8 +597,8 @@ exports.constraints = [
 			title: 'GitHub issue',
 			from: 'brainstorm-topic',
 			to: 'issue',
-			inverse: 'link-constraint-issue-is-attached-to-brainstorm-topic'
-		}
+			inverse: 'link-constraint-issue-is-attached-to-brainstorm-topic',
+		},
 	},
 	{
 		slug: 'link-constraint-issue-is-attached-to-brainstorm-topic',
@@ -595,8 +607,8 @@ exports.constraints = [
 			title: 'Brainstorm topic',
 			from: 'issue',
 			to: 'brainstorm-topic',
-			inverse: 'link-constraint-brainstorm-topic-has-attached-issue'
-		}
+			inverse: 'link-constraint-brainstorm-topic-has-attached-issue',
+		},
 	},
 	{
 		slug: 'link-constraint-brainstorm-topic-has-attached-support-thread',
@@ -605,8 +617,8 @@ exports.constraints = [
 			title: 'Support thread',
 			from: 'brainstorm-topic',
 			to: 'support-thread',
-			inverse: 'link-constraint-support-thread-is-attached-to-brainstorm-topic'
-		}
+			inverse: 'link-constraint-support-thread-is-attached-to-brainstorm-topic',
+		},
 	},
 	{
 		slug: 'link-constraint-support-thread-is-attached-to-brainstorm-topic',
@@ -615,8 +627,8 @@ exports.constraints = [
 			title: 'Brainstorm topic',
 			from: 'support-thread',
 			to: 'brainstorm-topic',
-			inverse: 'link-constraint-brainstorm-topic-has-attached-support-thread'
-		}
+			inverse: 'link-constraint-brainstorm-topic-has-attached-support-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-brainstorm-topic-has-attached-sales-thread',
@@ -625,8 +637,8 @@ exports.constraints = [
 			title: 'Sales thread',
 			from: 'brainstorm-topic',
 			to: 'sales-thread',
-			inverse: 'link-constraint-sales-thread-is-attached-to-brainstorm-topic'
-		}
+			inverse: 'link-constraint-sales-thread-is-attached-to-brainstorm-topic',
+		},
 	},
 	{
 		slug: 'link-constraint-sales-thread-is-attached-to-brainstorm-topic',
@@ -635,8 +647,8 @@ exports.constraints = [
 			title: 'Brainstorm topic',
 			from: 'sales-thread',
 			to: 'brainstorm-topic',
-			inverse: 'link-constraint-brainstorm-topic-has-attached-sales-thread'
-		}
+			inverse: 'link-constraint-brainstorm-topic-has-attached-sales-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-brainstorm-topic-has-attached-thread',
@@ -645,8 +657,8 @@ exports.constraints = [
 			title: 'Thread',
 			from: 'brainstorm-topic',
 			to: 'thread',
-			inverse: 'link-constraint-thread-is-attached-to-brainstorm-topic'
-		}
+			inverse: 'link-constraint-thread-is-attached-to-brainstorm-topic',
+		},
 	},
 	{
 		slug: 'link-constraint-thread-is-attached-to-brainstorm-topic',
@@ -655,8 +667,8 @@ exports.constraints = [
 			title: 'Brainstorm topic',
 			from: 'thread',
 			to: 'brainstorm-topic',
-			inverse: 'link-constraint-brainstorm-topic-has-attached-thread'
-		}
+			inverse: 'link-constraint-brainstorm-topic-has-attached-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-brainstorm-topic-has-attached-pattern',
@@ -665,8 +677,8 @@ exports.constraints = [
 			title: 'Pattern',
 			from: 'brainstorm-topic',
 			to: 'pattern',
-			inverse: 'link-constraint-pattern-is-attached-to-brainstorm-topic'
-		}
+			inverse: 'link-constraint-pattern-is-attached-to-brainstorm-topic',
+		},
 	},
 	{
 		slug: 'link-constraint-pattern-is-attached-to-brainstorm-topic',
@@ -675,8 +687,8 @@ exports.constraints = [
 			title: 'Brainstorm topic',
 			from: 'pattern',
 			to: 'brainstorm-topic',
-			inverse: 'link-constraint-brainstorm-topic-has-attached-pattern'
-		}
+			inverse: 'link-constraint-brainstorm-topic-has-attached-pattern',
+		},
 	},
 	{
 		slug: 'link-constraint-issue-has-attached-pattern',
@@ -685,8 +697,8 @@ exports.constraints = [
 			title: 'Pattern',
 			from: 'issue',
 			to: 'pattern',
-			inverse: 'link-constraint-pattern-is-attached-to-issue'
-		}
+			inverse: 'link-constraint-pattern-is-attached-to-issue',
+		},
 	},
 	{
 		slug: 'link-constraint-pattern-is-attached-to-issue',
@@ -695,8 +707,8 @@ exports.constraints = [
 			title: 'Issue',
 			from: 'pattern',
 			to: 'issue',
-			inverse: 'link-constraint-issue-has-attached-pattern'
-		}
+			inverse: 'link-constraint-issue-has-attached-pattern',
+		},
 	},
 	{
 		slug: 'link-constraint-support-thread-is-attached-to-product-improvement',
@@ -705,8 +717,9 @@ exports.constraints = [
 			title: 'Product improvement',
 			from: 'support-thread',
 			to: 'product-improvement',
-			inverse: 'link-constraint-product-improvement-has-attached-support-thread'
-		}
+			inverse:
+				'link-constraint-product-improvement-has-attached-support-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-product-improvement-has-attached-support-thread',
@@ -715,8 +728,9 @@ exports.constraints = [
 			title: 'Support thread',
 			from: 'product-improvement',
 			to: 'support-thread',
-			inverse: 'link-constraint-support-thread-is-attached-to-product-improvement'
-		}
+			inverse:
+				'link-constraint-support-thread-is-attached-to-product-improvement',
+		},
 	},
 	{
 		slug: 'link-constraint-brainstorm-topic-has-attached-product-improvement',
@@ -725,8 +739,9 @@ exports.constraints = [
 			title: 'Product improvement',
 			from: 'brainstorm-topic',
 			to: 'product-improvement',
-			inverse: 'link-constraint-product-improvement-is-attached-to-brainstorm-topic'
-		}
+			inverse:
+				'link-constraint-product-improvement-is-attached-to-brainstorm-topic',
+		},
 	},
 	{
 		slug: 'link-constraint-product-improvement-is-attached-to-brainstorm-topic',
@@ -735,8 +750,9 @@ exports.constraints = [
 			title: 'Brainstorm topic',
 			from: 'product-improvement',
 			to: 'brainstorm-topic',
-			inverse: 'link-constraint-brainstorm-topic-has-attached-product-improvement'
-		}
+			inverse:
+				'link-constraint-brainstorm-topic-has-attached-product-improvement',
+		},
 	},
 	{
 		slug: 'link-constraint-brainstorm-topic-is-source-for-specification',
@@ -745,8 +761,8 @@ exports.constraints = [
 			title: 'Specification',
 			from: 'brainstorm-topic',
 			to: 'specification',
-			inverse: 'link-constraint-specification-comes-from-brainstorm-topic'
-		}
+			inverse: 'link-constraint-specification-comes-from-brainstorm-topic',
+		},
 	},
 	{
 		slug: 'link-constraint-specification-comes-from-brainstorm-topic',
@@ -755,8 +771,8 @@ exports.constraints = [
 			title: 'Brainstorm topic',
 			from: 'specification',
 			to: 'brainstorm-topic',
-			inverse: 'link-constraint-brainstorm-topic-is-source-for-specification'
-		}
+			inverse: 'link-constraint-brainstorm-topic-is-source-for-specification',
+		},
 	},
 	{
 		slug: 'link-constraint-specification-is-source-for-issue',
@@ -765,8 +781,8 @@ exports.constraints = [
 			title: 'Issue',
 			from: 'specification',
 			to: 'issue',
-			inverse: 'link-constraint-issue-comes-from-specification'
-		}
+			inverse: 'link-constraint-issue-comes-from-specification',
+		},
 	},
 	{
 		slug: 'link-constraint-issue-comes-from-specification',
@@ -775,8 +791,8 @@ exports.constraints = [
 			title: 'Specification',
 			from: 'issue',
 			to: 'specification',
-			inverse: 'link-constraint-specification-is-source-for-issue'
-		}
+			inverse: 'link-constraint-specification-is-source-for-issue',
+		},
 	},
 	{
 		slug: 'link-constraint-project-is-owned-by-user',
@@ -785,8 +801,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'project',
 			to: 'user',
-			inverse: 'link-constraint-user-owns-project'
-		}
+			inverse: 'link-constraint-user-owns-project',
+		},
 	},
 	{
 		slug: 'link-constraint-user-owns-project',
@@ -795,8 +811,8 @@ exports.constraints = [
 			title: 'Project',
 			from: 'user',
 			to: 'project',
-			inverse: 'link-constraint-project-is-owned-by-user'
-		}
+			inverse: 'link-constraint-project-is-owned-by-user',
+		},
 	},
 	{
 		slug: 'link-constraint-project-is-guided-by-user',
@@ -805,8 +821,8 @@ exports.constraints = [
 			title: 'Guide',
 			from: 'project',
 			to: 'user',
-			inverse: 'link-constraint-user-guides-project'
-		}
+			inverse: 'link-constraint-user-guides-project',
+		},
 	},
 	{
 		slug: 'link-constraint-user-guides-project',
@@ -815,8 +831,8 @@ exports.constraints = [
 			title: 'Project',
 			from: 'user',
 			to: 'project',
-			inverse: 'link-constraint-project-is-guided-by-user'
-		}
+			inverse: 'link-constraint-project-is-guided-by-user',
+		},
 	},
 	{
 		slug: 'link-constraint-project-has-member',
@@ -825,8 +841,8 @@ exports.constraints = [
 			title: 'Member',
 			from: 'project',
 			to: 'user',
-			inverse: 'link-constraint-user-is-member-of-project'
-		}
+			inverse: 'link-constraint-user-is-member-of-project',
+		},
 	},
 	{
 		slug: 'link-constraint-user-is-member-of-project',
@@ -835,8 +851,8 @@ exports.constraints = [
 			title: 'Project',
 			from: 'user',
 			to: 'project',
-			inverse: 'link-constraint-project-has-member'
-		}
+			inverse: 'link-constraint-project-has-member',
+		},
 	},
 	{
 		slug: 'link-constraint-project-is-contributed-to-by-user',
@@ -845,8 +861,8 @@ exports.constraints = [
 			title: 'Contributors',
 			from: 'project',
 			to: 'user',
-			inverse: 'link-constraint-user-contributes-to-project'
-		}
+			inverse: 'link-constraint-user-contributes-to-project',
+		},
 	},
 	{
 		slug: 'link-constraint-user-contributes-to-project',
@@ -855,8 +871,8 @@ exports.constraints = [
 			title: 'Project contributions',
 			from: 'user',
 			to: 'project',
-			inverse: 'link-constraint-project-is-contributed-to-by-user'
-		}
+			inverse: 'link-constraint-project-is-contributed-to-by-user',
+		},
 	},
 	{
 		slug: 'link-constraint-project-is-observed-by-user',
@@ -865,8 +881,8 @@ exports.constraints = [
 			title: 'Observers',
 			from: 'project',
 			to: 'user',
-			inverse: 'link-constraint-user-observes-project'
-		}
+			inverse: 'link-constraint-user-observes-project',
+		},
 	},
 	{
 		slug: 'link-constraint-user-observes-project',
@@ -875,8 +891,8 @@ exports.constraints = [
 			title: 'Project observations',
 			from: 'user',
 			to: 'project',
-			inverse: 'link-constraint-project-is-observed-by-user'
-		}
+			inverse: 'link-constraint-project-is-observed-by-user',
+		},
 	},
 	{
 		slug: 'link-constraint-checkin-is-attended-by-user',
@@ -885,8 +901,8 @@ exports.constraints = [
 			title: 'Attendee',
 			from: 'checkin',
 			to: 'user',
-			inverse: 'link-constraint-user-attended-checkin'
-		}
+			inverse: 'link-constraint-user-attended-checkin',
+		},
 	},
 	{
 		slug: 'link-constraint-user-attended-checkin',
@@ -895,8 +911,8 @@ exports.constraints = [
 			title: 'Checkin',
 			from: 'user',
 			to: 'checkin',
-			inverse: 'link-constraint-checkin-is-attended-by-user'
-		}
+			inverse: 'link-constraint-checkin-is-attended-by-user',
+		},
 	},
 	{
 		slug: 'link-constraint-project-has-checkin',
@@ -905,8 +921,8 @@ exports.constraints = [
 			title: 'Checkins',
 			from: 'project',
 			to: 'checkin',
-			inverse: 'link-constraint-checkin-is-of-project'
-		}
+			inverse: 'link-constraint-checkin-is-of-project',
+		},
 	},
 	{
 		slug: 'link-constraint-checkin-is-of-project',
@@ -915,8 +931,8 @@ exports.constraints = [
 			title: 'Project',
 			from: 'checkin',
 			to: 'project',
-			inverse: 'link-constraint-project-has-checkin'
-		}
+			inverse: 'link-constraint-project-has-checkin',
+		},
 	},
 	{
 		slug: 'link-constraint-repository-has-thread',
@@ -925,8 +941,8 @@ exports.constraints = [
 			title: 'Thread',
 			from: 'repository',
 			to: 'thread',
-			inverse: 'link-constraint-thread-is-of-repository'
-		}
+			inverse: 'link-constraint-thread-is-of-repository',
+		},
 	},
 	{
 		slug: 'link-constraint-thread-is-of-repository',
@@ -935,8 +951,8 @@ exports.constraints = [
 			title: 'Repository',
 			from: 'thread',
 			to: 'repository',
-			inverse: 'link-constraint-repository-has-thread'
-		}
+			inverse: 'link-constraint-repository-has-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-product-improvement-has-attached-milestone',
@@ -945,8 +961,8 @@ exports.constraints = [
 			title: 'Milestone',
 			from: 'product-improvement',
 			to: 'milestone',
-			inverse: 'link-constraint-milestone-is-attached-to-product-improvement'
-		}
+			inverse: 'link-constraint-milestone-is-attached-to-product-improvement',
+		},
 	},
 	{
 		slug: 'link-constraint-milestone-is-attached-to-product-improvement',
@@ -955,8 +971,8 @@ exports.constraints = [
 			title: 'Product improvement',
 			from: 'milestone',
 			to: 'product-improvement',
-			inverse: 'link-constraint-product-improvement-has-attached-milestone'
-		}
+			inverse: 'link-constraint-product-improvement-has-attached-milestone',
+		},
 	},
 	{
 		slug: 'link-constraint-brainstorm-call-has-attached-brainstorm-topic',
@@ -965,8 +981,9 @@ exports.constraints = [
 			title: 'Brainstorm topic',
 			from: 'brainstorm-call',
 			to: 'brainstorm-topic',
-			inverse: 'link-constraint-brainstorm-topic-is-attached-to-brainstorm-call'
-		}
+			inverse:
+				'link-constraint-brainstorm-topic-is-attached-to-brainstorm-call',
+		},
 	},
 	{
 		slug: 'link-constraint-brainstorm-topic-is-attached-to-brainstorm-call',
@@ -975,8 +992,8 @@ exports.constraints = [
 			title: 'Brainstorm call',
 			from: 'brainstorm-topic',
 			to: 'brainstorm-call',
-			inverse: 'link-constraint-brainstorm-call-has-attached-brainstorm-topic'
-		}
+			inverse: 'link-constraint-brainstorm-call-has-attached-brainstorm-topic',
+		},
 	},
 	{
 		slug: 'link-constraint-user-is-using-ui-theme',
@@ -985,8 +1002,8 @@ exports.constraints = [
 			title: 'UI Theme',
 			from: 'user',
 			to: 'ui-theme',
-			inverse: 'link-constraint-ui-theme-is-used-by-user'
-		}
+			inverse: 'link-constraint-ui-theme-is-used-by-user',
+		},
 	},
 	{
 		slug: 'link-constraint-ui-theme-is-used-by-user',
@@ -995,8 +1012,8 @@ exports.constraints = [
 			title: 'User',
 			from: 'ui-theme',
 			to: 'user',
-			inverse: 'link-constraint-user-is-using-ui-theme'
-		}
+			inverse: 'link-constraint-user-is-using-ui-theme',
+		},
 	},
 	{
 		slug: 'link-constraint-pattern-is-attached-to-user-feedback',
@@ -1005,8 +1022,8 @@ exports.constraints = [
 			title: 'User Feedback',
 			from: 'pattern',
 			to: 'user-feedback',
-			inverse: 'link-constraint-user-feedback-has-attached-pattern'
-		}
+			inverse: 'link-constraint-user-feedback-has-attached-pattern',
+		},
 	},
 	{
 		slug: 'link-constraint-user-feedback-has-attached-pattern',
@@ -1015,8 +1032,8 @@ exports.constraints = [
 			title: 'Pattern',
 			from: 'user-feedback',
 			to: 'pattern',
-			inverse: 'link-constraint-pattern-is-attached-to-user-feedback'
-		}
+			inverse: 'link-constraint-pattern-is-attached-to-user-feedback',
+		},
 	},
 	{
 		slug: 'link-constraint-issue-is-attached-to-user-feedback',
@@ -1025,8 +1042,8 @@ exports.constraints = [
 			title: 'User Feedback',
 			from: 'issue',
 			to: 'user-feedback',
-			inverse: 'link-constraint-user-feedback-has-attached-issue'
-		}
+			inverse: 'link-constraint-user-feedback-has-attached-issue',
+		},
 	},
 	{
 		slug: 'link-constraint-user-feedback-has-attached-issue',
@@ -1035,8 +1052,8 @@ exports.constraints = [
 			title: 'GitHub issue',
 			from: 'user-feedback',
 			to: 'issue',
-			inverse: 'link-constraint-issue-is-attached-to-user-feedback'
-		}
+			inverse: 'link-constraint-issue-is-attached-to-user-feedback',
+		},
 	},
 	{
 		slug: 'link-constraint-user-feedback-is-owned-by-user',
@@ -1045,8 +1062,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'user-feedback',
 			to: 'user',
-			inverse: 'link-constraint-user-owns-user-feedback'
-		}
+			inverse: 'link-constraint-user-owns-user-feedback',
+		},
 	},
 	{
 		slug: 'link-constraint-user-owns-user-feedback',
@@ -1055,8 +1072,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'user',
 			to: 'user-feedback',
-			inverse: 'link-constraint-user-feedback-is-owned-by-user'
-		}
+			inverse: 'link-constraint-user-feedback-is-owned-by-user',
+		},
 	},
 	{
 		slug: 'link-constraint-subscription-is-attached-to-view',
@@ -1065,8 +1082,8 @@ exports.constraints = [
 			title: 'View',
 			from: 'subscription',
 			to: 'view',
-			inverse: 'link-constraint-view-has-attached-subscription'
-		}
+			inverse: 'link-constraint-view-has-attached-subscription',
+		},
 	},
 	{
 		slug: 'link-constraint-view-has-attached-subscription',
@@ -1075,8 +1092,8 @@ exports.constraints = [
 			title: 'Subscription',
 			from: 'view',
 			to: 'subscription',
-			inverse: 'link-constraint-subscription-is-attached-to-view'
-		}
+			inverse: 'link-constraint-subscription-is-attached-to-view',
+		},
 	},
 	{
 		slug: 'link-constraint-chart-configuration-is-attached-to-view',
@@ -1085,8 +1102,8 @@ exports.constraints = [
 			title: 'View',
 			from: 'chart-configuration',
 			to: 'view',
-			inverse: 'link-constraint-view-has-attached-chart-configuration'
-		}
+			inverse: 'link-constraint-view-has-attached-chart-configuration',
+		},
 	},
 	{
 		slug: 'link-constraint-view-has-attached-chart-configuration',
@@ -1095,8 +1112,8 @@ exports.constraints = [
 			title: 'Chart Configuration',
 			from: 'view',
 			to: 'chart-configuration',
-			inverse: 'link-constraint-chart-configuration-is-attached-to-view'
-		}
+			inverse: 'link-constraint-chart-configuration-is-attached-to-view',
+		},
 	},
 	{
 		slug: 'link-constraint-support-thread-has-attached-rating',
@@ -1105,8 +1122,8 @@ exports.constraints = [
 			title: 'Rating',
 			from: 'support-thread',
 			to: 'rating',
-			inverse: 'link-constraint-rating-is-attached-to-support-thread'
-		}
+			inverse: 'link-constraint-rating-is-attached-to-support-thread',
+		},
 	},
 	{
 		slug: 'link-constraint-rating-is-attached-to-support-thread',
@@ -1115,8 +1132,8 @@ exports.constraints = [
 			title: 'Support thread',
 			from: 'rating',
 			to: 'support-thread',
-			inverse: 'link-constraint-support-thread-has-attached-rating'
-		}
+			inverse: 'link-constraint-support-thread-has-attached-rating',
+		},
 	},
 	{
 		slug: 'link-constraint-user-owns-rating',
@@ -1125,8 +1142,8 @@ exports.constraints = [
 			title: 'Rating',
 			from: 'user',
 			to: 'rating',
-			inverse: 'link-constraint-rating-is-owned-by-user'
-		}
+			inverse: 'link-constraint-rating-is-owned-by-user',
+		},
 	},
 	{
 		slug: 'link-constraint-rating-is-owned-by-user',
@@ -1135,8 +1152,8 @@ exports.constraints = [
 			title: 'Owner',
 			from: 'rating',
 			to: 'user',
-			inverse: 'link-constraint-user-owns-rating'
-		}
+			inverse: 'link-constraint-user-owns-rating',
+		},
 	},
 	{
 		slug: 'link-constraint-loop-owns-transformer',
@@ -1145,8 +1162,8 @@ exports.constraints = [
 			title: 'Transformer',
 			from: 'loop',
 			to: 'transformer',
-			inverse: 'link-constraint-transformer-is-owned-by-loop'
-		}
+			inverse: 'link-constraint-transformer-is-owned-by-loop',
+		},
 	},
 	{
 		slug: 'link-constraint-transformer-is-owned-by-loop',
@@ -1155,8 +1172,8 @@ exports.constraints = [
 			title: 'Loop',
 			from: 'transformer',
 			to: 'loop',
-			inverse: 'link-constraint-loop-owns-transformer'
-		}
+			inverse: 'link-constraint-loop-owns-transformer',
+		},
 	},
 	{
 		slug: 'link-constraint-loop-owns-contract-repository',
@@ -1165,8 +1182,8 @@ exports.constraints = [
 			title: 'Contract Repository',
 			from: 'loop',
 			to: 'contract-repository',
-			inverse: 'link-constraint-contract-repository-is-owned-by-loop'
-		}
+			inverse: 'link-constraint-contract-repository-is-owned-by-loop',
+		},
 	},
 	{
 		slug: 'link-constraint-contract-repository-is-owned-by-loop',
@@ -1175,8 +1192,8 @@ exports.constraints = [
 			title: 'Loop',
 			from: 'contract-repository',
 			to: 'loop',
-			inverse: 'link-constraint-loop-owns-contract-repository'
-		}
+			inverse: 'link-constraint-loop-owns-contract-repository',
+		},
 	},
 	{
 		slug: 'link-constraint-transformer-worker-owns-task',
@@ -1185,8 +1202,8 @@ exports.constraints = [
 			title: 'Task',
 			from: 'transformer-worker',
 			to: 'task',
-			inverse: 'link-constraint-task-is-owned-by-transformer-worker'
-		}
+			inverse: 'link-constraint-task-is-owned-by-transformer-worker',
+		},
 	},
 	{
 		slug: 'link-constraint-task-is-owned-by-transformer-worker',
@@ -1195,8 +1212,8 @@ exports.constraints = [
 			title: 'Transformer worker',
 			from: 'task',
 			to: 'transformer-worker',
-			inverse: 'link-constraint-transformer-worker-owns-task'
-		}
+			inverse: 'link-constraint-transformer-worker-owns-task',
+		},
 	},
 	{
 		slug: 'link-constraint-transformer-generated-task',
@@ -1205,8 +1222,8 @@ exports.constraints = [
 			title: 'Task',
 			from: 'transformer',
 			to: 'task',
-			inverse: 'link-constraint-task-was-generated-by-transformer'
-		}
+			inverse: 'link-constraint-task-was-generated-by-transformer',
+		},
 	},
 	{
 		slug: 'link-constraint-task-was-generated-by-transformer',
@@ -1215,8 +1232,8 @@ exports.constraints = [
 			title: 'Transformer',
 			from: 'task',
 			to: 'transformer',
-			inverse: 'link-constraint-transformer-generated-task'
-		}
+			inverse: 'link-constraint-transformer-generated-task',
+		},
 	},
 	{
 		slug: 'link-constraint-any-wastransformedinto-any',
@@ -1225,8 +1242,8 @@ exports.constraints = [
 			title: 'Any',
 			from: '*',
 			to: '*',
-			inverse: 'link-constraint-any-wastransformedfrom-any'
-		}
+			inverse: 'link-constraint-any-wastransformedfrom-any',
+		},
 	},
 	{
 		slug: 'link-constraint-any-wastransformedfrom-any',
@@ -1235,8 +1252,8 @@ exports.constraints = [
 			title: 'Any',
 			from: '*',
 			to: '*',
-			inverse: 'link-constraint-any-wastransformedinto-any'
-		}
+			inverse: 'link-constraint-any-wastransformedinto-any',
+		},
 	},
 	{
 		slug: 'link-constraint-task-generated-any',
@@ -1245,8 +1262,8 @@ exports.constraints = [
 			title: 'Task',
 			from: 'task',
 			to: '*',
-			inverse: 'link-constraint-any-wasgeneratedby-task'
-		}
+			inverse: 'link-constraint-any-wasgeneratedby-task',
+		},
 	},
 	{
 		slug: 'link-constraint-any-wasgeneratedby-task',
@@ -1255,8 +1272,8 @@ exports.constraints = [
 			title: 'Any',
 			from: '*',
 			to: 'task',
-			inverse: 'link-constraint-task-generated-any'
-		}
+			inverse: 'link-constraint-task-generated-any',
+		},
 	},
 	{
 		slug: 'link-constraint-contract-repository-contains-any',
@@ -1265,8 +1282,8 @@ exports.constraints = [
 			title: 'Contract Repository',
 			from: 'contract-repository',
 			to: '*',
-			inverse: 'link-constraint-any-iscontainedin-contract-repository'
-		}
+			inverse: 'link-constraint-any-iscontainedin-contract-repository',
+		},
 	},
 	{
 		slug: 'link-constraint-any-iscontainedin-contract-repository',
@@ -1275,8 +1292,8 @@ exports.constraints = [
 			title: 'Any',
 			from: '*',
 			to: 'contract-repository',
-			inverse: 'link-constraint-contract-repository-contains-any'
-		}
+			inverse: 'link-constraint-contract-repository-contains-any',
+		},
 	},
 	{
 		slug: 'link-constraint-contract-repository-latest-any',
@@ -1285,8 +1302,8 @@ exports.constraints = [
 			title: 'Contract Repository',
 			from: 'contract-repository',
 			to: '*',
-			inverse: 'link-constraint-any-islatestof-contract-repository'
-		}
+			inverse: 'link-constraint-any-islatestof-contract-repository',
+		},
 	},
 	{
 		slug: 'link-constraint-any-islatestof-contract-repository',
@@ -1295,8 +1312,8 @@ exports.constraints = [
 			title: 'Any',
 			from: '*',
 			to: 'contract-repository',
-			inverse: 'link-constraint-contract-repository-latest-any'
-		}
+			inverse: 'link-constraint-contract-repository-latest-any',
+		},
 	},
 	{
 		slug: 'link-constraint-oauth-provider-has-attached-oauth-client',
@@ -1305,8 +1322,8 @@ exports.constraints = [
 			title: 'Oauth client',
 			from: 'oauth-provider',
 			to: 'oauth-client',
-			inverse: 'link-constraint-oauth-client-is-attached-to-oauth-provider'
-		}
+			inverse: 'link-constraint-oauth-client-is-attached-to-oauth-provider',
+		},
 	},
 	{
 		slug: 'link-constraint-oauth-client-is-attached-to-oauth-provider',
@@ -1315,10 +1332,10 @@ exports.constraints = [
 			title: 'Oauth provider',
 			from: 'oauth-client',
 			to: 'oauth-provider',
-			inverse: 'link-constraint-oauth-provider-has-attached-oauth-client'
-		}
-	}
-]
+			inverse: 'link-constraint-oauth-provider-has-attached-oauth-client',
+		},
+	},
+];
 
 /**
  * Get the reverse link constraint for a given set of constraints
@@ -1328,15 +1345,24 @@ exports.constraints = [
  * @param {String} name - the link verb
  * @returns {Object} - the reverse link if found; otherwise undefined
  */
-exports.getReverseConstraint = (fromType, toType, name) => {
-	const constraint = _.find(exports.constraints, {
+export const getReverseConstraint = (
+	fromType: string,
+	toType: string,
+	name: core.Contract['name'],
+): LinkConstraint | undefined => {
+	const constraint = find(constraints, {
 		name,
 		data: {
 			from: fromType.split('@')[0],
-			to: toType.split('@')[0]
-		}
-	})
-	return constraint && _.find(exports.constraints, {
-		slug: constraint.data.inverse
-	})
-}
+			to: toType.split('@')[0],
+		},
+	}) as LinkConstraint | undefined;
+
+	if (!constraint) {
+		return;
+	}
+
+	return find(constraints, {
+		slug: constraint.data.inverse,
+	});
+};

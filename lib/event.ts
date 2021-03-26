@@ -4,16 +4,16 @@
  * Proprietary and confidential.
  */
 
-const _ = require('lodash')
+import type { core } from '@balena/jellyfish-types';
+import assign from 'lodash/assign';
+import type { JellyfishSDK } from '.';
 
 /**
  * @namespace JellyfishSDK.event
  * @memberof JellyfishSDK
  */
-class EventSdk {
-	constructor (sdk) {
-		this.sdk = sdk
-	}
+export class EventSdk {
+	constructor(private sdk: JellyfishSDK) {}
 
 	/**
 	 * @summary Create a new event
@@ -41,16 +41,24 @@ class EventSdk {
 	 * 		console.log(id)
 	 * 	})
 	 */
-	create (event) {
-		return this.sdk.action({
-			card: event.target.id,
-			type: event.target.type,
+	async create<TContract extends core.Contract = core.Contract>({
+		target,
+		...rest
+	}: {
+		target: core.Contract;
+		[key: string]: any;
+	}): Promise<TContract | null> {
+		return this.sdk.action<TContract>({
+			card: target.id,
+			type: target.type,
 			action: 'action-create-event@1.0.0',
-			arguments: _.assign({
-				payload: {},
-				tags: []
-			}, _.omit(event, [ 'target' ]))
-		})
+			arguments: assign(
+				{
+					payload: {},
+					tags: [],
+				},
+				rest,
+			),
+		});
 	}
 }
-exports.EventSdk = EventSdk

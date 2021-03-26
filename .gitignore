@@ -67,7 +67,7 @@ dump.rdb
 *.lock
 
 # Built files
-dist/
+build/
 .cache-loader/
 *.0x
 

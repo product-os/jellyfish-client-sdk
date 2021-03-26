@@ -4,11 +4,12 @@
  * Proprietary and confidential.
  */
 
-const _ = require('lodash')
-const io = require('socket.io-client')
-const {
-	v4: uuid
-} = require('uuid')
+import omit from 'lodash/omit';
+import forEach from 'lodash/forEach';
+import io from 'socket.io-client';
+import { v4 as uuid } from 'uuid';
+import type { JellyfishSDK } from '.';
+import type { ExtendedSocket, JSONSchema, QueryOptions } from './types';
 
 /**
  * @class JellyfishStreamManager
@@ -16,16 +17,17 @@ const {
  * @description Manager for opening multiple streams through a single socket
  * connection the API
  */
-class JellyfishStreamManager {
+export class JellyfishStreamManager {
+	private activeSockets: { [key: string]: SocketIOClient.Socket };
+
 	/**
 	 * @summary Create a JellyfishStreamManager
 	 * @class
 	 *
 	 * @param {Object} sdk - An instantiated instance of JellyfishSDK
 	 */
-	constructor (sdk) {
-		this.sdk = sdk
-		this.activeSockets = {}
+	constructor(private sdk: JellyfishSDK) {
+		this.activeSockets = {};
 	}
 
 	/**
@@ -61,21 +63,26 @@ class JellyfishStreamManager {
 	 * 	console.error(error);
 	 * })
 	 */
-	async stream (query, options) {
-		const url = this.sdk.getApiUrl()
+	async stream(
+		query: JSONSchema,
+		options: QueryOptions,
+	): Promise<ExtendedSocket> {
+		const url = this.sdk.getApiUrl();
 		if (!url) {
-			throw new Error('jellyfish:sdk Cannot initialize websocket connection, API url is not set')
+			throw new Error(
+				'jellyfish:sdk Cannot initialize websocket connection, API url is not set',
+			);
 		}
 
-		const token = this.sdk.getAuthToken()
+		const token = this.sdk.getAuthToken();
 
 		// Create a new socket.io client connected to the API
-		const socket = io(url, {
-			transports: [ 'websocket', 'polling' ]
-		})
+		const socket: ExtendedSocket = io(url, {
+			transports: ['websocket', 'polling'],
+		});
 
 		// Generate a unique identifier for this client
-		socket.id = uuid()
+		socket.id = uuid();
 
 		// When the client connects, send the query that should be streamed as well
 		// as an authentication token
@@ -85,41 +92,42 @@ class JellyfishStreamManager {
 				socket.emit('query', {
 					token,
 					data: {
-						query: _.omit(query, '$id'),
-						options
-					}
-				})
-			})
+						query: omit(query, '$id'),
+						options,
+					},
+				});
+			});
 
 			// Wait for the API stream to become ready before proceeeding
-			await new Promise((resolve, reject) => {
+			await new Promise<void>((resolve) => {
 				socket.on('ready', () => {
-					resolve()
-				})
-			})
+					resolve();
+				});
+			});
 		}
 
 		// Cache the client so that it can be managed easily
-		this.activeSockets[socket.id] = socket
+		this.activeSockets[socket.id] = socket;
 
 		// Add a custom `close` method to assist with discarding dead streams
-		const close = socket.close.bind(socket)
+		const close = socket.close.bind(socket);
 		socket.close = () => {
-			Reflect.deleteProperty(this.activeSockets, socket.id)
-			close()
-			socket.removeAllListeners()
-		}
+			Reflect.deleteProperty(this.activeSockets, socket.id);
+			const result = close();
+			socket.removeAllListeners();
+			return result;
+		};
 
 		// Add a custom `type` method to indicate that a user is typing
 		socket.type = (user, card) => {
 			socket.emit('typing', {
 				token,
 				user,
-				card
-			})
-		}
+				card,
+			});
+		};
 
-		return socket
+		return socket;
 	}
 
 	/**
@@ -131,10 +139,9 @@ class JellyfishStreamManager {
 	 * @example
 	 * jellyfishStreamManager.close()
 	 */
-	close () {
-		_.forEach(this.activeSockets, (socket) => {
-			return socket.close()
-		})
+	close(): void {
+		forEach(this.activeSockets, (socket) => {
+			return socket.close();
+		});
 	}
 }
-exports.JellyfishStreamManager = JellyfishStreamManager
