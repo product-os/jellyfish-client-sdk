@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 3.0.1 - 2021-03-26
+
+* patch: Update non-major [Renovate Bot]
+
 ## 3.0.0 - 2021-03-26
 
 * Use GitHub action to generate and publish Typedoc docs [Graham McCulloch]
