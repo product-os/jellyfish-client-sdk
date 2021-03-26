@@ -18,14 +18,14 @@ import omit from 'lodash/omit';
 import trim from 'lodash/trim';
 import isPlainObject from 'lodash/isPlainObject';
 import forEach from 'lodash/forEach';
-import type { core } from '@balena/jellyfish-types';
+import type { core, JSONSchema } from '@balena/jellyfish-types';
 import { AuthSdk } from './auth';
 import { CardSdk } from './card';
 import { EventSdk } from './event';
 import { JellyfishStreamManager } from './stream';
 import { IntegrationsSdk } from './integrations';
 import { constraints } from './link-constraints';
-import { QueryOptions, JSONSchema, ExtendedSocket } from './types';
+import { QueryOptions, ExtendedSocket } from './types';
 import { SDKRequestCancelledError } from './errors';
 
 const trimSlash = (text: string) => {

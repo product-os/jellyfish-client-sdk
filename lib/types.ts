@@ -1,5 +1,4 @@
 import type { core } from '@balena/jellyfish-types';
-import type { JSONSchema7 } from 'json-schema';
 
 export type ExtendedSocket = SocketIOClient.Socket & {
 	type?: ((user: core.Contract, card: core.Contract) => void) | undefined;
@@ -25,12 +24,6 @@ export interface Message extends core.Contract {
 			alertsUser: string[];
 			mentionsUser: string[];
 		};
-	};
-}
-
-export interface JSONSchema extends JSONSchema7 {
-	$$links?: {
-		[key: string]: JSONSchema;
 	};
 }
 

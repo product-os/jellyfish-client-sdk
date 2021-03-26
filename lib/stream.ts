@@ -8,8 +8,9 @@ import omit from 'lodash/omit';
 import forEach from 'lodash/forEach';
 import io from 'socket.io-client';
 import { v4 as uuid } from 'uuid';
+import type { JSONSchema } from '@balena/jellyfish-types';
 import type { JellyfishSDK } from '.';
-import type { ExtendedSocket, JSONSchema, QueryOptions } from './types';
+import type { ExtendedSocket, QueryOptions } from './types';
 
 /**
  * @class JellyfishStreamManager
