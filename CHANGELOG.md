@@ -5,6 +5,12 @@
 
 # v0.0.3
 
+## 3.0.0 - 2021-03-26
+
+* Use GitHub action to generate and publish Typedoc docs [Graham McCulloch]
+* Replace husky with simple-git-hooks [Graham McCulloch]
+* Convert to typescript [Kakhaber]
+
 ## 2.19.1 - 2021-03-25
 
 * patch: Update dependency jsdoc-to-markdown to ^7.0.1 [Renovate Bot]

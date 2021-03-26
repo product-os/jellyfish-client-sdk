@@ -1,4 +1,35 @@
 - commits:
+    - subject: Use GitHub action to generate and publish Typedoc docs
+      hash: 398f170062f5378d02f142fe8969a1cd96f72f3c
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+    - subject: Replace husky with simple-git-hooks
+      hash: 8d895fb7fee8b79c61b48eb1f5d364a54349677c
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+    - subject: Convert to typescript
+      hash: 61ff3ee0d89a0eb8a2389d5d7be4a5ea854faee0
+      body: ''
+      footer:
+        Change-type: major
+        change-type: major
+      author: Kakhaber
+      nested: []
+  version: 3.0.0
+  date: 2021-03-26T09:42:07.344Z
+- commits:
     - subject: 'patch: Update dependency jsdoc-to-markdown to ^7.0.1'
       hash: c409dd8564bb34cddd9207323fc6b266e2f5be5a
       body: ''
