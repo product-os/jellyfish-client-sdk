@@ -1,4 +1,15 @@
 - commits:
+    - subject: Import JSONSchema from jellyfish-types
+      hash: e5fb565c6f334f9c0fb85fc29600c22e5abd3e3d
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Kakhaber
+      nested: []
+  version: 3.1.0
+  date: 2021-03-26T12:54:40.787Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.3.0'
       hash: 97f0b883c9c15a4700f38def3497495ec859eb0d
       body: ''
