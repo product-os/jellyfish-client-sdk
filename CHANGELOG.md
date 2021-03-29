@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 3.1.1 - 2021-03-29
+
+* patch: Update dependency @balena/jellyfish-types to ^0.4.3 [Renovate Bot]
+
 ## 3.1.0 - 2021-03-26
 
 * Import JSONSchema from jellyfish-types [Kakhaber]
