@@ -1,4 +1,15 @@
 - commits:
+    - subject: Fix sdk.getFile typing
+      hash: f2b506cc81613d86b40325c6da20defa2efe4907
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Kakhaber
+      nested: []
+  version: 3.1.5
+  date: 2021-04-01T21:50:45.736Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.4.5'
       hash: daa068573659ed52e9d4b5fbc4f775cead58b110
       body: ''
