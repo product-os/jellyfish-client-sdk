@@ -160,7 +160,7 @@ export class JellyfishSDK {
 	 * @fulfil {File} - The requested file
 	 * @returns {Promise}
 	 */
-	getFile = (cardId: core.Contract, name: string) => {
+	getFile = (cardId: core.Contract['id'], name: string) => {
 		return Bluebird.try(() => {
 			return axios.get(`${this.API_BASE}file/${cardId}/${name}`, {
 				headers: {
