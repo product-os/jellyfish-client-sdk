@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 3.1.6 - 2021-04-01
+
+* patch: Update dependency @balena/jellyfish-types to ^0.4.7 [Renovate Bot]
+
 ## 3.1.5 - 2021-04-01
 
 * Fix sdk.getFile typing [Kakhaber]
