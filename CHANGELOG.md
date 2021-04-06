@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 3.2.0 - 2021-04-06
+
+* Export link helpers [Kakhaber]
+
 ## 3.1.18 - 2021-04-04
 
 * patch: Update dependency @balena/jellyfish-types to ^0.4.20 [Renovate Bot]

@@ -1,4 +1,15 @@
 - commits:
+    - subject: Export link helpers
+      hash: 03907424283e334b495cea95239b1b50d371c165
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Kakhaber
+      nested: []
+  version: 3.2.0
+  date: 2021-04-06T11:33:26.273Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.4.20'
       hash: 6a53279c270ed823ddfe5a9a00e179a9db01d330
       body: ''
