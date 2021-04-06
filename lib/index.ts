@@ -24,7 +24,11 @@ import { CardSdk } from './card';
 import { EventSdk } from './event';
 import { JellyfishStreamManager } from './stream';
 import { IntegrationsSdk } from './integrations';
-import { constraints } from './link-constraints';
+import {
+	constraints,
+	supportsLink,
+	getReverseConstraint,
+} from './link-constraints';
 import { QueryOptions, ExtendedSocket } from './types';
 import { SDKRequestCancelledError } from './errors';
 
@@ -34,7 +38,7 @@ const trimSlash = (text: string) => {
 
 const LINKS = constraints;
 
-export const linkConstraints = constraints;
+export { constraints as linkConstraints, supportsLink, getReverseConstraint };
 
 /**
  * @summary Extracts files from an object
