@@ -56,7 +56,7 @@
   },
   "devDependencies": {
     "@balena/jellycheck": "^0.1.1",
-    "@balena/jellyfish-types": "^0.4.27",
+    "@balena/jellyfish-types": "^0.4.28",
     "@balena/lint": "^5.4.1",
     "@types/bluebird": "^3.5.33",
     "@types/common-tags": "^1.8.0",
@@ -76,7 +76,7 @@
     "sinon": "^10.0.0",
     "ts-jest": "^26.5.4",
     "typedoc": "^0.20.35",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.4"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
