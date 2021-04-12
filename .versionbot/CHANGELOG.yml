@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.4.50'
+      hash: 80605ab9dbed78b253a52b2a60f6b659de88c60f
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 3.2.30
+  date: 2021-04-12T05:21:51.311Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.4.49'
       hash: aafe999a15753a0e8cf6ec8ba3b25bc634802b23
       body: ''
