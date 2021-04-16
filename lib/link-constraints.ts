@@ -302,6 +302,16 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-constraint-pattern-relates-to-pattern',
+		name: 'relates to',
+		data: {
+			title: 'Related pattern',
+			from: 'pattern',
+			to: 'pattern',
+			inverse: 'link-constraint-pattern-relates-to-pattern',
+		},
+	},
+	{
 		slug: 'link-constraint-product-improvement-is-owned-by-user',
 		name: 'is owned by',
 		data: {
