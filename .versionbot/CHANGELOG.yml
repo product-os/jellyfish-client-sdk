@@ -1,4 +1,18 @@
 - commits:
+    - subject: simplify create return type
+      hash: a280706fff7c57dbcc88542da80fe4485c2d3faa
+      body: |
+        there is no code path returning null
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Martin Rauscher <martin@balena.io>
+        signed-off-by: Martin Rauscher <martin@balena.io>
+      author: Martin Rauscher
+      nested: []
+  version: 3.2.127
+  date: 2021-04-30T23:35:20.749Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.5.72'
       hash: c3dcad0b064a2a7ecf84434621a7cdb05e436851
       body: ''
