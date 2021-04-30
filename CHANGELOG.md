@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 3.2.128 - 2021-04-30
+
+* patch: Update dependency @balena/jellyfish-types to ^0.5.73 [Renovate Bot]
+
 ## 3.2.127 - 2021-04-30
 
 * simplify create return type [Martin Rauscher]
