@@ -33,8 +33,8 @@ import type { Message, QueryOptions } from './types';
 const checkLinksExist = async (
 	sdk: JellyfishSDK,
 	verb: string,
-	fromCard: core.Contract,
-	toCard: core.Contract | null = null,
+	fromCard: core.ContractSummary,
+	toCard: core.ContractSummary | null = null,
 ): Promise<boolean> => {
 	const query: JSONSchema = {
 		$$links: {
@@ -604,15 +604,15 @@ export class CardSdk {
 	 *
 	 * @description Link two cards together
 	 *
-	 * @param {String} fromCard - The id of the card that should be linked from
-	 * @param {String} toCard - The id of the card that should be linked to
+	 * @param {Object} fromCard - The card that should be linked from
+	 * @param {Object} toCard - The card that should be linked to
 	 * @param {String} verb - The name of the relationship
 	 *
 	 * @returns {Promise}
 	 */
 	async link(
-		fromCard: core.Contract,
-		toCard: core.Contract,
+		fromCard: core.ContractSummary,
+		toCard: core.ContractSummary,
 		verb: string,
 	): Promise<core.ContractSummary | true> {
 		if (!verb) {
