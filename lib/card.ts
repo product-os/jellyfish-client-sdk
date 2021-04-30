@@ -509,7 +509,7 @@ export class CardSdk {
 	 */
 	async create<TContract extends core.Contract = core.Contract>(
 		card: Partial<core.Contract>,
-	): Promise<TContract | null> {
+	): Promise<TContract> {
 		// For backwards compatibility purposes
 		card.linked_at ||= {};
 
@@ -614,7 +614,7 @@ export class CardSdk {
 		fromCard: core.Contract,
 		toCard: core.Contract,
 		verb: string,
-	): Promise<core.ContractSummary | true | null> {
+	): Promise<core.ContractSummary | true> {
 		if (!verb) {
 			throw new Error('No verb provided when creating link');
 		}

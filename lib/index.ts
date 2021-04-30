@@ -735,7 +735,7 @@ export class JellyfishSDK {
 		arguments?: {
 			[key: string]: any;
 		};
-	}): Promise<TResult | null> {
+	}): Promise<TResult> {
 		let payload: typeof body | FormData = body;
 		if (!body.arguments) {
 			body.arguments = {};
@@ -776,7 +776,7 @@ export class JellyfishSDK {
 			}
 
 			if (!data) {
-				return null;
+				throw new Error(`action ${body.action} didn't return a result`);
 			}
 
 			return data;
