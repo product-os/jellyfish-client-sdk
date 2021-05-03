@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 3.2.140 - 2021-05-03
+
+* reduce requirements for link call to ContractSummary [Martin Rauscher]
+
 ## 3.2.139 - 2021-05-03
 
 * patch: Update dependency @balena/jellyfish-types to ^0.5.84 [Renovate Bot]

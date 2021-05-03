@@ -1,4 +1,18 @@
 - commits:
+    - subject: reduce requirements for link call to ContractSummary
+      hash: 9bd87e292fd38b448d95c8249882c4679e53c59b
+      body: |
+        also fix wrong docs
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Martin Rauscher <martin@balena.io>
+        signed-off-by: Martin Rauscher <martin@balena.io>
+      author: Martin Rauscher
+      nested: []
+  version: 3.2.140
+  date: 2021-05-03T00:13:55.622Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.5.84'
       hash: 35723c0741945c1b92ab38ad9fddda5f9e399815
       body: ''
