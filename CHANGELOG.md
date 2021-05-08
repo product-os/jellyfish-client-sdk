@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 3.2.170 - 2021-05-07
+
+* patch: Update dependency lint-staged to v11 [Renovate Bot]
+
 ## 3.2.169 - 2021-05-06
 
 * patch: Update dependency catch-uncommitted to v2 [Renovate Bot]
