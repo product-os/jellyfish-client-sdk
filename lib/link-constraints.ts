@@ -935,6 +935,66 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-constraint-milestone-is-attached-to-pull-request',
+		name: 'is attached to',
+		data: {
+			title: 'Pull request',
+			from: 'milestone',
+			to: 'pull-request',
+			inverse: 'link-constraint-pull-request-has-attached-milestone',
+		},
+	},
+	{
+		slug: 'link-constraint-pull-request-has-attached-milestone',
+		name: 'has attached',
+		data: {
+			title: 'Milestone',
+			from: 'pull-request',
+			to: 'milestone',
+			inverse: 'link-constraint-milestone-is-attached-to-pull-request',
+		},
+	},
+	{
+		slug: 'link-constraint-milestone-is-attached-to-issue',
+		name: 'is attached to',
+		data: {
+			title: 'Issue',
+			from: 'milestone',
+			to: 'issue',
+			inverse: 'link-constraint-issue-has-attached-milestone',
+		},
+	},
+	{
+		slug: 'link-constraint-issue-has-attached-milestone',
+		name: 'has attached',
+		data: {
+			title: 'Milestone',
+			from: 'issue',
+			to: 'milestone',
+			inverse: 'link-constraint-milestone-is-attached-to-issue',
+		},
+	},
+	{
+		slug: 'link-constraint-milestone-is-owned-by-user',
+		name: 'is owned by',
+		data: {
+			title: 'Owner',
+			from: 'milestone',
+			to: 'user',
+			inverse: 'link-constraint-user-owns-milestone',
+		},
+	},
+	{
+		slug: 'link-constraint-user-owns-milestone',
+		name: 'owns',
+		data: {
+			title: 'Milestone',
+			from: 'user',
+			to: 'milestone',
+			inverse: 'link-constraint-milestone-is-owned-by-user',
+		},
+	},
+	{
 		slug: 'link-constraint-brainstorm-call-has-attached-brainstorm-topic',
 		name: 'has attached',
 		data: {
@@ -953,6 +1013,46 @@ export const constraints: LinkConstraint[] = [
 			from: 'brainstorm-topic',
 			to: 'brainstorm-call',
 			inverse: 'link-constraint-brainstorm-call-has-attached-brainstorm-topic',
+		},
+	},
+	{
+		slug: 'link-constraint-brainstorm-topic-is-owned-by-loop',
+		name: 'is owned by',
+		data: {
+			title: 'Loop',
+			from: 'brainstorm-topic',
+			to: 'loop',
+			inverse: 'link-constraint-loop-owns-brainstorm-topic',
+		},
+	},
+	{
+		slug: 'link-constraint-loop-owns-brainstorm-topic',
+		name: 'owns',
+		data: {
+			title: 'Brainstorm topic',
+			from: 'loop',
+			to: 'brainstorm-topic',
+			inverse: 'link-constraint-brainstorm-topic-is-owned-by-loop',
+		},
+	},
+	{
+		slug: 'link-constraint-brainstorm-call-is-owned-by-loop',
+		name: 'is owned by',
+		data: {
+			title: 'Loop',
+			from: 'brainstorm-call',
+			to: 'loop',
+			inverse: 'link-constraint-loop-owns-brainstorm-call',
+		},
+	},
+	{
+		slug: 'link-constraint-loop-owns-brainstorm-call',
+		name: 'owns',
+		data: {
+			title: 'Brainstorm call',
+			from: 'loop',
+			to: 'brainstorm-call',
+			inverse: 'link-constraint-brainstorm-call-is-owned-by-loop',
 		},
 	},
 	{
