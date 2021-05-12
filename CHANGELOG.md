@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 3.3.0 - 2021-05-12
+
+* Add loop link constraints [Graham McCulloch]
+* Remove link constraints relating to obsolete specification contract [Graham McCulloch]
+
 ## 3.2.174 - 2021-05-11
 
 * patch: Update non-major [Renovate Bot]

@@ -1,4 +1,30 @@
 - commits:
+    - subject: Add loop link constraints
+      hash: 757b98c1b3a4c6ac5613f10257d7cbec862bf301
+      body: |
+        loop <--> product-improvement
+        loop <--> pattern
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+    - subject: Remove link constraints relating to obsolete specification contract
+      hash: 916b516590b6a13bfea56f60420dde33b9ca0c14
+      body: |
+        Specification contract has been removed from the system.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 3.3.0
+  date: 2021-05-12T06:15:00.932Z
+- commits:
     - subject: 'patch: Update non-major'
       hash: a8312f080a442559b77ce71aa74fb5d8dd9f6937
       body: ''
