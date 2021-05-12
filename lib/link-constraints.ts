@@ -1116,6 +1116,46 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-constraint-loop-owns-product-improvement',
+		name: 'owns',
+		data: {
+			title: 'Improvement',
+			from: 'loop',
+			to: 'product-improvement',
+			inverse: 'link-constraint-product-improvement-is-owned-by-loop',
+		},
+	},
+	{
+		slug: 'link-constraint-product-improvement-is-owned-by-loop',
+		name: 'is owned by',
+		data: {
+			title: 'Loop',
+			from: 'product-improvement',
+			to: 'loop',
+			inverse: 'link-constraint-loop-owns-product-improvement',
+		},
+	},
+	{
+		slug: 'link-constraint-loop-owns-pattern',
+		name: 'owns',
+		data: {
+			title: 'Pattern',
+			from: 'loop',
+			to: 'pattern',
+			inverse: 'link-constraint-pattern-is-owned-by-loop',
+		},
+	},
+	{
+		slug: 'link-constraint-pattern-is-owned-by-loop',
+		name: 'is owned by',
+		data: {
+			title: 'Loop',
+			from: 'pattern',
+			to: 'loop',
+			inverse: 'link-constraint-loop-owns-pattern',
+		},
+	},
+	{
 		slug: 'link-constraint-loop-owns-transformer',
 		name: 'owns',
 		data: {
