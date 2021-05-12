@@ -755,46 +755,6 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-brainstorm-topic-is-source-for-specification',
-		name: 'is source for',
-		data: {
-			title: 'Specification',
-			from: 'brainstorm-topic',
-			to: 'specification',
-			inverse: 'link-constraint-specification-comes-from-brainstorm-topic',
-		},
-	},
-	{
-		slug: 'link-constraint-specification-comes-from-brainstorm-topic',
-		name: 'comes from',
-		data: {
-			title: 'Brainstorm topic',
-			from: 'specification',
-			to: 'brainstorm-topic',
-			inverse: 'link-constraint-brainstorm-topic-is-source-for-specification',
-		},
-	},
-	{
-		slug: 'link-constraint-specification-is-source-for-issue',
-		name: 'is source for',
-		data: {
-			title: 'Issue',
-			from: 'specification',
-			to: 'issue',
-			inverse: 'link-constraint-issue-comes-from-specification',
-		},
-	},
-	{
-		slug: 'link-constraint-issue-comes-from-specification',
-		name: 'comes from',
-		data: {
-			title: 'Specification',
-			from: 'issue',
-			to: 'specification',
-			inverse: 'link-constraint-specification-is-source-for-issue',
-		},
-	},
-	{
 		slug: 'link-constraint-project-is-owned-by-user',
 		name: 'is owned by',
 		data: {
