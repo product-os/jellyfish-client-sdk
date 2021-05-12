@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 3.4.0 - 2021-05-12
+
+* Add brainstorm link constraints [Graham McCulloch]
+* Add milestone link constraints [Graham McCulloch]
+
 ## 3.3.0 - 2021-05-12
 
 * Add loop link constraints [Graham McCulloch]

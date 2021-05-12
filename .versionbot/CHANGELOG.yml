@@ -1,4 +1,32 @@
 - commits:
+    - subject: Add brainstorm link constraints
+      hash: c8ab042c5ed8ddb04db3930ad09d134dd4b48d8b
+      body: |
+        brainstorm-topic <--> loop
+        brainstorm-call <--> loop
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+    - subject: Add milestone link constraints
+      hash: 58192eaaaf14260f9d270d35d371d73daf21dde0
+      body: |
+        milestone <--> pull-request
+        milestone <--> issue
+        milestone <--> user
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 3.4.0
+  date: 2021-05-12T06:42:40.740Z
+- commits:
     - subject: Add loop link constraints
       hash: 757b98c1b3a4c6ac5613f10257d7cbec862bf301
       body: |
