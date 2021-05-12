@@ -755,46 +755,6 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-brainstorm-topic-is-source-for-specification',
-		name: 'is source for',
-		data: {
-			title: 'Specification',
-			from: 'brainstorm-topic',
-			to: 'specification',
-			inverse: 'link-constraint-specification-comes-from-brainstorm-topic',
-		},
-	},
-	{
-		slug: 'link-constraint-specification-comes-from-brainstorm-topic',
-		name: 'comes from',
-		data: {
-			title: 'Brainstorm topic',
-			from: 'specification',
-			to: 'brainstorm-topic',
-			inverse: 'link-constraint-brainstorm-topic-is-source-for-specification',
-		},
-	},
-	{
-		slug: 'link-constraint-specification-is-source-for-issue',
-		name: 'is source for',
-		data: {
-			title: 'Issue',
-			from: 'specification',
-			to: 'issue',
-			inverse: 'link-constraint-issue-comes-from-specification',
-		},
-	},
-	{
-		slug: 'link-constraint-issue-comes-from-specification',
-		name: 'comes from',
-		data: {
-			title: 'Specification',
-			from: 'issue',
-			to: 'specification',
-			inverse: 'link-constraint-specification-is-source-for-issue',
-		},
-	},
-	{
 		slug: 'link-constraint-project-is-owned-by-user',
 		name: 'is owned by',
 		data: {
@@ -1153,6 +1113,46 @@ export const constraints: LinkConstraint[] = [
 			from: 'rating',
 			to: 'user',
 			inverse: 'link-constraint-user-owns-rating',
+		},
+	},
+	{
+		slug: 'link-constraint-loop-owns-product-improvement',
+		name: 'owns',
+		data: {
+			title: 'Improvement',
+			from: 'loop',
+			to: 'product-improvement',
+			inverse: 'link-constraint-product-improvement-is-owned-by-loop',
+		},
+	},
+	{
+		slug: 'link-constraint-product-improvement-is-owned-by-loop',
+		name: 'is owned by',
+		data: {
+			title: 'Loop',
+			from: 'product-improvement',
+			to: 'loop',
+			inverse: 'link-constraint-loop-owns-product-improvement',
+		},
+	},
+	{
+		slug: 'link-constraint-loop-owns-pattern',
+		name: 'owns',
+		data: {
+			title: 'Pattern',
+			from: 'loop',
+			to: 'pattern',
+			inverse: 'link-constraint-pattern-is-owned-by-loop',
+		},
+	},
+	{
+		slug: 'link-constraint-pattern-is-owned-by-loop',
+		name: 'is owned by',
+		data: {
+			title: 'Loop',
+			from: 'pattern',
+			to: 'loop',
+			inverse: 'link-constraint-loop-owns-pattern',
 		},
 	},
 	{
