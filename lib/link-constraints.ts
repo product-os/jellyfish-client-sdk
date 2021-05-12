@@ -1016,6 +1016,46 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-constraint-brainstorm-topic-is-owned-by-loop',
+		name: 'is owned by',
+		data: {
+			title: 'Loop',
+			from: 'brainstorm-topic',
+			to: 'loop',
+			inverse: 'link-constraint-loop-owns-brainstorm-topic',
+		},
+	},
+	{
+		slug: 'link-constraint-loop-owns-brainstorm-topic',
+		name: 'owns',
+		data: {
+			title: 'Brainstorm topic',
+			from: 'loop',
+			to: 'brainstorm-topic',
+			inverse: 'link-constraint-brainstorm-topic-is-owned-by-loop',
+		},
+	},
+	{
+		slug: 'link-constraint-brainstorm-call-is-owned-by-loop',
+		name: 'is owned by',
+		data: {
+			title: 'Loop',
+			from: 'brainstorm-call',
+			to: 'loop',
+			inverse: 'link-constraint-loop-owns-brainstorm-call',
+		},
+	},
+	{
+		slug: 'link-constraint-loop-owns-brainstorm-call',
+		name: 'owns',
+		data: {
+			title: 'Brainstorm call',
+			from: 'loop',
+			to: 'brainstorm-call',
+			inverse: 'link-constraint-brainstorm-call-is-owned-by-loop',
+		},
+	},
+	{
 		slug: 'link-constraint-user-is-using-ui-theme',
 		name: 'is using',
 		data: {
