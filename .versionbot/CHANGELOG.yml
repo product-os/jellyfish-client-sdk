@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency @types/lodash to ^4.14.169'
+      hash: def4b4b0f77a5c8bc9d5cb4f35932fdf95d72147
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 3.4.1
+  date: 2021-05-12T23:56:21.164Z
+- commits:
     - subject: Add brainstorm link constraints
       hash: c8ab042c5ed8ddb04db3930ad09d134dd4b48d8b
       body: |

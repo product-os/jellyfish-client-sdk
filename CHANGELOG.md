@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 3.4.1 - 2021-05-12
+
+* patch: Update dependency @types/lodash to ^4.14.169 [Renovate Bot]
+
 ## 3.4.0 - 2021-05-12
 
 * Add brainstorm link constraints [Graham McCulloch]
