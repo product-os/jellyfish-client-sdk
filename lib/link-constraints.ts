@@ -1016,46 +1016,6 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-brainstorm-topic-is-owned-by-loop',
-		name: 'is owned by',
-		data: {
-			title: 'Loop',
-			from: 'brainstorm-topic',
-			to: 'loop',
-			inverse: 'link-constraint-loop-owns-brainstorm-topic',
-		},
-	},
-	{
-		slug: 'link-constraint-loop-owns-brainstorm-topic',
-		name: 'owns',
-		data: {
-			title: 'Brainstorm topic',
-			from: 'loop',
-			to: 'brainstorm-topic',
-			inverse: 'link-constraint-brainstorm-topic-is-owned-by-loop',
-		},
-	},
-	{
-		slug: 'link-constraint-brainstorm-call-is-owned-by-loop',
-		name: 'is owned by',
-		data: {
-			title: 'Loop',
-			from: 'brainstorm-call',
-			to: 'loop',
-			inverse: 'link-constraint-loop-owns-brainstorm-call',
-		},
-	},
-	{
-		slug: 'link-constraint-loop-owns-brainstorm-call',
-		name: 'owns',
-		data: {
-			title: 'Brainstorm call',
-			from: 'loop',
-			to: 'brainstorm-call',
-			inverse: 'link-constraint-brainstorm-call-is-owned-by-loop',
-		},
-	},
-	{
 		slug: 'link-constraint-user-is-using-ui-theme',
 		name: 'is using',
 		data: {
@@ -1213,46 +1173,6 @@ export const constraints: LinkConstraint[] = [
 			from: 'rating',
 			to: 'user',
 			inverse: 'link-constraint-user-owns-rating',
-		},
-	},
-	{
-		slug: 'link-constraint-loop-owns-product-improvement',
-		name: 'owns',
-		data: {
-			title: 'Improvement',
-			from: 'loop',
-			to: 'product-improvement',
-			inverse: 'link-constraint-product-improvement-is-owned-by-loop',
-		},
-	},
-	{
-		slug: 'link-constraint-product-improvement-is-owned-by-loop',
-		name: 'is owned by',
-		data: {
-			title: 'Loop',
-			from: 'product-improvement',
-			to: 'loop',
-			inverse: 'link-constraint-loop-owns-product-improvement',
-		},
-	},
-	{
-		slug: 'link-constraint-loop-owns-pattern',
-		name: 'owns',
-		data: {
-			title: 'Pattern',
-			from: 'loop',
-			to: 'pattern',
-			inverse: 'link-constraint-pattern-is-owned-by-loop',
-		},
-	},
-	{
-		slug: 'link-constraint-pattern-is-owned-by-loop',
-		name: 'is owned by',
-		data: {
-			title: 'Loop',
-			from: 'pattern',
-			to: 'loop',
-			inverse: 'link-constraint-loop-owns-pattern',
 		},
 	},
 	{
