@@ -36,3 +36,9 @@ export interface QueryOptions
 export interface SdkQueryOptions extends QueryOptions {
 	ignoreMask?: boolean;
 }
+
+export interface GlobalQueryOptions {
+	ignoreGlobalQueryMask?: boolean;
+}
+
+export interface QueryCallOptions extends GlobalQueryOptions, QueryOptions {}

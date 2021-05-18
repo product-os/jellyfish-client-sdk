@@ -6,6 +6,7 @@ import { v4 as uuid } from 'uuid';
 import type { JSONSchema } from '@balena/jellyfish-types';
 import { JellyfishSDK, applyMask } from '.';
 import type { ExtendedSocket, SdkQueryOptions } from './types';
+import { JellyfishCursor } from './cursor';
 
 /**
  * @class JellyfishStreamManager
@@ -36,8 +37,8 @@ export class JellyfishStreamManager {
 	 * Returns a socket object that emits response data for the given query
 	 * @param {SdkQueryOptions} options - Extra query options to use
 	 *
-	 * @fulfil {JellyfishStream} An instantiated JellyfishStream
-	 * @returns {Promise}
+	 * @returns {Promise<Cursor>} An instantiated Cursor object that can be used
+	 * to interact with the underlying stream
 	 *
 	 * @example
 	 * const schema = {
@@ -49,17 +50,17 @@ export class JellyfishStreamManager {
 	 * 	}
 	 * };
 	 *
-	 * const stream = jellyfishStreamManager.stream(schema)
+	 * const cursor = jellyfishStreamManager.stream(schema)
 	 *
-	 * stream.on('update', (data) => {
+	 * cursor.on('update', (data) => {
 	 * 	console.log(data);
 	 * })
 	 *
-	 * stream.on('streamError', (error) => {
+	 * cursor.on('streamError', (error) => {
 	 * 	console.error(error);
 	 * })
 	 */
-	stream(query: JSONSchema, options: SdkQueryOptions): ExtendedSocket {
+	stream(query: JSONSchema, options: SdkQueryOptions): JellyfishCursor {
 		const url = this.sdk.getApiUrl();
 		if (!url) {
 			throw new Error(
@@ -127,7 +128,7 @@ export class JellyfishStreamManager {
 			});
 		};
 
-		return socket;
+		return new JellyfishCursor(this.sdk, socket, query, options);
 	}
 
 	/**

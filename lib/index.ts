@@ -23,7 +23,8 @@ import {
 	supportsLink,
 	getReverseConstraint,
 } from './link-constraints';
-import { QueryOptions, ExtendedSocket, SdkQueryOptions } from './types';
+import { QueryOptions, SdkQueryOptions } from './types';
+import { JellyfishCursor } from './cursor';
 import { SDKRequestCancelledError } from './errors';
 
 const trimSlash = (text: string) => {
@@ -147,6 +148,20 @@ export class JellyfishSDK {
 		// TODO: When we have cursor instances wrapping the StreamManager's sockets
 		// we should update them all with the new mask to force a refresh.
 	}
+
+	/**
+	 * @summary Set the mask option to the global query schema if it is set
+	 * and the ignoreGlobalQueryMask option is not set.
+	 * @param options - the query options
+	 * @returns the query options without the ignoreGlobalQueryMask
+	 */
+	applyGlobalQueryMask = (options: SdkQueryOptions): QueryOptions => {
+		const queryOptions = omit(options, 'ignoreGlobalQueryMask');
+		if (!options.ignoreMask && this.globalQueryMask) {
+			queryOptions.mask = this.globalQueryMask;
+		}
+		return queryOptions;
+	};
 
 	/**
 	 * @summary Load config object from the API
@@ -592,7 +607,7 @@ export class JellyfishSDK {
 	): Promise<core.Contract[]> {
 		const payload: any = {
 			params,
-			options: applyMask(options, this.globalQueryMask),
+			options: applyMask(options, this._globalQueryMask),
 		};
 
 		return this.post<core.Contract[]>(`view/${viewSlug}`, payload).then(
@@ -844,7 +859,10 @@ export class JellyfishSDK {
 	 * 	console.error(error);
 	 * })
 	 */
-	stream(query: JSONSchema, options: SdkQueryOptions = {}): ExtendedSocket {
+	stream(
+		query: JSONSchema,
+		options: SdkQueryOptions = {},
+	): Promise<JellyfishCursor> {
 		return this.streamManager.stream(query, options);
 	}
 }
