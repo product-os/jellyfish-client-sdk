@@ -1,4 +1,27 @@
 - commits:
+    - subject: Remove link constraints relating to loops
+      hash: d6a012e749a2ee82c5d6ed61d1456e46849560e7
+      body: >
+        Loops will not be associated using links but with a top-level 'loop'
+        field on each contract. This commit removes some link constraints that
+        were recently added but are no longer appropriate. Although this
+        constitutes a major bump there should be no problem with removing these
+        link constraints as they were not being used yet.
+
+
+        Note - there are still link-constraints defined between loops &
+        contract-repository and loops & transformers. These will be removed at a
+        later time once the code that relies on these links has been updated.
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 4.0.0
+  date: 2021-05-18T23:31:51.830Z
+- commits:
     - subject: 'patch: Update dependency @types/bluebird to ^3.5.35'
       hash: e685d6d54ad9f5a6d19917a5165fa9b471b0124b
       body: ''

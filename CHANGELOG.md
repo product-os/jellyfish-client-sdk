@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 4.0.0 - 2021-05-18
+
+* Remove link constraints relating to loops [Graham McCulloch]
+
 ## 3.4.2 - 2021-05-18
 
 * patch: Update dependency @types/bluebird to ^3.5.35 [Renovate Bot]
