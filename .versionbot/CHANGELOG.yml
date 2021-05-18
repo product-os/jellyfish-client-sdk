@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency @types/bluebird to ^3.5.35'
+      hash: e685d6d54ad9f5a6d19917a5165fa9b471b0124b
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 3.4.2
+  date: 2021-05-18T18:24:03.325Z
+- commits:
     - subject: 'patch: Update dependency @types/lodash to ^4.14.169'
       hash: def4b4b0f77a5c8bc9d5cb4f35932fdf95d72147
       body: ''

@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 3.4.2 - 2021-05-18
+
+* patch: Update dependency @types/bluebird to ^3.5.35 [Renovate Bot]
+
 ## 3.4.1 - 2021-05-12
 
 * patch: Update dependency @types/lodash to ^4.14.169 [Renovate Bot]
