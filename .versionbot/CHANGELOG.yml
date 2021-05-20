@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add more links between users and product improvements
+      hash: c8b2f3350de17c5902f5d10886388ed3feea80ca
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 4.2.0
+  date: 2021-05-20T07:21:10.720Z
+- commits:
     - subject: Add link constraints between patterns/improvements and issues/prs
       hash: 360ec164caa926fde09c6d28006725ffd2c56e2c
       body: ''
