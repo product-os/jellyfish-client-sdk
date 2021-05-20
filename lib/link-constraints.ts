@@ -322,6 +322,66 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-constraint-product-improvement-has-dedicated-user',
+		name: 'has dedicated user',
+		data: {
+			title: 'Dedicated user',
+			from: 'product-improvement',
+			to: 'user',
+			inverse: 'link-constraint-user-is-dedicated-to-product-improvement',
+		},
+	},
+	{
+		slug: 'link-constraint-user-is-dedicated-to-product-improvement',
+		name: 'is dedicated to',
+		data: {
+			title: 'Product improvement',
+			from: 'user',
+			to: 'product-improvement',
+			inverse: 'link-constraint-product-improvement-has-dedicated-user',
+		},
+	},
+	{
+		slug: 'link-constraint-product-improvement-is-contributed-to-by-user',
+		name: 'is contributed to by',
+		data: {
+			title: 'Contributor',
+			from: 'product-improvement',
+			to: 'user',
+			inverse: 'link-constraint-user-contributes-to-product-improvement',
+		},
+	},
+	{
+		slug: 'link-constraint-user-contributes-to-product-improvement',
+		name: 'contributes to',
+		data: {
+			title: 'Product improvement',
+			from: 'user',
+			to: 'product-improvement',
+			inverse: 'link-constraint-product-improvement-is-contributed-to-by-user',
+		},
+	},
+	{
+		slug: 'link-constraint-product-improvement-is-guided-by-user',
+		name: 'is guided by',
+		data: {
+			title: 'Guide',
+			from: 'product-improvement',
+			to: 'user',
+			inverse: 'link-constraint-user-guides-product-improvement',
+		},
+	},
+	{
+		slug: 'link-constraint-user-guides-product-improvement',
+		name: 'guides',
+		data: {
+			title: 'Product improvement',
+			from: 'user',
+			to: 'product-improvement',
+			inverse: 'link-constraint-product-improvement-is-guided-by-user',
+		},
+	},
+	{
 		slug: 'link-constraint-support-issue-is-attached-to-issue',
 		name: 'support issue is attached to issue',
 		data: {
