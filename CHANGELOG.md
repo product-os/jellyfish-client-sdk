@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 4.3.0 - 2021-05-20
+
+* Remove link constraint between support threads and product improvements [Graham McCulloch]
+
 ## 4.2.0 - 2021-05-20
 
 * Add more links between users and product improvements [Graham McCulloch]

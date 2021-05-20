@@ -1,4 +1,20 @@
 - commits:
+    - subject: Remove link constraint between support threads and product improvements
+      hash: 657577f27c32f5f2124e5374b32c4ac07be84aaa
+      body: >
+        Going forward, we will always require the loop to go: support thread >
+        pattern > product improvement (rather than just linking directly from a
+        support thread to a product improvement).
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 4.3.0
+  date: 2021-05-20T07:45:41.058Z
+- commits:
     - subject: Add more links between users and product improvements
       hash: c8b2f3350de17c5902f5d10886388ed3feea80ca
       body: ''
