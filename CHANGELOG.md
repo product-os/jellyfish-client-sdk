@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 4.4.0 - 2021-05-20
+
+* minor: Adding pattern-to-pattern relationship to link-contraints.ts [rmorillo24]
+
 ## 4.3.0 - 2021-05-20
 
 * Remove link constraint between support threads and product improvements [Graham McCulloch]

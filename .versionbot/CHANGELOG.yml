@@ -1,4 +1,18 @@
 - commits:
+    - subject: 'minor: Adding pattern-to-pattern relationship to link-contraints.ts'
+      hash: 12efe92e4ab182c6b1ce58d97866b278fbe8418e
+      body: >-
+        Adding a pattern-to-pattern relationship to allow creating groups of
+        patterns and linking related patterns.
+
+        Normally you would have a separate inverse, but because this is self
+        similar its the same
+      footer: {}
+      author: rmorillo24
+      nested: []
+  version: 4.4.0
+  date: 2021-05-20T07:54:51.901Z
+- commits:
     - subject: Remove link constraint between support threads and product improvements
       hash: 657577f27c32f5f2124e5374b32c4ac07be84aaa
       body: >
