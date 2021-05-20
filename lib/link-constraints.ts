@@ -832,28 +832,6 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-support-thread-is-attached-to-product-improvement',
-		name: 'is attached to',
-		data: {
-			title: 'Product improvement',
-			from: 'support-thread',
-			to: 'product-improvement',
-			inverse:
-				'link-constraint-product-improvement-has-attached-support-thread',
-		},
-	},
-	{
-		slug: 'link-constraint-product-improvement-has-attached-support-thread',
-		name: 'has attached',
-		data: {
-			title: 'Support thread',
-			from: 'product-improvement',
-			to: 'support-thread',
-			inverse:
-				'link-constraint-support-thread-is-attached-to-product-improvement',
-		},
-	},
-	{
 		slug: 'link-constraint-brainstorm-topic-has-attached-product-improvement',
 		name: 'has attached',
 		data: {
