@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add link constraints between patterns/improvements and issues/prs
+      hash: 360ec164caa926fde09c6d28006725ffd2c56e2c
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 4.1.0
+  date: 2021-05-20T04:31:28.606Z
+- commits:
     - subject: Remove link constraints relating to loops
       hash: d6a012e749a2ee82c5d6ed61d1456e46849560e7
       body: >

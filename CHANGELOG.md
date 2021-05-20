@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 4.1.0 - 2021-05-20
+
+* Add link constraints between patterns/improvements and issues/prs [Graham McCulloch]
+
 ## 4.0.0 - 2021-05-18
 
 * Remove link constraints relating to loops [Graham McCulloch]
