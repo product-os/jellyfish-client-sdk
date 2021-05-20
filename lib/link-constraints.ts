@@ -261,6 +261,47 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-constraint-product-improvement-is-attached-to-issue',
+		name: 'is attached to',
+		data: {
+			title: 'Issue',
+			from: 'product-improvement',
+			to: 'issue',
+			inverse: 'link-constraint-issue-has-attached-product-improvement',
+		},
+	},
+	{
+		slug: 'link-constraint-issue-has-attached-product-improvement',
+		name: 'has attached',
+		data: {
+			title: 'Product improvement',
+			from: 'issue',
+			to: 'product-improvement',
+			inverse: 'link-constraint-product-improvement-is-attached-to-issue',
+		},
+	},
+	{
+		slug: 'link-constraint-product-improvement-is-attached-to-pull-request',
+		name: 'is attached to',
+		data: {
+			title: 'Pull request',
+			from: 'product-improvement',
+			to: 'pull-request',
+			inverse: 'link-constraint-pull-request-has-attached-product-improvement',
+		},
+	},
+	{
+		slug: 'link-constraint-pull-request-has-attached-product-improvement',
+		name: 'has attached',
+		data: {
+			title: 'Product improvement',
+			from: 'pull-request',
+			to: 'product-improvement',
+			inverse:
+				'link-constraint-product-improvement-is-attached-to-pull-request',
+		},
+	},
+	{
 		slug: 'link-constraint-product-improvement-is-owned-by-user',
 		name: 'is owned by',
 		data: {
@@ -708,6 +749,26 @@ export const constraints: LinkConstraint[] = [
 			from: 'pattern',
 			to: 'issue',
 			inverse: 'link-constraint-issue-has-attached-pattern',
+		},
+	},
+	{
+		slug: 'link-constraint-pull-request-has-attached-pattern',
+		name: 'has attached',
+		data: {
+			title: 'Pattern',
+			from: 'pull-request',
+			to: 'pattern',
+			inverse: 'link-constraint-pattern-is-attached-to-pull-request',
+		},
+	},
+	{
+		slug: 'link-constraint-pattern-is-attached-to-pull-request',
+		name: 'is attached to',
+		data: {
+			title: 'Pull request',
+			from: 'pattern',
+			to: 'pull-request',
+			inverse: 'link-constraint-pull-request-has-attached-pattern',
 		},
 	},
 	{
