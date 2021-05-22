@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 4.4.1 - 2021-05-22
+
+* patch: Update dependency @types/lodash to ^4.14.170 [Renovate Bot]
+
 ## 4.4.0 - 2021-05-20
 
 * minor: Adding pattern-to-pattern relationship to link-contraints.ts [rmorillo24]
