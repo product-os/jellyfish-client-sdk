@@ -1,3 +1,6 @@
+# This file is auto-synced from product-os/jellyfish-config/.gitignore
+# and should only be edited there!
+
 # Created by https://www.gitignore.io/api/node
 
 ### Node ###
@@ -68,6 +71,7 @@ dump.rdb
 
 # Built files
 build/
+dist/
 .cache-loader/
 *.0x
 
@@ -87,7 +91,10 @@ build/
 # tmp directory
 tmp/
 
+# Optional custom dotenv file
+custom.env
+
 # Doc files should not be committed. They are generated using
-# the command 'npm run doc' and committed to the root of the 
+# the command 'npm run doc' and committed to the root of the
 # 'docs' branch.
 docs/
