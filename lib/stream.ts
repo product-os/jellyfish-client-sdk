@@ -5,12 +5,13 @@
  */
 
 import omit from 'lodash/omit';
+import set from 'lodash/set';
 import forEach from 'lodash/forEach';
 import io from 'socket.io-client';
 import { v4 as uuid } from 'uuid';
 import type { JSONSchema } from '@balena/jellyfish-types';
-import type { JellyfishSDK } from '.';
-import type { ExtendedSocket, QueryOptions } from './types';
+import { JellyfishSDK, applyMask } from '.';
+import type { ExtendedSocket, SdkQueryOptions } from './types';
 
 /**
  * @class JellyfishStreamManager
@@ -37,9 +38,9 @@ export class JellyfishStreamManager {
 	 * @public
 	 * @function
 	 *
-	 * @param {Object} query - An optional JSON schema used to match cards
+	 * @param {JSONSchema} query - An optional JSON schema used to match cards
 	 * Returns a socket object that emits response data for the given query
-	 * @param {Object} options - Extra query options to use
+	 * @param {SdkQueryOptions} options - Extra query options to use
 	 *
 	 * @fulfil {JellyfishStream} An instantiated JellyfishStream
 	 * @returns {Promise}
@@ -66,7 +67,7 @@ export class JellyfishStreamManager {
 	 */
 	async stream(
 		query: JSONSchema,
-		options: QueryOptions,
+		options: SdkQueryOptions,
 	): Promise<ExtendedSocket> {
 		const url = this.sdk.getApiUrl();
 		if (!url) {
@@ -94,7 +95,7 @@ export class JellyfishStreamManager {
 					token,
 					data: {
 						query: omit(query, '$id'),
-						options,
+						options: applyMask(options, this.sdk.globalQueryMask),
 					},
 				});
 			});
@@ -117,6 +118,20 @@ export class JellyfishStreamManager {
 			const result = close();
 			socket.removeAllListeners();
 			return result;
+		};
+
+		// Add a custom 'emit' method to ensure we apply the global mask as required.
+		const emit = socket.emit.bind(socket);
+		socket.emit = (event, ...args) => {
+			if (event === 'queryDataset' && this.sdk.globalQueryMask) {
+				const payload = set(
+					args[0],
+					'data.options.mask',
+					this.sdk.globalQueryMask,
+				);
+				return emit(event, payload);
+			}
+			return emit(event, ...args);
 		};
 
 		// Add a custom `type` method to indicate that a user is typing
