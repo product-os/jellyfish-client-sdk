@@ -1,4 +1,17 @@
 - commits:
+    - subject: Remove unnecessary catch-uncommitted
+      hash: d56b0d2c83e2f958cf0372cb6abe4e30b5892e6e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 4.4.18
+  date: 2021-06-02T23:20:12.708Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.5.137'
       hash: 7302aadd4c556993e345c37a50bd5c23c64c88db
       body: ''
