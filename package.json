@@ -27,14 +27,14 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "balena-lint --typescript --fix"
+      "balena-lint --fix"
     ]
   },
   "scripts": {
     "clean": "rimraf build",
     "build": "npm run clean && tsc",
-    "lint": "balena-lint --typescript lib test && npm run check && deplint && depcheck --ignore-bin-package --ignores=@types/jest",
-    "lint-fix": "balena-lint --typescript --fix lib test",
+    "lint": "balena-lint lib test && npm run check && deplint && depcheck --ignore-bin-package --ignores=@types/jest",
+    "lint-fix": "balena-lint --fix lib test",
     "unit": "jest",
     "test": "npm run lint && npm run unit",
     "doc": "typedoc lib/ && touch docs/.nojekyll",
