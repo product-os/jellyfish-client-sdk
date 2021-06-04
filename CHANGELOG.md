@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 4.4.19 - 2021-06-04
+
+* Fix lint errors [Josh Bowling]
+* Improve lint-staged config [Josh Bowling]
+
 ## 4.4.18 - 2021-06-02
 
 * Remove unnecessary catch-uncommitted [Josh Bowling]

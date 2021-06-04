@@ -1,4 +1,27 @@
 - commits:
+    - subject: Fix lint errors
+      hash: 4ddc490949fac5c8c9a0680df9aed5e1168dec4d
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+    - subject: Improve lint-staged config
+      hash: f48446f52f25c28a2f113b5bf585bb98cb20081a
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 4.4.19
+  date: 2021-06-04T00:12:40.671Z
+- commits:
     - subject: Remove unnecessary catch-uncommitted
       hash: d56b0d2c83e2f958cf0372cb6abe4e30b5892e6e
       body: ''
