@@ -35,7 +35,7 @@ export class AuthSdk {
 	 * 	})
 	 */
 	async whoami<
-		TContract extends core.Contract = core.Contract
+		TContract extends core.Contract = core.Contract,
 	>(): Promise<TContract> {
 		return this.sdk.get<TContract>('/whoami').then((response) => {
 			return response.data.data;

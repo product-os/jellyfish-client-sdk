@@ -23,7 +23,7 @@ const sandbox = sinon.createSandbox();
 const API_URL = 'https://test.ly.fish';
 
 const makeMessageCard = (message: string) => {
-	return ({
+	return {
 		id: 'msg1',
 		type: 'message@1.0.0',
 		data: {
@@ -31,7 +31,7 @@ const makeMessageCard = (message: string) => {
 				message,
 			},
 		},
-	} as any) as Message;
+	} as any as Message;
 };
 
 const testMarkAsReadMention = async (
@@ -75,7 +75,7 @@ const testMarkAsUnreadMention = async (
 		},
 	};
 	const cardSdk = new CardSdk(sdk as any);
-	const card = ({
+	const card = {
 		id: 'msg1',
 		type: 'message@1.0.0',
 		data: {
@@ -84,7 +84,7 @@ const testMarkAsUnreadMention = async (
 				message,
 			},
 		},
-	} as any) as Message;
+	} as any as Message;
 
 	await cardSdk.markAsUnread(userSlug, card, userGroups);
 
@@ -311,7 +311,7 @@ test('markAsRead updates the card if a group the user is part of is alerted', as
 
 test('markAsRead updates the card if the user is mentioned using the mentionsUser field', async () => {
 	await testMarkAsReadMention(
-		({
+		{
 			id: 'msg1',
 			type: 'message@1.0.0',
 			data: {
@@ -320,7 +320,7 @@ test('markAsRead updates the card if the user is mentioned using the mentionsUse
 					mentionsUser: ['user-testuser'],
 				},
 			},
-		} as any) as Message,
+		} as any as Message,
 		'user-testuser',
 		['group1'],
 	);
@@ -328,7 +328,7 @@ test('markAsRead updates the card if the user is mentioned using the mentionsUse
 
 test('markAsRead updates the card if the user is alerted using the alertsUser field', async () => {
 	await testMarkAsReadMention(
-		({
+		{
 			id: 'msg1',
 			type: 'message@1.0.0',
 			data: {
@@ -337,7 +337,7 @@ test('markAsRead updates the card if the user is alerted using the alertsUser fi
 					alertsUser: ['user-testuser'],
 				},
 			},
-		} as any) as Message,
+		} as any as Message,
 		'user-testuser',
 		['group1'],
 	);
@@ -345,7 +345,7 @@ test('markAsRead updates the card if the user is alerted using the alertsUser fi
 
 test('markAsRead updates the card if a group the user is part of is mentioned using the mentionsGroup field', async () => {
 	await testMarkAsReadMention(
-		({
+		{
 			id: 'msg1',
 			type: 'message@1.0.0',
 			data: {
@@ -354,7 +354,7 @@ test('markAsRead updates the card if a group the user is part of is mentioned us
 					mentionsGroup: ['group1'],
 				},
 			},
-		} as any) as Message,
+		} as any as Message,
 		'user-testuser',
 		['group1'],
 	);
@@ -362,7 +362,7 @@ test('markAsRead updates the card if a group the user is part of is mentioned us
 
 test('markAsRead updates the card if a group the user is part of is alerted using the alertsGroup field', async () => {
 	await testMarkAsReadMention(
-		({
+		{
 			id: 'msg1',
 			type: 'message@1.0.0',
 			data: {
@@ -371,7 +371,7 @@ test('markAsRead updates the card if a group the user is part of is alerted usin
 					alertsGroup: ['group1'],
 				},
 			},
-		} as any) as Message,
+		} as any as Message,
 		'user-testuser',
 		['group1'],
 	);
@@ -698,8 +698,8 @@ test('unlink will unlink all links between two cards with the specified verb', a
 	const cardSdk = new CardSdk(sdk as any);
 
 	await cardSdk.unlink(
-		(account1 as any) as core.Contract,
-		(opportunity1 as any) as core.Contract,
+		account1 as any as core.Contract,
+		opportunity1 as any as core.Contract,
 		'has attached',
 	);
 
@@ -736,8 +736,8 @@ test('link throws on invalid link', async () => {
 
 	await expect(
 		cardSdk.link(
-			(aTask as any) as core.Contract,
-			(anOpportunity as any) as core.Contract,
+			aTask as any as core.Contract,
+			anOpportunity as any as core.Contract,
 			'needs',
 		),
 	).rejects.toBeTruthy();
@@ -763,8 +763,8 @@ test('link allows links with asterisks', async () => {
 
 	await expect(
 		cardSdk.link(
-			(aTask as any) as core.Contract,
-			(anOpportunity as any) as core.Contract,
+			aTask as any as core.Contract,
+			anOpportunity as any as core.Contract,
 			'was built into',
 		),
 	).resolves.toBeNull();
@@ -801,8 +801,8 @@ test("unlink will unlink 'reverse' links between two cards with the specified ve
 	const cardSdk = new CardSdk(sdk as any);
 
 	await cardSdk.unlink(
-		(account1 as any) as core.Contract,
-		(opportunity1 as any) as core.Contract,
+		account1 as any as core.Contract,
+		opportunity1 as any as core.Contract,
 		'has attached',
 	);
 
