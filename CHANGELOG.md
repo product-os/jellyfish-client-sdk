@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 4.4.20 - 2021-06-05
+
+* patch: Update dependency @balena/jellyfish-types to ^0.6.2 [Renovate Bot]
+
 ## 4.4.19 - 2021-06-04
 
 * Fix lint errors [Josh Bowling]
