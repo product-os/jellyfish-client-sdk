@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 4.4.23 - 2021-06-06
+
+* Bump jest dependencies [Josh Bowling]
+
 ## 4.4.22 - 2021-06-05
 
 * Bump sinon to v11.1.1 [Josh Bowling]

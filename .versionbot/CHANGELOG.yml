@@ -1,4 +1,17 @@
 - commits:
+    - subject: Bump jest dependencies
+      hash: 6d5ae48b0d37dfbb7a29f70a35ebd4983e04d6be
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 4.4.23
+  date: 2021-06-06T06:45:20.673Z
+- commits:
     - subject: Bump sinon to v11.1.1
       hash: f6645958e658e286720e77ffcf9f138665f4acab
       body: ''
