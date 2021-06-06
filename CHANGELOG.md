@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 4.4.22 - 2021-06-05
+
+* Bump sinon to v11.1.1 [Josh Bowling]
+
 ## 4.4.21 - 2021-06-05
 
 * patch: Update external-non-major [Renovate Bot]

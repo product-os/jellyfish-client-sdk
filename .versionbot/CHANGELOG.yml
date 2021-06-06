@@ -1,4 +1,17 @@
 - commits:
+    - subject: Bump sinon to v11.1.1
+      hash: f6645958e658e286720e77ffcf9f138665f4acab
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 4.4.22
+  date: 2021-06-05T23:58:11.242Z
+- commits:
     - subject: 'patch: Update external-non-major'
       hash: b45c978393b7e9113c530256d97f35059f6fead0
       body: ''
