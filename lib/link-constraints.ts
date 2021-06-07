@@ -74,7 +74,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-has-attached-contact',
 		name: 'has attached contact',
 		data: {
-			title: 'Contact',
+			title: 'Attached contact',
 			from: 'user',
 			to: 'contact',
 			inverse: 'link-constraint-contact-is-attached-to-user',
@@ -114,7 +114,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-is-owner-of-support-thread',
 		name: 'is owner of',
 		data: {
-			title: 'Support thread',
+			title: 'Owned support thread',
 			from: 'user',
 			to: 'support-thread',
 			inverse: 'link-constraint-support-thread-is-owned-by',
@@ -244,7 +244,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-product-improvement-is-attached-to-issue',
 		name: 'is attached to',
 		data: {
-			title: 'Issue',
+			title: 'GitHub issue',
 			from: 'product-improvement',
 			to: 'issue',
 			inverse: 'link-constraint-issue-has-attached-product-improvement',
@@ -305,7 +305,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-owns-product-improvement',
 		name: 'owns',
 		data: {
-			title: 'Owner',
+			title: 'Owned product improvement',
 			from: 'user',
 			to: 'product-improvement',
 			inverse: 'link-constraint-product-improvement-is-owned-by-user',
@@ -325,7 +325,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-is-dedicated-to-product-improvement',
 		name: 'is dedicated to',
 		data: {
-			title: 'Product improvement',
+			title: 'Product improvement dedication',
 			from: 'user',
 			to: 'product-improvement',
 			inverse: 'link-constraint-product-improvement-has-dedicated-user',
@@ -345,7 +345,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-contributes-to-product-improvement',
 		name: 'contributes to',
 		data: {
-			title: 'Product improvement',
+			title: 'Product improvement contribution',
 			from: 'user',
 			to: 'product-improvement',
 			inverse: 'link-constraint-product-improvement-is-contributed-to-by-user',
@@ -365,7 +365,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-guides-product-improvement',
 		name: 'guides',
 		data: {
-			title: 'Product improvement',
+			title: 'Guided product improvement',
 			from: 'user',
 			to: 'product-improvement',
 			inverse: 'link-constraint-product-improvement-is-guided-by-user',
@@ -435,7 +435,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-contact-is-attached-to-user',
 		name: 'is attached to user',
 		data: {
-			title: 'User',
+			title: 'Attached user',
 			from: 'contact',
 			to: 'user',
 			inverse: 'link-constraint-user-has-attached-contact',
@@ -455,7 +455,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-owns-contact',
 		name: 'owns',
 		data: {
-			title: 'Owner',
+			title: 'Owned contact',
 			from: 'user',
 			to: 'contact',
 			inverse: 'link-constraint-contact-is-owned-by-user',
@@ -475,7 +475,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-is-backup-owner-of-contact',
 		name: 'is backup owner of',
 		data: {
-			title: 'Backup owner',
+			title: '(Backup owned) contact',
 			from: 'user',
 			to: 'contact',
 			inverse: 'link-constraint-contact-has-backup-owner',
@@ -495,7 +495,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-owns-account',
 		name: 'owns',
 		data: {
-			title: 'Owner',
+			title: 'Owned account',
 			from: 'user',
 			to: 'account',
 			inverse: 'link-constraint-account-is-owned-by-user',
@@ -515,7 +515,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-is-backup-owner-of-account',
 		name: 'is backup owner of',
 		data: {
-			title: 'Backup owner',
+			title: '(Backup owned) account',
 			from: 'user',
 			to: 'account',
 			inverse: 'link-constraint-account-has-backup-owner',
@@ -615,7 +615,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-owns-opportunity',
 		name: 'owns',
 		data: {
-			title: 'Owner',
+			title: 'Owned opportunity',
 			from: 'user',
 			to: 'opportunity',
 			inverse: 'link-constraint-opportunity-is-owned-by-user',
@@ -635,7 +635,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-is-backup-owner-of-opportunity',
 		name: 'is backup owner of',
 		data: {
-			title: 'Backup owner',
+			title: '(Backup owned) opportunity',
 			from: 'user',
 			to: 'opportunity',
 			inverse: 'link-constraint-opportunity-has-backup-owner',
@@ -795,7 +795,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-pattern-is-attached-to-issue',
 		name: 'is attached to',
 		data: {
-			title: 'Issue',
+			title: 'GitHub issue',
 			from: 'pattern',
 			to: 'issue',
 			inverse: 'link-constraint-issue-has-attached-pattern',
@@ -857,7 +857,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-owns-project',
 		name: 'owns',
 		data: {
-			title: 'Project',
+			title: 'Owned project',
 			from: 'user',
 			to: 'project',
 			inverse: 'link-constraint-project-is-owned-by-user',
@@ -877,7 +877,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-guides-project',
 		name: 'guides',
 		data: {
-			title: 'Project',
+			title: 'Guided project',
 			from: 'user',
 			to: 'project',
 			inverse: 'link-constraint-project-is-guided-by-user',
@@ -897,7 +897,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-is-member-of-project',
 		name: 'is member of',
 		data: {
-			title: 'Project',
+			title: 'Member project',
 			from: 'user',
 			to: 'project',
 			inverse: 'link-constraint-project-has-member',
@@ -907,7 +907,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-project-is-contributed-to-by-user',
 		name: 'is contributed to by',
 		data: {
-			title: 'Contributors',
+			title: 'Contributor',
 			from: 'project',
 			to: 'user',
 			inverse: 'link-constraint-user-contributes-to-project',
@@ -917,7 +917,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-contributes-to-project',
 		name: 'contributes to',
 		data: {
-			title: 'Project contributions',
+			title: 'Project contribution',
 			from: 'user',
 			to: 'project',
 			inverse: 'link-constraint-project-is-contributed-to-by-user',
@@ -927,7 +927,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-project-is-observed-by-user',
 		name: 'is observed by',
 		data: {
-			title: 'Observers',
+			title: 'Observer',
 			from: 'project',
 			to: 'user',
 			inverse: 'link-constraint-user-observes-project',
@@ -937,7 +937,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-observes-project',
 		name: 'observes',
 		data: {
-			title: 'Project observations',
+			title: 'Project observation',
 			from: 'user',
 			to: 'project',
 			inverse: 'link-constraint-project-is-observed-by-user',
@@ -967,7 +967,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-project-has-checkin',
 		name: 'has',
 		data: {
-			title: 'Checkins',
+			title: 'Checkin',
 			from: 'project',
 			to: 'checkin',
 			inverse: 'link-constraint-checkin-is-of-project',
@@ -1047,7 +1047,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-milestone-is-attached-to-issue',
 		name: 'is attached to',
 		data: {
-			title: 'Issue',
+			title: 'GitHub issue',
 			from: 'milestone',
 			to: 'issue',
 			inverse: 'link-constraint-issue-has-attached-milestone',
@@ -1077,7 +1077,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-owns-milestone',
 		name: 'owns',
 		data: {
-			title: 'Milestone',
+			title: 'Owned milestone',
 			from: 'user',
 			to: 'milestone',
 			inverse: 'link-constraint-milestone-is-owned-by-user',
@@ -1128,7 +1128,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-pattern-is-attached-to-user-feedback',
 		name: 'is attached to',
 		data: {
-			title: 'User Feedback',
+			title: 'User feedback',
 			from: 'pattern',
 			to: 'user-feedback',
 			inverse: 'link-constraint-user-feedback-has-attached-pattern',
@@ -1148,7 +1148,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-issue-is-attached-to-user-feedback',
 		name: 'is attached to',
 		data: {
-			title: 'User Feedback',
+			title: 'User feedback',
 			from: 'issue',
 			to: 'user-feedback',
 			inverse: 'link-constraint-user-feedback-has-attached-issue',
@@ -1178,7 +1178,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-owns-user-feedback',
 		name: 'owns',
 		data: {
-			title: 'Owner',
+			title: 'Owned user feedback',
 			from: 'user',
 			to: 'user-feedback',
 			inverse: 'link-constraint-user-feedback-is-owned-by-user',
@@ -1288,7 +1288,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-user-owns-rating',
 		name: 'owns',
 		data: {
-			title: 'Rating',
+			title: 'Owned rating',
 			from: 'user',
 			to: 'rating',
 			inverse: 'link-constraint-rating-is-owned-by-user',
@@ -1308,7 +1308,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-loop-owns-transformer',
 		name: 'owns',
 		data: {
-			title: 'Transformer',
+			title: 'Owned transformer',
 			from: 'loop',
 			to: 'transformer',
 			inverse: 'link-constraint-transformer-is-owned-by-loop',
@@ -1328,7 +1328,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-loop-owns-contract-repository',
 		name: 'owns',
 		data: {
-			title: 'Contract Repository',
+			title: 'Owned contract repository',
 			from: 'loop',
 			to: 'contract-repository',
 			inverse: 'link-constraint-contract-repository-is-owned-by-loop',
@@ -1348,7 +1348,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-transformer-worker-owns-task',
 		name: 'owns',
 		data: {
-			title: 'Task',
+			title: 'Owned task',
 			from: 'transformer-worker',
 			to: 'task',
 			inverse: 'link-constraint-task-is-owned-by-transformer-worker',
