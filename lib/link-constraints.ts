@@ -1225,6 +1225,26 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-constraint-notification-is-read-by-user',
+		name: 'is read by',
+		data: {
+			title: 'User',
+			from: 'notification',
+			to: 'user',
+			inverse: 'link-constraint-user-has-read-notification',
+		},
+	},
+	{
+		slug: 'link-constraint-user-has-read-notification',
+		name: 'read',
+		data: {
+			title: 'Notification',
+			from: 'user',
+			to: 'notification',
+			inverse: 'link-constraint-notification-is-read-by-user',
+		},
+	},
+	{
 		slug: 'link-constraint-chart-configuration-is-attached-to-view',
 		name: 'is attached to',
 		data: {
