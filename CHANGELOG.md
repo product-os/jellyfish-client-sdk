@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 4.4.25 - 2021-06-07
+
+* patch: Update dependency @balena/jellyfish-types to ^0.6.3 [Renovate Bot]
+
 ## 4.4.24 - 2021-06-06
 
 * patch: Update dependency ts-jest to ^27.0.3 [Renovate Bot]
