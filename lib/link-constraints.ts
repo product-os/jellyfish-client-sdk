@@ -1231,17 +1231,37 @@ export const constraints: LinkConstraint[] = [
 			title: 'User',
 			from: 'notification',
 			to: 'user',
-			inverse: 'link-constraint-user-has-read-notification',
+			inverse: 'link-constraint-user-read-notification',
 		},
 	},
 	{
-		slug: 'link-constraint-user-has-read-notification',
+		slug: 'link-constraint-user-read-notification',
 		name: 'read',
 		data: {
 			title: 'Notification',
 			from: 'user',
 			to: 'notification',
 			inverse: 'link-constraint-notification-is-read-by-user',
+		},
+	},
+	{
+		slug: 'link-constraint-support-thread-is-starred-by-user',
+		name: 'is starred by',
+		data: {
+			title: 'User',
+			from: 'support-thread',
+			to: 'user',
+			inverse: 'link-constraint-user-starred-support-thread',
+		},
+	},
+	{
+		slug: 'link-constraint-user-starred-support-thread',
+		name: 'starred',
+		data: {
+			title: 'Support thread',
+			from: 'user',
+			to: 'support-thread',
+			inverse: 'link-constraint-support-thread-is-starred-by-user',
 		},
 	},
 	{
