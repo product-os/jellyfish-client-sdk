@@ -71,26 +71,6 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-web-push-subscription-is-subscribed-for-user',
-		name: 'is subscribed for',
-		data: {
-			title: 'Web push subscription user',
-			from: 'web-push-subscription',
-			to: 'user',
-			inverse: 'link-constraint-user-is-subscribed-with-web-push-subscription',
-		},
-	},
-	{
-		slug: 'link-constraint-user-is-subscribed-with-web-push-subscription',
-		name: 'is subscribed with',
-		data: {
-			title: 'Web push subscription',
-			from: 'user',
-			to: 'web-push-subscription',
-			inverse: 'link-constraint-web-push-subscription-is-subscribed-for-user',
-		},
-	},
-	{
 		slug: 'link-constraint-user-has-attached-contact',
 		name: 'has attached contact',
 		data: {
