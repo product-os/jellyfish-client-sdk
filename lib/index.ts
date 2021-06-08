@@ -29,7 +29,7 @@ import {
 	supportsLink,
 	getReverseConstraint,
 } from './link-constraints';
-import { QueryOptions, ExtendedSocket } from './types';
+import { QueryOptions, ExtendedSocket, SdkQueryOptions } from './types';
 import { SDKRequestCancelledError } from './errors';
 
 const trimSlash = (text: string) => {
@@ -39,6 +39,23 @@ const trimSlash = (text: string) => {
 const LINKS = constraints;
 
 export { constraints as linkConstraints, supportsLink, getReverseConstraint };
+
+/**
+ * @summary Set the mask option to the supplied mask if it is set
+ * - unless the ignoreMask option is set.
+ * @param options - the query options
+ * @returns the query options without the ignoreMask
+ */
+export const applyMask = (
+	options: SdkQueryOptions,
+	mask: JSONSchema | null,
+): QueryOptions => {
+	const queryOptions = omit(options, 'ignoreMask');
+	if (mask && !options.ignoreMask) {
+		queryOptions.mask = mask;
+	}
+	return queryOptions;
+};
 
 /**
  * @summary Extracts files from an object
@@ -94,6 +111,10 @@ export class JellyfishSDK {
 	public readonly streamManager: JellyfishStreamManager;
 	private API_BASE: string = '';
 	private cancelTokenSources: CancelTokenSource[] = [];
+	/**
+	 * A JSON schema filter that will be applied to all queries
+	 */
+	private _globalQueryMask: JSONSchema | null = null;
 
 	/**
 	 * @name JellyfishSDK
@@ -121,6 +142,16 @@ export class JellyfishSDK {
 		this.cancelTokenSources = [];
 		this.setApiBase(API_URL, API_PREFIX);
 		this.streamManager = new JellyfishStreamManager(this);
+	}
+
+	public get globalQueryMask(): JSONSchema | null {
+		return this._globalQueryMask;
+	}
+
+	public set globalQueryMask(mask: JSONSchema | null) {
+		this._globalQueryMask = mask;
+		// TODO: When we have cursor instances wrapping the StreamManager's sockets
+		// we should update them all with the new mask to force a refresh.
 	}
 
 	/**
@@ -519,11 +550,11 @@ export class JellyfishSDK {
 	 */
 	async query<TResponse extends core.Contract = core.Contract>(
 		schema: JSONSchema,
-		options = {},
+		options: SdkQueryOptions = {},
 	): Promise<TResponse[]> {
 		const payload = {
 			query: isString(schema) ? schema : omit(schema, '$id'),
-			options,
+			options: applyMask(options, this.globalQueryMask),
 		};
 		return this.post<TResponse[]>('query', payload, {}).then((response) => {
 			return response.data.data;
@@ -563,11 +594,11 @@ export class JellyfishSDK {
 	async view(
 		viewSlug: string,
 		params: any = {},
-		options: QueryOptions = {},
+		options: SdkQueryOptions = {},
 	): Promise<core.Contract[]> {
 		const payload: any = {
 			params,
-			options,
+			options: applyMask(options, this.globalQueryMask),
 		};
 
 		return this.post<core.Contract[]>(`view/${viewSlug}`, payload).then(
@@ -793,8 +824,8 @@ export class JellyfishSDK {
 	 * @description Stream updates and insertions for cards that match a JSON
 	 * schema
 	 *
-	 * @param {Object} query - The JSON schema to query with
-	 * @param {Object} options - Extra query options to use
+	 * @param {JSONSchema} query - The JSON schema to query with
+	 * @param {SdkQueryOptions} options - Extra query options to use
 	 *
 	 * @fulfil {EventEmitter}
 	 * @returns {Promise}
@@ -821,7 +852,7 @@ export class JellyfishSDK {
 	 */
 	stream(
 		query: JSONSchema,
-		options: QueryOptions = {},
+		options: SdkQueryOptions = {},
 	): Promise<ExtendedSocket> {
 		return this.streamManager.stream(query, options);
 	}

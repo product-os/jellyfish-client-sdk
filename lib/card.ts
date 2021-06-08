@@ -62,6 +62,7 @@ const checkLinksExist = async (
 
 	const result = await sdk.query(query, {
 		limit: 1,
+		ignoreMask: true,
 	});
 
 	if (!result.length) {
@@ -271,7 +272,10 @@ export class CardSdk {
 	 */
 	async getWithTimeline<TContract extends core.Contract = core.Contract>(
 		idOrSlug: string,
-		options: { schema?: JSONSchema; queryOptions?: QueryOptions } = {},
+		options: {
+			schema?: JSONSchema;
+			queryOptions?: Omit<QueryOptions, 'mask'>;
+		} = {},
 	): Promise<TContract | null> {
 		const schema: JSONSchema = isUUID(idOrSlug)
 			? {
@@ -478,7 +482,9 @@ export class CardSdk {
 			additionalProperties: true,
 		};
 
-		return this.sdk.query(schema);
+		return this.sdk.query(schema, {
+			ignoreMask: true,
+		});
 	}
 
 	/**
@@ -736,6 +742,7 @@ export class CardSdk {
 		return this.sdk
 			.query(getLinkQuery(verb, fromCard, toCard), {
 				limit: 1,
+				ignoreMask: true,
 			})
 			.then((linkCards) => {
 				// Then remove the link cards

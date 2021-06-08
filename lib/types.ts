@@ -1,4 +1,4 @@
-import type { core } from '@balena/jellyfish-types';
+import type { core, JSONSchema } from '@balena/jellyfish-types';
 
 export type ExtendedSocket = SocketIOClient.Socket & {
 	type?: ((user: core.Contract, card: core.Contract) => void) | undefined;
@@ -27,9 +27,11 @@ export interface Message extends core.Contract {
 	};
 }
 
-export interface QueryOptions {
-	skip?: number;
-	limit?: number;
-	sortBy?: string;
-	links?: Omit<QueryOptions, 'links'>;
+export interface QueryOptions
+	extends Omit<core.QueryOptions, 'connection' | 'profile'> {
+	mask?: JSONSchema;
+}
+
+export interface SdkQueryOptions extends QueryOptions {
+	ignoreMask?: boolean;
 }
