@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 4.6.0 - 2021-06-08
+
+* Add notifications support [Kakhaber]
+
 ## 4.5.0 - 2021-06-08
 
 * Add support for sdk.globalQueryMask [Graham McCulloch]
