@@ -1245,23 +1245,23 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-support-thread-is-starred-by-user',
+		slug: 'link-constraint-any-is-starred-by-user',
 		name: 'is starred by',
 		data: {
-			title: 'User',
-			from: 'support-thread',
+			title: 'Starred by user',
+			from: '*',
 			to: 'user',
-			inverse: 'link-constraint-user-starred-support-thread',
+			inverse: 'link-constraint-user-starred-any',
 		},
 	},
 	{
-		slug: 'link-constraint-user-starred-support-thread',
+		slug: 'link-constraint-user-starred-any',
 		name: 'starred',
 		data: {
-			title: 'Support thread',
+			title: 'Starred',
 			from: 'user',
-			to: 'support-thread',
-			inverse: 'link-constraint-support-thread-is-starred-by-user',
+			to: '*',
+			inverse: 'link-constraint-any-is-starred-by-user',
 		},
 	},
 	{
