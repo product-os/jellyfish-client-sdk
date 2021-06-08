@@ -1,4 +1,25 @@
 - commits:
+    - subject: Add support for sdk.globalQueryMask
+      hash: 64ca96035d05bead47f15925021d93c626b34284
+      body: >
+        The global mask is a schema that will be applied to all subsequent
+        queries. The global mask can be 'cleared' (unset) by setting it to
+        `null`.
+
+
+        You can also manually ignore the global query schema when calling
+        `query()`, `view()` or `stream()` by passing `ignoreMask: true` in the
+        `options` argument.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 4.5.0
+  date: 2021-06-08T09:10:41.758Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.6.6'
       hash: 7dffadb76f3ab61a75d6afcfd068ed5610691cfa
       body: ''

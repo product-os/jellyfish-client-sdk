@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 4.5.0 - 2021-06-08
+
+* Add support for sdk.globalQueryMask [Graham McCulloch]
+
 ## 4.4.28 - 2021-06-08
 
 * patch: Update dependency @balena/jellyfish-types to ^0.6.6 [Renovate Bot]
