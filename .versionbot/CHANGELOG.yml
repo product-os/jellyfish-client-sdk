@@ -1,4 +1,31 @@
 - commits:
+    - subject: Fix terminology in link constraints
+      hash: 7a27fe3ab8fb09eafba568cdca4a2ee4ab0f3df9
+      body: >
+        Fixed pluralization, capitalization, direction and specificity of link
+        titles.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+    - subject: Remove web push subscription link constraints
+      hash: 100f999e156b38e6ec329bbd11891c068b5ecc29
+      body: >
+        We're not using web push at the moment so these are unnecessary and just
+        confuse users!
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 4.7.0
+  date: 2021-06-10T01:27:11.526Z
+- commits:
     - subject: Add notifications support
       hash: e28a1f9e506360313ccc9baa4bce11c919ae2c04
       body: ''

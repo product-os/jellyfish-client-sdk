@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 4.7.0 - 2021-06-10
+
+* Fix terminology in link constraints [Graham McCulloch]
+* Remove web push subscription link constraints [Graham McCulloch]
+
 ## 4.6.0 - 2021-06-08
 
 * Add notifications support [Kakhaber]
