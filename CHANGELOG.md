@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 4.7.1 - 2021-06-11
+
+* patch: Update dependency @balena/jellyfish-types to ^0.6.7 [Renovate Bot]
+
 ## 4.7.0 - 2021-06-10
 
 * Fix terminology in link constraints [Graham McCulloch]
