@@ -1,4 +1,17 @@
 - commits:
+    - subject: Rename product-improvement to improvement
+      hash: 5236a74fcf1df77f69dbe578ca69fb4e4d858cd6
+      body: ''
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 5.0.0
+  date: 2021-06-12T01:59:42.435Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.6.7'
       hash: e85e31f4e87af0f7eb86e29dfb6d69c19c0fb2fc
       body: ''

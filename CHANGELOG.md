@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.0.0 - 2021-06-12
+
+* Rename product-improvement to improvement [Graham McCulloch]
+
 ## 4.7.1 - 2021-06-11
 
 * patch: Update dependency @balena/jellyfish-types to ^0.6.7 [Renovate Bot]
