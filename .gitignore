@@ -98,3 +98,8 @@ custom.env
 # the command 'npm run doc' and committed to the root of the
 # 'docs' branch.
 docs/
+
+# Package lock files should not be generated (see .npmrc).
+# This is just a fail-safe to ensure that if they are generated
+# they are still ignored and not committed.
+package-lock.json
