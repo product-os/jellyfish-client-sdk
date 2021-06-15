@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 5.0.3 - 2021-06-15
+
+* Remove package-lock.json [Josh Bowling]
+* 🔄 Synced file(s) with product-os/jellyfish-config [jellyfish-bot]
+
 ## 5.0.2 - 2021-06-15
 
 * patch: Update dependency @balena/jellyfish-types to ^0.6.9 [Renovate Bot]

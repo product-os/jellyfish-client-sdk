@@ -1,4 +1,25 @@
 - commits:
+    - subject: Remove package-lock.json
+      hash: fd634d817afdf4790314ac88dce4067f0363fc15
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+    - subject: "\U0001F504 Synced file(s) with product-os/jellyfish-config"
+      hash: 2c96032d0746cf000a3a3efcef9bf189e9aa4b98
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: jellyfish-bot
+      nested: []
+  version: 5.0.3
+  date: 2021-06-15T03:24:52.034Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.6.9'
       hash: f935db24a77cbcbf7126e14e6b4d042e3770c304
       body: ''
