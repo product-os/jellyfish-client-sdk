@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.0.5 - 2021-06-19
+
+* Bump typescript to v4.3.4 [Josh Bowling]
+
 ## 5.0.4 - 2021-06-19
 
 * patch: Update dependency @balena/jellyfish-types to ^0.6.10 [Renovate Bot]

@@ -1,4 +1,17 @@
 - commits:
+    - subject: Bump typescript to v4.3.4
+      hash: 410af9d7a7dff1531027dacb19ccdfe9b0d27b9a
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 5.0.5
+  date: 2021-06-19T13:12:19.259Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.6.10'
       hash: 78eaff1e960690a157f4e0ca696ba5857c8c9128
       body: ''
