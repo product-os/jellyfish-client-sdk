@@ -1,4 +1,17 @@
 - commits:
+    - subject: Bump jest to v27.0.5
+      hash: ba66be5548e0f72adc6946dcd7ccb5109fa60f2d
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 5.0.8
+  date: 2021-06-23T23:39:31.595Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.7.0'
       hash: f42a9ff3e7adbd74d3de1af08361894222ff0577
       body: |

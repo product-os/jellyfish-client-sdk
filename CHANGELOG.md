@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.0.8 - 2021-06-23
+
+* Bump jest to v27.0.5 [Josh Bowling]
+
 ## 5.0.7 - 2021-06-22
 
 * patch: Update dependency @balena/jellyfish-types to ^0.7.0 [Renovate Bot]
