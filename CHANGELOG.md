@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.0.9 - 2021-06-24
+
+* Fix getting reverse constraint [Kakhaber]
+
 ## 5.0.8 - 2021-06-23
 
 * Bump jest to v27.0.5 [Josh Bowling]

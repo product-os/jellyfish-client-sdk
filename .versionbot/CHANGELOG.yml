@@ -1,4 +1,15 @@
 - commits:
+    - subject: Fix getting reverse constraint
+      hash: 01a7e27ac3f6d844a18bd6952acc6253aabd97a0
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Kakhaber
+      nested: []
+  version: 5.0.9
+  date: 2021-06-24T10:24:11.458Z
+- commits:
     - subject: Bump jest to v27.0.5
       hash: ba66be5548e0f72adc6946dcd7ccb5109fa60f2d
       body: ''
