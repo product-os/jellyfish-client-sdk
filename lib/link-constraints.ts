@@ -1182,23 +1182,23 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-subscription-is-attached-to-view',
+		slug: 'link-constraint-subscription-is-attached-to-any',
 		name: 'is attached to',
 		data: {
-			title: 'View',
+			title: 'Target',
 			from: 'subscription',
-			to: 'view',
-			inverse: 'link-constraint-view-has-attached-subscription',
+			to: '*',
+			inverse: 'link-constraint-any-has-attached-subscription',
 		},
 	},
 	{
-		slug: 'link-constraint-view-has-attached-subscription',
+		slug: 'link-constraint-any-has-attached-subscription',
 		name: 'has attached',
 		data: {
 			title: 'Subscription',
-			from: 'view',
+			from: '*',
 			to: 'subscription',
-			inverse: 'link-constraint-subscription-is-attached-to-view',
+			inverse: 'link-constraint-subscription-is-attached-to-any',
 		},
 	},
 	{
@@ -1219,26 +1219,6 @@ export const constraints: LinkConstraint[] = [
 			from: 'user',
 			to: 'notification',
 			inverse: 'link-constraint-notification-is-read-by-user',
-		},
-	},
-	{
-		slug: 'link-constraint-any-is-starred-by-user',
-		name: 'is starred by',
-		data: {
-			title: 'Starred by user',
-			from: '*',
-			to: 'user',
-			inverse: 'link-constraint-user-starred-any',
-		},
-	},
-	{
-		slug: 'link-constraint-user-starred-any',
-		name: 'starred',
-		data: {
-			title: 'Starred',
-			from: 'user',
-			to: '*',
-			inverse: 'link-constraint-any-is-starred-by-user',
 		},
 	},
 	{
@@ -1496,19 +1476,21 @@ export const getReverseConstraint = (
 	toType: string,
 	name: core.Contract['name'],
 ): LinkConstraint | undefined => {
-	const constraint = find(constraints, {
-		name,
-		data: {
-			from: fromType.split('@')[0],
-			to: toType.split('@')[0],
-		},
-	}) as LinkConstraint | undefined;
+	const result = find(exports.constraints, (constraint) => {
+		return (
+			constraint.name === name &&
+			(constraint.data.from === '*' ||
+				constraint.data.from === fromType.split('@')[0]) &&
+			(constraint.data.to === '*' ||
+				constraint.data.to === toType.split('@')[0])
+		);
+	});
 
-	if (!constraint) {
+	if (!result) {
 		return;
 	}
 
 	return find(constraints, {
-		slug: constraint.data.inverse,
+		slug: result.data.inverse,
 	});
 };
