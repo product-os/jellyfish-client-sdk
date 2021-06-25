@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.1.0 - 2021-06-25
+
+* Add link constraints between sagas and improvements [Graham McCulloch]
+
 ## 5.0.9 - 2021-06-24
 
 * Fix getting reverse constraint [Kakhaber]

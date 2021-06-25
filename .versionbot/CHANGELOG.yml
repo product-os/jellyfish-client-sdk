@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add link constraints between sagas and improvements
+      hash: f7699da63d55631283945a52d437bfbd4333ff85
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 5.1.0
+  date: 2021-06-25T04:17:52.612Z
+- commits:
     - subject: Fix getting reverse constraint
       hash: 01a7e27ac3f6d844a18bd6952acc6253aabd97a0
       body: ''
