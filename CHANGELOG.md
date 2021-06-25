@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.1.1 - 2021-06-25
+
+* Bump depcheck to v1.4.2 [Josh Bowling]
+
 ## 5.1.0 - 2021-06-25
 
 * Add link constraints between sagas and improvements [Graham McCulloch]
