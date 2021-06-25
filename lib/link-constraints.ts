@@ -841,6 +841,26 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-constraint-saga-has-attached-improvement',
+		name: 'has attached',
+		data: {
+			title: 'Improvement',
+			from: 'saga',
+			to: 'improvement',
+			inverse: 'link-constraint-improvement-is-attached-to-saga',
+		},
+	},
+	{
+		slug: 'link-constraint-improvement-is-attached-to-saga',
+		name: 'is attached to',
+		data: {
+			title: 'Saga',
+			from: 'improvement',
+			to: 'saga',
+			inverse: 'link-constraint-saga-has-attached-improvement',
+		},
+	},
+	{
 		slug: 'link-constraint-project-is-owned-by-user',
 		name: 'is owned by',
 		data: {
