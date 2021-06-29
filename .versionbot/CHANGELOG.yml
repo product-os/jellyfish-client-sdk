@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update external-non-major'
+      hash: a6b6dc3462b8a32b6999eb75da398eb97b43fe1e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 5.2.1
+  date: 2021-06-29T08:08:01.348Z
+- commits:
     - subject: Add link constraints for projects
       hash: 5a3942b6552207f29cb2110683f1d61091c8acb8
       body: ''

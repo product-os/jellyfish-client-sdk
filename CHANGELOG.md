@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.2.1 - 2021-06-29
+
+* patch: Update external-non-major [Renovate Bot]
+
 ## 5.2.0 - 2021-06-29
 
 * Add link constraints for projects [Graham McCulloch]
