@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add link constraints for projects
+      hash: 5a3942b6552207f29cb2110683f1d61091c8acb8
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 5.2.0
+  date: 2021-06-29T04:40:40.665Z
+- commits:
     - subject: Bump depcheck to v1.4.2
       hash: 2911fa10f6fd4e13a0853f414e552a13e0263eea
       body: ''
