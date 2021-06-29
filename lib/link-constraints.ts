@@ -1101,6 +1101,46 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-constraint-improvement-is-implemented-by-project',
+		name: 'is implemented by',
+		data: {
+			title: 'Project',
+			from: 'improvement',
+			to: 'project',
+			inverse: 'link-constraint-project-implements-improvement',
+		},
+	},
+	{
+		slug: 'link-constraint-project-implements-improvement',
+		name: 'implements',
+		data: {
+			title: 'Improvement',
+			from: 'project',
+			to: 'improvement',
+			inverse: 'link-constraint-improvement-is-implemented-by-project',
+		},
+	},
+	{
+		slug: 'link-constraint-project-implements-milestone',
+		name: 'implements',
+		data: {
+			title: 'Milestone',
+			from: 'project',
+			to: 'milestone',
+			inverse: 'link-constraint-milestone-is-implemented-by-project',
+		},
+	},
+	{
+		slug: 'link-constraint-milestone-is-implemented-by-project',
+		name: 'is implemented by',
+		data: {
+			title: 'Project',
+			from: 'milestone',
+			to: 'project',
+			inverse: 'link-constraint-project-implements-milestone',
+		},
+	},
+	{
 		slug: 'link-constraint-brainstorm-call-has-attached-brainstorm-topic',
 		name: 'has attached',
 		data: {
