@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>card | @balena/jellyfish-client-sdk</title>
+	<title>SdkQueryOptions | @balena/jellyfish-client-sdk</title>
 	<meta name="description" content="Documentation for @balena/jellyfish-client-sdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -53,65 +53,68 @@
 					<a href="../modules.html">@balena/jellyfish-client-sdk</a>
 				</li>
 				<li>
-					<a href="card.html">card</a>
+					<a href="../modules/types.html">types</a>
+				</li>
+				<li>
+					<a href="types.sdkqueryoptions.html">SdkQueryOptions</a>
 				</li>
 			</ul>
-			<h1>Module card</h1>
+			<h1>Interface SdkQueryOptions</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="types.queryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">QueryOptions</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">SdkQueryOptions</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Classes</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/card.cardsdk.html" class="tsd-kind-icon">Card<wbr>Sdk</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="card.html#ismentionedinmessage" class="tsd-kind-icon">is<wbr>Mentioned<wbr>InMessage</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.sdkqueryoptions.html#ignoremask" class="tsd-kind-icon">ignore<wbr>Mask</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="types.sdkqueryoptions.html#mask" class="tsd-kind-icon">mask</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="ismentionedinmessage" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Mentioned<wbr>InMessage</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Mentioned<wbr>InMessage<span class="tsd-signature-symbol">(</span>card<span class="tsd-signature-symbol">: </span><a href="../interfaces/types.message.html" class="tsd-signature-type" data-tsd-kind="Interface">Message</a>, userSlug<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, userGroups<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/card.ts#L150">lib/card.ts:150</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>card: <a href="../interfaces/types.message.html" class="tsd-signature-type" data-tsd-kind="Interface">Message</a></h5>
-								</li>
-								<li>
-									<h5>userSlug: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>userGroups: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="ignoremask" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> ignore<wbr>Mask</h3>
+					<div class="tsd-signature tsd-kind-icon">ignore<wbr>Mask<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/types.ts#L36">lib/types.ts:36</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="mask" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> mask</h3>
+					<div class="tsd-signature tsd-kind-icon">mask<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">JSONSchema</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="types.queryoptions.html">QueryOptions</a>.<a href="types.queryoptions.html#mask">mask</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/types.ts#L32">lib/types.ts:32</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -122,41 +125,62 @@
 						<a href="../modules.html">Modules</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="auth.html">auth</a>
+						<a href="../modules/auth.html">auth</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/card.html">card</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/errors.html">errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/event.html">event</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/index.html">index</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/integrations.html">integrations</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/link_constraints.html">link-<wbr>constraints</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/stream.html">stream</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="card.html">card</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="errors.html">errors</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="event.html">event</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="index.html">index</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="integrations.html">integrations</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="link_constraints.html">link-<wbr>constraints</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="stream.html">stream</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="types.html">types</a>
+						<a href="../modules/types.html">types</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/card.cardsdk.html" class="tsd-kind-icon">Card<wbr>Sdk</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="types.linkconstraint.html" class="tsd-kind-icon">Link<wbr>Constraint</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="card.html#ismentionedinmessage" class="tsd-kind-icon">is<wbr>Mentioned<wbr>InMessage</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="types.message.html" class="tsd-kind-icon">Message</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="types.queryoptions.html" class="tsd-kind-icon">Query<wbr>Options</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module">
+						<a href="types.sdkqueryoptions.html" class="tsd-kind-icon">Sdk<wbr>Query<wbr>Options</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="types.sdkqueryoptions.html#ignoremask" class="tsd-kind-icon">ignore<wbr>Mask</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="types.sdkqueryoptions.html#mask" class="tsd-kind-icon">mask</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/types.html#extendedsocket" class="tsd-kind-icon">Extended<wbr>Socket</a>
 					</li>
 				</ul>
 			</nav>
@@ -174,6 +198,7 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>

@@ -70,7 +70,17 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">QueryOptions</span>
+						<span class="tsd-signature-type">Omit</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">core.QueryOptions</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;connection&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;profile&quot;</span><span class="tsd-signature-symbol">&gt;</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">QueryOptions</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="types.sdkqueryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">SdkQueryOptions</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -81,10 +91,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.queryoptions.html#limit" class="tsd-kind-icon">limit</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.queryoptions.html#links" class="tsd-kind-icon">links</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.queryoptions.html#skip" class="tsd-kind-icon">skip</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.queryoptions.html#sortby" class="tsd-kind-icon">sort<wbr>By</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.queryoptions.html#mask" class="tsd-kind-icon">mask</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,42 +100,12 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="limit" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> limit</h3>
-					<div class="tsd-signature tsd-kind-icon">limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="mask" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> mask</h3>
+					<div class="tsd-signature tsd-kind-icon">mask<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">JSONSchema</span></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/types.ts#L32">lib/types.ts:32</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="links" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> links</h3>
-					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Omit</span><span class="tsd-signature-symbol">&lt;</span><a href="types.queryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">QueryOptions</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;links&quot;</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/types.ts#L34">lib/types.ts:34</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="skip" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> skip</h3>
-					<div class="tsd-signature tsd-kind-icon">skip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/types.ts#L31">lib/types.ts:31</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="sortby" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> sort<wbr>By</h3>
-					<div class="tsd-signature tsd-kind-icon">sort<wbr>By<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/types.ts#L33">lib/types.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -138,16 +115,13 @@
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class=" ">
-						<a href="../modules.html">Exports</a>
+						<a href="../modules.html">Modules</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/auth.html">auth</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/card.html">card</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/card_spec.html">card.spec</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/errors.html">errors</a>
@@ -159,16 +133,10 @@
 						<a href="../modules/index.html">index</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/index_spec.html">index.spec</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/integrations.html">integrations</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/link_constraints.html">link-<wbr>constraints</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/link_constraints_spec.html">link-<wbr>constraints.spec</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/stream.html">stream</a>
@@ -192,21 +160,15 @@
 						<a href="types.queryoptions.html" class="tsd-kind-icon">Query<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="types.queryoptions.html#limit" class="tsd-kind-icon">limit</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="types.queryoptions.html#links" class="tsd-kind-icon">links</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="types.queryoptions.html#skip" class="tsd-kind-icon">skip</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="types.queryoptions.html#sortby" class="tsd-kind-icon">sort<wbr>By</a>
+								<a href="types.queryoptions.html#mask" class="tsd-kind-icon">mask</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="types.sdkqueryoptions.html" class="tsd-kind-icon">Sdk<wbr>Query<wbr>Options</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="../modules/types.html#extendedsocket" class="tsd-kind-icon">Extended<wbr>Socket</a>
 					</li>
