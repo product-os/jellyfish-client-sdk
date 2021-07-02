@@ -56,7 +56,7 @@
   },
   "devDependencies": {
     "@balena/jellycheck": "^0.1.1",
-    "@balena/jellyfish-types": "^0.8.1",
+    "@balena/jellyfish-types": "^0.8.2",
     "@balena/lint": "^6.1.1",
     "@types/bluebird": "^3.5.35",
     "@types/common-tags": "^1.8.0",
