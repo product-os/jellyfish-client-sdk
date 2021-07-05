@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.2.10 - 2021-07-05
+
+* patch: Update dependency @balena/jellyfish-types to ^0.8.5 [Renovate Bot]
+
 ## 5.2.9 - 2021-07-04
 
 * patch: Update dependency nock to ^13.1.1 [Renovate Bot]
