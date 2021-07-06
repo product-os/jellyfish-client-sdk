@@ -1,4 +1,15 @@
 - commits:
+    - subject: Notification can be attached to any card
+      hash: fd368388817d4d4fa79be2f5db18a31b0164e084
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Kakhaber
+      nested: []
+  version: 5.3.0
+  date: 2021-07-06T16:18:41.696Z
+- commits:
     - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.8.5'
       hash: efca3a3a7cd55301d3424948d2710b78c056c398
       body: ''

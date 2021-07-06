@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.3.0 - 2021-07-06
+
+* Notification can be attached to any card [Kakhaber]
+
 ## 5.2.10 - 2021-07-05
 
 * patch: Update dependency @balena/jellyfish-types to ^0.8.5 [Renovate Bot]
