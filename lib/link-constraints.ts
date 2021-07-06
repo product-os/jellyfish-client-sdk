@@ -1262,6 +1262,26 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-constraint-notification-is-attached-to-any',
+		name: 'is attached to',
+		data: {
+			title: 'Target',
+			from: 'notification',
+			to: '*',
+			inverse: 'link-constraint-any-has-attached-notification',
+		},
+	},
+	{
+		slug: 'link-constraint-any-has-attached-notification',
+		name: 'has attached',
+		data: {
+			title: 'Notification',
+			from: '*',
+			to: 'notification',
+			inverse: 'link-constraint-notification-is-attached-to-any',
+		},
+	},
+	{
 		slug: 'link-constraint-notification-is-read-by-user',
 		name: 'is read by',
 		data: {
@@ -1536,7 +1556,7 @@ export const getReverseConstraint = (
 	toType: string,
 	name: core.Contract['name'],
 ): LinkConstraint | undefined => {
-	const result = find(exports.constraints, (constraint) => {
+	const result = find(constraints, (constraint) => {
 		return (
 			constraint.name === name &&
 			(constraint.data.from === '*' ||
