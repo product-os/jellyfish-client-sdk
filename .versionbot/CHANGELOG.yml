@@ -1,4 +1,17 @@
 - commits:
+    - subject: Use config from jellyfish-config
+      hash: 081dafa2d95e8117554aedbb0224f73c7c6d0087
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 5.3.3
+  date: 2021-07-14T07:35:43.755Z
+- commits:
     - subject: 'patch: Update external-non-major'
       hash: c28237419f2d28df040d9ba24dcb75e731838b9b
       body: ''

@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.3.3 - 2021-07-14
+
+* Use config from jellyfish-config [Graham McCulloch]
+
 ## 5.3.2 - 2021-07-10
 
 * patch: Update external-non-major [Renovate Bot]
