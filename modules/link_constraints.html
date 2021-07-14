@@ -39,6 +39,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -71,13 +73,13 @@
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="link_constraints.html#constraints" class="tsd-kind-icon">constraints</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="link_constraints.html#supportslink" class="tsd-kind-icon">supports<wbr>Link</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="link_constraints.html#supportsLink" class="tsd-kind-icon">supports<wbr>Link</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="link_constraints.html#getreverseconstraint" class="tsd-kind-icon">get<wbr>Reverse<wbr>Constraint</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="link_constraints.html#getReverseConstraint" class="tsd-kind-icon">get<wbr>Reverse<wbr>Constraint</a></li>
 							</ul>
 						</section>
 					</div>
@@ -88,20 +90,20 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="constraints" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> constraints</h3>
-					<div class="tsd-signature tsd-kind-icon">constraints<span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.linkconstraint.html" class="tsd-signature-type" data-tsd-kind="Interface">LinkConstraint</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<div class="tsd-signature tsd-kind-icon">constraints<span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.LinkConstraint.html" class="tsd-signature-type" data-tsd-kind="Interface">LinkConstraint</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/link-constraints.ts#L32">lib/link-constraints.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/dcf96a3/lib/link-constraints.ts#L32">lib/link-constraints.ts:32</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
-					<a name="supportslink" class="tsd-anchor"></a>
+					<a name="supportsLink" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> supports<wbr>Link</h3>
 					<div class="tsd-signature tsd-kind-icon">supports<wbr>Link<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>cardType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, linkName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">MemoizedFunction</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/link-constraints.ts#L11">lib/link-constraints.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/dcf96a3/lib/link-constraints.ts#L11">lib/link-constraints.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -109,16 +111,16 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="getreverseconstraint" class="tsd-anchor"></a>
+					<a name="getReverseConstraint" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Reverse<wbr>Constraint</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Reverse<wbr>Constraint<span class="tsd-signature-symbol">(</span>fromType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, toType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/types.linkconstraint.html" class="tsd-signature-type" data-tsd-kind="Interface">LinkConstraint</a></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Reverse<wbr>Constraint<span class="tsd-signature-symbol">(</span>fromType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, toType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/types.LinkConstraint.html" class="tsd-signature-type" data-tsd-kind="Interface">LinkConstraint</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/link-constraints.ts#L1554">lib/link-constraints.ts:1554</a></li>
+									<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/dcf96a3/lib/link-constraints.ts#L1554">lib/link-constraints.ts:1554</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -147,7 +149,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/types.linkconstraint.html" class="tsd-signature-type" data-tsd-kind="Interface">LinkConstraint</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/types.LinkConstraint.html" class="tsd-signature-type" data-tsd-kind="Interface">LinkConstraint</a></h4>
 							<ul>
 								<li>the reverse link if found; otherwise undefined</li>
 							</ul>
@@ -197,10 +199,10 @@
 						<a href="link_constraints.html#constraints" class="tsd-kind-icon">constraints</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="link_constraints.html#supportslink" class="tsd-kind-icon">supports<wbr>Link</a>
+						<a href="link_constraints.html#supportsLink" class="tsd-kind-icon">supports<wbr>Link</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="link_constraints.html#getreverseconstraint" class="tsd-kind-icon">get<wbr>Reverse<wbr>Constraint</a>
+						<a href="link_constraints.html#getReverseConstraint" class="tsd-kind-icon">get<wbr>Reverse<wbr>Constraint</a>
 					</li>
 				</ul>
 			</nav>

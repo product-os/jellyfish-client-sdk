@@ -39,6 +39,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -56,7 +58,7 @@
 					<a href="../modules/stream.html">stream</a>
 				</li>
 				<li>
-					<a href="stream.jellyfishstreammanager.html">JellyfishStreamManager</a>
+					<a href="stream.JellyfishStreamManager.html">JellyfishStreamManager</a>
 				</li>
 			</ul>
 			<h1>Class JellyfishStreamManager</h1>
@@ -91,14 +93,20 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="stream.jellyfishstreammanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="stream.JellyfishStreamManager.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="stream.JellyfishStreamManager.html#activeSockets" class="tsd-kind-icon">active<wbr>Sockets</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="stream.jellyfishstreammanager.html#close" class="tsd-kind-icon">close</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="stream.jellyfishstreammanager.html#stream" class="tsd-kind-icon">stream</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="stream.JellyfishStreamManager.html#close" class="tsd-kind-icon">close</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="stream.JellyfishStreamManager.html#stream" class="tsd-kind-icon">stream</a></li>
 							</ul>
 						</section>
 					</div>
@@ -110,13 +118,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Jellyfish<wbr>Stream<wbr>Manager<span class="tsd-signature-symbol">(</span>sdk<span class="tsd-signature-symbol">: </span><a href="index.jellyfishsdk.html" class="tsd-signature-type" data-tsd-kind="Class">JellyfishSDK</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="stream.jellyfishstreammanager.html" class="tsd-signature-type" data-tsd-kind="Class">JellyfishStreamManager</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Jellyfish<wbr>Stream<wbr>Manager<span class="tsd-signature-symbol">(</span>sdk<span class="tsd-signature-symbol">: </span><a href="index.JellyfishSDK.html" class="tsd-signature-type" data-tsd-kind="Class">JellyfishSDK</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="stream.JellyfishStreamManager.html" class="tsd-signature-type" data-tsd-kind="Class">JellyfishStreamManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/stream.ts#L23">lib/stream.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/dcf96a3/lib/stream.ts#L31">lib/stream.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -129,15 +137,38 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>sdk: <a href="index.jellyfishsdk.html" class="tsd-signature-type" data-tsd-kind="Class">JellyfishSDK</a></h5>
+									<h5>sdk: <a href="index.JellyfishSDK.html" class="tsd-signature-type" data-tsd-kind="Class">JellyfishSDK</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>An instantiated instance of JellyfishSDK</p>
+										<div class="lead">
+											<p>An instantiated instance of JellyfishSDK</p>
+										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="stream.jellyfishstreammanager.html" class="tsd-signature-type" data-tsd-kind="Class">JellyfishStreamManager</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="stream.JellyfishStreamManager.html" class="tsd-signature-type" data-tsd-kind="Class">JellyfishStreamManager</a></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="activeSockets" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> active<wbr>Sockets</h3>
+					<div class="tsd-signature tsd-kind-icon">active<wbr>Sockets<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/dcf96a3/lib/stream.ts#L23">lib/stream.ts:23</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">SocketIOClient.Socket</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -152,7 +183,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/stream.ts#L158">lib/stream.ts:158</a></li>
+									<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/dcf96a3/lib/stream.ts#L158">lib/stream.ts:158</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -178,13 +209,13 @@
 					<a name="stream" class="tsd-anchor"></a>
 					<h3>stream</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">stream<span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">JSONSchema</span>, options<span class="tsd-signature-symbol">: </span><a href="../interfaces/types.sdkqueryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">SdkQueryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/types.html#extendedsocket" class="tsd-signature-type" data-tsd-kind="Type alias">ExtendedSocket</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">stream<span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">JSONSchema</span>, options<span class="tsd-signature-symbol">: </span><a href="../interfaces/types.SdkQueryOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">SdkQueryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/types.html#ExtendedSocket" class="tsd-signature-type" data-tsd-kind="Type alias">ExtendedSocket</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/stream.ts#L68">lib/stream.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/dcf96a3/lib/stream.ts#L68">lib/stream.ts:68</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -229,13 +260,13 @@
 									</div>
 								</li>
 								<li>
-									<h5>options: <a href="../interfaces/types.sdkqueryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">SdkQueryOptions</a></h5>
+									<h5>options: <a href="../interfaces/types.SdkQueryOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">SdkQueryOptions</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Extra query options to use</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/types.html#extendedsocket" class="tsd-signature-type" data-tsd-kind="Type alias">ExtendedSocket</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/types.html#ExtendedSocket" class="tsd-signature-type" data-tsd-kind="Type alias">ExtendedSocket</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -281,16 +312,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="stream.jellyfishstreammanager.html" class="tsd-kind-icon">Jellyfish<wbr>Stream<wbr>Manager</a>
+						<a href="stream.JellyfishStreamManager.html" class="tsd-kind-icon">Jellyfish<wbr>Stream<wbr>Manager</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="stream.jellyfishstreammanager.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="stream.JellyfishStreamManager.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="stream.JellyfishStreamManager.html#activeSockets" class="tsd-kind-icon">active<wbr>Sockets</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="stream.jellyfishstreammanager.html#close" class="tsd-kind-icon">close</a>
+								<a href="stream.JellyfishStreamManager.html#close" class="tsd-kind-icon">close</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="stream.jellyfishstreammanager.html#stream" class="tsd-kind-icon">stream</a>
+								<a href="stream.JellyfishStreamManager.html#stream" class="tsd-kind-icon">stream</a>
 							</li>
 						</ul>
 					</li>
@@ -317,6 +351,9 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 			</ul>
 		</div>
 	</div>

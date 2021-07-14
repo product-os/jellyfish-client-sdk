@@ -39,6 +39,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -56,7 +58,7 @@
 					<a href="../modules/types.html">types</a>
 				</li>
 				<li>
-					<a href="types.queryoptions.html">QueryOptions</a>
+					<a href="types.QueryOptions.html">QueryOptions</a>
 				</li>
 			</ul>
 			<h1>Interface QueryOptions</h1>
@@ -76,7 +78,7 @@
 								<span class="target">QueryOptions</span>
 								<ul class="tsd-hierarchy">
 									<li>
-										<a href="types.sdkqueryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">SdkQueryOptions</a>
+										<a href="types.SdkQueryOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">SdkQueryOptions</a>
 									</li>
 								</ul>
 							</li>
@@ -91,7 +93,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.queryoptions.html#mask" class="tsd-kind-icon">mask</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="types.QueryOptions.html#limit" class="tsd-kind-icon">limit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="types.QueryOptions.html#links" class="tsd-kind-icon">links</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.QueryOptions.html#mask" class="tsd-kind-icon">mask</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="types.QueryOptions.html#skip" class="tsd-kind-icon">skip</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="types.QueryOptions.html#sortBy" class="tsd-kind-icon">sort<wbr>By</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="types.QueryOptions.html#sortDir" class="tsd-kind-icon">sort<wbr>Dir</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,13 +106,68 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="limit" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> limit</h3>
+					<div class="tsd-signature tsd-kind-icon">limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from Omit.limit</p>
+						<ul>
+							<li>Defined in node_modules/@balena/jellyfish-types/build/core/backend.d.ts:21</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="links" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> links</h3>
+					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">LinksMap</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from Omit.links</p>
+						<ul>
+							<li>Defined in node_modules/@balena/jellyfish-types/build/core/backend.d.ts:26</li>
+						</ul>
+					</aside>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="mask" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> mask</h3>
 					<div class="tsd-signature tsd-kind-icon">mask<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">JSONSchema</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/master/lib/types.ts#L32">lib/types.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/product-os/jellyfish-client-sdk/blob/dcf96a3/lib/types.ts#L32">lib/types.ts:32</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="skip" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> skip</h3>
+					<div class="tsd-signature tsd-kind-icon">skip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from Omit.skip</p>
+						<ul>
+							<li>Defined in node_modules/@balena/jellyfish-types/build/core/backend.d.ts:22</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="sortBy" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> sort<wbr>By</h3>
+					<div class="tsd-signature tsd-kind-icon">sort<wbr>By<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from Omit.sortBy</p>
+						<ul>
+							<li>Defined in node_modules/@balena/jellyfish-types/build/core/backend.d.ts:23</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="sortDir" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> sort<wbr>Dir</h3>
+					<div class="tsd-signature tsd-kind-icon">sort<wbr>Dir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;asc&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;desc&quot;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from Omit.sortDir</p>
+						<ul>
+							<li>Defined in node_modules/@balena/jellyfish-types/build/core/backend.d.ts:24</li>
 						</ul>
 					</aside>
 				</section>
@@ -149,28 +211,43 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="types.linkconstraint.html" class="tsd-kind-icon">Link<wbr>Constraint</a>
+						<a href="types.LinkConstraint.html" class="tsd-kind-icon">Link<wbr>Constraint</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="types.message.html" class="tsd-kind-icon">Message</a>
+						<a href="types.Message.html" class="tsd-kind-icon">Message</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="types.queryoptions.html" class="tsd-kind-icon">Query<wbr>Options</a>
+						<a href="types.QueryOptions.html" class="tsd-kind-icon">Query<wbr>Options</a>
 						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="types.QueryOptions.html#limit" class="tsd-kind-icon">limit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="types.QueryOptions.html#links" class="tsd-kind-icon">links</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="types.queryoptions.html#mask" class="tsd-kind-icon">mask</a>
+								<a href="types.QueryOptions.html#mask" class="tsd-kind-icon">mask</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="types.QueryOptions.html#skip" class="tsd-kind-icon">skip</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="types.QueryOptions.html#sortBy" class="tsd-kind-icon">sort<wbr>By</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="types.QueryOptions.html#sortDir" class="tsd-kind-icon">sort<wbr>Dir</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="types.sdkqueryoptions.html" class="tsd-kind-icon">Sdk<wbr>Query<wbr>Options</a>
+						<a href="types.SdkQueryOptions.html" class="tsd-kind-icon">Sdk<wbr>Query<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/types.html#extendedsocket" class="tsd-kind-icon">Extended<wbr>Socket</a>
+						<a href="../modules/types.html#ExtendedSocket" class="tsd-kind-icon">Extended<wbr>Socket</a>
 					</li>
 				</ul>
 			</nav>
