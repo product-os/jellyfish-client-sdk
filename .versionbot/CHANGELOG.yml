@@ -1,4 +1,17 @@
 - commits:
+    - subject: downgrade to es2016 to make it work in browser environments
+      hash: ea0b2e63930bb39f06e16377fbf8bd0de792fe56
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Martin Rauscher <martin@balena.io>
+        signed-off-by: Martin Rauscher <martin@balena.io>
+      author: Martin Rauscher
+      nested: []
+  version: 5.3.4
+  date: 2021-07-15T15:44:56.936Z
+- commits:
     - subject: Use config from jellyfish-config
       hash: 081dafa2d95e8117554aedbb0224f73c7c6d0087
       body: ''

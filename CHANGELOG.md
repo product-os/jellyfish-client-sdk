@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.3.4 - 2021-07-15
+
+* downgrade to es2016 to make it work in browser environments [Martin Rauscher]
+
 ## 5.3.3 - 2021-07-14
 
 * Use config from jellyfish-config [Graham McCulloch]
