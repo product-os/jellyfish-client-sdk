@@ -1,3 +1,6 @@
 {
-  "extends": "@balena/jellyfish-config/config/tsconfig.json"
+	"extends": "@balena/jellyfish-config/config/tsconfig.json",
+	"compilerOptions": {
+		"target": "es2016"
+	}
 }
