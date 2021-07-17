@@ -1,4 +1,17 @@
 - commits:
+    - subject: Remove whitesource config
+      hash: 0079f090867ef9c4b083a8290bf04e4b7956b6a6
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 5.3.5
+  date: 2021-07-17T00:10:41.873Z
+- commits:
     - subject: downgrade to es2016 to make it work in browser environments
       hash: ea0b2e63930bb39f06e16377fbf8bd0de792fe56
       body: ''

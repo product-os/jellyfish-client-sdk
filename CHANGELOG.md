@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.3.5 - 2021-07-17
+
+* Remove whitesource config [Josh Bowling]
+
 ## 5.3.4 - 2021-07-15
 
 * downgrade to es2016 to make it work in browser environments [Martin Rauscher]
