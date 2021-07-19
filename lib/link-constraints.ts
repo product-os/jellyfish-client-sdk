@@ -28,7 +28,8 @@ export const supportsLink = memoize(
 	},
 );
 
-// TODO Use 'LINK_CONSTRAINTS' on type cards instead of hardcoding lere
+// TODO replace with JIP: Link constraints https://github.com/product-os/product-os/issues/201
+// NOTE this is also used here https://github.com/product-os/jellyfish-jellyscript/blob/master/lib/link-traversal.ts#L31
 export const constraints: LinkConstraint[] = [
 	{
 		slug: 'link-constraint-org-has-member',
@@ -1539,6 +1540,46 @@ export const constraints: LinkConstraint[] = [
 			from: 'oauth-client',
 			to: 'oauth-provider',
 			inverse: 'link-constraint-oauth-provider-has-attached-oauth-client',
+		},
+	},
+	{
+		slug: 'link-constraint-commit-is-attached-to-pr-pull-request',
+		name: 'is attached to PR',
+		data: {
+			title: 'Pull Request',
+			from: 'commit',
+			to: 'pull-request',
+			inverse: 'link-constraint-pull-request-has-attached-commit-commit',
+		},
+	},
+	{
+		slug: 'link-constraint-pull-request-has-attached-commit-commit',
+		name: 'has attached commit',
+		data: {
+			title: 'Commit',
+			from: 'pull-request',
+			to: 'commit',
+			inverse: 'link-constraint-commit-is-attached-to-pr-pull-request',
+		},
+	},
+	{
+		slug: 'link-constraint-commit-has-attached-check-run-check-run',
+		name: 'has attached check run',
+		data: {
+			title: 'Check Run',
+			from: 'commit',
+			to: 'check-run',
+			inverse: 'link-constraint-check-run-is-attached-to-commit-commit',
+		},
+	},
+	{
+		slug: 'link-constraint-check-run-is-attached-to-commit-commit',
+		name: 'is attached to commit',
+		data: {
+			title: 'Commit',
+			from: 'check-run',
+			to: 'commit',
+			inverse: 'link-constraint-commit-has-attached-check-run-check-run',
 		},
 	},
 ];
