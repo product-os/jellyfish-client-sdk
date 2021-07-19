@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'add link constraints for pull-request, check-run and commit'
+      hash: cccf7ee82b8f134736141f875060ff7d8d3ccc18
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Martin Rauscher <martin@balena.io>
+        signed-off-by: Martin Rauscher <martin@balena.io>
+      author: Martin Rauscher
+      nested: []
+  version: 5.4.0
+  date: 2021-07-19T10:20:50.684Z
+- commits:
     - subject: Remove whitesource config
       hash: 0079f090867ef9c4b083a8290bf04e4b7956b6a6
       body: ''
