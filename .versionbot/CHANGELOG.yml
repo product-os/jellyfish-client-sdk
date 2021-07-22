@@ -1,4 +1,19 @@
 - commits:
+    - subject: Remove link constraints relating to support contribution score
+      hash: e0467542779dc71bb000a523fa20e9b967b76b5d
+      body: >
+        This type has been removed so the link constraints are no longer
+        relevant.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 5.4.1
+  date: 2021-07-22T14:19:42.211Z
+- commits:
     - subject: 'add link constraints for pull-request, check-run and commit'
       hash: cccf7ee82b8f134736141f875060ff7d8d3ccc18
       body: ''

@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.4.1 - 2021-07-22
+
+* Remove link constraints relating to support contribution score [Graham McCulloch]
+
 ## 5.4.0 - 2021-07-19
 
 * add link constraints for pull-request, check-run and commit [Martin Rauscher]
