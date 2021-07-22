@@ -82,26 +82,6 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-support-contribution-score-is-for-user',
-		name: 'is for',
-		data: {
-			title: 'Support agent',
-			from: 'support-contribution-score',
-			to: 'user',
-			inverse: 'link-constraint-user-has-support-contribution-score',
-		},
-	},
-	{
-		slug: 'link-constraint-user-has-support-contribution-score',
-		name: 'has',
-		data: {
-			title: 'Contribution score',
-			from: 'user',
-			to: 'support-contribution-score',
-			inverse: 'link-constraint-support-contribution-score-is-for-user',
-		},
-	},
-	{
 		slug: 'link-constraint-support-thread-is-owned-by',
 		name: 'is owned by',
 		data: {
