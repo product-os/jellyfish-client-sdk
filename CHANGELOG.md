@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.4.3 - 2021-08-04
+
+* use balena convention for npm script names [Martin Rauscher]
+
 ## 5.4.2 - 2021-08-03
 
 * patch: Update dependency socket.io-client to v4 [Renovate Bot]
