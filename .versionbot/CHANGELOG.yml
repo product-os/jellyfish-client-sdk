@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency socket.io-client to v4'
+      hash: 58bb334190f2e09667edec0ada48cb91a3b88957
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 5.4.2
+  date: 2021-08-03T00:24:41.647Z
+- commits:
     - subject: Remove link constraints relating to support contribution score
       hash: e0467542779dc71bb000a523fa20e9b967b76b5d
       body: >

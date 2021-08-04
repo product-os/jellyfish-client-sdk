@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.4.2 - 2021-08-03
+
+* patch: Update dependency socket.io-client to v4 [Renovate Bot]
+
 ## 5.4.1 - 2021-07-22
 
 * Remove link constraints relating to support contribution score [Graham McCulloch]
