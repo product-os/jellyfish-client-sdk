@@ -32,6 +32,26 @@ export const supportsLink = memoize(
 // NOTE this is also used here https://github.com/product-os/jellyfish-jellyscript/blob/master/lib/link-traversal.ts#L31
 export const constraints: LinkConstraint[] = [
 	{
+		slug: 'link-constraint-any-is-bookmarked-by-user',
+		name: 'is bookmarked by',
+		data: {
+			title: 'Bookmarked by user',
+			from: '*',
+			to: 'user',
+			inverse: 'link-constraint-user-bookmarked-any',
+		},
+	},
+	{
+		slug: 'link-constraint-user-bookmarked-any',
+		name: 'bookmarked',
+		data: {
+			title: 'Bookmarked contract',
+			from: 'user',
+			to: '*',
+			inverse: 'link-constraint-any-is-bookmarked-by-user',
+		},
+	},
+	{
 		slug: 'link-constraint-org-has-member',
 		name: 'has member',
 		data: {
