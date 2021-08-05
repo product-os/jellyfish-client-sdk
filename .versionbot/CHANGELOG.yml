@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add bookmark link constraints
+      hash: 9effe005981db7571681d7c9e40f66bc03877558
+      body: |
+        These will be used instead of starredViews on a user's profile.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Graham McCulloch <graham@balena.io>
+        signed-off-by: Graham McCulloch <graham@balena.io>
+      author: Graham McCulloch
+      nested: []
+  version: 5.5.0
+  date: 2021-08-05T06:41:12.930Z
+- commits:
     - subject: use balena convention for npm script names
       hash: f6f61f8595ae7fabc86b236825b9d61b862a8851
       body: |

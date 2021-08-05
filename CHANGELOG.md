@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.5.0 - 2021-08-05
+
+* Add bookmark link constraints [Graham McCulloch]
+
 ## 5.4.3 - 2021-08-04
 
 * use balena convention for npm script names [Martin Rauscher]
