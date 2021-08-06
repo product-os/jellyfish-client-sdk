@@ -1463,6 +1463,26 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-constraint-any-wasmergedinto-any',
+		name: 'was merged as',
+		data: {
+			title: 'Any',
+			from: '*',
+			to: '*',
+			inverse: 'link-constraint-any-wasmergedfrom-any',
+		},
+	},
+	{
+		slug: 'link-constraint-any-wasmergedfrom-any',
+		name: 'was merged from',
+		data: {
+			title: 'Any',
+			from: '*',
+			to: '*',
+			inverse: 'link-constraint-any-wasmergedinto-any',
+		},
+	},
+	{
 		slug: 'link-constraint-task-generated-any',
 		name: 'generated',
 		data: {
