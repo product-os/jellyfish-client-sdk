@@ -1,4 +1,17 @@
 - commits:
+    - subject: add "merged" links
+      hash: da36a7ec9ace18298a63738d169af2190ebfe8c9
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Martin Rauscher <martin@balena.io>
+        signed-off-by: Martin Rauscher <martin@balena.io>
+      author: Martin Rauscher
+      nested: []
+  version: 5.5.1
+  date: 2021-08-06T16:20:40.227Z
+- commits:
     - subject: Add bookmark link constraints
       hash: 9effe005981db7571681d7c9e40f66bc03877558
       body: |

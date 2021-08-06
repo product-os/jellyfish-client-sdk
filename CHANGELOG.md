@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.5.1 - 2021-08-06
+
+* add "merged" links [Martin Rauscher]
+
 ## 5.5.0 - 2021-08-05
 
 * Add bookmark link constraints [Graham McCulloch]
