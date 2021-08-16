@@ -1506,7 +1506,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-contract-repository-contains-any',
 		name: 'contains',
 		data: {
-			title: 'Contract Repository',
+			title: 'Contained Contracts',
 			from: 'contract-repository',
 			to: '*',
 			inverse: 'link-constraint-any-iscontainedin-contract-repository',
@@ -1516,7 +1516,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-any-iscontainedin-contract-repository',
 		name: 'is contained in',
 		data: {
-			title: 'Any',
+			title: 'Is contained in Contract Repository',
 			from: '*',
 			to: 'contract-repository',
 			inverse: 'link-constraint-contract-repository-contains-any',
