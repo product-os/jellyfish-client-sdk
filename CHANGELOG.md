@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 5.5.2 - 2021-08-16
+
+* improve contract repo link names [Martin Rauscher]
+
 ## 5.5.1 - 2021-08-06
 
 * add "merged" links [Martin Rauscher]

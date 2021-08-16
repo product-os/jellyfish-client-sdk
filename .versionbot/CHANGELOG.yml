@@ -1,4 +1,17 @@
 - commits:
+    - subject: improve contract repo link names
+      hash: 5c30113feb2dc5f4202456042df2b01795a81f33
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Martin Rauscher <martin@balena.io>
+        signed-off-by: Martin Rauscher <martin@balena.io>
+      author: Martin Rauscher
+      nested: []
+  version: 5.5.2
+  date: 2021-08-16T14:53:50.194Z
+- commits:
     - subject: add "merged" links
       hash: da36a7ec9ace18298a63738d169af2190ebfe8c9
       body: ''
