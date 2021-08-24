@@ -122,16 +122,6 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-support-thread-is-attached-to-support-issue',
-		name: 'support thread is attached to support issue',
-		data: {
-			title: 'Support issue',
-			from: 'support-thread',
-			to: 'support-issue',
-			inverse: 'link-constraint-support-issue-has-attached-support-thread',
-		},
-	},
-	{
 		slug: 'link-constraint-support-thread-is-attached-to-issue',
 		name: 'support thread is attached to issue',
 		data: {
@@ -149,16 +139,6 @@ export const constraints: LinkConstraint[] = [
 			from: 'support-thread',
 			to: 'pull-request',
 			inverse: 'link-constraint-pull-request-has-attached-support-thread',
-		},
-	},
-	{
-		slug: 'link-constraint-support-issue-has-attached-support-thread',
-		name: 'support issue has attached support thread',
-		data: {
-			title: 'Support thread',
-			from: 'support-issue',
-			to: 'support-thread',
-			inverse: 'link-constraint-support-thread-is-attached-to-support-issue',
 		},
 	},
 	{
@@ -372,16 +352,6 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-support-issue-is-attached-to-issue',
-		name: 'support issue is attached to issue',
-		data: {
-			title: 'GitHub issue',
-			from: 'support-issue',
-			to: 'issue',
-			inverse: 'link-constraint-issue-has-attached-support-issue',
-		},
-	},
-	{
 		slug: 'link-constraint-issue-has-attached-support-thread',
 		name: 'issue has attached support thread',
 		data: {
@@ -399,16 +369,6 @@ export const constraints: LinkConstraint[] = [
 			from: 'pull-request',
 			to: 'support-thread',
 			inverse: 'link-constraint-support-thread-is-attached-to-pull-request',
-		},
-	},
-	{
-		slug: 'link-constraint-issue-has-attached-support-issue',
-		name: 'issue has attached support issue',
-		data: {
-			title: 'Support issue',
-			from: 'issue',
-			to: 'support-issue',
-			inverse: 'link-constraint-support-issue-is-attached-to-issue',
 		},
 	},
 	{
