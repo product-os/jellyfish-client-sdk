@@ -1,4 +1,17 @@
 - commits:
+    - subject: Remove support-issue contract references
+      hash: 26680ba81ccca59590087802d032c88053fe4105
+      body: ''
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 6.0.0
+  date: 2021-08-24T07:58:06.467Z
+- commits:
     - subject: improve contract repo link names
       hash: 5c30113feb2dc5f4202456042df2b01795a81f33
       body: ''

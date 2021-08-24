@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 6.0.0 - 2021-08-24
+
+* Remove support-issue contract references [Josh Bowling]
+
 ## 5.5.2 - 2021-08-16
 
 * improve contract repo link names [Martin Rauscher]
