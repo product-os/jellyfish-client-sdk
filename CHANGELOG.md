@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 6.0.1 - 2021-10-04
+
+* 🔄 Synced file(s) with product-os/jellyfish-config [joshbwlng]
+
 ## 6.0.0 - 2021-08-24
 
 * Remove support-issue contract references [Josh Bowling]

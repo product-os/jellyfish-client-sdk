@@ -1,4 +1,15 @@
 - commits:
+    - subject: "\U0001F504 Synced file(s) with product-os/jellyfish-config"
+      hash: 20f56c0bd0ffcd947391049717b4c2597fa4b880
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: joshbwlng
+      nested: []
+  version: 6.0.1
+  date: 2021-10-04T05:12:40.531Z
+- commits:
     - subject: Remove support-issue contract references
       hash: 26680ba81ccca59590087802d032c88053fe4105
       body: ''
