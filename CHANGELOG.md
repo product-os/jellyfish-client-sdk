@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 6.0.2 - 2021-10-28
+
+* Update README.md [Martin Rauscher]
+
 ## 6.0.1 - 2021-10-04
 
 * 🔄 Synced file(s) with product-os/jellyfish-config [joshbwlng]

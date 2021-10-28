@@ -1,4 +1,15 @@
 - commits:
+    - subject: Update README.md
+      hash: ef50dbf3506c807520066372ff36b8b114f72e7a
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Martin Rauscher
+      nested: []
+  version: 6.0.2
+  date: 2021-10-28T08:38:17.585Z
+- commits:
     - subject: "\U0001F504 Synced file(s) with product-os/jellyfish-config"
       hash: 20f56c0bd0ffcd947391049717b4c2597fa4b880
       body: ''
