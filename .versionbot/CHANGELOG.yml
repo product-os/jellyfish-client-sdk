@@ -1,4 +1,21 @@
 - commits:
+    - subject: Don't refresh token when logging in with a token
+      hash: 7cdb2d7e212a7d17b4d4dc998bb20b6aab3ec5ed
+      body: |
+        Previously, whenever `loginWithToken` was called, it would automatically
+        refresh the token. This is quite resource intensive and has now been
+        changed to the more lightweight approach of simply checking the current
+        tokens expiration date.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 6.0.3
+  date: 2021-10-29T14:07:27.259Z
+- commits:
     - subject: Update README.md
       hash: ef50dbf3506c807520066372ff36b8b114f72e7a
       body: ''

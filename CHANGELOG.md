@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 6.0.3 - 2021-10-29
+
+* Don't refresh token when logging in with a token [Lucian Buzzo]
+
 ## 6.0.2 - 2021-10-28
 
 * Update README.md [Martin Rauscher]
