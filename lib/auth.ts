@@ -34,7 +34,7 @@ export class AuthSdk {
 	 * 		console.log(user)
 	 * 	})
 	 */
-	async whoami<
+	public async whoami<
 		TContract extends core.Contract = core.Contract,
 	>(): Promise<TContract> {
 		return this.sdk.get<TContract>('/whoami').then((response) => {
@@ -70,7 +70,7 @@ export class AuthSdk {
 	 * 		console.log(id)
 	 * 	})
 	 */
-	async signup<TContract extends core.Contract = core.Contract>({
+	public async signup<TContract extends core.Contract = core.Contract>({
 		username,
 		email,
 		password,
@@ -111,16 +111,25 @@ export class AuthSdk {
 	 * 		console.log('Authenticated')
 	 * 	})
 	 */
-	async loginWithToken(token: string): Promise<string> {
+	public async loginWithToken(token: string): Promise<string> {
 		// Set the auth token
 		this.sdk.setAuthToken(token);
 
-		// Try to refresh the session token, if it fails the token is invalid and
-		// the internal token in SDK state should be set to null
+		// Check to see if the token has expired
 		try {
-			const newToken = await this.refreshToken();
+			const sessionContract = await this.sdk.card.get(token);
+			if (!sessionContract) {
+				throw new Error('Session could not be retrieved');
+			}
+			const expirationDate = new Date(
+				sessionContract.data.expiration as string,
+			);
+			const now = new Date();
+			if (expirationDate.getTime() <= now.getTime()) {
+				throw new Error('Token has expired');
+			}
 
-			return newToken;
+			return token;
 		} catch (error) {
 			this.sdk.setAuthToken(null);
 			throw new Error(`Token is invalid: ${token}`);
@@ -155,7 +164,7 @@ export class AuthSdk {
 	 * 		console.log('Authenticated', session)
 	 * 	})
 	 */
-	async login<TContract extends core.Contract = core.Contract>(options: {
+	public async login<TContract extends core.Contract = core.Contract>(options: {
 		username: string;
 		password: string;
 	}): Promise<TContract | null> {
@@ -193,7 +202,7 @@ export class AuthSdk {
 	 * 		console.log('New token', token)
 	 * 	})
 	 */
-	async refreshToken(): Promise<string> {
+	public async refreshToken(): Promise<string> {
 		return this.whoami()
 			.then((user) => {
 				const expirationDate = new Date();
@@ -228,7 +237,7 @@ export class AuthSdk {
 	 * @example
 	 * sdk.auth.logout()
 	 */
-	logout(): void {
+	public logout(): void {
 		this.sdk.clearAuthToken();
 		this.sdk.cancelAllRequests();
 		this.sdk.cancelAllStreams();
