@@ -1,6 +1,7 @@
+import type { Socket } from 'socket.io-client';
 import type { core, JSONSchema } from '@balena/jellyfish-types';
 
-export type ExtendedSocket = SocketIOClient.Socket & {
+export type ExtendedSocket = typeof Socket & {
 	type?: ((user: core.Contract, card: core.Contract) => void) | undefined;
 };
 
