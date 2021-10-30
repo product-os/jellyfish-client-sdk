@@ -65,10 +65,7 @@ export class JellyfishStreamManager {
 	 * 	console.error(error);
 	 * })
 	 */
-	async stream(
-		query: JSONSchema,
-		options: SdkQueryOptions,
-	): Promise<ExtendedSocket> {
+	stream(query: JSONSchema, options: SdkQueryOptions): ExtendedSocket {
 		const url = this.sdk.getApiUrl();
 		if (!url) {
 			throw new Error(
@@ -97,13 +94,6 @@ export class JellyfishStreamManager {
 						query: omit(query, '$id'),
 						options: applyMask(options, this.sdk.globalQueryMask),
 					},
-				});
-			});
-
-			// Wait for the API stream to become ready before proceeeding
-			await new Promise<void>((resolve) => {
-				socket.on('ready', () => {
-					resolve();
 				});
 			});
 		}
