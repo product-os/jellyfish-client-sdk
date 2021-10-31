@@ -850,10 +850,7 @@ export class JellyfishSDK {
 	 * 	console.error(error);
 	 * })
 	 */
-	stream(
-		query: JSONSchema,
-		options: SdkQueryOptions = {},
-	): Promise<ExtendedSocket> {
+	stream(query: JSONSchema, options: SdkQueryOptions = {}): ExtendedSocket {
 		return this.streamManager.stream(query, options);
 	}
 }

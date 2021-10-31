@@ -7,7 +7,7 @@
 import omit from 'lodash/omit';
 import set from 'lodash/set';
 import forEach from 'lodash/forEach';
-import io from 'socket.io-client';
+import io, { Socket } from 'socket.io-client';
 import { v4 as uuid } from 'uuid';
 import type { JSONSchema } from '@balena/jellyfish-types';
 import { JellyfishSDK, applyMask } from '.';
@@ -20,7 +20,7 @@ import type { ExtendedSocket, SdkQueryOptions } from './types';
  * connection the API
  */
 export class JellyfishStreamManager {
-	private activeSockets: { [key: string]: SocketIOClient.Socket };
+	private activeSockets: { [key: string]: Socket };
 
 	/**
 	 * @summary Create a JellyfishStreamManager
@@ -65,10 +65,7 @@ export class JellyfishStreamManager {
 	 * 	console.error(error);
 	 * })
 	 */
-	async stream(
-		query: JSONSchema,
-		options: SdkQueryOptions,
-	): Promise<ExtendedSocket> {
+	stream(query: JSONSchema, options: SdkQueryOptions): ExtendedSocket {
 		const url = this.sdk.getApiUrl();
 		if (!url) {
 			throw new Error(
@@ -97,13 +94,6 @@ export class JellyfishStreamManager {
 						query: omit(query, '$id'),
 						options: applyMask(options, this.sdk.globalQueryMask),
 					},
-				});
-			});
-
-			// Wait for the API stream to become ready before proceeeding
-			await new Promise<void>((resolve) => {
-				socket.on('ready', () => {
-					resolve();
 				});
 			});
 		}
