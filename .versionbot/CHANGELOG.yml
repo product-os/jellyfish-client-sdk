@@ -1,4 +1,15 @@
 - commits:
+    - subject: Make stream method sync
+      hash: a7562b87c1f4ea7bdcd50993f18cfe9fa6d5754d
+      body: ''
+      footer:
+        Change-type: major
+        change-type: major
+      author: karaxuna
+      nested: []
+  version: 7.0.0
+  date: 2021-10-30T20:38:37.218Z
+- commits:
     - subject: Don't refresh token when logging in with a token
       hash: 7cdb2d7e212a7d17b4d4dc998bb20b6aab3ec5ed
       body: |

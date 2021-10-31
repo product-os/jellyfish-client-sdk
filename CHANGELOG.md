@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.0 - 2021-10-30
+
+* Make stream method sync [karaxuna]
+
 ## 6.0.3 - 2021-10-29
 
 * Don't refresh token when logging in with a token [Lucian Buzzo]
