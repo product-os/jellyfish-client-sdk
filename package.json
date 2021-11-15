@@ -42,7 +42,7 @@
     "check": "jellycheck"
   },
   "author": "Balena.io. <hello@balena.io>",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "dependencies": {
     "axios": "^0.21.1",
     "bluebird": "^3.7.2",
