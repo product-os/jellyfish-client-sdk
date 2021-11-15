@@ -1,4 +1,17 @@
 - commits:
+    - subject: Bump @types/jest to v27
+      hash: f38a525730c782153e9a393ead71c1ec80cf561a
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 7.0.2
+  date: 2021-11-15T07:13:09.765Z
+- commits:
     - subject: Set license
       hash: 45bd20987afb7ab83ae7e8d676ff3bc116dea772
       body: ''

@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.2 - 2021-11-15
+
+* Bump @types/jest to v27 [Josh Bowling]
+
 ## 7.0.1 - 2021-11-15
 
 * Set license [Josh Bowling]
