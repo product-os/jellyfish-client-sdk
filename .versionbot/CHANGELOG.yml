@@ -1,4 +1,17 @@
 - commits:
+    - subject: Set license
+      hash: 45bd20987afb7ab83ae7e8d676ff3bc116dea772
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 7.0.1
+  date: 2021-11-15T03:50:11.285Z
+- commits:
     - subject: Make stream method sync
       hash: a7562b87c1f4ea7bdcd50993f18cfe9fa6d5754d
       body: ''

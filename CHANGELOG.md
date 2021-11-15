@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.1 - 2021-11-15
+
+* Set license [Josh Bowling]
+
 ## 7.0.0 - 2021-10-30
 
 * Make stream method sync [karaxuna]
