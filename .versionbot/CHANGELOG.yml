@@ -1,4 +1,15 @@
 - commits:
+    - subject: "\U0001F504 Synced file(s) with product-os/jellyfish-config"
+      hash: b450718a63376fb63825d51bffe6e3199662f54e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: joshbwlng
+      nested: []
+  version: 7.0.3
+  date: 2021-11-16T01:56:59.308Z
+- commits:
     - subject: Bump @types/jest to v27
       hash: f38a525730c782153e9a393ead71c1ec80cf561a
       body: ''
