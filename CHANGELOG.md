@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 7.0.4 - 2021-11-20
+
+* patch: Update dependency @balena/jellyfish-types to ^0.9.9 [Renovate Bot]
+* Use shared Renovate config [Josh Bowling]
+
 ## 7.0.3 - 2021-11-16
 
 * 🔄 Synced file(s) with product-os/jellyfish-config [joshbwlng]

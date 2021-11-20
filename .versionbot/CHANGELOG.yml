@@ -1,4 +1,26 @@
 - commits:
+    - subject: 'patch: Update dependency @balena/jellyfish-types to ^0.9.9'
+      hash: dc49d0570060478c30441152ea37792111263958
+      body: |
+        Update @balena/jellyfish-types from 0.8.6 to 0.9.9
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+    - subject: Use shared Renovate config
+      hash: 92cff2821fdf130fc196a02e1d0c6a3cbbe3cd0e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 7.0.4
+  date: 2021-11-20T05:59:43.734Z
+- commits:
     - subject: "\U0001F504 Synced file(s) with product-os/jellyfish-config"
       hash: b450718a63376fb63825d51bffe6e3199662f54e
       body: ''
