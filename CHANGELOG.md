@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 7.0.6 - 2021-11-20
+
+* patch: Update dependency @balena/jellyfish-types to v1 [Renovate Bot]
+* patch: Update external-major [Renovate Bot]
+
 ## 7.0.5 - 2021-11-20
 
 * patch: Update dependency @balena/jellyfish-config to ^1.5.10 [Renovate Bot]
