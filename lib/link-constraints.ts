@@ -1,8 +1,3 @@
-/*
- * Copyright (C) Balena.io - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited.
- * Proprietary and confidential.
- */
 import memoize from 'lodash/memoize';
 import find from 'lodash/find';
 import type { core } from '@balena/jellyfish-types';
