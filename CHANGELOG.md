@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.8 - 2021-11-21
+
+* Remove license headers [Josh Bowling]
+
 ## 7.0.7 - 2021-11-21
 
 * patch: Update dependency @balena/jellycheck to v1 [Renovate Bot]
