@@ -1,4 +1,17 @@
 - commits:
+    - subject: Bump axios to v0.24.0
+      hash: ea7250591ce3186bcc8e664d5c27904b4a319b96
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 7.0.10
+  date: 2021-11-22T04:39:51.688Z
+- commits:
     - subject: Bump external deps
       hash: 8fb51521032afc40ab29acb45348b41c390aeb72
       body: ''

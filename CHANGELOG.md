@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.10 - 2021-11-22
+
+* Bump axios to v0.24.0 [Josh Bowling]
+
 ## 7.0.9 - 2021-11-22
 
 * Bump external deps [Josh Bowling]
