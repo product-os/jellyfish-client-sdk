@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.11 - 2021-11-22
+
+* Bump nock to v13.2.1 [Josh Bowling]
+
 ## 7.0.10 - 2021-11-22
 
 * Bump axios to v0.24.0 [Josh Bowling]

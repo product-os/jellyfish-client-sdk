@@ -1,4 +1,17 @@
 - commits:
+    - subject: Bump nock to v13.2.1
+      hash: 051684f83e9d674103c260bbbf433cdac893cc0d
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 7.0.11
+  date: 2021-11-22T04:48:32.210Z
+- commits:
     - subject: Bump axios to v0.24.0
       hash: ea7250591ce3186bcc8e664d5c27904b4a319b96
       body: ''
