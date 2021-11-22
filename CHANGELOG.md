@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.9 - 2021-11-22
+
+* Bump external deps [Josh Bowling]
+
 ## 7.0.8 - 2021-11-21
 
 * Remove license headers [Josh Bowling]
