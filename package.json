@@ -44,7 +44,7 @@
   "author": "Balena.io. <hello@balena.io>",
   "license": "Apache-2.0",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.24.0",
     "bluebird": "^3.7.2",
     "common-tags": "^1.8.2",
     "deep-copy": "^1.4.2",
