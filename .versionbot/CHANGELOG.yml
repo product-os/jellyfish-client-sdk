@@ -1,4 +1,17 @@
 - commits:
+    - subject: Bump lint-staged to v12.1.2
+      hash: 7341be06beef993f818f3488d5af148917faf51b
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 7.0.13
+  date: 2021-11-23T02:06:26.789Z
+- commits:
     - subject: Add typedoc to depcheck ignore list
       hash: 6d98d8d5f12dba753727eaa2afcb79668b4e9799
       body: ''

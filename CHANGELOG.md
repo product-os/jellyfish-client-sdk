@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.13 - 2021-11-23
+
+* Bump lint-staged to v12.1.2 [Josh Bowling]
+
 ## 7.0.12 - 2021-11-22
 
 * Add typedoc to depcheck ignore list [Josh Bowling]
