@@ -1,4 +1,17 @@
 - commits:
+    - subject: Bump ts-jest to v27.0.7
+      hash: 4bf9d8d14271b2567dad8ca722465338934318e2
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 7.0.15
+  date: 2021-11-23T02:25:17.863Z
+- commits:
     - subject: 'patch: Update external-non-major'
       hash: 40a4f47cb75412726240c05de29cf7a20f324ea9
       body: ''

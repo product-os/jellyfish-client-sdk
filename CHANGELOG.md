@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.15 - 2021-11-23
+
+* Bump ts-jest to v27.0.7 [Josh Bowling]
+
 ## 7.0.14 - 2021-11-23
 
 * patch: Update external-non-major [Renovate Bot]
