@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 7.0.12 - 2021-11-22
+
+* Add typedoc to depcheck ignore list [Josh Bowling]
+* Bump external deps [Josh Bowling]
+
 ## 7.0.11 - 2021-11-22
 
 * Bump nock to v13.2.1 [Josh Bowling]

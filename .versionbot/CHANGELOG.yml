@@ -1,4 +1,27 @@
 - commits:
+    - subject: Add typedoc to depcheck ignore list
+      hash: 6d98d8d5f12dba753727eaa2afcb79668b4e9799
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+    - subject: Bump external deps
+      hash: f02c92908047a05f6addc2a32ae8b0f149104c9e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 7.0.12
+  date: 2021-11-22T05:06:12.821Z
+- commits:
     - subject: Bump nock to v13.2.1
       hash: 051684f83e9d674103c260bbbf433cdac893cc0d
       body: ''
