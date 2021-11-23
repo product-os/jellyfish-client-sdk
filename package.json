@@ -70,7 +70,7 @@
     "depcheck": "^1.4.2",
     "deplint": "^1.1.3",
     "jest": "^27.0.6",
-    "lint-staged": "^12.1.1",
+    "lint-staged": "^12.1.2",
     "nock": "^13.2.1",
     "simple-git-hooks": "^2.7.0",
     "sinon": "^12.0.1",
