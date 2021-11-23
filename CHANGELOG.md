@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.14 - 2021-11-23
+
+* patch: Update external-non-major [Renovate Bot]
+
 ## 7.0.13 - 2021-11-23
 
 * Bump lint-staged to v12.1.2 [Josh Bowling]

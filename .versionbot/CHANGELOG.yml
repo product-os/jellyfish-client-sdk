@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update external-non-major'
+      hash: 40a4f47cb75412726240c05de29cf7a20f324ea9
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 7.0.14
+  date: 2021-11-23T02:14:47.568Z
+- commits:
     - subject: Bump lint-staged to v12.1.2
       hash: 7341be06beef993f818f3488d5af148917faf51b
       body: ''
