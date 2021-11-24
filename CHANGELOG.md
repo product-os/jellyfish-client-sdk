@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.16 - 2021-11-24
+
+* 🔄 Synced file(s) with product-os/jellyfish-config [joshbwlng]
+
 ## 7.0.15 - 2021-11-23
 
 * Bump ts-jest to v27.0.7 [Josh Bowling]
