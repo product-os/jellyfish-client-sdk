@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.17 - 2021-11-25
+
+* Remove jellycheck [Josh Bowling]
+
 ## 7.0.16 - 2021-11-24
 
 * 🔄 Synced file(s) with product-os/jellyfish-config [joshbwlng]
