@@ -33,13 +33,12 @@
   "scripts": {
     "clean": "rimraf build",
     "build": "npm run clean && tsc -p tsconfig.build.json",
-    "lint": "balena-lint lib test && npm run check && deplint && depcheck --ignore-bin-package --ignores=@types/jest,typedoc",
+    "lint": "balena-lint lib test && deplint && depcheck --ignore-bin-package --ignores=@types/jest,typedoc",
     "lint:fix": "balena-lint --fix lib test",
     "test": "npm run lint && npm run test:unit",
     "test:unit": "jest",
     "doc": "typedoc lib/ && touch docs/.nojekyll",
-    "prepack": "npm run build",
-    "check": "jellycheck"
+    "prepack": "npm run build"
   },
   "author": "Balena.io. <hello@balena.io>",
   "license": "Apache-2.0",
@@ -55,7 +54,6 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@balena/jellycheck": "^1.0.0",
     "@balena/jellyfish-config": "^1.5.10",
     "@balena/jellyfish-types": "^1.2.21",
     "@balena/lint": "^6.1.1",
