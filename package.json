@@ -56,7 +56,7 @@
   "devDependencies": {
     "@balena/jellyfish-config": "^1.5.10",
     "@balena/jellyfish-types": "^1.2.21",
-    "@balena/lint": "^6.1.1",
+    "@balena/lint": "^6.2.0",
     "@types/bluebird": "^3.5.36",
     "@types/common-tags": "^1.8.1",
     "@types/is-uuid": "^1.0.0",
