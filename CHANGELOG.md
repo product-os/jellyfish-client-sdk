@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.20 - 2021-11-26
+
+* patch: Update dependency @balena/lint to ^6.2.0 [Renovate Bot]
+
 ## 7.0.19 - 2021-11-26
 
 * Use product-os/renovate-config [Josh Bowling]
