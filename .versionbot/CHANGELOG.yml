@@ -1,4 +1,24 @@
 - commits:
+    - subject: 'patch: Update dependency typedoc to ^0.22.10'
+      hash: 5cd252b2fc5e33b8b78f776808a798d6c70b76f3
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+    - subject: 'patch: Update dependency @balena/jellyfish-config to v2'
+      hash: 9474a06f41972a5c4a701347b1f2e3743974924e
+      body: |
+        Update @balena/jellyfish-config from 1.5.10 to 2.0.1
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 7.0.21
+  date: 2021-11-28T13:22:50.108Z
+- commits:
     - subject: 'patch: Update dependency @balena/lint to ^6.2.0'
       hash: 2ef6f04056b6a123cf7e878c3e8863b1a7efeda8
       body: |
