@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.22 - 2021-12-04
+
+* patch: Update dependency jest to ^27.4.3 [Renovate Bot]
+
 ## 7.0.21 - 2021-11-28
 
 * patch: Update dependency typedoc to ^0.22.10 [Renovate Bot]
