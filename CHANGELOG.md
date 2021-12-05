@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.23 - 2021-12-05
+
+* patch: Update dependency ts-jest to ^27.1.0 [Renovate Bot]
+
 ## 7.0.22 - 2021-12-04
 
 * patch: Update dependency jest to ^27.4.3 [Renovate Bot]
