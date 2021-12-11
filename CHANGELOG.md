@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.25 - 2021-12-11
+
+* patch: Update external-non-major [Renovate Bot]
+
 ## 7.0.24 - 2021-12-09
 
 * patch: Update dependency typescript to ^4.5.3 [Renovate Bot]

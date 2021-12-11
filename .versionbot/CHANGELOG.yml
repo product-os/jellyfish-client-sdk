@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update external-non-major'
+      hash: 77988e21e7c21af93bb88ccc4710beb1cb22c542
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 7.0.25
+  date: 2021-12-11T09:28:36.410Z
+- commits:
     - subject: 'patch: Update dependency typescript to ^4.5.3'
       hash: bd6d77da04f091557658e0895361cb19711fbdb1
       body: |
