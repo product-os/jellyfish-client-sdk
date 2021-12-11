@@ -1,4 +1,16 @@
 - commits:
+    - subject: 'patch: Update dependency typescript to ^4.5.3'
+      hash: bd6d77da04f091557658e0895361cb19711fbdb1
+      body: |
+        Update typescript from 4.5.2 to 4.5.3
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 7.0.24
+  date: 2021-12-09T22:57:21.343Z
+- commits:
     - subject: 'patch: Update dependency ts-jest to ^27.1.0'
       hash: 898a5f55b788614a83ba11215bd056108ae15513
       body: ''

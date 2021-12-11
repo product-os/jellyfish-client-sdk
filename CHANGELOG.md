@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.24 - 2021-12-09
+
+* patch: Update dependency typescript to ^4.5.3 [Renovate Bot]
+
 ## 7.0.23 - 2021-12-05
 
 * patch: Update dependency ts-jest to ^27.1.0 [Renovate Bot]
