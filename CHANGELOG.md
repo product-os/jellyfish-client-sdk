@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.27 - 2021-12-18
+
+* patch: Update external-non-major [Renovate Bot]
+
 ## 7.0.26 - 2021-12-14
 
 * Drop depcheck, bump typescript [Josh Bowling]
