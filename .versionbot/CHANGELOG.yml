@@ -1,4 +1,15 @@
 - commits:
+    - subject: Replace deep import with root imports
+      hash: 1f0234d4b8b6ef7294430b8721540191d59a9601
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: edufschmidt
+      nested: []
+  version: 7.0.29
+  date: 2021-12-24T16:30:31.730Z
+- commits:
     - subject: 'patch: Update dependency lint-staged to ^12.1.3'
       hash: ee48ad571189fe8156080bdf297225f5f9351fae
       body: ''
