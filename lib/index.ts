@@ -1,30 +1,32 @@
 /* global FormData */
+import type { core, JSONSchema } from '@balena/jellyfish-types';
 import axios, {
 	AxiosRequestConfig,
 	AxiosResponse,
 	CancelTokenSource,
 } from 'axios';
 import Bluebird from 'bluebird';
-import get from 'lodash/get';
-import merge from 'lodash/merge';
-import isString from 'lodash/isString';
-import omit from 'lodash/omit';
-import trim from 'lodash/trim';
-import isPlainObject from 'lodash/isPlainObject';
-import forEach from 'lodash/forEach';
-import type { core, JSONSchema } from '@balena/jellyfish-types';
+import {
+	forEach,
+	get,
+	isPlainObject,
+	isString,
+	merge,
+	omit,
+	trim,
+} from 'lodash';
 import { AuthSdk } from './auth';
 import { CardSdk } from './card';
+import { SDKRequestCancelledError } from './errors';
 import { EventSdk } from './event';
-import { JellyfishStreamManager } from './stream';
 import { IntegrationsSdk } from './integrations';
 import {
 	constraints,
-	supportsLink,
 	getReverseConstraint,
+	supportsLink,
 } from './link-constraints';
-import { QueryOptions, ExtendedSocket, SdkQueryOptions } from './types';
-import { SDKRequestCancelledError } from './errors';
+import { JellyfishStreamManager } from './stream';
+import { ExtendedSocket, QueryOptions, SdkQueryOptions } from './types';
 
 const trimSlash = (text: string) => {
 	return trim(text, '/');

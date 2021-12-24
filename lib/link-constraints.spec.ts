@@ -1,8 +1,8 @@
-import find from 'lodash/find';
+import { find } from 'lodash';
 import {
+	constraints,
 	getReverseConstraint,
 	supportsLink,
-	constraints,
 } from './link-constraints';
 
 describe('link constraints', () => {
