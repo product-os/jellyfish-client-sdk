@@ -1,11 +1,9 @@
-import omit from 'lodash/omit';
-import set from 'lodash/set';
-import forEach from 'lodash/forEach';
 import io, { Socket } from 'socket.io-client';
 import { v4 as uuid } from 'uuid';
 import type { JSONSchema } from '@balena/jellyfish-types';
 import { JellyfishSDK, applyMask } from '.';
 import type { ExtendedSocket, SdkQueryOptions } from './types';
+import { omit, set, forEach } from 'lodash';
 
 /**
  * @class JellyfishStreamManager

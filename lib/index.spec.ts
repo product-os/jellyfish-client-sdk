@@ -1,4 +1,4 @@
-import isEqual from 'lodash/isEqual';
+import { isEqual } from 'lodash';
 import Bluebird from 'bluebird';
 import nock from 'nock';
 import { v4 as uuid } from 'uuid';

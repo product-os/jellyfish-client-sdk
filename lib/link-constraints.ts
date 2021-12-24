@@ -1,6 +1,5 @@
-import memoize from 'lodash/memoize';
-import find from 'lodash/find';
 import type { core } from '@balena/jellyfish-types';
+import { memoize, find } from 'lodash';
 import type { LinkConstraint } from './types';
 
 export const supportsLink = memoize(

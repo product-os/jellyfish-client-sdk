@@ -1,27 +1,29 @@
-import { commaListsOr } from 'common-tags';
+import type { core, JSONSchema } from '@balena/jellyfish-types';
 import Bluebird from 'bluebird';
+import { commaListsOr } from 'common-tags';
 import clone from 'deep-copy';
 import jsonpatch, { Operation } from 'fast-json-patch';
-import get from 'lodash/get';
-import escapeRegExp from 'lodash/escapeRegExp';
-import intersection from 'lodash/intersection';
-import invokeMap from 'lodash/invokeMap';
-import some from 'lodash/some';
-import castArray from 'lodash/castArray';
-import merge from 'lodash/merge';
-import find from 'lodash/find';
-import omit from 'lodash/omit';
-import map from 'lodash/map';
-import filter from 'lodash/filter';
-import set from 'lodash/set';
-import includes from 'lodash/includes';
-import first from 'lodash/first';
-import without from 'lodash/without';
-import type { core, JSONSchema } from '@balena/jellyfish-types';
-import { v4 as uuid } from 'uuid';
 import { v4 as isUUID } from 'is-uuid';
-import { getReverseConstraint } from './link-constraints';
+import {
+	map,
+	some,
+	filter,
+	castArray,
+	escapeRegExp,
+	find,
+	first,
+	get,
+	includes,
+	intersection,
+	invokeMap,
+	merge,
+	omit,
+	set,
+	without,
+} from 'lodash';
+import { v4 as uuid } from 'uuid';
 import type { JellyfishSDK } from '.';
+import { getReverseConstraint } from './link-constraints';
 import type { Message, QueryOptions } from './types';
 
 const checkLinksExist = async (

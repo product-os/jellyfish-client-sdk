@@ -1,5 +1,5 @@
 import type { core } from '@balena/jellyfish-types';
-import assign from 'lodash/assign';
+import { assign } from 'lodash';
 import type { JellyfishSDK } from '.';
 
 /**
