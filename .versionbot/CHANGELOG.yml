@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency lint-staged to ^12.1.4'
+      hash: 26e17b9e8d484a166621e49220dd7405ae615858
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 7.0.30
+  date: 2021-12-25T01:25:06.700Z
+- commits:
     - subject: Replace deep import with root imports
       hash: 1f0234d4b8b6ef7294430b8721540191d59a9601
       body: ''

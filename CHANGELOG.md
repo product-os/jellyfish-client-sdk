@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.30 - 2021-12-25
+
+* patch: Update dependency lint-staged to ^12.1.4 [Renovate Bot]
+
 ## 7.0.29 - 2021-12-24
 
 * Replace deep import with root imports [edufschmidt]
