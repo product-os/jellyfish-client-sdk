@@ -60,7 +60,7 @@
     "@types/bluebird": "^3.5.36",
     "@types/common-tags": "^1.8.1",
     "@types/is-uuid": "^1.0.0",
-    "@types/jest": "^27.0.3",
+    "@types/jest": "^27.4.0",
     "@types/lodash": "^4.14.178",
     "@types/sinon": "^10.0.6",
     "@types/socket.io-client": "^3.0.0",
