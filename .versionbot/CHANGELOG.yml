@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update dependency lint-staged to ^12.1.5'
+      hash: 6fc4a6ac7e3988606792af8f10867577027c40b1
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 7.0.32
+  date: 2022-01-02T22:26:08.419Z
+- commits:
     - subject: 'patch: Update dependency @types/jest to ^27.4.0'
       hash: ba80607b2fbc87dd7b4745548bdb6e116a69631f
       body: ''
