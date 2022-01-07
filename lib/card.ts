@@ -1,5 +1,4 @@
 import type { core, JSONSchema } from '@balena/jellyfish-types';
-import Bluebird from 'bluebird';
 import { commaListsOr } from 'common-tags';
 import clone from 'deep-copy';
 import jsonpatch, { Operation } from 'fast-json-patch';
@@ -745,7 +744,7 @@ export class CardSdk {
 				const removeActions = linkCards.map((linkCard) => {
 					return this.remove(linkCard.id, linkCard.type);
 				});
-				return Bluebird.all(removeActions);
+				return Promise.all(removeActions);
 			})
 			.catch((error) => {
 				console.error('Failed to unlink cards', error);
