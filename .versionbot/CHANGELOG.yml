@@ -1,4 +1,17 @@
 - commits:
+    - subject: remove Bluebird
+      hash: bd22eaf089acbb73083f1d431c23e297c7874fac
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Martin Rauscher <martin@balena.io>
+        signed-off-by: Martin Rauscher <martin@balena.io>
+      author: Martin Rauscher
+      nested: []
+  version: 7.0.34
+  date: 2022-01-08T11:13:21.103Z
+- commits:
     - subject: 'patch: Update external-non-major'
       hash: 0d6639ea859f50a322ea39ab7a708722911952cd
       body: ''

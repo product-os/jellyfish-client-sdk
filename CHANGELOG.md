@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.34 - 2022-01-08
+
+* remove Bluebird [Martin Rauscher]
+
 ## 7.0.33 - 2022-01-08
 
 * patch: Update external-non-major [Renovate Bot]
