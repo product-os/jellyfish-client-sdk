@@ -1,5 +1,4 @@
 import { isEqual } from 'lodash';
-import Bluebird from 'bluebird';
 import nock from 'nock';
 import { v4 as uuid } from 'uuid';
 import { getSdk, JellyfishSDK } from './index';
@@ -37,7 +36,7 @@ beforeAll(async () => {
 				return results[0];
 			}
 
-			await Bluebird.delay(1000);
+			await new Promise((resolve) => setTimeout(resolve, 1000));
 			return context.executeThenWait(null, waitQuery, times - 1);
 		},
 	};

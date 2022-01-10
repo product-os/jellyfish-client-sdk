@@ -5,7 +5,6 @@ import axios, {
 	AxiosResponse,
 	CancelTokenSource,
 } from 'axios';
-import Bluebird from 'bluebird';
 import {
 	forEach,
 	get,
@@ -168,12 +167,8 @@ export class JellyfishSDK {
 	 * 		console.log(config);
 	 * 	});
 	 */
-	getConfig = () => {
-		return Bluebird.try(() => {
-			return axios.get(`${this.API_BASE}config`);
-		}).then((response) => {
-			return response.data;
-		});
+	getConfig = async () => {
+		return (await axios.get(`${this.API_BASE}config`)).data;
 	};
 
 	/**
@@ -192,17 +187,15 @@ export class JellyfishSDK {
 	 * @returns {Promise}
 	 */
 	getFile = async (cardId: core.Contract['id'], name: string) => {
-		return Bluebird.try(() => {
-			return axios.get(`${this.API_BASE}file/${cardId}/${name}`, {
+		return (
+			await axios.get(`${this.API_BASE}file/${cardId}/${name}`, {
 				headers: {
 					authorization: `Bearer ${this.authToken}`,
 					accept: 'image/webp,image/*,*/*;q=0.8',
 				},
 				responseType: 'arraybuffer',
-			});
-		}).then((response) => {
-			return response.data;
-		});
+			})
+		).data;
 	};
 
 	/**
@@ -390,44 +383,41 @@ export class JellyfishSDK {
 			cancelToken: cancelTokenSource.token,
 		});
 
-		return Bluebird.try(() => {
-			return axios.get<{ data: TResponse; error: Error }>(
+		try {
+			const response = axios.get<{ data: TResponse; error: Error }>(
 				`${this.API_BASE}${trimSlash(endpoint)}`,
 				requestOptions,
 			);
-		})
-			.tap((response) => {
-				if (!response) {
-					throw new Error('Got empty response');
+			if (!response) {
+				throw new Error('Got empty response');
+			}
+			return response;
+		} catch (error: any) {
+			if (error.message === 'Operation canceled by user') {
+				throw new SDKRequestCancelledError();
+			}
+			if (error.response && error.response.data) {
+				const message = get(
+					error.response.data,
+					['data', 'message'],
+					error.response.data.data,
+				);
+				if (message) {
+					const newError = new Error(message) as Error & {
+						expected: boolean;
+					};
+					newError.name = error.response.data.data.name;
+					newError.expected = error.response.status < 500;
+					throw newError;
 				}
-			})
-			.catch((error) => {
-				if (error.message === 'Operation canceled by user') {
-					throw new SDKRequestCancelledError();
-				}
-				if (error.response && error.response.data) {
-					const message = get(
-						error.response.data,
-						['data', 'message'],
-						error.response.data.data,
-					);
-					if (message) {
-						const newError = new Error(message) as Error & {
-							expected: boolean;
-						};
-						newError.name = error.response.data.data.name;
-						newError.expected = error.response.status < 500;
-						throw newError;
-					}
-				}
-				throw error;
-			})
-			.finally(() => {
-				// Remove the cancel token so that the request can be garbage collected
-				this.cancelTokenSources = this.cancelTokenSources.filter((item) => {
-					return item !== cancelTokenSource;
-				});
+			}
+			throw error;
+		} finally {
+			// Remove the cancel token so that the request can be garbage collected
+			this.cancelTokenSources = this.cancelTokenSources.filter((item) => {
+				return item !== cancelTokenSource;
 			});
+		}
 	}
 
 	/**
@@ -470,45 +460,42 @@ export class JellyfishSDK {
 					cancelToken: cancelTokenSource.token,
 			  })
 			: options;
-		return Bluebird.try(() => {
-			return axios.post<{ data: TResponse; error: Error }>(
+		try {
+			const response = axios.post<{ data: TResponse; error: Error }>(
 				`${this.API_BASE}${trimSlash(endpoint)}`,
 				body,
 				requestOptions,
 			);
-		})
-			.tap((response) => {
-				if (!response) {
-					throw new Error('Got empty response');
+			if (!response) {
+				throw new Error('Got empty response');
+			}
+			return response;
+		} catch (error: any) {
+			if (error.message === 'Operation canceled by user') {
+				throw new SDKRequestCancelledError();
+			}
+			if (error.response && error.response.data) {
+				const message = get(
+					error.response.data,
+					['data', 'message'],
+					error.response.data.data,
+				);
+				if (message) {
+					const newError = new Error(message) as Error & {
+						expected: boolean;
+					};
+					newError.name = error.response.data.data.name;
+					newError.expected = error.response.status < 500;
+					throw newError;
 				}
-			})
-			.catch((error) => {
-				if (error.message === 'Operation canceled by user') {
-					throw new SDKRequestCancelledError();
-				}
-				if (error.response && error.response.data) {
-					const message = get(
-						error.response.data,
-						['data', 'message'],
-						error.response.data.data,
-					);
-					if (message) {
-						const newError = new Error(message) as Error & {
-							expected: boolean;
-						};
-						newError.name = error.response.data.data.name;
-						newError.expected = error.response.status < 500;
-						throw newError;
-					}
-				}
-				throw error;
-			})
-			.finally(() => {
-				// Remove the cancel token so that the request can be garbage collected
-				this.cancelTokenSources = this.cancelTokenSources.filter((item) => {
-					return item !== cancelTokenSource;
-				});
+			}
+			throw error;
+		} finally {
+			// Remove the cancel token so that the request can be garbage collected
+			this.cancelTokenSources = this.cancelTokenSources.filter((item) => {
+				return item !== cancelTokenSource;
 			});
+		}
 	}
 
 	/**
@@ -626,11 +613,9 @@ export class JellyfishSDK {
 			  }
 			: undefined;
 
-		return Bluebird.try(() => {
-			return axios.get<TContract[]>(`${this.API_BASE}type/${type}`, options);
-		}).then((response) => {
-			return response.data;
-		});
+		return (
+			await axios.get<TContract[]>(`${this.API_BASE}type/${type}`, options)
+		).data;
 	}
 
 	/**
@@ -655,19 +640,15 @@ export class JellyfishSDK {
 			  }
 			: undefined;
 
-		return Bluebird.try(() => {
-			return axios.get<TContract>(`${this.API_BASE}id/${id}`, options);
-		})
-			.then((response) => {
-				return response.data;
-			})
-			.catch((error) => {
-				if (error.response && error.response.status === 404) {
-					return null;
-				}
-
-				throw error;
-			});
+		try {
+			return (await axios.get<TContract>(`${this.API_BASE}id/${id}`, options))
+				.data;
+		} catch (error: any) {
+			if (error.response && error.response.status === 404) {
+				return null;
+			}
+			throw error;
+		}
 	}
 
 	/**
@@ -692,19 +673,17 @@ export class JellyfishSDK {
 			  }
 			: undefined;
 
-		return Bluebird.try(() => {
-			return axios.get<TContract>(`${this.API_BASE}slug/${slug}`, options);
-		})
-			.then((response) => {
-				return response.data;
-			})
-			.catch((error) => {
-				if (error.response && error.response.status === 404) {
-					return null;
-				}
+		try {
+			return (
+				await axios.get<TContract>(`${this.API_BASE}slug/${slug}`, options)
+			).data;
+		} catch (error: any) {
+			if (error.response && error.response.status === 404) {
+				return null;
+			}
 
-				throw error;
-			});
+			throw error;
+		}
 	}
 
 	/**
