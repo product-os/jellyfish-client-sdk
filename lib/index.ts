@@ -5,6 +5,7 @@ import axios, {
 	AxiosResponse,
 	CancelTokenSource,
 } from 'axios';
+import axiosRetry from 'axios-retry';
 import {
 	forEach,
 	get,
@@ -34,6 +35,14 @@ const trimSlash = (text: string) => {
 const LINKS = constraints;
 
 export { constraints as linkConstraints, supportsLink, getReverseConstraint };
+
+axiosRetry(axios, {
+	retries: 3,
+	retryDelay: axiosRetry.exponentialDelay,
+	retryCondition: (err) =>
+		// retry network errors and transient http errors
+		!err.response || [502, 503, 504].includes(err.response.status),
+});
 
 /**
  * @summary Set the mask option to the supplied mask if it is set
