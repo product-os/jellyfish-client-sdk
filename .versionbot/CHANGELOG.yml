@@ -1,4 +1,17 @@
 - commits:
+    - subject: introduce retries for recoverable errors
+      hash: 548794fce836c2f6e471019ecd7488dcd8da12c4
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Martin Rauscher <martin@balena.io>
+        signed-off-by: Martin Rauscher <martin@balena.io>
+      author: Martin Rauscher
+      nested: []
+  version: 7.0.35
+  date: 2022-01-10T15:55:26.143Z
+- commits:
     - subject: remove Bluebird
       hash: bd22eaf089acbb73083f1d431c23e297c7874fac
       body: ''

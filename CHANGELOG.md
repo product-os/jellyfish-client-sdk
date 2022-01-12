@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.35 - 2022-01-10
+
+* introduce retries for recoverable errors [Martin Rauscher]
+
 ## 7.0.34 - 2022-01-08
 
 * remove Bluebird [Martin Rauscher]
