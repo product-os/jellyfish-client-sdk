@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.36 - 2022-01-13
+
+* patch: Expand README.md with a sample code of logging in and fetching contracts. [Taro Murao]
+
 ## 7.0.35 - 2022-01-10
 
 * introduce retries for recoverable errors [Martin Rauscher]
