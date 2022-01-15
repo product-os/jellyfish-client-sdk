@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.37 - 2022-01-15
+
+* patch: Update external-non-major [Renovate Bot]
+
 ## 7.0.36 - 2022-01-13
 
 * patch: Expand README.md with a sample code of logging in and fetching contracts. [Taro Murao]

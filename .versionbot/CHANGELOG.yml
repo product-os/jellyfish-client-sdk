@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update external-non-major'
+      hash: 1eafa1839087ddd8e83aff5c32e5bddcfdb359a2
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 7.0.37
+  date: 2022-01-15T01:10:19.679Z
+- commits:
     - subject: >-
         patch: Expand README.md with a sample code of logging in and fetching
         contracts.
