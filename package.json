@@ -43,7 +43,7 @@
   "author": "Balena.io. <hello@balena.io>",
   "license": "Apache-2.0",
   "dependencies": {
-    "axios": "^0.24.0",
+    "axios": "^0.25.0",
     "axios-retry": "^3.2.4",
     "common-tags": "^1.8.2",
     "deep-copy": "^1.4.2",
