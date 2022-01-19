@@ -1,4 +1,16 @@
 - commits:
+    - subject: 'patch: Update dependency typedoc to ^0.22.11'
+      hash: f2f58f8c3135e14c28ca9b6eed557a0ccee8be07
+      body: |
+        Update typedoc from 0.22.10 to 0.22.11
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 7.0.39
+  date: 2022-01-19T05:41:56.357Z
+- commits:
     - subject: 'patch: Update dependency axios to ^0.25.0'
       hash: fe817873df2bb40c65721210e00fa638a83b81ca
       body: |

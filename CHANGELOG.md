@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.39 - 2022-01-19
+
+* patch: Update dependency typedoc to ^0.22.11 [Renovate Bot]
+
 ## 7.0.38 - 2022-01-18
 
 * patch: Update dependency axios to ^0.25.0 [Renovate Bot]
