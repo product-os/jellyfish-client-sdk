@@ -1,4 +1,16 @@
 - commits:
+    - subject: 'patch: Update dependency axios to ^0.25.0'
+      hash: fe817873df2bb40c65721210e00fa638a83b81ca
+      body: |
+        Update axios from 0.24.0 to 0.25.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 7.0.38
+  date: 2022-01-18T10:02:51.767Z
+- commits:
     - subject: 'patch: Update external-non-major'
       hash: 1eafa1839087ddd8e83aff5c32e5bddcfdb359a2
       body: ''

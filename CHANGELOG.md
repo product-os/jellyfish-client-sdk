@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 7.0.38 - 2022-01-18
+
+* patch: Update dependency axios to ^0.25.0 [Renovate Bot]
+
 ## 7.0.37 - 2022-01-15
 
 * patch: Update external-non-major [Renovate Bot]
