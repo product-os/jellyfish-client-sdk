@@ -1,4 +1,23 @@
 - commits:
+    - subject: Use new endpoints for auth functions
+      hash: fa51fe694663a74d823de3f814272cb93360a326
+      body: |
+        Use new endpoints for login, and other functions required by
+        unauthorised users.
+
+        - request password reset
+        - complete password reset
+        - complete first time login
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 8.0.0
+  date: 2022-01-19T12:21:43.424Z
+- commits:
     - subject: 'patch: Update dependency typedoc to ^0.22.11'
       hash: f2f58f8c3135e14c28ca9b6eed557a0ccee8be07
       body: |

@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 8.0.0 - 2022-01-19
+
+* Use new endpoints for auth functions [Lucian Buzzo]
+
 ## 7.0.39 - 2022-01-19
 
 * patch: Update dependency typedoc to ^0.22.11 [Renovate Bot]
