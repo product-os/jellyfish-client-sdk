@@ -158,22 +158,20 @@ export class AuthSdk {
 	 * 		console.log('Authenticated', session)
 	 * 	})
 	 */
-	public async login<TContract extends core.Contract = core.Contract>(options: {
+	public async login<TContract extends core.Contract = core.Contract>({
+		username,
+		password,
+	}: {
 		username: string;
 		password: string;
 	}): Promise<TContract | null> {
-		// Normalize username to lower case
-		const slug = `user-${options.username}`.toLowerCase();
 		return this.sdk
-			.action<TContract>({
-				card: slug,
-				type: 'user',
-				action: 'action-create-session@1.0.0',
-				arguments: {
-					password: options.password,
-				},
+			.post<TContract>('/login', {
+				username,
+				password,
 			})
-			.then((session) => {
+			.then((response) => {
+				const session = response.data.data;
 				this.sdk.setAuthToken(session!.id);
 				return session;
 			});
@@ -235,5 +233,69 @@ export class AuthSdk {
 		this.sdk.clearAuthToken();
 		this.sdk.cancelAllRequests();
 		this.sdk.cancelAllStreams();
+	}
+
+	/**
+	 * @summary Request a password reset email for given username
+	 * @name requestPasswordReset
+	 * @public
+	 * @function
+	 * @memberof JellyfishSDK.auth
+	 *
+	 * @param {String} username - Username
+	 *
+	 * @returns {Promise}
+	 *
+	 * @example
+	 * sdk.auth.requestPasswordReset('johndoe')
+	 */
+	public async requestPasswordReset(username: string): Promise<void> {
+		await this.sdk.post('/request-password-reset', {
+			username,
+		});
+	}
+
+	/**
+	 * @summary Complete a password reset flow
+	 * @name completePasswordReset
+	 * @public
+	 * @function
+	 * @memberof JellyfishSDK.auth
+	 *
+	 * @param {String} newPassword - New password to set
+	 * @param {String} resetToken - Token used to authorise password reset
+	 *
+	 * @returns {Promise}
+	 *
+	 * @example
+	 * sdk.auth.completePasswordReset('password', 'token')
+	 */
+	public async completePasswordReset(newPassword, resetToken) {
+		await this.sdk.post('/complete-password-reset', {
+			newPassword,
+			resetToken,
+		});
+	}
+
+	/**
+	 * @summary Complete a password reset flow
+	 * @name completeFirstTimeLogin
+	 * @public
+	 * @function
+	 * @memberof JellyfishSDK.auth
+	 *
+	 * @param {String} newPassword - New password to set
+	 * @param {String} resetToken - Token used for first time login
+	 *
+	 * @returns {Promise}
+	 *
+	 * @example
+	 * sdk.auth.completePasswordReset('password', 'token')
+	 */
+	public async completeFirstTimeLogin(newPassword, firstTimeLoginToken) {
+		await this.sdk.post('/complete-first-time-login', {
+			newPassword,
+			firstTimeLoginToken,
+		});
 	}
 }
