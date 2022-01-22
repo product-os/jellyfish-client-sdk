@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 8.0.1 - 2022-01-22
+
+* patch: Update external-non-major [Renovate Bot]
+
 ## 8.0.0 - 2022-01-19
 
 * Use new endpoints for auth functions [Lucian Buzzo]

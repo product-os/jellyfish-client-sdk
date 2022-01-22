@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Update external-non-major'
+      hash: 5f7b944cc4d220e6ff782bdb0435028d9007a257
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 8.0.1
+  date: 2022-01-22T01:59:40.874Z
+- commits:
     - subject: Use new endpoints for auth functions
       hash: fa51fe694663a74d823de3f814272cb93360a326
       body: |
