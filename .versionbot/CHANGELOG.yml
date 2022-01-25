@@ -1,4 +1,19 @@
 - commits:
+    - subject: Add basic cursor functionality
+      hash: d4450f1b44cee0e5e0ceb765b82d3d9c16a55430
+      body: |
+        The cursor abstracts loading, paginating and streaming a query as well
+        as simplifying checks to see if there is more data to load.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Lucian Buzzo lucian.buzzo@gmail.com
+        signed-off-by: Lucian Buzzo lucian.buzzo@gmail.com
+      author: Graham McCulloch
+      nested: []
+  version: 8.1.0
+  date: 2022-01-25T10:23:38.286Z
+- commits:
     - subject: 'patch: Update dependency lint-staged to ^12.3.1'
       hash: e52c8dda52ded322c7a3886ebdbc99c32ea8e960
       body: ''

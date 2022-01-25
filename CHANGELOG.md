@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 8.1.0 - 2022-01-25
+
+* Add basic cursor functionality [Graham McCulloch]
+
 ## 8.0.3 - 2022-01-23
 
 * patch: Update dependency lint-staged to ^12.3.1 [Renovate Bot]
