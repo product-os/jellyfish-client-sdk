@@ -25,8 +25,9 @@ import {
 	getReverseConstraint,
 	supportsLink,
 } from './link-constraints';
-import { JellyfishStreamManager } from './stream';
+import { JellyfishStreamManager, StreamOptions } from './stream';
 import { ExtendedSocket, QueryOptions, SdkQueryOptions } from './types';
+import { JellyfishCursor } from './cursor';
 
 const trimSlash = (text: string) => {
 	return trim(text, '/');
@@ -834,8 +835,49 @@ export class JellyfishSDK {
 	 * 	console.error(error);
 	 * })
 	 */
-	stream(query: JSONSchema, options: SdkQueryOptions = {}): ExtendedSocket {
+	stream(query: JSONSchema, options: StreamOptions = {}): ExtendedSocket {
 		return this.streamManager.stream(query, options);
+	}
+
+	/**
+	 * @summary Create a cursor
+	 * @name getCursor
+	 * @public
+	 * @function
+	 * @memberof JellyfishSDK
+	 *
+	 * @description Create a cursor object to query, stream and page contracts from the API
+	 *
+	 * @param {JSONSchema} query - The JSON schema to query with
+	 * @param {SdkQueryOptions} options - Extra query options to use
+	 *
+	 * @fulfil {EventEmitter}
+	 * @returns {Promise}
+	 *
+	 * @example
+	 * const schema = {
+	 * 	type: 'object',
+	 * 	properties: {
+	 * 		type: {
+	 * 			const: 'thread'
+	 * 		}
+	 * 	}
+	 * };
+	 *
+	 * const cursor = sdk.getCursor(schema)
+	 *
+	 * cursor.on('update', (data) => {
+	 * 	console.log(data);
+	 * })
+	 *
+	 * const results = await cursor.nextPage()
+	 */
+	getCursor(
+		query: JSONSchema,
+		options: StreamOptions = { initialQuery: false },
+	): JellyfishCursor {
+		const socket = this.streamManager.stream(query, options);
+		return new JellyfishCursor(socket, query, options);
 	}
 }
 

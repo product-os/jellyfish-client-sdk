@@ -5,6 +5,11 @@ import { JellyfishSDK, applyMask } from '.';
 import type { ExtendedSocket, SdkQueryOptions } from './types';
 import { omit, set, forEach } from 'lodash';
 
+export type StreamOptions = SdkQueryOptions & {
+	// Immediately run the provided query over the stream
+	initialQuery?: boolean;
+};
+
 /**
  * @class JellyfishStreamManager
  *
@@ -57,7 +62,12 @@ export class JellyfishStreamManager {
 	 * 	console.error(error);
 	 * })
 	 */
-	stream(query: JSONSchema, options: SdkQueryOptions): ExtendedSocket {
+	stream(
+		query: JSONSchema,
+		options: StreamOptions = {
+			initialQuery: true,
+		},
+	): ExtendedSocket {
 		const url = this.sdk.getApiUrl();
 		if (!url) {
 			throw new Error(
@@ -78,7 +88,7 @@ export class JellyfishStreamManager {
 		// When the client connects, send the query that should be streamed as well
 		// as an authentication token
 
-		if (query) {
+		if (query && options.initialQuery) {
 			socket.on('connect', () => {
 				socket.emit('query', {
 					token,
