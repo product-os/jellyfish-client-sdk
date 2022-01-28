@@ -105,13 +105,17 @@ export class AuthSdk {
 	 * 		console.log('Authenticated')
 	 * 	})
 	 */
-	public async loginWithToken(token: string): Promise<string> {
+	public async loginWithToken(
+		sessionId: string,
+		token: string | null = null,
+	): Promise<string> {
 		// Set the auth token
+		this.sdk.setSessionId(sessionId);
 		this.sdk.setAuthToken(token);
 
 		// Check to see if the token has expired
 		try {
-			const sessionContract = await this.sdk.card.get(token);
+			const sessionContract = await this.sdk.card.get(sessionId);
 			if (!sessionContract) {
 				throw new Error('Session could not be retrieved');
 			}
@@ -123,10 +127,11 @@ export class AuthSdk {
 				throw new Error('Token has expired');
 			}
 
-			return token;
+			return sessionId;
 		} catch (error) {
-			this.sdk.setAuthToken(null);
-			throw new Error(`Token is invalid: ${token}`);
+			this.sdk.clearSessionId();
+			this.sdk.clearAuthToken();
+			throw new Error(`Invalid session ID or token: ${token}`);
 		}
 	}
 

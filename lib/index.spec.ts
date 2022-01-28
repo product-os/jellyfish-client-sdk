@@ -5,6 +5,7 @@ import { getSdk, JellyfishSDK } from '.';
 
 let context: {
 	sdk: JellyfishSDK;
+	session: string;
 	token: string;
 	executeThenWait: (
 		asyncFn: any,
@@ -21,7 +22,8 @@ beforeAll(async () => {
 			apiPrefix: 'api/v2',
 			apiUrl: API_URL,
 		}),
-		token: 'foobar',
+		session: 'foobar-session',
+		token: 'foobar-token',
 		executeThenWait: async (asyncFn, waitQuery, times = 20) => {
 			if (times === 0) {
 				throw new Error('The wait query did not resolve');
@@ -435,4 +437,86 @@ test('.view() should query using a view template', async () => {
 	);
 
 	expect(results[0]).toEqual(mockData);
+});
+
+test('requests should include authorization header containing session id and token if they are both set', async () => {
+	const { sdk } = context;
+
+	sdk.setSessionId(context.session);
+	sdk.setAuthToken(context.token);
+
+	const server = nock(API_URL);
+
+	server.get(/(.*?)/).reply(function (this, _uri) {
+		if (
+			this.req.headers['authorization'] ===
+				`Bearer ${context.session}.${context.token}` ||
+			this.req.headers['authorization'] === `Bearer ${context.session}`
+		) {
+			return [
+				200,
+				{
+					error: false,
+					data: {
+						slug: 'some-user-slug',
+						type: 'user@1.0.0',
+					},
+				},
+			];
+		}
+
+		return [
+			200,
+			{
+				error: false,
+				data: {
+					slug: 'user-guest',
+					type: 'user@1.0.0',
+				},
+			},
+		];
+	});
+
+	const me = await sdk.auth.whoami();
+
+	expect(me.slug).toEqual('some-user-slug');
+});
+
+test('requests should include authorization header containing only session id if token is not set', async () => {
+	const { sdk } = context;
+
+	sdk.setSessionId(context.session);
+	sdk.clearAuthToken();
+
+	const server = nock(API_URL);
+
+	server.get(/(.*?)/).reply(function (this, _uri) {
+		if (this.req.headers['authorization'] === `Bearer ${context.session}`) {
+			return [
+				200,
+				{
+					error: false,
+					data: {
+						slug: 'some-user-slug',
+						type: 'user@1.0.0',
+					},
+				},
+			];
+		}
+
+		return [
+			200,
+			{
+				error: false,
+				data: {
+					slug: 'user-guest',
+					type: 'user@1.0.0',
+				},
+			},
+		];
+	});
+
+	const me = await sdk.auth.whoami();
+
+	expect(me.slug).toEqual('some-user-slug');
 });

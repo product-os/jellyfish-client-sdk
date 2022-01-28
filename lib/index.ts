@@ -136,11 +136,13 @@ export class JellyfishSDK {
 	 *
 	 * @param {String} API_URL - The URL of the Jellyfish API
 	 * @param {String} API_PREFIX - The prefix used for the API endpoint, e.g. v1, v2
+	 * @param {String=} sessionId - An optional session ID to instantiate the SDK with
 	 * @param {String=} authToken - An optional authentication token to instantiate the SDK with
 	 */
 	constructor(
 		private API_URL: string,
 		private readonly API_PREFIX: string,
+		private sessionId?: string | null,
 		private authToken?: string | null,
 	) {
 		this.LINKS = LINKS;
@@ -295,6 +297,24 @@ export class JellyfishSDK {
 	}
 
 	/**
+	 * @summary Set the session ID
+	 * @name setSessionID
+	 * @public
+	 * @function
+	 * @memberof JellyfishSDK
+	 *
+	 * @description Set session ID used when sending request to the API
+	 *
+	 * @param {String} id - The session ID
+	 *
+	 * @example
+	 * sdk.setSessionId('799de256-31bb-4399-b2d2-3c2a2483ddd8')
+	 */
+	setSessionId(id: string | null) {
+		this.sessionId = id;
+	}
+
+	/**
 	 * @summary Get the auth token
 	 * @name getAauthToken
 	 * @public
@@ -314,6 +334,25 @@ export class JellyfishSDK {
 	}
 
 	/**
+	 * @summary Get the session ID
+	 * @name getSessionId
+	 * @public
+	 * @function
+	 * @memberof JellyfishSDK
+	 *
+	 * @description Get sessionID used when sending request to the API
+	 *
+	 * @returns {String|undefined} The session ID if it has been set
+	 *
+	 * @example
+	 * const id = sdk.getSessionId(
+	 * console.log(id) //--> '799de256-31bb-4399-b2d2-3c2a2483ddd8'
+	 */
+	getSessionId() {
+		return this.sessionId;
+	}
+
+	/**
 	 * @summary clear the auth token
 	 * @name clearAuthToken
 	 * @public
@@ -327,6 +366,22 @@ export class JellyfishSDK {
 	 */
 	clearAuthToken() {
 		this.authToken = null;
+	}
+
+	/**
+	 * @summary clear the session id
+	 * @name clearSessionId
+	 * @public
+	 * @function
+	 * @memberof JellyfishSDK
+	 *
+	 * @description Clear the session ID used when sending request to the API
+	 *
+	 * @example
+	 * sdk.clearSessionId()
+	 */
+	clearSessionId() {
+		this.sessionId = null;
 	}
 
 	/**
@@ -389,15 +444,23 @@ export class JellyfishSDK {
 		endpoint: string,
 		options?: AxiosRequestConfig,
 	): Promise<AxiosResponse<{ data: TResponse; error: Error }>> {
+		let headers = {};
+
+		if (this.sessionId && this.authToken) {
+			headers = {
+				authorization: `Bearer ${this.sessionId}.${this.authToken}`,
+			};
+		} else if (this.sessionId) {
+			headers = {
+				authorization: `Bearer ${this.sessionId}`,
+			};
+		}
+
 		// Generate a fresh cancel token
 		const cancelTokenSource = axios.CancelToken.source();
 		this.cancelTokenSources.push(cancelTokenSource);
 		const requestOptions = merge({}, options, {
-			headers: this.authToken
-				? {
-						authorization: `Bearer ${this.authToken}`,
-				  }
-				: {},
+			headers,
 			cancelToken: cancelTokenSource.token,
 		});
 
@@ -439,6 +502,35 @@ export class JellyfishSDK {
 	}
 
 	/**
+	 * @summary Build an object containing default headers based on client attributes.
+	 * @name defaultHeaders
+	 * @protected
+	 * @function
+	 * @memberof JellyfishSDK
+	 *
+	 * @description Build an object containing default headers based on client
+	 * attributes such as session ID and token.
+	 *
+	 * @returns {Object} - Object containing default headers.
+	 *
+	 * @example
+	 * const headers = sdk.defaultHeaders();
+	 *
+	 */
+	protected defaultHeaders = (): { authorization?: string } => {
+		if (this.sessionId && this.authToken) {
+			return {
+				authorization: `Bearer ${this.sessionId}.${this.authToken}`,
+			};
+		} else if (this.sessionId) {
+			return {
+				authorization: `Bearer ${this.sessionId}`,
+			};
+		}
+		return {};
+	};
+
+	/**
 	 * @summary Send a POST request to the API
 	 * @name post
 	 * @public
@@ -467,14 +559,14 @@ export class JellyfishSDK {
 		body: TBody,
 		options?: AxiosRequestConfig,
 	): Promise<AxiosResponse<{ data: TResponse; error: Error }>> {
+		const headers = this.defaultHeaders();
+
 		// Generate a fresh cancel token
 		const cancelTokenSource = axios.CancelToken.source();
 		this.cancelTokenSources.push(cancelTokenSource);
 		const requestOptions = this.authToken
 			? merge({}, options, {
-					headers: {
-						authorization: `Bearer ${this.authToken}`,
-					},
+					headers,
 					cancelToken: cancelTokenSource.token,
 			  })
 			: options;
@@ -624,13 +716,7 @@ export class JellyfishSDK {
 	async getByType<TContract extends Contract = Contract>(
 		type: string,
 	): Promise<TContract[]> {
-		const options = this.authToken
-			? {
-					headers: {
-						authorization: `Bearer ${this.authToken}`,
-					},
-			  }
-			: undefined;
+		const headers = this.defaultHeaders();
 
 		return (
 			await axios.get<TContract[]>(`${this.API_BASE}type/${type}`, options)
@@ -651,13 +737,7 @@ export class JellyfishSDK {
 	async getById<TContract extends Contract = Contract>(
 		id: Contract['id'],
 	): Promise<TContract | null> {
-		const options = this.authToken
-			? {
-					headers: {
-						authorization: `Bearer ${this.authToken}`,
-					},
-			  }
-			: undefined;
+		const headers = this.defaultHeaders();
 
 		try {
 			return (await axios.get<TContract>(`${this.API_BASE}id/${id}`, options))
@@ -684,13 +764,7 @@ export class JellyfishSDK {
 	async getBySlug<TContract extends Contract = Contract>(
 		slug: string,
 	): Promise<TContract | null> {
-		const options = this.authToken
-			? {
-					headers: {
-						authorization: `Bearer ${this.authToken}`,
-					},
-			  }
-			: undefined;
+		const headers = this.defaultHeaders();
 
 		try {
 			return (
@@ -910,11 +984,13 @@ export class JellyfishSDK {
 export const getSdk = ({
 	apiUrl,
 	apiPrefix,
+	sessionId,
 	authToken,
 }: {
 	apiUrl: string;
 	apiPrefix: string;
+	sessionId?: string;
 	authToken?: string;
 }): JellyfishSDK => {
-	return new JellyfishSDK(apiUrl, apiPrefix, authToken);
+	return new JellyfishSDK(apiUrl, apiPrefix, sessionId, authToken);
 };
