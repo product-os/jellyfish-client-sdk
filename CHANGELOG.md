@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 8.1.1 - 2022-01-29
+
+* Update dependencies (external major bumps) [Renovate Bot]
+
 ## 8.1.0 - 2022-01-25
 
 * Add basic cursor functionality [Graham McCulloch]
