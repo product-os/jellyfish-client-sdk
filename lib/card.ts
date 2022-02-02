@@ -1,42 +1,56 @@
-import type { core, JSONSchema } from '@balena/jellyfish-types';
+import type { QueryOptions } from '@balena/jellyfish-core';
+import type { JsonSchema } from '@balena/jellyfish-types';
+import type {
+	Contract,
+	ContractSummary,
+} from '@balena/jellyfish-types/build/core';
 import { commaListsOr } from 'common-tags';
 import clone from 'deep-copy';
 import jsonpatch, { Operation } from 'fast-json-patch';
 import { v4 as isUUID } from 'is-uuid';
 import {
-	map,
-	some,
-	filter,
 	castArray,
 	escapeRegExp,
+	filter,
 	find,
 	first,
 	get,
 	includes,
 	intersection,
 	invokeMap,
+	map,
 	merge,
 	omit,
 	set,
+	some,
 	without,
 } from 'lodash';
 import { v4 as uuid } from 'uuid';
 import type { JellyfishSDK } from '.';
 import { getReverseConstraint } from './link-constraints';
-import type { Message, QueryOptions } from './types';
+import type { Message } from './types';
 
 const checkLinksExist = async (
 	sdk: JellyfishSDK,
 	verb: string,
-	fromCard: core.ContractSummary,
-	toCard: core.ContractSummary | null = null,
+	fromCard: ContractSummary,
+	toCard: ContractSummary | null = null,
 ): Promise<boolean> => {
-	const query: JSONSchema = {
-		$$links: {
-			[verb]: {
-				type: 'object',
-				properties: {},
+	let linkSchema: JsonSchema;
+	if (toCard) {
+		linkSchema = {
+			properties: {
+				id: {
+					const: toCard.id,
+				},
 			},
+		};
+	} else {
+		linkSchema = true;
+	}
+	const query: JsonSchema = {
+		$$links: {
+			[verb]: linkSchema,
 		},
 		type: 'object',
 		properties: {
@@ -47,13 +61,6 @@ const checkLinksExist = async (
 		},
 		required: ['id'],
 	};
-
-	if (toCard) {
-		query.$$links![verb].properties!.id = {
-			type: 'string',
-			const: toCard.id,
-		};
-	}
 
 	const result = await sdk.query(query, {
 		limit: 1,
@@ -69,9 +76,9 @@ const checkLinksExist = async (
 
 const getLinkQueryOption = (
 	verb: string,
-	fromCardId: core.Contract['id'],
-	toCardId: core.Contract['id'],
-): JSONSchema => {
+	fromCardId: Contract['id'],
+	toCardId: Contract['id'],
+): JsonSchema => {
 	return {
 		type: 'object',
 		required: ['name', 'data'],
@@ -112,9 +119,9 @@ const getLinkQueryOption = (
 
 const getLinkQuery = (
 	verb: string,
-	fromCard: core.Contract,
-	toCard: core.Contract,
-): JSONSchema => {
+	fromCard: Contract,
+	toCard: Contract,
+): JsonSchema => {
 	const reverseVerb = getReverseConstraint(fromCard.type, toCard.type, verb);
 
 	if (!reverseVerb) {
@@ -229,7 +236,7 @@ export class CardSdk {
 	 * 		console.log(card)
 	 * 	})
 	 */
-	async get<TContract extends core.Contract = core.Contract>(
+	async get<TContract extends Contract = Contract>(
 		idOrSlug: string,
 	): Promise<TContract | null> {
 		if (isUUID(idOrSlug)) {
@@ -265,14 +272,14 @@ export class CardSdk {
 	 * 		console.log(card)
 	 * 	})
 	 */
-	async getWithTimeline<TContract extends core.Contract = core.Contract>(
+	async getWithTimeline<TContract extends Contract = Contract>(
 		idOrSlug: string,
 		options: {
-			schema?: JSONSchema;
+			schema?: JsonSchema;
 			queryOptions?: Omit<QueryOptions, 'mask'>;
 		} = {},
 	): Promise<TContract | null> {
-		const schema: JSONSchema = isUUID(idOrSlug)
+		const schema: JsonSchema = isUUID(idOrSlug)
 			? {
 					type: 'object',
 					description: `Get by id ${idOrSlug}`,
@@ -353,12 +360,12 @@ export class CardSdk {
 	 * 		console.log(card)
 	 * 	})
 	 */
-	async getWithLinks<TContract extends core.Contract = core.Contract>(
+	async getWithLinks<TContract extends Contract = Contract>(
 		idOrSlug: string,
 		verbs: string[],
 		options: { type?: string } = {},
 	): Promise<TContract | null> {
-		const schema: JSONSchema = isUUID(idOrSlug)
+		const schema: JsonSchema = isUUID(idOrSlug)
 			? {
 					type: 'object',
 					description: `Get with links by id ${idOrSlug}`,
@@ -437,17 +444,17 @@ export class CardSdk {
 	 * 		console.log(cards)
 	 * 	})
 	 */
-	async getAllByType<TContract extends core.Contract = core.Contract>(
+	async getAllByType<TContract extends Contract = Contract>(
 		cardType: string,
 	): Promise<TContract[]> {
 		return this.sdk.getByType(cardType);
 	}
 
-	async getByCreator<TContract extends core.Contract = core.Contract>(
-		actorId: core.Contract['id'],
+	async getByCreator<TContract extends Contract = Contract>(
+		actorId: Contract['id'],
 		type: string,
 	): Promise<TContract[]> {
-		const schema: JSONSchema = {
+		const schema: JsonSchema = {
 			$$links: {
 				'has attached element': {
 					type: 'object',
@@ -508,8 +515,8 @@ export class CardSdk {
 	 * 		console.log(id)
 	 * 	})
 	 */
-	async create<TContract extends core.Contract = core.Contract>(
-		card: Partial<core.Contract>,
+	async create<TContract extends Contract = Contract>(
+		card: Partial<Contract>,
 	): Promise<TContract> {
 		// For backwards compatibility purposes
 		card.linked_at ||= {};
@@ -553,10 +560,10 @@ export class CardSdk {
 	 * })
 	 */
 	async update(
-		id: core.Contract['id'],
+		id: Contract['id'],
 		type: string,
 		patch: Operation[],
-	): Promise<core.ContractSummary | null> {
+	): Promise<ContractSummary | null> {
 		return this.sdk.action({
 			card: id,
 			type,
@@ -586,9 +593,9 @@ export class CardSdk {
 	 * sdk.card.remove('8b465c9a-b4cb-44c1-9df9-632649d7c4c3', 'card')
 	 */
 	async remove(
-		id: core.Contract['id'],
+		id: Contract['id'],
 		type: string,
-	): Promise<core.ContractSummary | null> {
+	): Promise<ContractSummary | null> {
 		return this.sdk.action({
 			card: id,
 			type,
@@ -612,10 +619,10 @@ export class CardSdk {
 	 * @returns {Promise}
 	 */
 	async link(
-		fromCard: core.ContractSummary,
-		toCard: core.ContractSummary,
+		fromCard: ContractSummary,
+		toCard: ContractSummary,
 		verb: string,
-	): Promise<core.ContractSummary | true> {
+	): Promise<ContractSummary | true> {
 		if (!verb) {
 			throw new Error('No verb provided when creating link');
 		}
@@ -693,7 +700,7 @@ export class CardSdk {
 			},
 		};
 
-		return this.sdk.action<core.ContractSummary>(payload).catch((error) => {
+		return this.sdk.action<ContractSummary>(payload).catch((error) => {
 			console.error(
 				`Failed to create link ${payload.arguments.properties.slug}`,
 				error,
@@ -718,10 +725,10 @@ export class CardSdk {
 	 * @returns {Promise}
 	 */
 	async unlink(
-		fromCard: core.Contract,
-		toCard: core.Contract,
+		fromCard: Contract,
+		toCard: Contract,
 		verb: string,
-	): Promise<Array<core.ContractSummary | null>> {
+	): Promise<Array<ContractSummary | null>> {
 		if (!verb) {
 			throw new Error('No verb provided when removing link');
 		}
@@ -771,7 +778,7 @@ export class CardSdk {
 		userSlug: string,
 		card: Message,
 		userGroups: string[] = [],
-	): Promise<void | core.ContractSummary | null> {
+	): Promise<void | ContractSummary | null> {
 		const typeBase = card.type.split('@')[0];
 		if (
 			typeBase !== 'message' &&
@@ -824,7 +831,7 @@ export class CardSdk {
 		userSlug: string,
 		card: Message,
 		userGroups: string[] = [],
-	): Promise<void | core.ContractSummary | null> {
+	): Promise<void | ContractSummary | null> {
 		const typeBase = card.type.split('@')[0];
 		if (
 			typeBase !== 'message' &&

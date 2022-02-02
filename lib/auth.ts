@@ -1,4 +1,4 @@
-import type { core } from '@balena/jellyfish-types';
+import type { Contract } from '@balena/jellyfish-types/build/core';
 import { v4 as uuid } from 'uuid';
 import type { JellyfishSDK } from '.';
 
@@ -29,7 +29,7 @@ export class AuthSdk {
 	 * 	})
 	 */
 	public async whoami<
-		TContract extends core.Contract = core.Contract,
+		TContract extends Contract = Contract,
 	>(): Promise<TContract> {
 		return this.sdk.get<TContract>('/whoami').then((response) => {
 			return response.data.data;
@@ -64,7 +64,7 @@ export class AuthSdk {
 	 * 		console.log(id)
 	 * 	})
 	 */
-	public async signup<TContract extends core.Contract = core.Contract>({
+	public async signup<TContract extends Contract = Contract>({
 		username,
 		email,
 		password,
@@ -158,7 +158,7 @@ export class AuthSdk {
 	 * 		console.log('Authenticated', session)
 	 * 	})
 	 */
-	public async login<TContract extends core.Contract = core.Contract>({
+	public async login<TContract extends Contract = Contract>({
 		username,
 		password,
 	}: {

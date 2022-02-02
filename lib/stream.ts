@@ -1,9 +1,9 @@
+import type { JsonSchema } from '@balena/jellyfish-types';
+import { forEach, omit, set } from 'lodash';
 import io, { Socket } from 'socket.io-client';
 import { v4 as uuid } from 'uuid';
-import type { JSONSchema } from '@balena/jellyfish-types';
-import { JellyfishSDK, applyMask } from '.';
+import { applyMask, JellyfishSDK } from '.';
 import type { ExtendedSocket, SdkQueryOptions } from './types';
-import { omit, set, forEach } from 'lodash';
 
 export type StreamOptions = SdkQueryOptions & {
 	// Immediately run the provided query over the stream
@@ -35,7 +35,7 @@ export class JellyfishStreamManager {
 	 * @public
 	 * @function
 	 *
-	 * @param {JSONSchema} query - An optional JSON schema used to match cards
+	 * @param {JsonSchema} query - An optional JSON schema used to match cards
 	 * Returns a socket object that emits response data for the given query
 	 * @param {SdkQueryOptions} options - Extra query options to use
 	 *
@@ -63,7 +63,7 @@ export class JellyfishStreamManager {
 	 * })
 	 */
 	stream(
-		query: JSONSchema,
+		query: JsonSchema,
 		options: StreamOptions = {
 			initialQuery: true,
 		},
@@ -93,7 +93,7 @@ export class JellyfishStreamManager {
 				socket.emit('query', {
 					token,
 					data: {
-						query: omit(query, '$id'),
+						query: query instanceof Object ? omit(query, '$id') : query,
 						options: applyMask(options, this.sdk.globalQueryMask),
 					},
 				});

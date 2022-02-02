@@ -1,6 +1,9 @@
-import type { JellyfishError } from '@balena/jellyfish-types';
+import type { errors as coreErrors } from '@balena/jellyfish-core';
 
-export class SDKRequestCancelledError extends Error implements JellyfishError {
+export class SDKRequestCancelledError
+	extends Error
+	implements coreErrors.JellyfishError
+{
 	public expected: boolean = true;
 
 	constructor() {

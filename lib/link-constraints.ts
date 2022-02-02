@@ -1,5 +1,5 @@
-import type { core } from '@balena/jellyfish-types';
-import { memoize, find } from 'lodash';
+import type { Contract } from '@balena/jellyfish-types/build/core';
+import { find, memoize } from 'lodash';
 import type { LinkConstraint } from './types';
 
 export const supportsLink = memoize(
@@ -1589,7 +1589,7 @@ export const constraints: LinkConstraint[] = [
 export const getReverseConstraint = (
 	fromType: string,
 	toType: string,
-	name: core.Contract['name'],
+	name: Contract['name'],
 ): LinkConstraint | undefined => {
 	const result = find(constraints, (constraint) => {
 		return (

@@ -1,11 +1,11 @@
+import type { Contract } from '@balena/jellyfish-types/build/core';
 import { isEqual } from 'lodash';
-import sinon from 'sinon';
 import nock from 'nock';
+import sinon from 'sinon';
 import { v4 as uuid } from 'uuid';
-import { getSdk, JellyfishSDK, linkConstraints } from './index';
-import { isMentionedInMessage, CardSdk } from './card';
-import { core } from '@balena/jellyfish-types';
-import { Message } from './types';
+import { getSdk, JellyfishSDK, linkConstraints } from '.';
+import { CardSdk, isMentionedInMessage } from './card';
+import type { Message } from './types';
 
 let context: {
 	sdk: JellyfishSDK;
@@ -164,7 +164,9 @@ test(
 			const expected = {
 				limit: 1,
 				links: {
-					limit: 20,
+					'has attached element': {
+						limit: 20,
+					},
 				},
 			};
 			if (!isEqual((requestBody as any).options, expected)) {
@@ -186,7 +188,9 @@ test(
 		const getWithTimelineRequest = await sdk.card.getWithTimeline(name, {
 			queryOptions: {
 				links: {
-					limit: 20,
+					'has attached element': {
+						limit: 20,
+					},
 				},
 			},
 		});
@@ -692,8 +696,8 @@ test('unlink will unlink all links between two cards with the specified verb', a
 	const cardSdk = new CardSdk(sdk as any);
 
 	await cardSdk.unlink(
-		account1 as any as core.Contract,
-		opportunity1 as any as core.Contract,
+		account1 as any as Contract,
+		opportunity1 as any as Contract,
 		'has attached',
 	);
 
@@ -730,8 +734,8 @@ test('link throws on invalid link', async () => {
 
 	await expect(
 		cardSdk.link(
-			aTask as any as core.Contract,
-			anOpportunity as any as core.Contract,
+			aTask as any as Contract,
+			anOpportunity as any as Contract,
 			'needs',
 		),
 	).rejects.toBeTruthy();
@@ -757,8 +761,8 @@ test('link allows links with asterisks', async () => {
 
 	await expect(
 		cardSdk.link(
-			aTask as any as core.Contract,
-			anOpportunity as any as core.Contract,
+			aTask as any as Contract,
+			anOpportunity as any as Contract,
 			'was built into',
 		),
 	).resolves.toBeNull();
@@ -795,8 +799,8 @@ test("unlink will unlink 'reverse' links between two cards with the specified ve
 	const cardSdk = new CardSdk(sdk as any);
 
 	await cardSdk.unlink(
-		account1 as any as core.Contract,
-		opportunity1 as any as core.Contract,
+		account1 as any as Contract,
+		opportunity1 as any as Contract,
 		'has attached',
 	);
 
