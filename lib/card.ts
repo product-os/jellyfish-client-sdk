@@ -33,8 +33,8 @@ import type { Message } from './types';
 const checkLinksExist = async (
 	sdk: JellyfishSDK,
 	verb: string,
-	fromCard: ContractSummary,
-	toCard: ContractSummary | null = null,
+	fromCard: Pick<Contract, 'id' | 'type'>,
+	toCard: Pick<Contract, 'id' | 'type'> | null = null,
 ): Promise<boolean> => {
 	let linkSchema: JsonSchema;
 	if (toCard) {
@@ -119,8 +119,8 @@ const getLinkQueryOption = (
 
 const getLinkQuery = (
 	verb: string,
-	fromCard: Contract,
-	toCard: Contract,
+	fromCard: Pick<Contract, 'id' | 'type'>,
+	toCard: Pick<Contract, 'id' | 'type'>,
 ): JsonSchema => {
 	const reverseVerb = getReverseConstraint(fromCard.type, toCard.type, verb);
 
@@ -619,8 +619,8 @@ export class CardSdk {
 	 * @returns {Promise}
 	 */
 	async link(
-		fromCard: ContractSummary,
-		toCard: ContractSummary,
+		fromCard: Pick<Contract, 'id' | 'type'>,
+		toCard: Pick<Contract, 'id' | 'type'>,
 		verb: string,
 	): Promise<ContractSummary | true> {
 		if (!verb) {
@@ -725,8 +725,8 @@ export class CardSdk {
 	 * @returns {Promise}
 	 */
 	async unlink(
-		fromCard: Contract,
-		toCard: Contract,
+		fromCard: Pick<Contract, 'id' | 'type'>,
+		toCard: Pick<Contract, 'id' | 'type'>,
 		verb: string,
 	): Promise<Array<ContractSummary | null>> {
 		if (!verb) {

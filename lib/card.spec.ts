@@ -1,4 +1,3 @@
-import type { Contract } from '@balena/jellyfish-types/build/core';
 import { isEqual } from 'lodash';
 import nock from 'nock';
 import sinon from 'sinon';
@@ -695,11 +694,7 @@ test('unlink will unlink all links between two cards with the specified verb', a
 
 	const cardSdk = new CardSdk(sdk as any);
 
-	await cardSdk.unlink(
-		account1 as any as Contract,
-		opportunity1 as any as Contract,
-		'has attached',
-	);
+	await cardSdk.unlink(account1, opportunity1, 'has attached');
 
 	// The SDK is used to delete BOTH existing links
 	expect(sdk.action.callCount).toBe(linkCards.length);
@@ -733,11 +728,7 @@ test('link throws on invalid link', async () => {
 	const cardSdk = new CardSdk(sdk as any);
 
 	await expect(
-		cardSdk.link(
-			aTask as any as Contract,
-			anOpportunity as any as Contract,
-			'needs',
-		),
+		cardSdk.link(aTask, anOpportunity, 'needs'),
 	).rejects.toBeTruthy();
 });
 
@@ -760,11 +751,7 @@ test('link allows links with asterisks', async () => {
 	const cardSdk = new CardSdk(sdk as any);
 
 	await expect(
-		cardSdk.link(
-			aTask as any as Contract,
-			anOpportunity as any as Contract,
-			'was built into',
-		),
+		cardSdk.link(aTask, anOpportunity, 'was built into'),
 	).resolves.toBeNull();
 });
 
@@ -798,11 +785,7 @@ test("unlink will unlink 'reverse' links between two cards with the specified ve
 
 	const cardSdk = new CardSdk(sdk as any);
 
-	await cardSdk.unlink(
-		account1 as any as Contract,
-		opportunity1 as any as Contract,
-		'has attached',
-	);
+	await cardSdk.unlink(account1, opportunity1, 'has attached');
 
 	expect(sdk.action.callCount).toBe(linkCards.length);
 
