@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 8.3.0 - 2022-02-03
+
+* Export the `LinkConstraint` type [Carol Schulze]
+
 ## 8.2.0 - 2022-02-03
 
 * Add link constraint for owning issues [Lucian Buzzo]

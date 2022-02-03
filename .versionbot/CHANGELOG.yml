@@ -1,4 +1,18 @@
 - commits:
+    - subject: Export the `LinkConstraint` type
+      hash: e9a1332dc9524d6ac169828de2d436e538569632
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Carol Schulze <carol@balena.io>
+        signed-off-by: Carol Schulze <carol@balena.io>
+      author: Carol Schulze
+      nested: []
+  version: 8.3.0
+  title: "'Export the  type'"
+  date: 2022-02-03T19:59:12.376Z
+- commits:
     - subject: Add link constraint for owning issues
       hash: 2031d70e026df2e8b45a4009ddb212991fe2ea86
       body: ""
