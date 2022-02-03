@@ -1556,6 +1556,26 @@ export const constraints: LinkConstraint[] = [
 			inverse: 'link-constraint-commit-has-attached-check-run-check-run',
 		},
 	},
+	{
+		slug: 'link-constraint-issue-is-owned-by',
+		name: 'is owned by',
+		data: {
+			title: 'Owner',
+			from: 'issue',
+			to: 'user',
+			inverse: 'link-constraint-user-is-owner-of-issue',
+		},
+	},
+	{
+		slug: 'link-constraint-user-is-owner-of-issue',
+		name: 'is owner of',
+		data: {
+			title: 'Owned issue',
+			from: 'user',
+			to: 'issue',
+			inverse: 'link-constraint-issue-is-owned-by',
+		},
+	},
 ];
 
 /**

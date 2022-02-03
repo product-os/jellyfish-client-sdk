@@ -26,8 +26,8 @@ describe('link constraints', () => {
 			expect(supportsLink('support-thread', 'is owned by')).toBe(true);
 		});
 
-		test("returns false for issue and the 'is owned by' link name", () => {
-			expect(supportsLink('issue', 'is owned by')).toBe(false);
+		test("returns false for user and the 'is owned by' link name", () => {
+			expect(supportsLink('user', 'is owned by')).toBe(false);
 		});
 	});
 
