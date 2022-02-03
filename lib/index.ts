@@ -26,7 +26,12 @@ import {
 	supportsLink,
 } from './link-constraints';
 import { JellyfishStreamManager, StreamOptions } from './stream';
-import { ExtendedSocket, QueryOptions, SdkQueryOptions } from './types';
+import {
+	ExtendedSocket,
+	LinkConstraint,
+	QueryOptions,
+	SdkQueryOptions,
+} from './types';
 import { JellyfishCursor } from './cursor';
 
 const trimSlash = (text: string) => {
@@ -35,7 +40,12 @@ const trimSlash = (text: string) => {
 
 const LINKS = constraints;
 
-export { constraints as linkConstraints, supportsLink, getReverseConstraint };
+export {
+	constraints as linkConstraints,
+	LinkConstraint,
+	supportsLink,
+	getReverseConstraint,
+};
 
 axiosRetry(axios, {
 	retries: 3,
