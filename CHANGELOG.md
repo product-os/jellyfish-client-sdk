@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 8.2.0 - 2022-02-03
+
+* Add link constraint for owning issues [Lucian Buzzo]
+
 ## 8.1.2 - 2022-01-30
 
 * Update external-non-major [Renovate Bot]

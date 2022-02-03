@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add link constraint for owning issues
+      hash: 2031d70e026df2e8b45a4009ddb212991fe2ea86
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 8.2.0
+  title: "'Add link constraint for owning issues'"
+  date: 2022-02-03T17:05:45.399Z
+- commits:
     - subject: Update external-non-major
       hash: 7772f7fb1893c12392856db93330c7049f5037eb
       body: ""
