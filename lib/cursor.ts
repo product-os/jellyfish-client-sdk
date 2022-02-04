@@ -4,11 +4,12 @@
  * Proprietary and confidential.
  */
 
-import cloneDeep from 'lodash/cloneDeep';
-import { JSONSchema } from '@balena/jellyfish-types';
+import type { QueryOptions } from '@balena/jellyfish-core';
+import type { JsonSchema } from '@balena/jellyfish-types';
+import type { Contract } from '@balena/jellyfish-types/build/core';
+import { cloneDeep } from 'lodash';
 import { v4 as uuid } from 'uuid';
 import type { ExtendedSocket } from './types';
-import { Contract, QueryOptions } from '@balena/jellyfish-types/build/core';
 
 export type CursorEventName =
 	| 'update'
@@ -19,13 +20,13 @@ export type CursorEventName =
 
 export class JellyfishCursor<T extends Contract = Contract> {
 	private options: QueryOptions & { limit: number };
-	private schema: JSONSchema;
+	private schema: JsonSchema;
 	private hasmore = true;
 	private page = 1;
 
 	constructor(
 		public socket: ExtendedSocket,
-		schema: JSONSchema,
+		schema: JsonSchema,
 		options: QueryOptions,
 	) {
 		this.schema = schema;

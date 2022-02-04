@@ -1,4 +1,4 @@
-import type { core } from '@balena/jellyfish-types';
+import type { Contract } from '@balena/jellyfish-types/build/core';
 import { assign } from 'lodash';
 import type { JellyfishSDK } from '.';
 
@@ -35,11 +35,11 @@ export class EventSdk {
 	 * 		console.log(id)
 	 * 	})
 	 */
-	async create<TContract extends core.Contract = core.Contract>({
+	async create<TContract extends Contract = Contract>({
 		target,
 		...rest
 	}: {
-		target: core.Contract;
+		target: Contract;
 		[key: string]: any;
 	}): Promise<TContract | null> {
 		return this.sdk.action<TContract>({

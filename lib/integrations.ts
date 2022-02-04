@@ -1,4 +1,4 @@
-import type { core } from '@balena/jellyfish-types';
+import type { Contract } from '@balena/jellyfish-types/build/core';
 import type { JellyfishSDK } from '.';
 
 /**
@@ -8,7 +8,7 @@ export class IntegrationsSdk {
 	constructor(private sdk: JellyfishSDK) {}
 
 	async getAuthorizationUrl(
-		user: core.Contract,
+		user: Contract,
 		integration: string,
 	): Promise<string> {
 		const endpoint = `oauth/${integration}/${user.slug}`;
@@ -19,7 +19,7 @@ export class IntegrationsSdk {
 	}
 
 	async authorize(
-		user: core.Contract,
+		user: Contract,
 		integration: string,
 		code: string,
 	): Promise<void> {

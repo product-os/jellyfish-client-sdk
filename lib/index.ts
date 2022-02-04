@@ -1,5 +1,7 @@
 /* global FormData */
-import type { core, JSONSchema } from '@balena/jellyfish-types';
+import type { QueryOptions } from '@balena/jellyfish-core';
+import type { JsonSchema } from '@balena/jellyfish-types';
+import type { Contract } from '@balena/jellyfish-types/build/core';
 import axios, {
 	AxiosRequestConfig,
 	AxiosResponse,
@@ -9,6 +11,7 @@ import axiosRetry from 'axios-retry';
 import {
 	forEach,
 	get,
+	isBoolean,
 	isPlainObject,
 	isString,
 	merge,
@@ -17,6 +20,7 @@ import {
 } from 'lodash';
 import { AuthSdk } from './auth';
 import { CardSdk } from './card';
+import { JellyfishCursor } from './cursor';
 import { SDKRequestCancelledError } from './errors';
 import { EventSdk } from './event';
 import { IntegrationsSdk } from './integrations';
@@ -26,13 +30,7 @@ import {
 	supportsLink,
 } from './link-constraints';
 import { JellyfishStreamManager, StreamOptions } from './stream';
-import {
-	ExtendedSocket,
-	LinkConstraint,
-	QueryOptions,
-	SdkQueryOptions,
-} from './types';
-import { JellyfishCursor } from './cursor';
+import { ExtendedSocket, LinkConstraint, SdkQueryOptions } from './types';
 
 const trimSlash = (text: string) => {
 	return trim(text, '/');
@@ -63,7 +61,7 @@ axiosRetry(axios, {
  */
 export const applyMask = (
 	options: SdkQueryOptions,
-	mask: JSONSchema | null,
+	mask: JsonSchema | null,
 ): QueryOptions => {
 	const queryOptions = omit(options, 'ignoreMask');
 	if (mask && !options.ignoreMask) {
@@ -129,7 +127,7 @@ export class JellyfishSDK {
 	/**
 	 * A JSON schema filter that will be applied to all queries
 	 */
-	private _globalQueryMask: JSONSchema | null = null;
+	private _globalQueryMask: JsonSchema | null = null;
 
 	/**
 	 * @name JellyfishSDK
@@ -159,11 +157,11 @@ export class JellyfishSDK {
 		this.streamManager = new JellyfishStreamManager(this);
 	}
 
-	public get globalQueryMask(): JSONSchema | null {
+	public get globalQueryMask(): JsonSchema | null {
 		return this._globalQueryMask;
 	}
 
-	public set globalQueryMask(mask: JSONSchema | null) {
+	public set globalQueryMask(mask: JsonSchema | null) {
 		this._globalQueryMask = mask;
 		// TODO: When we have cursor instances wrapping the StreamManager's sockets
 		// we should update them all with the new mask to force a refresh.
@@ -206,7 +204,7 @@ export class JellyfishSDK {
 	 * @fulfil {File} - The requested file
 	 * @returns {Promise}
 	 */
-	getFile = async (cardId: core.Contract['id'], name: string) => {
+	getFile = async (cardId: Contract['id'], name: string) => {
 		return (
 			await axios.get(`${this.API_BASE}file/${cardId}/${name}`, {
 				headers: {
@@ -551,12 +549,13 @@ export class JellyfishSDK {
 	 * 		console.log(cards);
 	 * 	});
 	 */
-	async query<TResponse extends core.Contract = core.Contract>(
-		schema: JSONSchema,
+	async query<TResponse extends Contract = Contract>(
+		schema: JsonSchema,
 		options: SdkQueryOptions = {},
 	): Promise<TResponse[]> {
 		const payload = {
-			query: isString(schema) ? schema : omit(schema, '$id'),
+			query:
+				isString(schema) || isBoolean(schema) ? schema : omit(schema, '$id'),
 			options: applyMask(options, this.globalQueryMask),
 		};
 		return this.post<TResponse[]>('query', payload, {}).then((response) => {
@@ -598,13 +597,13 @@ export class JellyfishSDK {
 		viewSlug: string,
 		params: any = {},
 		options: SdkQueryOptions = {},
-	): Promise<core.Contract[]> {
+	): Promise<Contract[]> {
 		const payload: any = {
 			params,
 			options: applyMask(options, this.globalQueryMask),
 		};
 
-		return this.post<core.Contract[]>(`view/${viewSlug}`, payload).then(
+		return this.post<Contract[]>(`view/${viewSlug}`, payload).then(
 			(response) => {
 				return response ? response.data.data : [];
 			},
@@ -622,7 +621,7 @@ export class JellyfishSDK {
 	 * @fulfil {Object[]} - The resulting cards
 	 * @returns {Promise}
 	 */
-	async getByType<TContract extends core.Contract = core.Contract>(
+	async getByType<TContract extends Contract = Contract>(
 		type: string,
 	): Promise<TContract[]> {
 		const options = this.authToken
@@ -649,8 +648,8 @@ export class JellyfishSDK {
 	 * @fulfil {Object} - The resulting card
 	 * @returns {Promise}
 	 */
-	async getById<TContract extends core.Contract = core.Contract>(
-		id: core.Contract['id'],
+	async getById<TContract extends Contract = Contract>(
+		id: Contract['id'],
 	): Promise<TContract | null> {
 		const options = this.authToken
 			? {
@@ -682,7 +681,7 @@ export class JellyfishSDK {
 	 * @fulfil {Object} - The resulting card
 	 * @returns {Promise}
 	 */
-	async getBySlug<TContract extends core.Contract = core.Contract>(
+	async getBySlug<TContract extends Contract = Contract>(
 		slug: string,
 	): Promise<TContract | null> {
 		const options = this.authToken
@@ -819,7 +818,7 @@ export class JellyfishSDK {
 	 * @description Stream updates and insertions for cards that match a JSON
 	 * schema
 	 *
-	 * @param {JSONSchema} query - The JSON schema to query with
+	 * @param {JsonSchema} query - The JSON schema to query with
 	 * @param {SdkQueryOptions} options - Extra query options to use
 	 *
 	 * @fulfil {EventEmitter}
@@ -845,7 +844,7 @@ export class JellyfishSDK {
 	 * 	console.error(error);
 	 * })
 	 */
-	stream(query: JSONSchema, options: StreamOptions = {}): ExtendedSocket {
+	stream(query: JsonSchema, options: StreamOptions = {}): ExtendedSocket {
 		return this.streamManager.stream(query, options);
 	}
 
@@ -858,7 +857,7 @@ export class JellyfishSDK {
 	 *
 	 * @description Create a cursor object to query, stream and page contracts from the API
 	 *
-	 * @param {JSONSchema} query - The JSON schema to query with
+	 * @param {JsonSchema} query - The JSON schema to query with
 	 * @param {SdkQueryOptions} options - Extra query options to use
 	 *
 	 * @fulfil {EventEmitter}
@@ -883,7 +882,7 @@ export class JellyfishSDK {
 	 * const results = await cursor.nextPage()
 	 */
 	getCursor(
-		query: JSONSchema,
+		query: JsonSchema,
 		options: StreamOptions = { initialQuery: false },
 	): JellyfishCursor {
 		const socket = this.streamManager.stream(query, options);

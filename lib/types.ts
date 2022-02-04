@@ -1,8 +1,9 @@
+import type { QueryOptions } from '@balena/jellyfish-core';
+import type { Contract } from '@balena/jellyfish-types/build/core';
 import type { Socket } from 'socket.io-client';
-import type { core, JSONSchema } from '@balena/jellyfish-types';
 
 export type ExtendedSocket = Socket & {
-	type?: ((user: core.Contract, card: core.Contract) => void) | undefined;
+	type?: ((user: Contract, card: Contract) => void) | undefined;
 };
 
 export interface LinkConstraint {
@@ -16,7 +17,7 @@ export interface LinkConstraint {
 	};
 }
 
-export interface Message extends core.Contract {
+export interface Message extends Contract {
 	data: {
 		payload: {
 			message: string;
@@ -26,11 +27,6 @@ export interface Message extends core.Contract {
 			mentionsUser: string[];
 		};
 	};
-}
-
-export interface QueryOptions
-	extends Omit<core.QueryOptions, 'connection' | 'profile'> {
-	mask?: JSONSchema;
 }
 
 export interface SdkQueryOptions extends QueryOptions {

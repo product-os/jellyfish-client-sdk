@@ -1,7 +1,7 @@
 import { isEqual } from 'lodash';
 import nock from 'nock';
 import { v4 as uuid } from 'uuid';
-import { getSdk, JellyfishSDK } from './index';
+import { getSdk, JellyfishSDK } from '.';
 
 let context: {
 	sdk: JellyfishSDK;

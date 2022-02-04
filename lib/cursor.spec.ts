@@ -4,9 +4,9 @@
  * Proprietary and confidential.
  */
 
-import { JSONSchema } from '@balena/jellyfish-types';
-import sinon from 'sinon';
+import type { JsonSchema } from '@balena/jellyfish-types';
 import EventEmitter from 'events';
+import sinon from 'sinon';
 import { getSdk } from '.';
 import { JellyfishCursor } from './cursor';
 
@@ -42,7 +42,7 @@ const makeSocketStub = () => {
 	return socket;
 };
 
-const schema: JSONSchema = {
+const schema: JsonSchema = {
 	type: 'object',
 };
 
