@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 8.3.1 - 2022-02-04
+
+* Update `jellyfish-types` to v2 and fix type imports [Carol Schulze]
+
 ## 8.3.0 - 2022-02-03
 
 * Export the `LinkConstraint` type [Carol Schulze]
