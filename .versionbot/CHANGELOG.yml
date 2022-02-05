@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update external-non-major
+      hash: d0f073ba6649f0d422560887e32f9368e7d215ba
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 8.3.2
+  title: "'Update external-non-major'"
+  date: 2022-02-05T00:15:05.502Z
+- commits:
     - subject: Update `jellyfish-types` to v2 and fix type imports
       hash: e9d7edb4f2c00dbaf876442dbf1fc87343933eae
       body: ""

@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 8.3.2 - 2022-02-05
+
+* Update external-non-major [Renovate Bot]
+
 ## 8.3.1 - 2022-02-04
 
 * Update `jellyfish-types` to v2 and fix type imports [Carol Schulze]
