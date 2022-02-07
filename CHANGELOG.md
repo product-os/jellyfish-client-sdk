@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 8.3.4 - 2022-02-07
+
+* Streams: Fix bug that prevents stream initialisation [Lucian Buzzo]
+
 ## 8.3.3 - 2022-02-05
 
 * Update dependencies (external non-major bumps) [Renovate Bot]

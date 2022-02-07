@@ -1,4 +1,22 @@
 - commits:
+    - subject: "Streams: Fix bug that prevents stream initialisation"
+      hash: b044456c2e6716af463681d5ca060cfc4326f981
+      body: |
+        The initial `connect` reaction and `query` emission are vital for
+        correctly initialising the database stream correctly. I initially
+        changed this because I made the mistake that the `query` event caused
+        a full query to be run, which isn't the case.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 8.3.4
+  title: "'Streams: Fix bug that prevents stream initialisation'"
+  date: 2022-02-07T14:40:14.276Z
+- commits:
     - subject: Update dependencies (external non-major bumps)
       hash: dd3243baf3ee4f470820a264d8344ce3a4c2d165
       body: ""
