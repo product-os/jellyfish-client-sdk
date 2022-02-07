@@ -5,11 +5,6 @@ import { v4 as uuid } from 'uuid';
 import { applyMask, JellyfishSDK } from '.';
 import type { ExtendedSocket, SdkQueryOptions } from './types';
 
-export type StreamOptions = SdkQueryOptions & {
-	// Immediately run the provided query over the stream
-	initialQuery?: boolean;
-};
-
 /**
  * @class JellyfishStreamManager
  *
@@ -62,12 +57,7 @@ export class JellyfishStreamManager {
 	 * 	console.error(error);
 	 * })
 	 */
-	stream(
-		query: JsonSchema,
-		options: StreamOptions = {
-			initialQuery: true,
-		},
-	): ExtendedSocket {
+	stream(query: JsonSchema, options: SdkQueryOptions = {}): ExtendedSocket {
 		const url = this.sdk.getApiUrl();
 		if (!url) {
 			throw new Error(
@@ -86,19 +76,19 @@ export class JellyfishStreamManager {
 		socket.id = uuid();
 
 		// When the client connects, send the query that should be streamed as well
-		// as an authentication token
-
-		if (query && options.initialQuery) {
-			socket.on('connect', () => {
-				socket.emit('query', {
-					token,
-					data: {
-						query: query instanceof Object ? omit(query, '$id') : query,
-						options: applyMask(options, this.sdk.globalQueryMask),
-					},
-				});
+		// as an authentication token.
+		// Note that emitting this event doesn't cause a full query to be run, and instead
+		// just instructs the server what to stream on update. To run a full query, use the
+		// `queryDataset` event.
+		socket.on('connect', () => {
+			socket.emit('query', {
+				token,
+				data: {
+					query: query instanceof Object ? omit(query, '$id') : query,
+					options: applyMask(options, this.sdk.globalQueryMask),
+				},
 			});
-		}
+		});
 
 		// Cache the client so that it can be managed easily
 		this.activeSockets[socket.id] = socket;
