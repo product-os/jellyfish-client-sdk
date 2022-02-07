@@ -29,7 +29,7 @@ import {
 	getReverseConstraint,
 	supportsLink,
 } from './link-constraints';
-import { JellyfishStreamManager, StreamOptions } from './stream';
+import { JellyfishStreamManager } from './stream';
 import { ExtendedSocket, LinkConstraint, SdkQueryOptions } from './types';
 
 const trimSlash = (text: string) => {
@@ -844,7 +844,7 @@ export class JellyfishSDK {
 	 * 	console.error(error);
 	 * })
 	 */
-	stream(query: JsonSchema, options: StreamOptions = {}): ExtendedSocket {
+	stream(query: JsonSchema, options: SdkQueryOptions = {}): ExtendedSocket {
 		return this.streamManager.stream(query, options);
 	}
 
@@ -881,10 +881,7 @@ export class JellyfishSDK {
 	 *
 	 * const results = await cursor.nextPage()
 	 */
-	getCursor(
-		query: JsonSchema,
-		options: StreamOptions = { initialQuery: false },
-	): JellyfishCursor {
+	getCursor(query: JsonSchema, options: SdkQueryOptions): JellyfishCursor {
 		const socket = this.streamManager.stream(query, options);
 		return new JellyfishCursor(socket, query, options);
 	}
