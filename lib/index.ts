@@ -207,12 +207,14 @@ export class JellyfishSDK {
 	 * @returns {Promise}
 	 */
 	getFile = async (cardId: Contract['id'], name: string) => {
+		const headers = {
+			...this.defaultHeaders(),
+			accept: 'image/webp,image/*,*/*;q=0.8',
+		};
+
 		return (
 			await axios.get(`${this.API_BASE}file/${cardId}/${name}`, {
-				headers: {
-					authorization: `Bearer ${this.authToken}`,
-					accept: 'image/webp,image/*,*/*;q=0.8',
-				},
+				headers,
 				responseType: 'arraybuffer',
 			})
 		).data;
@@ -444,17 +446,7 @@ export class JellyfishSDK {
 		endpoint: string,
 		options?: AxiosRequestConfig,
 	): Promise<AxiosResponse<{ data: TResponse; error: Error }>> {
-		let headers = {};
-
-		if (this.sessionId && this.authToken) {
-			headers = {
-				authorization: `Bearer ${this.sessionId}.${this.authToken}`,
-			};
-		} else if (this.sessionId) {
-			headers = {
-				authorization: `Bearer ${this.sessionId}`,
-			};
-		}
+		const headers = this.defaultHeaders();
 
 		// Generate a fresh cancel token
 		const cancelTokenSource = axios.CancelToken.source();
@@ -716,7 +708,9 @@ export class JellyfishSDK {
 	async getByType<TContract extends Contract = Contract>(
 		type: string,
 	): Promise<TContract[]> {
-		const headers = this.defaultHeaders();
+		const options: any | undefined = {
+			...this.defaultHeaders(),
+		};
 
 		return (
 			await axios.get<TContract[]>(`${this.API_BASE}type/${type}`, options)
@@ -737,7 +731,9 @@ export class JellyfishSDK {
 	async getById<TContract extends Contract = Contract>(
 		id: Contract['id'],
 	): Promise<TContract | null> {
-		const headers = this.defaultHeaders();
+		const options: any | undefined = {
+			...this.defaultHeaders(),
+		};
 
 		try {
 			return (await axios.get<TContract>(`${this.API_BASE}id/${id}`, options))
@@ -764,7 +760,9 @@ export class JellyfishSDK {
 	async getBySlug<TContract extends Contract = Contract>(
 		slug: string,
 	): Promise<TContract | null> {
-		const headers = this.defaultHeaders();
+		const options: any | undefined = {
+			...this.defaultHeaders(),
+		};
 
 		try {
 			return (

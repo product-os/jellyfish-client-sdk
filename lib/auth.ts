@@ -177,7 +177,12 @@ export class AuthSdk {
 			})
 			.then((response) => {
 				const session = response.data.data;
-				this.sdk.setAuthToken(session!.id);
+
+				if (session.data.token) {
+					this.sdk.setAuthToken((session!.data.token as any).authentication);
+				}
+				this.sdk.setSessionId(session!.id);
+
 				return session;
 			});
 	}
@@ -215,8 +220,10 @@ export class AuthSdk {
 				});
 			})
 			.then((session) => {
-				this.sdk.setAuthToken(session!.id);
-
+				if (session.data.token) {
+					this.sdk.setAuthToken((session!.data.token as any).authentication);
+				}
+				this.sdk.setSessionId(session!.id);
 				return session!.id;
 			});
 	}
@@ -235,6 +242,7 @@ export class AuthSdk {
 	 * sdk.auth.logout()
 	 */
 	public logout(): void {
+		this.sdk.clearSessionId();
 		this.sdk.clearAuthToken();
 		this.sdk.cancelAllRequests();
 		this.sdk.cancelAllStreams();

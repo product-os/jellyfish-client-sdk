@@ -60,7 +60,7 @@ test('.login() should set both token and session ID correctly if they are presen
 	const mockSessionId = context.session;
 	const mockAuthToken = context.token;
 
-	server.post(/action/).reply((_uri) => {
+	server.post(/login/).reply((_uri) => {
 		return [
 			200,
 			{
