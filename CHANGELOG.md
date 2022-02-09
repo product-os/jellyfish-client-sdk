@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 8.3.5 - 2022-02-09
+
+* Update @balena/jellyfish-core from 14.2.0 to 14.3.0 [Renovate Bot]
+
 ## 8.3.4 - 2022-02-07
 
 * Streams: Fix bug that prevents stream initialisation [Lucian Buzzo]
