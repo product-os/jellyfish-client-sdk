@@ -15,7 +15,7 @@ export class IntegrationsSdk {
 
 		const response = await this.sdk.get<{ url: string }>(endpoint);
 
-		return response?.data.data.url;
+		return response?.data.url;
 	}
 
 	async authorize(
