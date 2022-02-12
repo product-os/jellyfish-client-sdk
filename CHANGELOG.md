@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 8.3.6 - 2022-02-12
+
+* Update external-non-major [Renovate Bot]
+
 ## 8.3.5 - 2022-02-09
 
 * Update @balena/jellyfish-core from 14.2.0 to 14.3.0 [Renovate Bot]
