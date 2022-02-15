@@ -49,7 +49,8 @@ export class JellyfishCursor<T extends Contract = Contract> {
 		return new Promise((resolve) => {
 			const handler = ({ data }) => {
 				if (data.id === queryId) {
-					resolve(data.cards);
+					// Slice off any additional items that are returned for page detection
+					resolve(data.cards.slice(0, this.options.limit));
 					this.socket.off('dataset', handler);
 				}
 			};
