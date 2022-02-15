@@ -1,4 +1,22 @@
 - commits:
+    - subject: "cursor: trim extra data items"
+      hash: 8a6f39b710b2e7e70ff0a023527576d23218543a
+      body: |
+        When querying the API the cursor requests one additional item. This
+        overscan is used to see if there is another page of data available, but
+        shouldn't be returned to the callee. This change trims the data set to
+        the size of `options.limit` before returning it.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 8.3.8
+  title: "'cursor: trim extra data items'"
+  date: 2022-02-15T16:08:24.071Z
+- commits:
     - subject: Update dependencies (external v0 minor bumps)
       hash: b66a69582342b61ae23557197a7faf2bb2ed9803
       body: ""
