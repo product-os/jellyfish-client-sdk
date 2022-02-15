@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 8.3.7 - 2022-02-13
+
+* Update dependencies (external v0 minor bumps) [Renovate Bot]
+
 ## 8.3.6 - 2022-02-12
 
 * Update external-non-major [Renovate Bot]
