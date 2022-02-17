@@ -49,8 +49,12 @@ export class JellyfishCursor<T extends Contract = Contract> {
 		return new Promise((resolve) => {
 			const handler = ({ data }) => {
 				if (data.id === queryId) {
+					const results = data.cards;
+					// If an extra item was retrieved, another page is available
+					this.hasmore = results.length > this.options.limit;
+
 					// Slice off any additional items that are returned for page detection
-					resolve(data.cards.slice(0, this.options.limit));
+					resolve(results.slice(0, this.options.limit));
 					this.socket.off('dataset', handler);
 				}
 			};
@@ -82,9 +86,6 @@ export class JellyfishCursor<T extends Contract = Contract> {
 		};
 
 		const results = await this.query();
-
-		// If an extra item was retrieved, another page is available
-		this.hasmore = results.length > this.options.limit;
 
 		return results;
 	}
