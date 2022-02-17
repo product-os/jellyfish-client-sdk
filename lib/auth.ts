@@ -73,15 +73,11 @@ export class AuthSdk {
 		email: string;
 		password: string;
 	}): Promise<TContract> {
-		return this.sdk
-			.post<TContract>('/signup', {
-				email,
-				username,
-				password,
-			})
-			.then((response) => {
-				return response.data.data;
-			});
+		return this.sdk.post<TContract>('/signup', {
+			email,
+			username,
+			password,
+		});
 	}
 
 	/**
@@ -165,16 +161,13 @@ export class AuthSdk {
 		username: string;
 		password: string;
 	}): Promise<TContract | null> {
-		return this.sdk
-			.post<TContract>('/login', {
-				username,
-				password,
-			})
-			.then((response) => {
-				const session = response.data.data;
-				this.sdk.setAuthToken(session!.id);
-				return session;
-			});
+		const session = await this.sdk.post<TContract>('/login', {
+			username,
+			password,
+		});
+
+		this.sdk.setAuthToken(session.id);
+		return session;
 	}
 
 	/**

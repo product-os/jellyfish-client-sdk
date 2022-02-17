@@ -466,7 +466,7 @@ export class JellyfishSDK {
 		endpoint: string,
 		body: TBody,
 		options?: AxiosRequestConfig,
-	): Promise<AxiosResponse<{ data: TResponse; error: Error }>> {
+	): Promise<TResponse> {
 		// Generate a fresh cancel token
 		const cancelTokenSource = axios.CancelToken.source();
 		this.cancelTokenSources.push(cancelTokenSource);
@@ -478,16 +478,21 @@ export class JellyfishSDK {
 					cancelToken: cancelTokenSource.token,
 			  })
 			: options;
+
 		try {
-			const response = axios.post<{ data: TResponse; error: Error }>(
-				`${this.API_BASE}${trimSlash(endpoint)}`,
-				body,
-				requestOptions,
-			);
+			const response = await axios.post<
+				{ data: TResponse; error: false } | { data: any; error: true }
+			>(`${this.API_BASE}${trimSlash(endpoint)}`, body, requestOptions);
+
 			if (!response) {
 				throw new Error('Got empty response');
 			}
-			return response;
+
+			if (response.data.error) {
+				throw response.data.error;
+			}
+
+			return response.data.data;
 		} catch (error: any) {
 			if (error.message === 'Operation canceled by user') {
 				throw new SDKRequestCancelledError();
@@ -558,9 +563,7 @@ export class JellyfishSDK {
 				isString(schema) || isBoolean(schema) ? schema : omit(schema, '$id'),
 			options: applyMask(options, this.globalQueryMask),
 		};
-		return this.post<TResponse[]>('query', payload, {}).then((response) => {
-			return response.data.data;
-		});
+		return this.post<TResponse[]>('query', payload, {});
 	}
 
 	/**
@@ -603,11 +606,7 @@ export class JellyfishSDK {
 			options: applyMask(options, this.globalQueryMask),
 		};
 
-		return this.post<Contract[]>(`view/${viewSlug}`, payload).then(
-			(response) => {
-				return response ? response.data.data : [];
-			},
-		);
+		return (await this.post<Contract[]>(`view/${viewSlug}`, payload)) || [];
 	}
 
 	/**
@@ -791,21 +790,13 @@ export class JellyfishSDK {
 				payload = formData;
 			}
 		}
-		return this.post<TResult>('action', payload).then(async (response) => {
-			if (!response) {
-				throw new Error('Got empty response');
-			}
-			const { error, data } = response.data;
-			if (error) {
-				throw new Error(get(data, ['message']));
-			}
 
-			if (!data) {
-				throw new Error(`action ${body.action} didn't return a result`);
-			}
+		const data = this.post<TResult>('action', payload);
+		if (!data) {
+			throw new Error(`action ${body.action} didn't return a result`);
+		}
 
-			return data;
-		});
+		return data;
 	}
 
 	/**
