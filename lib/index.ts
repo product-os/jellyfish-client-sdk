@@ -112,6 +112,36 @@ const extractFiles = (subject: any, path: string[] = []) => {
 	};
 };
 
+type ApiError =
+	| string
+	| {
+			name: string;
+			message: string;
+	  };
+
+type ApiResponse<TData> =
+	| {
+			error: false;
+			data: TData;
+	  }
+	| {
+			error: true;
+			data: ApiError;
+	  };
+
+const createError = (data: ApiError) => {
+	const error: Error & { expected?: boolean } = new Error();
+
+	if (typeof data === 'string') {
+		error.message = data;
+	} else if (typeof data === 'object') {
+		Object.assign(error, data);
+	}
+
+	error.expected = true;
+	return error;
+};
+
 /**
  * @namespace JellyfishSDK
  */
@@ -470,26 +500,50 @@ export class JellyfishSDK {
 		// Generate a fresh cancel token
 		const cancelTokenSource = axios.CancelToken.source();
 		this.cancelTokenSources.push(cancelTokenSource);
-		const requestOptions = this.authToken
-			? merge({}, options, {
-					headers: {
-						authorization: `Bearer ${this.authToken}`,
-					},
-					cancelToken: cancelTokenSource.token,
-			  })
-			: options;
+
+		const requestOptions: AxiosRequestConfig = merge(
+			{},
+			options,
+			this.authToken
+				? {
+						headers: {
+							authorization: `Bearer ${this.authToken}`,
+						},
+						cancelToken: cancelTokenSource.token,
+				  }
+				: {},
+			{
+				validateStatus: null,
+			},
+		);
 
 		try {
-			const response = await axios.post<
-				{ data: TResponse; error: false } | { data: any; error: true }
-			>(`${this.API_BASE}${trimSlash(endpoint)}`, body, requestOptions);
+			const response = await axios.post<ApiResponse<TResponse>>(
+				`${this.API_BASE}${trimSlash(endpoint)}`,
+				body,
+				requestOptions,
+			);
 
 			if (!response) {
 				throw new Error('Got empty response');
 			}
 
+			if (!('error' in response.data) || !('data' in response.data)) {
+				throw new Error(
+					'Invalid response: Response should contain "data" and "error" keys',
+				);
+			}
+
+			const statusOk = response.status >= 200 && response.status < 300;
+
+			if (response.data.error === statusOk) {
+				throw new Error(
+					'Invalid response: Status code success mismatch with data.error value',
+				);
+			}
+
 			if (response.data.error) {
-				throw response.data.error;
+				throw createError(response.data.data);
 			}
 
 			return response.data.data;
