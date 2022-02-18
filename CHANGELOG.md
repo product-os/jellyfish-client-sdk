@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.0.0 - 2022-02-18
+
+* Simplify request code [karaxuna]
+
 ## 9.0.0 - 2022-02-18
 
 * Simplify `sdk.post` method [karaxuna]

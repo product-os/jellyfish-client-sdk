@@ -1,4 +1,16 @@
 - commits:
+    - subject: Simplify request code
+      hash: e6e4e3c5222410150976b5654cf0f0eef4ba8083
+      body: ""
+      footer:
+        Change-type: major
+        change-type: major
+      author: karaxuna
+      nested: []
+  version: 10.0.0
+  title: "'Simplify request code'"
+  date: 2022-02-18T22:59:30.379Z
+- commits:
     - subject: Simplify `sdk.post` method
       hash: 93daff432a78c604ff98b55a479eed2b500580d2
       body: ""
