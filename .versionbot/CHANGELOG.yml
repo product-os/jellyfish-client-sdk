@@ -1,4 +1,28 @@
 - commits:
+    - subject: Update @balena/jellyfish-core from 14.3.0 to 14.4.0
+      hash: bd0be2c4db9526195838b9923f6850952ea89d6c
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+    - subject: "cursor: check for overscan before trimming"
+      hash: 57547bccd756c5e98a5f09547d56544d2802c890
+      body: |
+        The cursor should check for overscan results before trimming off the
+        excess, otherwise `hasNextPage()` will *always* return false.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 8.3.9
+  title: "'Update @balena/jellyfish-core from 14.3.0 to 14.4.0'"
+  date: 2022-02-17T19:10:28.224Z
+- commits:
     - subject: "cursor: trim extra data items"
       hash: 8a6f39b710b2e7e70ff0a023527576d23218543a
       body: |

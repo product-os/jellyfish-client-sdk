@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 8.3.9 - 2022-02-17
+
+* Update @balena/jellyfish-core from 14.3.0 to 14.4.0 [Renovate Bot]
+* cursor: check for overscan before trimming [Lucian Buzzo]
+
 ## 8.3.8 - 2022-02-15
 
 * cursor: trim extra data items [Lucian Buzzo]
