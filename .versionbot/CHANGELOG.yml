@@ -1,4 +1,16 @@
 - commits:
+    - subject: Simplify `sdk.post` method
+      hash: 93daff432a78c604ff98b55a479eed2b500580d2
+      body: ""
+      footer:
+        Change-type: major
+        change-type: major
+      author: karaxuna
+      nested: []
+  version: 9.0.0
+  title: "'Simplify  method'"
+  date: 2022-02-18T15:54:38.823Z
+- commits:
     - subject: Update @balena/jellyfish-core from 14.3.0 to 14.4.0
       hash: bd0be2c4db9526195838b9923f6850952ea89d6c
       body: ""

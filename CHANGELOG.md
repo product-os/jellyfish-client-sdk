@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 9.0.0 - 2022-02-18
+
+* Simplify `sdk.post` method [karaxuna]
+
 ## 8.3.9 - 2022-02-17
 
 * Update @balena/jellyfish-core from 14.3.0 to 14.4.0 [Renovate Bot]
