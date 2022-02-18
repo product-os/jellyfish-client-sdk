@@ -31,9 +31,7 @@ export class AuthSdk {
 	public async whoami<
 		TContract extends Contract = Contract,
 	>(): Promise<TContract> {
-		return this.sdk.get<TContract>('/whoami').then((response) => {
-			return response.data.data;
-		});
+		return this.sdk.get<TContract>('/whoami');
 	}
 
 	/**
