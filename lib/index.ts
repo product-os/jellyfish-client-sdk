@@ -2,15 +2,10 @@
 import type { QueryOptions } from '@balena/jellyfish-core';
 import type { JsonSchema } from '@balena/jellyfish-types';
 import type { Contract } from '@balena/jellyfish-types/build/core';
-import axios, {
-	AxiosRequestConfig,
-	AxiosResponse,
-	CancelTokenSource,
-} from 'axios';
+import axios, { AxiosRequestConfig, CancelTokenSource } from 'axios';
 import axiosRetry from 'axios-retry';
 import {
 	forEach,
-	get,
 	isBoolean,
 	isPlainObject,
 	isString,
@@ -128,19 +123,6 @@ type ApiResponse<TData> =
 			error: true;
 			data: ApiError;
 	  };
-
-const createError = (data: ApiError) => {
-	const error: Error & { expected?: boolean } = new Error();
-
-	if (typeof data === 'string') {
-		error.message = data;
-	} else if (typeof data === 'object') {
-		Object.assign(error, data);
-	}
-
-	error.expected = true;
-	return error;
-};
 
 /**
  * @namespace JellyfishSDK
@@ -399,6 +381,79 @@ export class JellyfishSDK {
 		this.streamManager.close();
 	}
 
+	async request<TResponse>(endpoint: string, options?: AxiosRequestConfig) {
+		// Generate a fresh cancel token
+		const cancelTokenSource = axios.CancelToken.source();
+		this.cancelTokenSources.push(cancelTokenSource);
+
+		const requestOptions: AxiosRequestConfig = merge(
+			{},
+			options,
+			this.authToken
+				? {
+						headers: {
+							authorization: `Bearer ${this.authToken}`,
+						},
+						cancelToken: cancelTokenSource.token,
+				  }
+				: {},
+			{
+				validateStatus: null,
+			},
+		);
+
+		try {
+			const response = await axios.request<ApiResponse<TResponse>>({
+				...requestOptions,
+				url: `${this.API_BASE}${trimSlash(endpoint)}`,
+			});
+
+			if (!response) {
+				throw new Error('Got empty response');
+			}
+
+			if (!('error' in response.data) || !('data' in response.data)) {
+				throw new Error(
+					'Invalid response: Response should contain "data" and "error" keys',
+				);
+			}
+
+			const statusOk = response.status >= 200 && response.status < 300;
+
+			if (response.data.error === statusOk) {
+				throw new Error(
+					'Invalid response: Status code success mismatch with data.error value',
+				);
+			}
+
+			if (response.data.error) {
+				const error: Error & { expected?: boolean } = new Error();
+
+				if (typeof response.data.data === 'string') {
+					error.message = response.data.data;
+				} else if (typeof response.data.data === 'object') {
+					Object.assign(error, response.data.data);
+				}
+
+				error.expected = true;
+				throw error;
+			}
+
+			return response.data.data;
+		} catch (error: any) {
+			if (error.message === 'Operation canceled by user') {
+				throw new SDKRequestCancelledError();
+			}
+
+			throw error;
+		} finally {
+			// Remove the cancel token so that the request can be garbage collected
+			this.cancelTokenSources = this.cancelTokenSources.filter((item) => {
+				return item !== cancelTokenSource;
+			});
+		}
+	}
+
 	/**
 	 * @summary Send a GET request to the API
 	 * @name get
@@ -418,54 +473,11 @@ export class JellyfishSDK {
 	async get<TResponse>(
 		endpoint: string,
 		options?: AxiosRequestConfig,
-	): Promise<AxiosResponse<{ data: TResponse; error: Error }>> {
-		// Generate a fresh cancel token
-		const cancelTokenSource = axios.CancelToken.source();
-		this.cancelTokenSources.push(cancelTokenSource);
-		const requestOptions = merge({}, options, {
-			headers: this.authToken
-				? {
-						authorization: `Bearer ${this.authToken}`,
-				  }
-				: {},
-			cancelToken: cancelTokenSource.token,
+	): Promise<TResponse> {
+		return this.request<TResponse>(endpoint, {
+			...options,
+			method: 'GET',
 		});
-
-		try {
-			const response = axios.get<{ data: TResponse; error: Error }>(
-				`${this.API_BASE}${trimSlash(endpoint)}`,
-				requestOptions,
-			);
-			if (!response) {
-				throw new Error('Got empty response');
-			}
-			return response;
-		} catch (error: any) {
-			if (error.message === 'Operation canceled by user') {
-				throw new SDKRequestCancelledError();
-			}
-			if (error.response && error.response.data) {
-				const message = get(
-					error.response.data,
-					['data', 'message'],
-					error.response.data.data,
-				);
-				if (message) {
-					const newError = new Error(message) as Error & {
-						expected: boolean;
-					};
-					newError.name = error.response.data.data.name;
-					newError.expected = error.response.status < 500;
-					throw newError;
-				}
-			}
-			throw error;
-		} finally {
-			// Remove the cancel token so that the request can be garbage collected
-			this.cancelTokenSources = this.cancelTokenSources.filter((item) => {
-				return item !== cancelTokenSource;
-			});
-		}
 	}
 
 	/**
@@ -497,82 +509,11 @@ export class JellyfishSDK {
 		body: TBody,
 		options?: AxiosRequestConfig,
 	): Promise<TResponse> {
-		// Generate a fresh cancel token
-		const cancelTokenSource = axios.CancelToken.source();
-		this.cancelTokenSources.push(cancelTokenSource);
-
-		const requestOptions: AxiosRequestConfig = merge(
-			{},
-			options,
-			this.authToken
-				? {
-						headers: {
-							authorization: `Bearer ${this.authToken}`,
-						},
-						cancelToken: cancelTokenSource.token,
-				  }
-				: {},
-			{
-				validateStatus: null,
-			},
-		);
-
-		try {
-			const response = await axios.post<ApiResponse<TResponse>>(
-				`${this.API_BASE}${trimSlash(endpoint)}`,
-				body,
-				requestOptions,
-			);
-
-			if (!response) {
-				throw new Error('Got empty response');
-			}
-
-			if (!('error' in response.data) || !('data' in response.data)) {
-				throw new Error(
-					'Invalid response: Response should contain "data" and "error" keys',
-				);
-			}
-
-			const statusOk = response.status >= 200 && response.status < 300;
-
-			if (response.data.error === statusOk) {
-				throw new Error(
-					'Invalid response: Status code success mismatch with data.error value',
-				);
-			}
-
-			if (response.data.error) {
-				throw createError(response.data.data);
-			}
-
-			return response.data.data;
-		} catch (error: any) {
-			if (error.message === 'Operation canceled by user') {
-				throw new SDKRequestCancelledError();
-			}
-			if (error.response && error.response.data) {
-				const message = get(
-					error.response.data,
-					['data', 'message'],
-					error.response.data.data,
-				);
-				if (message) {
-					const newError = new Error(message) as Error & {
-						expected: boolean;
-					};
-					newError.name = error.response.data.data.name;
-					newError.expected = error.response.status < 500;
-					throw newError;
-				}
-			}
-			throw error;
-		} finally {
-			// Remove the cancel token so that the request can be garbage collected
-			this.cancelTokenSources = this.cancelTokenSources.filter((item) => {
-				return item !== cancelTokenSource;
-			});
-		}
+		return this.request(endpoint, {
+			...options,
+			method: 'POST',
+			data: body,
+		});
 	}
 
 	/**
