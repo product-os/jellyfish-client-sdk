@@ -112,6 +112,36 @@ const extractFiles = (subject: any, path: string[] = []) => {
 	};
 };
 
+type ApiError =
+	| string
+	| {
+			name: string;
+			message: string;
+	  };
+
+type ApiResponse<TData> =
+	| {
+			error: false;
+			data: TData;
+	  }
+	| {
+			error: true;
+			data: ApiError;
+	  };
+
+const createError = (data: ApiError) => {
+	const error: Error & { expected?: boolean } = new Error();
+
+	if (typeof data === 'string') {
+		error.message = data;
+	} else if (typeof data === 'object') {
+		Object.assign(error, data);
+	}
+
+	error.expected = true;
+	return error;
+};
+
 /**
  * @namespace JellyfishSDK
  */
@@ -466,28 +496,57 @@ export class JellyfishSDK {
 		endpoint: string,
 		body: TBody,
 		options?: AxiosRequestConfig,
-	): Promise<AxiosResponse<{ data: TResponse; error: Error }>> {
+	): Promise<TResponse> {
 		// Generate a fresh cancel token
 		const cancelTokenSource = axios.CancelToken.source();
 		this.cancelTokenSources.push(cancelTokenSource);
-		const requestOptions = this.authToken
-			? merge({}, options, {
-					headers: {
-						authorization: `Bearer ${this.authToken}`,
-					},
-					cancelToken: cancelTokenSource.token,
-			  })
-			: options;
+
+		const requestOptions: AxiosRequestConfig = merge(
+			{},
+			options,
+			this.authToken
+				? {
+						headers: {
+							authorization: `Bearer ${this.authToken}`,
+						},
+						cancelToken: cancelTokenSource.token,
+				  }
+				: {},
+			{
+				validateStatus: null,
+			},
+		);
+
 		try {
-			const response = axios.post<{ data: TResponse; error: Error }>(
+			const response = await axios.post<ApiResponse<TResponse>>(
 				`${this.API_BASE}${trimSlash(endpoint)}`,
 				body,
 				requestOptions,
 			);
+
 			if (!response) {
 				throw new Error('Got empty response');
 			}
-			return response;
+
+			if (!('error' in response.data) || !('data' in response.data)) {
+				throw new Error(
+					'Invalid response: Response should contain "data" and "error" keys',
+				);
+			}
+
+			const statusOk = response.status >= 200 && response.status < 300;
+
+			if (response.data.error === statusOk) {
+				throw new Error(
+					'Invalid response: Status code success mismatch with data.error value',
+				);
+			}
+
+			if (response.data.error) {
+				throw createError(response.data.data);
+			}
+
+			return response.data.data;
 		} catch (error: any) {
 			if (error.message === 'Operation canceled by user') {
 				throw new SDKRequestCancelledError();
@@ -558,9 +617,7 @@ export class JellyfishSDK {
 				isString(schema) || isBoolean(schema) ? schema : omit(schema, '$id'),
 			options: applyMask(options, this.globalQueryMask),
 		};
-		return this.post<TResponse[]>('query', payload, {}).then((response) => {
-			return response.data.data;
-		});
+		return this.post<TResponse[]>('query', payload, {});
 	}
 
 	/**
@@ -603,11 +660,7 @@ export class JellyfishSDK {
 			options: applyMask(options, this.globalQueryMask),
 		};
 
-		return this.post<Contract[]>(`view/${viewSlug}`, payload).then(
-			(response) => {
-				return response ? response.data.data : [];
-			},
-		);
+		return (await this.post<Contract[]>(`view/${viewSlug}`, payload)) || [];
 	}
 
 	/**
@@ -791,21 +844,13 @@ export class JellyfishSDK {
 				payload = formData;
 			}
 		}
-		return this.post<TResult>('action', payload).then(async (response) => {
-			if (!response) {
-				throw new Error('Got empty response');
-			}
-			const { error, data } = response.data;
-			if (error) {
-				throw new Error(get(data, ['message']));
-			}
 
-			if (!data) {
-				throw new Error(`action ${body.action} didn't return a result`);
-			}
+		const data = this.post<TResult>('action', payload);
+		if (!data) {
+			throw new Error(`action ${body.action} didn't return a result`);
+		}
 
-			return data;
-		});
+		return data;
 	}
 
 	/**
