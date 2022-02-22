@@ -1576,6 +1576,26 @@ export const constraints: LinkConstraint[] = [
 			inverse: 'link-constraint-issue-is-owned-by',
 		},
 	},
+	{
+		slug: 'link-constraint-milestone-requires-milestone',
+		name: 'requires',
+		data: {
+			title: 'Required milestone',
+			from: 'milestone',
+			to: 'milestone',
+			inverse: 'link-constraint-milestone-is-required-by-milestone',
+		},
+	},
+	{
+		slug: 'link-constraint-milestone-is-required-by-milestone',
+		name: 'is required by',
+		data: {
+			title: 'Required by milestone',
+			from: 'milestone',
+			to: 'milestone',
+			inverse: 'link-constraint-milestone-requires-milestone',
+		},
+	},
 ];
 
 /**
