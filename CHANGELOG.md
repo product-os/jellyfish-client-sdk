@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 10.1.0 - 2022-02-22
+
+* Add link for milestones requiring milestones [Lucian Buzzo]
+* Update typedoc from 0.22.11 to 0.22.12 [Renovate Bot]
+
 ## 10.0.0 - 2022-02-18
 
 * Simplify request code [karaxuna]

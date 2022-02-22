@@ -1,4 +1,27 @@
 - commits:
+    - subject: Add link for milestones requiring milestones
+      hash: a73c3538363c4cc224848ccebffbc3f8dd343c89
+      body: |
+        Fixes https://github.com/product-os/jellyfish/issues/7900
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+    - subject: Update typedoc from 0.22.11 to 0.22.12
+      hash: b30cdfcd26a402ca3b8d28d740b293d4a5d06b73
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.1.0
+  title: "'Add link for milestones requiring milestones'"
+  date: 2022-02-22T15:40:32.035Z
+- commits:
     - subject: Simplify request code
       hash: e6e4e3c5222410150976b5654cf0f0eef4ba8083
       body: ""
