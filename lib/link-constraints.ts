@@ -1036,6 +1036,26 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-constraint-pattern-is-owned-by-user',
+		name: 'is owned by',
+		data: {
+			title: 'Owner',
+			from: 'pattern',
+			to: 'user',
+			inverse: 'link-constraint-user-owns-pattern',
+		},
+	},
+	{
+		slug: 'link-constraint-user-owns-pattern',
+		name: 'owns',
+		data: {
+			title: 'Owned pattern',
+			from: 'user',
+			to: 'pattern',
+			inverse: 'link-constraint-pattern-is-owned-by-user',
+		},
+	},
+	{
 		slug: 'link-constraint-milestone-is-owned-by-user',
 		name: 'is owned by',
 		data: {
