@@ -1,4 +1,20 @@
 - commits:
+    - subject: Make `jellyfish-core` a main dependency
+      hash: 8a374d715c6a804dde612289b6032f3ea39c7177
+      body: |
+        The SDK exports a `SdkQueryOptions` type which extends from the core's
+        `QueryOptions`, which means this dependency is not dev-only.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Carol Schulze <carol@balena.io>
+        signed-off-by: Carol Schulze <carol@balena.io>
+      author: Carol Schulze
+      nested: []
+  version: 10.1.2
+  title: "'Make  a main dependency'"
+  date: 2022-02-24T12:03:07.904Z
+- commits:
     - subject: Add pattern ownership to link constraints
       hash: 060c97bffae16c553e237a8184433a8154d39971
       body: ""
