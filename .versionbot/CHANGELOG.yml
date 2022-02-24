@@ -1,4 +1,26 @@
 - commits:
+    - subject: Add pattern ownership to link constraints
+      hash: 060c97bffae16c553e237a8184433a8154d39971
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+    - subject: Update @balena/jellyfish-core from 14.4.0 to 15.0.0
+      hash: 28134f149c64838f07ffdc0b886a9e42b0fa12fb
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.1.1
+  title: "'Add pattern ownership to link constraints'"
+  date: 2022-02-24T11:27:52.760Z
+- commits:
     - subject: Add link for milestones requiring milestones
       hash: a73c3538363c4cc224848ccebffbc3f8dd343c89
       body: |

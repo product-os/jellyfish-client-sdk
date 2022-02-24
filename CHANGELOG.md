@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 10.1.1 - 2022-02-24
+
+* Add pattern ownership to link constraints [Lucian Buzzo]
+* Update @balena/jellyfish-core from 14.4.0 to 15.0.0 [Renovate Bot]
+
 ## 10.1.0 - 2022-02-22
 
 * Add link for milestones requiring milestones [Lucian Buzzo]
