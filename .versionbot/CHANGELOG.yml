@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update dependencies (internal patch bumps)
+      hash: 1cd770d4ff7ed90296f103ac1ceed7918bbfc527
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.1.3
+  title: "'Update dependencies (internal patch bumps)'"
+  date: 2022-02-25T04:33:30.159Z
+- commits:
     - subject: Make `jellyfish-core` a main dependency
       hash: 8a374d715c6a804dde612289b6032f3ea39c7177
       body: |

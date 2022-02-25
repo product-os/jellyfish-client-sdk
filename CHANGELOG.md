@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.1.3 - 2022-02-25
+
+* Update dependencies (internal patch bumps) [Renovate Bot]
+
 ## 10.1.2 - 2022-02-24
 
 * Make `jellyfish-core` a main dependency [Carol Schulze]
