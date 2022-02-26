@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.1.4 - 2022-02-26
+
+* Update external-non-major [Renovate Bot]
+
 ## 10.1.3 - 2022-02-25
 
 * Update dependencies (internal patch bumps) [Renovate Bot]
