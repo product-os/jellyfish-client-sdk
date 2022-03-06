@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update lint-staged from 12.3.4 to 12.3.5
+      hash: da1cb4a416e8be73d568e2ba0ae990ea53288318
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 10.1.6
+  title: "'Update lint-staged from 12.3.4 to 12.3.5'"
+  date: 2022-03-06T02:50:27.329Z
+- commits:
     - subject: Update @balena/jellyfish-core from 15.0.1 to 16.0.0
       hash: 1958ed34b4faf7f76282cb89744e54e6a80e4369
       body: ""

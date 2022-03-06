@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.1.6 - 2022-03-06
+
+* Update lint-staged from 12.3.4 to 12.3.5 [Josh Bowling]
+
 ## 10.1.5 - 2022-03-01
 
 * Update @balena/jellyfish-core from 15.0.1 to 16.0.0 [Renovate Bot]
