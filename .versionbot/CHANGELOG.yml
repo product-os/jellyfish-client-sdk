@@ -1,4 +1,24 @@
 - commits:
+    - subject: Update typescript from 4.5.5 to 4.6.2
+      hash: dfd2bd21bff886826c641576059b5873c04f2d64
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+    - subject: Update typedoc from 0.22.12 to 0.22.13
+      hash: 654fb796f20223e22e0b8c97edf259c2599f2030
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.1.7
+  title: "'Update typescript from 4.5.5 to 4.6.2'"
+  date: 2022-03-07T05:54:40.278Z
+- commits:
     - subject: Update lint-staged from 12.3.4 to 12.3.5
       hash: da1cb4a416e8be73d568e2ba0ae990ea53288318
       body: ""
