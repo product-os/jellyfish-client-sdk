@@ -1,4 +1,16 @@
 - commits:
+    - subject: Amended documentation of sortBy and sortDir of the query function
+      hash: cab253ef72203fadaafb7b39dc388001a4bcb495
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Taro Murao
+      nested: []
+  version: 10.1.8
+  title: "'Ammended documentation of sortBy and sortDir of the query function'"
+  date: 2022-03-07T10:39:42.013Z
+- commits:
     - subject: Update typescript from 4.5.5 to 4.6.2
       hash: dfd2bd21bff886826c641576059b5873c04f2d64
       body: ""

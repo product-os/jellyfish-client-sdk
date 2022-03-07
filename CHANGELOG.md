@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.1.8 - 2022-03-07
+
+* Amended documentation of sortBy and sortDir of the query function [Taro Murao]
+
 ## 10.1.7 - 2022-03-07
 
 * Update typescript from 4.5.5 to 4.6.2 [Renovate Bot]
