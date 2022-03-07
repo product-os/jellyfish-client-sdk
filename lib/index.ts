@@ -523,15 +523,17 @@ export class JellyfishSDK {
 	 * @function
 	 * @memberof JellyfishSDK
 	 *
-	 * @description Query the API for card data, using a JSON schema. Cards that
+	 * @description Query the API for contract data, using a JSON schema. Contracts that
 	 * match the JSON schema are returned
 	 *
 	 * @param {Object} schema - The JSON schema to query with
 	 * @param {Object} [options] - Additional options
 	 * @param {Number} [options.limit] - Limit the number of results
 	 * @param {Number} [options.skip] - Skip a set amount of results
+	 * @param {String} [options.sortBy] - Sort by the specified field
+	 * @param {String} [options.sortDir] - Sort direction, defaults to ascending order. To sort by descending order, specify 'desc'.
 	 *
-	 * @fulfil {Object[]} - An array of cards that match the schema
+	 * @fulfil {Object[]} - An array of contracts that match the schema
 	 * @returns {Promise}
 	 *
 	 * @example
@@ -539,14 +541,20 @@ export class JellyfishSDK {
 	 * 	type: 'object',
 	 * 	properties: {
 	 * 		type: {
-	 * 			const: 'thread'
+	 * 			const: 'thread@1.0.0'
 	 * 		}
 	 * 	}
 	 * };
 	 *
-	 * sdk.query(schema)
-	 * 	.then((cards) => {
-	 * 		console.log(cards);
+	 * const options = {
+	 *   limit: 10,
+	 *   sortBy: 'created_at',
+	 *   sortDir: 'desc',
+	 * };
+	 *
+	 * sdk.query(schema, options)
+	 * 	.then((contracts) => {
+	 * 		console.log(contracts);
 	 * 	});
 	 */
 	async query<TResponse extends Contract = Contract>(
