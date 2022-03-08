@@ -71,6 +71,52 @@ const sdk = getSdk({
 		 *   }
 		 * ]
 		 */
+
+		// Query to retrieve active support threads with the query API.
+		// Include also links to "pattern" type contractswith the categor
+		// 'has attachement'.
+		const supportThreadyQuery = {
+			type: "object",
+			anyOf: [
+				{
+					$$links: {
+						"has attached": {
+							type: "object",
+							properties: {
+								type: {
+									const: "pattern@1.0.0",
+								},
+							},
+						},
+					},
+				},
+				true,
+			],
+			required: ["active", "type", "data", "links", "created_at"],
+			properties: {
+				data: {
+					type: "object",
+					properties: {
+						"type": {
+							"type": "string",
+							"const": "support-thread@1.0.0"
+						},
+						"active": {
+							"type": "boolean",
+							"const": true
+						}
+					},
+				},
+			},
+		};
+		// Sort by created_at field with descending order, skip the first 100 records.
+		const supportThreadyQueryOptions = {
+            sortBy: 'created_at',
+            sortDir: 'desc',
+            skip: 100,
+        });
+		const supportThreads =
+			await sdk.query(supportThreadQuery, supportThreadQueryOptions);
 	}
 })();
 ```
