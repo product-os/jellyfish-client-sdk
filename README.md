@@ -72,7 +72,7 @@ const sdk = getSdk({
 		 * ]
 		 */
 
-		// Query to retrieve active support threads with the query API.
+		// Retrieve active support threads from the API.
 		// Include also links to "pattern" type contractswith the categor
 		// 'has attachement'.
 		const supportThreadyQuery = {
