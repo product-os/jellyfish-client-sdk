@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.1.9 - 2022-03-09
+
+* Update axios from 0.26.0 to 0.26.1 [Renovate Bot]
+
 ## 10.1.8 - 2022-03-07
 
 * Amended documentation of sortBy and sortDir of the query function [Taro Murao]

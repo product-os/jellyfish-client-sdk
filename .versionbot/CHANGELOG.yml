@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update axios from 0.26.0 to 0.26.1
+      hash: 4523c1eff83af5fb46161f4bd668e4c8eb69ef7d
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.1.9
+  title: "'Update axios from 0.26.0 to 0.26.1'"
+  date: 2022-03-09T18:31:45.604Z
+- commits:
     - subject: Amended documentation of sortBy and sortDir of the query function
       hash: cab253ef72203fadaafb7b39dc388001a4bcb495
       body: ""
