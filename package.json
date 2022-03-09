@@ -44,7 +44,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@balena/jellyfish-core": "^16.0.0",
-    "axios": "^0.26.0",
+    "axios": "^0.26.1",
     "axios-retry": "^3.2.4",
     "common-tags": "^1.8.2",
     "deep-copy": "^1.4.2",
