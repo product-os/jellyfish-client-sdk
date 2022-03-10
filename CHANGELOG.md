@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.1.10 - 2022-03-10
+
+* Add relationship for owning todo items [Lucian Buzzo]
+
 ## 10.1.9 - 2022-03-09
 
 * Update axios from 0.26.0 to 0.26.1 [Renovate Bot]
