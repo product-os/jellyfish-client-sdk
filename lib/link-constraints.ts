@@ -1616,6 +1616,26 @@ export const constraints: LinkConstraint[] = [
 			inverse: 'link-constraint-milestone-requires-milestone',
 		},
 	},
+	{
+		slug: 'link-constraint-todo-is-owned-by',
+		name: 'is owned by',
+		data: {
+			title: 'Owner',
+			from: 'todo',
+			to: 'user',
+			inverse: 'link-constraint-user-is-owner-of-todo',
+		},
+	},
+	{
+		slug: 'link-constraint-user-is-owner-of-todo',
+		name: 'is owner of',
+		data: {
+			title: 'Owned todo item',
+			from: 'user',
+			to: 'todo',
+			inverse: 'link-constraint-todo-is-owned-by',
+		},
+	},
 ];
 
 /**
