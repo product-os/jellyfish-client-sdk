@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.1.11 - 2022-03-16
+
+* Use autumndb instead of jellyfish-core [Lucian Buzzo]
+
 ## 10.1.10 - 2022-03-10
 
 * Add relationship for owning todo items [Lucian Buzzo]

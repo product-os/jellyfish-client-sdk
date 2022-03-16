@@ -1,4 +1,19 @@
 - commits:
+    - subject: Use autumndb instead of jellyfish-core
+      hash: a03630fa2f6eb8f56fb8aaa0f0db3f18d69b0333
+      body: |
+        The `jellyfish-core` package has been renamed to `autumndb`
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 10.1.11
+  title: "'Use autumndb instead of jellyfish-core'"
+  date: 2022-03-16T11:17:09.037Z
+- commits:
     - subject: Add relationship for owning todo items
       hash: 51e626bd87d04a557b144a35cacac824191a9c19
       body: ""
