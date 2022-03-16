@@ -1,4 +1,4 @@
-import type { QueryOptions } from '@balena/jellyfish-core';
+import type { QueryOptions } from 'autumndb';
 import type { Contract } from '@balena/jellyfish-types/build/core';
 import type { Socket } from 'socket.io-client';
 

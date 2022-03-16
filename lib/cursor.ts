@@ -4,7 +4,7 @@
  * Proprietary and confidential.
  */
 
-import type { QueryOptions } from '@balena/jellyfish-core';
+import type { QueryOptions } from 'autumndb';
 import type { JsonSchema } from '@balena/jellyfish-types';
 import type { Contract } from '@balena/jellyfish-types/build/core';
 import { cloneDeep } from 'lodash';

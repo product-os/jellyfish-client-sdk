@@ -43,7 +43,7 @@
   "author": "Balena.io. <hello@balena.io>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@balena/jellyfish-core": "^16.0.0",
+    "autumndb": "^17.0.3",
     "axios": "^0.26.1",
     "axios-retry": "^3.2.4",
     "common-tags": "^1.8.2",
