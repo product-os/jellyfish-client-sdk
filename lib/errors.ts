@@ -1,4 +1,4 @@
-import type { errors as coreErrors } from '@balena/jellyfish-core';
+import type { errors as coreErrors } from 'autumndb';
 
 export class SDKRequestCancelledError
 	extends Error
