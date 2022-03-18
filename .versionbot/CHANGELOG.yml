@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update autumndb from 17.0.3 to 19.0.0
+      hash: 36556a9325d97fca80f8839e0f645c811f25b5c7
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 10.1.12
+  title: "'Update autumndb from 17.0.3 to 19.0.0'"
+  date: 2022-03-18T04:40:07.137Z
+- commits:
     - subject: Use autumndb instead of jellyfish-core
       hash: a03630fa2f6eb8f56fb8aaa0f0db3f18d69b0333
       body: |

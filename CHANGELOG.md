@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.1.12 - 2022-03-18
+
+* Update autumndb from 17.0.3 to 19.0.0 [Josh Bowling]
+
 ## 10.1.11 - 2022-03-16
 
 * Use autumndb instead of jellyfish-core [Lucian Buzzo]
