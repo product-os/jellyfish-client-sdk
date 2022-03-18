@@ -43,7 +43,7 @@
   "author": "Balena.io. <hello@balena.io>",
   "license": "Apache-2.0",
   "dependencies": {
-    "autumndb": "^17.0.3",
+    "autumndb": "^19.0.0",
     "axios": "^0.26.1",
     "axios-retry": "^3.2.4",
     "common-tags": "^1.8.2",
