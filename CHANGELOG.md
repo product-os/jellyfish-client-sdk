@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.1.13 - 2022-03-19
+
+* Update external-non-major [Renovate Bot]
+
 ## 10.1.12 - 2022-03-18
 
 * Update autumndb from 17.0.3 to 19.0.0 [Josh Bowling]
