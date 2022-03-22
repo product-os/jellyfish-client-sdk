@@ -1,1 +1,4 @@
-type: 'node'
+type: "node"
+upstream:
+  - repo: "autumndb"
+    url: "https://github.com/product-os/autumndb"
