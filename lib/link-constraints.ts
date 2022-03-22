@@ -1636,6 +1636,46 @@ export const constraints: LinkConstraint[] = [
 			inverse: 'link-constraint-todo-is-owned-by',
 		},
 	},
+	{
+		slug: 'link-constraint-post-mortem-is-attached-to-incident',
+		name: 'is attached to',
+		data: {
+			title: 'Incident',
+			from: 'post-mortem',
+			to: 'incident',
+			inverse: 'link-constraint-incident-has-attached-post-mortem',
+		},
+	},
+	{
+		slug: 'link-constraint-incident-has-attached-post-mortem',
+		name: 'has attached',
+		data: {
+			title: 'Post-mortem',
+			from: 'incident',
+			to: 'post-mortem',
+			inverse: 'link-constraint-post-mortem-is-attached-to-incident',
+		},
+	},
+	{
+		slug: 'link-constraint-pattern-is-attached-to-incident',
+		name: 'is attached to',
+		data: {
+			title: 'Incident',
+			from: 'pattern',
+			to: 'incident',
+			inverse: 'link-constraint-incident-has-attached-pattern',
+		},
+	},
+	{
+		slug: 'link-constraint-incident-has-attached-pattern',
+		name: 'has attached',
+		data: {
+			title: 'Pattern',
+			from: 'incident',
+			to: 'pattern',
+			inverse: 'link-constraint-pattern-is-attached-to-incident',
+		},
+	},
 ];
 
 /**
