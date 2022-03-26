@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 19.0.0 to 19.1.7
+      hash: 85455e0034454c5970c8b136cf8fdd4ac19934ea
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.2.1
+  title: "'Update autumndb from 19.0.0 to 19.1.7'"
+  date: 2022-03-26T08:07:11.436Z
+- commits:
     - subject: Define relationship between product repositories
       hash: bc36df545b85dadb08d2d60026dc0a5fd5f70e9b
       body: ""

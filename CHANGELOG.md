@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.2.1 - 2022-03-26
+
+* Update autumndb from 19.0.0 to 19.1.7 [Renovate Bot]
+
 ## 10.2.0 - 2022-03-26
 
 * Define relationship between product repositories [Lucian Buzzo]
