@@ -1636,6 +1636,26 @@ export const constraints: LinkConstraint[] = [
 			inverse: 'link-constraint-todo-is-owned-by',
 		},
 	},
+	{
+		slug: 'link-constraint-repository-uses-repository',
+		name: 'uses',
+		data: {
+			title: 'Uses product',
+			from: 'repository',
+			to: 'repository',
+			inverse: 'link-constraint-repository-is-used-by-repository',
+		},
+	},
+	{
+		slug: 'link-constraint-repository-is-used-by-repository',
+		name: 'is used by',
+		data: {
+			title: 'Used by product',
+			from: 'repository',
+			to: 'repository',
+			inverse: 'link-constraint-repository-uses-repository',
+		},
+	},
 ];
 
 /**
