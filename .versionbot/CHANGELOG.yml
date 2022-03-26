@@ -1,4 +1,18 @@
 - commits:
+    - subject: Define relationship between product repositories
+      hash: bc36df545b85dadb08d2d60026dc0a5fd5f70e9b
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 10.2.0
+  title: "'Define relationship between product repositories'"
+  date: 2022-03-26T07:58:54.679Z
+- commits:
     - subject: Update upstreams in repo.yml
       hash: 4214684f2d2b2dbdc28565616df614fda5e36b2a
       body: ""

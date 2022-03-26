@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.2.0 - 2022-03-26
+
+* Define relationship between product repositories [Lucian Buzzo]
+
 ## 10.1.14 - 2022-03-22
 
 * Update upstreams in repo.yml [Josh Bowling]
