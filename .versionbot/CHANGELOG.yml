@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update external-non-major
+      hash: c2e4c38ff25396b5a66953035d7166ac4cdef994
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.2.2
+  title: "'Update external-non-major'"
+  date: 2022-03-26T08:46:57.763Z
+- commits:
     - subject: Update autumndb from 19.0.0 to 19.1.7
       hash: 85455e0034454c5970c8b136cf8fdd4ac19934ea
       body: ""
