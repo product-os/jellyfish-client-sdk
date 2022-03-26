@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.2.3 - 2022-03-26
+
+* Update typescript from 4.6.2 to 4.6.3 [Renovate Bot]
+
 ## 10.2.2 - 2022-03-26
 
 * Update external-non-major [Renovate Bot]
