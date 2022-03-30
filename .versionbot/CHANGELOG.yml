@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add relationship between loops and repositories
+      hash: 4123fdda35707c643b233a9b46a1bcc1e03e96c7
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 10.3.0
+  title: "'Add relationship between loops and repositories'"
+  date: 2022-03-30T12:53:12.815Z
+- commits:
     - subject: Update typescript from 4.6.2 to 4.6.3
       hash: 108f8c9f1f0f7d1a09a5f5dfe2b15cb6b7945ae2
       body: ""
