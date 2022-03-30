@@ -1656,6 +1656,26 @@ export const constraints: LinkConstraint[] = [
 			inverse: 'link-constraint-repository-uses-repository',
 		},
 	},
+	{
+		slug: 'link-constraint-loop-has-product-repository',
+		name: 'has',
+		data: {
+			title: 'Products',
+			from: 'loop',
+			to: 'repository',
+			inverse: 'link-constraint-repository-is-product-of-loop',
+		},
+	},
+	{
+		slug: 'link-constraint-repository-is-product-of-loop',
+		name: 'is used by',
+		data: {
+			title: 'Loop',
+			from: 'repository',
+			to: 'loop',
+			inverse: 'link-constraint-loop-has-product-repository',
+		},
+	},
 ];
 
 /**
