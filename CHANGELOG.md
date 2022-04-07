@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.3.1 - 2022-04-07
+
+* Update typedoc from 0.22.13 to 0.22.14 [Renovate Bot]
+
 ## 10.3.0 - 2022-03-30
 
 * Add relationship between loops and repositories [Lucian Buzzo]

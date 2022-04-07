@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update typedoc from 0.22.13 to 0.22.14
+      hash: 14ecd89ef8fbeab39bf2900c66943b90b59db43d
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.3.1
+  title: "'Update typedoc from 0.22.13 to 0.22.14'"
+  date: 2022-04-07T04:02:43.772Z
+- commits:
     - subject: Add relationship between loops and repositories
       hash: 4123fdda35707c643b233a9b46a1bcc1e03e96c7
       body: ""
