@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.3.3 - 2022-04-15
+
+* 🔄 Synced file(s) with product-os/jellyfish-config [joshbwlng]
+
 ## 10.3.2 - 2022-04-12
 
 * Update typedoc from 0.22.14 to 0.22.15 [Renovate Bot]
