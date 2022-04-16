@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.3.4 - 2022-04-16
+
+* Update external-non-major [Renovate Bot]
+
 ## 10.3.3 - 2022-04-15
 
 * 🔄 Synced file(s) with product-os/jellyfish-config [joshbwlng]
