@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.3.5 - 2022-04-23
+
+* Update external-non-major [Renovate Bot]
+
 ## 10.3.4 - 2022-04-16
 
 * Update external-non-major [Renovate Bot]
