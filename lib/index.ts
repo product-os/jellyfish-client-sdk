@@ -3,7 +3,6 @@ import type { QueryOptions } from 'autumndb';
 import type { JsonSchema } from '@balena/jellyfish-types';
 import type { Contract } from '@balena/jellyfish-types/build/core';
 import axios, { AxiosRequestConfig, CancelTokenSource } from 'axios';
-import axiosRetry from 'axios-retry';
 import {
 	forEach,
 	isBoolean,
@@ -39,14 +38,6 @@ export {
 	supportsLink,
 	getReverseConstraint,
 };
-
-axiosRetry(axios, {
-	retries: 3,
-	retryDelay: axiosRetry.exponentialDelay,
-	retryCondition: (err) =>
-		// retry network errors and transient http errors
-		!err.response || [502, 503, 504].includes(err.response.status),
-});
 
 /**
  * @summary Set the mask option to the supplied mask if it is set
