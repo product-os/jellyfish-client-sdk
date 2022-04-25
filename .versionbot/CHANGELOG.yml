@@ -1,4 +1,22 @@
 - commits:
+    - subject: Remove automatic retries
+      hash: d948e052702bd76cdc7210bd300c2b9d4cb869d5
+      body: |
+        Requests to Jellyfish are not currently idempotent, making automatic
+        retries unsafe. We've seen multiple incidents in production where
+        a non-200 HTTP status code is generated, but the contract has still been
+        correctly created, resulting in multiple entities being created.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 10.3.6
+  title: "'Remove automatic retries'"
+  date: 2022-04-25T12:42:51.998Z
+- commits:
     - subject: Update external-non-major
       hash: 2eb761e69037b36f89a49238e8d531b6c630273e
       body: ""

@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.3.6 - 2022-04-25
+
+* Remove automatic retries [Lucian Buzzo]
+
 ## 10.3.5 - 2022-04-23
 
 * Update external-non-major [Renovate Bot]
