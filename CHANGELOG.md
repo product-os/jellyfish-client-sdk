@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.3.7 - 2022-04-28
+
+* Update typescript from 4.6.3 to 4.6.4 [Josh Bowling]
+
 ## 10.3.6 - 2022-04-25
 
 * Remove automatic retries [Lucian Buzzo]
