@@ -1,4 +1,21 @@
 - commits:
+    - subject: Add product/channel link constraints
+      hash: f4340d3c22c836fe4de89c3509343c68cc2e0e09
+      body: |
+        Add new link constraints between products,
+        channels, channel preferences, and users.
+        A part of the support v2 work.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 10.4.0
+  title: "'Add product/channel link constraints'"
+  date: 2022-05-10T03:45:46.841Z
+- commits:
     - subject: Update external-non-major
       hash: 61846772a591f853adb2abaec80ecc95c297a05a
       body: ""

@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.4.0 - 2022-05-10
+
+* Add product/channel link constraints [Josh Bowling]
+
 ## 10.3.10 - 2022-05-08
 
 * Update external-non-major [Renovate Bot]
