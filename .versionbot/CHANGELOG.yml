@@ -1,4 +1,24 @@
 - commits:
+    - subject: Update external-non-major
+      hash: 0a569a45bcf4f5b75a6a5789ee47069cec3edbbd
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+    - subject: Update autumndb from 19.1.7 to 20.0.0
+      hash: d7fe2ff4899879fd7996c70d102306ec0741f2aa
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.4.1
+  title: "'Update external-non-major'"
+  date: 2022-05-21T02:44:47.537Z
+- commits:
     - subject: Add product/channel link constraints
       hash: f4340d3c22c836fe4de89c3509343c68cc2e0e09
       body: |

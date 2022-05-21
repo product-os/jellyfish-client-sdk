@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 10.4.1 - 2022-05-21
+
+* Update external-non-major [Renovate Bot]
+* Update autumndb from 19.1.7 to 20.0.0 [Renovate Bot]
+
 ## 10.4.0 - 2022-05-10
 
 * Add product/channel link constraints [Josh Bowling]
