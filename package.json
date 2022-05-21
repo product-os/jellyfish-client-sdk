@@ -50,7 +50,7 @@
     "fast-json-patch": "^3.1.1",
     "is-uuid": "^1.0.2",
     "lodash": "^4.17.21",
-    "socket.io-client": "^4.5.0",
+    "socket.io-client": "^4.5.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
@@ -59,7 +59,7 @@
     "@balena/lint": "^6.2.0",
     "@types/common-tags": "^1.8.1",
     "@types/is-uuid": "^1.0.0",
-    "@types/jest": "^27.5.0",
+    "@types/jest": "^27.5.1",
     "@types/lodash": "^4.14.182",
     "@types/sinon": "^10.0.11",
     "@types/uuid": "^8.3.4",
