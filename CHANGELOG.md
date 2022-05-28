@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.4.2 - 2022-05-28
+
+* Update external-non-major (external non-major bumps) [Renovate Bot]
+
 ## 10.4.1 - 2022-05-21
 
 * Update external-non-major [Renovate Bot]
