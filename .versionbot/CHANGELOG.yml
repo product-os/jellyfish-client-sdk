@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 20.0.0 to 20.1.0
+      hash: 886beb74c0353fd72dfb0095f1ddadbbf15caeb0
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.4.4
+  title: "'Update autumndb from 20.0.0 to 20.1.0'"
+  date: 2022-05-31T10:14:44.838Z
+- commits:
     - subject: Update typescript from 4.6.4 to 4.7.2
       hash: 1e8019e53bd7cfa206f27410a971c1f08eeaabfd
       body: ""

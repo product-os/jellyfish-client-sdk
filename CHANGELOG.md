@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.4.4 - 2022-05-31
+
+* Update autumndb from 20.0.0 to 20.1.0 [Renovate Bot]
+
 ## 10.4.3 - 2022-05-31
 
 * Update typescript from 4.6.4 to 4.7.2 [Renovate Bot]
