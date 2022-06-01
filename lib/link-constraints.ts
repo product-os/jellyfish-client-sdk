@@ -1717,45 +1717,45 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: "link-contrain-relationship-reaction-is-attached-to-message",
+		slug: "link-contraint-reaction-is-attached-to-message",
 		name: "is attached to",
 		data: {
 			title: "Reaction",
 			from: "reaction",
 			to: "message",
-			inverse: "link-constrain-has-attached-element",
+			inverse: "link-constraint-has-attached-element",
 		},
 	},
 	{
-		slug: "link-constrain-has-attached-element",
+		slug: "link-constraint-has-attached-element",
 		name: "has attached element",
 		data: {
 			title: "Reaction contract",
 			from: "message",
 			to: "reaction",
-			inverse: "link-contrain-relationship-reaction-is-attached-to-message",
+			inverse: "link-contraint-reaction-is-attached-to-message",
 		},
 	},
 	{
-		slug: "link-constrain-relationship-reaction-is-attached-to-whisper",
+		slug: "link-constraint-reaction-is-attached-to-whisper",
 		name: "is attached to",
 		data: {
 			title: "Reaction",
 			from: "reaction",
 			to: "whisper",
-			inverse: "link-constrain-Whisper",
+			inverse: "link-constraint-whisper-has-attached-reaction",
 		},
 	},
 	{
-		slug: "link-constrain-Whisper",
-		name: "is attached to",
+		slug: "link-constraint-whisper-has-attached-reaction",
+		name: "has attached element",
 		data: {
 			title: "Reaction",
 			from: "whisper",
 			to: "reaction",
-			inverse: "link-constrain-relationship-reaction-is-attached-to-whisper",
+			inverse: "link-constraint-reaction-is-attached-to-whisper",
 		},
-	}
+	},
 ];
 
 /**
