@@ -1755,7 +1755,7 @@ export const constraints: LinkConstraint[] = [
 			to: "reaction",
 			inverse: "link-constrain-relationship-reaction-is-attached-to-whisper",
 		},
-	},
+	}
 ];
 
 /**
