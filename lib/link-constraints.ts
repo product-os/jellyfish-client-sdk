@@ -1756,6 +1756,107 @@ export const constraints: LinkConstraint[] = [
 			inverse: "link-constraint-reaction-is-attached-to-whisper",
 		},
 	},
+	{
+		slug: 'link-constraint-product-has-attached-channel',
+		name: 'has attached',
+		data: {
+			title: 'Channel',
+			from: 'product',
+			to: 'channel',
+			inverse: 'link-constraint-channel-is-attached-to-product',
+		},
+	},
+	{
+		slug: 'link-constraint-channel-is-attached-to-product',
+		name: 'is attached to',
+		data: {
+			title: 'Product',
+			from: 'channel',
+			to: 'product',
+			inverse: 'link-constraint-product-has-attached-channel',
+		},
+	},
+	{
+		slug: 'link-constraint-channel-has-agent-user',
+		name: 'has agent',
+		data: {
+			title: 'User',
+			from: 'channel',
+			to: 'user',
+			inverse: 'link-constraint-user-is-agent-for-channel',
+		},
+	},
+	{
+		slug: 'link-constraint-user-is-agent-for-channel',
+		name: 'is agent for',
+		data: {
+			title: 'Channel',
+			from: 'user',
+			to: 'channel',
+			inverse: 'link-constraint-channel-has-agent-user',
+		},
+	},
+	{
+		slug: 'link-constraint-channel-has-settings-agent-channel-settings',
+		name: 'has settings',
+		data: {
+			title: 'Agent channel settings',
+			from: 'channel',
+			to: 'agent-channel-settings',
+			inverse:
+				'link-constraint-agent-channel-settings-are-settings-for-channel',
+		},
+	},
+	{
+		slug: 'link-constraint-agent-channel-settings-are-settings-for-channel',
+		name: 'are settings for',
+		data: {
+			title: 'Channel settings for channel',
+			from: 'agent-channel-settings',
+			to: 'channel',
+			inverse: 'link-constraint-channel-has-settings-agent-channel-settings',
+		},
+	},
+	{
+		slug: 'link-constraint-user-has-settings-agent-channel-settings',
+		name: 'has settings',
+		data: {
+			title: 'User agent channel settings',
+			from: 'user',
+			to: 'agent-channel-settings',
+			inverse: 'link-constraint-agent-channel-settings-are-settings-for-user',
+		},
+	},
+	{
+		slug: 'link-constraint-agent-channel-settings-are-settings-for-user',
+		name: 'are settings for',
+		data: {
+			title: 'Agent channel settings for a user',
+			from: 'agent-channel-settings',
+			to: 'user',
+			inverse: 'link-constraint-user-has-settings-agent-channel-settings',
+		},
+	},
+	{
+		slug: 'link-constraint-user-has-settings-agent-settings',
+		name: 'has settings',
+		data: {
+			title: 'User agent settings',
+			from: 'user',
+			to: 'agent-settings',
+			inverse: 'link-constraint-agent-settings-are-settings-for-user',
+		},
+	},
+	{
+		slug: 'link-constraint-agent-settings-are-settings-for-user',
+		name: 'are settings for',
+		data: {
+			title: 'Agent settings for a user',
+			from: 'agent-settings',
+			to: 'user',
+			inverse: 'link-constraint-user-has-settings-agent-settings',
+		},
+	},
 ];
 
 /**

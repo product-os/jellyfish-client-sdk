@@ -1,4 +1,225 @@
 - commits:
+    - subject: Update typedoc from 0.22.16 to 0.22.17
+      hash: 1d21998af8abb9286976ada2e1c23bf3f9bc73d1
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.4.5
+  title: "'Update typedoc from 0.22.16 to 0.22.17'"
+  date: 2022-06-01T04:56:24.877Z
+- commits:
+    - subject: Update autumndb from 20.0.0 to 20.1.0
+      hash: 886beb74c0353fd72dfb0095f1ddadbbf15caeb0
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.4.4
+  title: "'Update autumndb from 20.0.0 to 20.1.0'"
+  date: 2022-05-31T10:14:44.838Z
+- commits:
+    - subject: Update typescript from 4.6.4 to 4.7.2
+      hash: 1e8019e53bd7cfa206f27410a971c1f08eeaabfd
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+    - subject: Update typedoc from 0.22.15 to 0.22.16
+      hash: f80f8b9ef385a94227bc44944f912be510172582
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.4.3
+  title: "'Update typescript from 4.6.4 to 4.7.2'"
+  date: 2022-05-31T01:35:49.041Z
+- commits:
+    - subject: Update external-non-major (external non-major bumps)
+      hash: 85a70fe0a47e17277263985c37c63213a5ecf422
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.4.2
+  title: "'Update external-non-major (external non-major bumps)'"
+  date: 2022-05-28T01:01:13.948Z
+- commits:
+    - subject: Update external-non-major
+      hash: 0a569a45bcf4f5b75a6a5789ee47069cec3edbbd
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+    - subject: Update autumndb from 19.1.7 to 20.0.0
+      hash: d7fe2ff4899879fd7996c70d102306ec0741f2aa
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.4.1
+  title: "'Update external-non-major'"
+  date: 2022-05-21T02:44:47.537Z
+- commits:
+    - subject: Add product/channel link constraints
+      hash: f4340d3c22c836fe4de89c3509343c68cc2e0e09
+      body: |
+        Add new link constraints between products,
+        channels, channel preferences, and users.
+        A part of the support v2 work.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 10.4.0
+  title: "'Add product/channel link constraints'"
+  date: 2022-05-10T03:45:46.841Z
+- commits:
+    - subject: Update external-non-major
+      hash: 61846772a591f853adb2abaec80ecc95c297a05a
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.3.10
+  title: "'Update external-non-major'"
+  date: 2022-05-08T09:39:19.486Z
+- commits:
+    - subject: Update external-major
+      hash: aacfa68e773fa442bdac3d7319bc7b918d559733
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.3.9
+  title: "'Update external-major (major)'"
+  date: 2022-05-07T00:48:14.950Z
+- commits:
+    - subject: Update external-non-major
+      hash: fc65f7d5e0db2de935153cf98f6a33b0c2d7eb1d
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.3.8
+  title: "'Update external-non-major'"
+  date: 2022-04-30T01:36:10.935Z
+- commits:
+    - subject: Update typescript from 4.6.3 to 4.6.4
+      hash: 1ab32484b86e6a1c98de164ea6ad42ee1b98ce76
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 10.3.7
+  title: "'Update typescript from 4.6.3 to 4.6.4'"
+  date: 2022-04-28T23:32:38.474Z
+- commits:
+    - subject: Remove automatic retries
+      hash: d948e052702bd76cdc7210bd300c2b9d4cb869d5
+      body: |
+        Requests to Jellyfish are not currently idempotent, making automatic
+        retries unsafe. We've seen multiple incidents in production where
+        a non-200 HTTP status code is generated, but the contract has still been
+        correctly created, resulting in multiple entities being created.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 10.3.6
+  title: "'Remove automatic retries'"
+  date: 2022-04-25T12:42:51.998Z
+- commits:
+    - subject: Update external-non-major
+      hash: 2eb761e69037b36f89a49238e8d531b6c630273e
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.3.5
+  title: "'Update external-non-major'"
+  date: 2022-04-23T01:34:26.742Z
+- commits:
+    - subject: Update external-non-major
+      hash: 4e19a8a3e88af38c9a06701c84b68510a1fac70f
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.3.4
+  title: "'Update external-non-major'"
+  date: 2022-04-16T01:24:02.438Z
+- commits:
+    - subject: 🔄 Synced file(s) with product-os/jellyfish-config
+      hash: 3ce8cb0d4f2867edc177ff94c9ce0a2498363e5d
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: joshbwlng
+      nested: []
+  version: 10.3.3
+  title: "'🔄 Synced file(s) with product-os/jellyfish-config'"
+  date: 2022-04-15T03:31:09.441Z
+- commits:
+    - subject: Update typedoc from 0.22.14 to 0.22.15
+      hash: 1f461d46b798c82de887bf34b6c06d3c24b6f4d6
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.3.2
+  title: "'Update typedoc from 0.22.14 to 0.22.15'"
+  date: 2022-04-12T13:34:36.572Z
+- commits:
+    - subject: Update typedoc from 0.22.13 to 0.22.14
+      hash: 14ecd89ef8fbeab39bf2900c66943b90b59db43d
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.3.1
+  title: "'Update typedoc from 0.22.13 to 0.22.14'"
+  date: 2022-04-07T04:02:43.772Z
+- commits:
     - subject: Add relationship between loops and repositories
       hash: 4123fdda35707c643b233a9b46a1bcc1e03e96c7
       body: ""

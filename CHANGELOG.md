@@ -5,6 +5,72 @@
 
 # v0.0.3
 
+## 10.4.5 - 2022-06-01
+
+* Update typedoc from 0.22.16 to 0.22.17 [Renovate Bot]
+
+## 10.4.4 - 2022-05-31
+
+* Update autumndb from 20.0.0 to 20.1.0 [Renovate Bot]
+
+## 10.4.3 - 2022-05-31
+
+* Update typescript from 4.6.4 to 4.7.2 [Renovate Bot]
+* Update typedoc from 0.22.15 to 0.22.16 [Renovate Bot]
+
+## 10.4.2 - 2022-05-28
+
+* Update external-non-major (external non-major bumps) [Renovate Bot]
+
+## 10.4.1 - 2022-05-21
+
+* Update external-non-major [Renovate Bot]
+* Update autumndb from 19.1.7 to 20.0.0 [Renovate Bot]
+
+## 10.4.0 - 2022-05-10
+
+* Add product/channel link constraints [Josh Bowling]
+
+## 10.3.10 - 2022-05-08
+
+* Update external-non-major [Renovate Bot]
+
+## 10.3.9 - 2022-05-07
+
+* Update external-major [Renovate Bot]
+
+## 10.3.8 - 2022-04-30
+
+* Update external-non-major [Renovate Bot]
+
+## 10.3.7 - 2022-04-28
+
+* Update typescript from 4.6.3 to 4.6.4 [Josh Bowling]
+
+## 10.3.6 - 2022-04-25
+
+* Remove automatic retries [Lucian Buzzo]
+
+## 10.3.5 - 2022-04-23
+
+* Update external-non-major [Renovate Bot]
+
+## 10.3.4 - 2022-04-16
+
+* Update external-non-major [Renovate Bot]
+
+## 10.3.3 - 2022-04-15
+
+* 🔄 Synced file(s) with product-os/jellyfish-config [joshbwlng]
+
+## 10.3.2 - 2022-04-12
+
+* Update typedoc from 0.22.14 to 0.22.15 [Renovate Bot]
+
+## 10.3.1 - 2022-04-07
+
+* Update typedoc from 0.22.13 to 0.22.14 [Renovate Bot]
+
 ## 10.3.0 - 2022-03-30
 
 * Add relationship between loops and repositories [Lucian Buzzo]
