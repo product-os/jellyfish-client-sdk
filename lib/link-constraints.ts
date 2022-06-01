@@ -1716,6 +1716,46 @@ export const constraints: LinkConstraint[] = [
 			inverse: "link-constraint-message-reaction-is-made-by-user",
 		},
 	},
+	{
+		slug: "link-contrain-relationship-reaction-is-attached-to-message",
+		name: "is attached to",
+		data: {
+			title: "Reaction",
+			from: "reaction",
+			to: "message",
+			inverse: "link-constrain-has-attached-element",
+		},
+	},
+	{
+		slug: "link-constrain-has-attached-element",
+		name: "has attached element",
+		data: {
+			title: "Reaction contract",
+			from: "message",
+			to: "reaction",
+			inverse: "link-contrain-relationship-reaction-is-attached-to-message",
+		},
+	},
+	{
+		slug: "link-constrain-relationship-reaction-is-attached-to-whisper",
+		name: "is attached to",
+		data: {
+			title: "Reaction",
+			from: "reaction",
+			to: "whisper",
+			inverse: "link-constrain-Whisper",
+		},
+	},
+	{
+		slug: "link-constrain-Whisper",
+		name: "is attached to",
+		data: {
+			title: "Reaction",
+			from: "whisper",
+			to: "reaction",
+			inverse: "link-constrain-relationship-reaction-is-attached-to-whisper",
+		},
+	},
 ];
 
 /**
