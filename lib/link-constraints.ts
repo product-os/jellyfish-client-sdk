@@ -46,26 +46,6 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-any-is-bookmarked-by-user',
-		name: 'is bookmarked by',
-		data: {
-			title: 'Bookmarked by user',
-			from: '*',
-			to: 'user',
-			inverse: 'link-constraint-user-bookmarked-any',
-		},
-	},
-	{
-		slug: 'link-constraint-user-bookmarked-any',
-		name: 'bookmarked',
-		data: {
-			title: 'Bookmarked contract',
-			from: 'user',
-			to: '*',
-			inverse: 'link-constraint-any-is-bookmarked-by-user',
-		},
-	},
-	{
 		slug: 'link-constraint-org-has-member',
 		name: 'has member',
 		data: {
@@ -1694,26 +1674,6 @@ export const constraints: LinkConstraint[] = [
 			from: 'repository',
 			to: 'loop',
 			inverse: 'link-constraint-loop-has-product-repository',
-		},
-	},
-	{
-		slug: 'link-constraint-message-reaction-is-made-by-user',
-		name: 'is reacted by',
-		data: {
-			title: 'Reacted by user',
-			from: '*',
-			to: 'user',
-			inverse: 'link-constraint-user-react-to-message',
-		},
-	},
-	{
-		slug: 'link-constraint-user-react-to-message',
-		name: 'reacted',
-		data: {
-			title: 'Reaction contract',
-			from: 'user',
-			to: '*',
-			inverse: 'link-constraint-message-reaction-is-made-by-user',
 		},
 	},
 	{
