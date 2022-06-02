@@ -1687,7 +1687,7 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-has-attached-element',
+		slug: 'link-constraint-message-has-attached-element-reaction',
 		name: 'has attached element',
 		data: {
 			title: 'Reaction contract',
