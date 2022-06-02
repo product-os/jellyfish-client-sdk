@@ -1683,7 +1683,7 @@ export const constraints: LinkConstraint[] = [
 			title: 'Reaction',
 			from: 'reaction',
 			to: 'message',
-			inverse: 'link-constraint-has-attached-element',
+			inverse: 'link-constraint-message-has-attached-element-reaction',
 		},
 	},
 	{
