@@ -1703,7 +1703,7 @@ export const constraints: LinkConstraint[] = [
 			title: 'Reaction',
 			from: 'reaction',
 			to: 'whisper',
-			inverse: 'link-constraint-whisper-has-attached-reaction',
+			inverse: 'link-constraint-whisper-has-attached-element-reaction',
 		},
 	},
 	{
