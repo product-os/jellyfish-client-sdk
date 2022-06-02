@@ -1707,7 +1707,7 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
-		slug: 'link-constraint-whisper-has-attached-reaction',
+		slug: 'link-constraint-whisper-has-attached-element-reaction',
 		name: 'has attached element',
 		data: {
 			title: 'Reaction',
