@@ -1690,7 +1690,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-message-has-attached-element-reaction',
 		name: 'has attached element',
 		data: {
-			title: 'Reaction contract',
+			title: 'Reaction',
 			from: 'message',
 			to: 'reaction',
 			inverse: 'link-contraint-reaction-is-attached-to-message',
