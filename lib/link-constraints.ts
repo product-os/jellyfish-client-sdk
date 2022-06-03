@@ -1700,7 +1700,7 @@ export const constraints: LinkConstraint[] = [
 		slug: 'link-constraint-reaction-is-attached-to-whisper',
 		name: 'is attached to',
 		data: {
-			title: 'Reaction',
+			title: 'Whisper',
 			from: 'reaction',
 			to: 'whisper',
 			inverse: 'link-constraint-whisper-has-attached-element-reaction',
