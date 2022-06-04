@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.4.7 - 2022-06-04
+
+* Fix anti-pattern link constraints [Josh Bowling]
+
 ## 10.4.6 - 2022-06-04
 
 * Update typescript from 4.7.2 to 4.7.3 [Renovate Bot]
