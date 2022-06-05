@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update external-major (external major bumps)
+      hash: 2c5c88018dcbb40a93a1069bc01ad59e9a5cd101
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.4.8
+  title: "'Update external-major (external major bumps) (major)'"
+  date: 2022-06-05T08:00:28.243Z
+- commits:
     - subject: Fix anti-pattern link constraints
       hash: 24d0e101512ec63252e38ac58a11cb0d905578d7
       body: ""

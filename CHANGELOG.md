@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.4.8 - 2022-06-05
+
+* Update external-major (external major bumps) [Renovate Bot]
+
 ## 10.4.7 - 2022-06-04
 
 * Fix anti-pattern link constraints [Josh Bowling]
