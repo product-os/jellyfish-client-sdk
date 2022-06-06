@@ -1,4 +1,18 @@
 - commits:
+    - subject: Revert formatting changes
+      hash: 48a8deb141d905d46fbec1636a27499855c46270
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 10.4.9
+  title: "'Add reaction contract and link constrains to it'"
+  date: 2022-06-06T14:53:11.218Z
+- commits:
     - subject: Update external-major (external major bumps)
       hash: 2c5c88018dcbb40a93a1069bc01ad59e9a5cd101
       body: ""

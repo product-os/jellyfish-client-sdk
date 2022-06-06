@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 10.4.9 - 2022-06-06
+
+* Revert formatting changes [Josh Bowling]
+
 ## 10.4.8 - 2022-06-05
 
 * Update external-major (external major bumps) [Renovate Bot]
