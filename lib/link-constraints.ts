@@ -1677,6 +1677,46 @@ export const constraints: LinkConstraint[] = [
 		},
 	},
 	{
+		slug: 'link-contraint-reaction-is-attached-to-message',
+		name: 'is attached to',
+		data: {
+			title: 'Message',
+			from: 'reaction',
+			to: 'message',
+			inverse: 'link-constraint-message-has-attached-element-reaction',
+		},
+	},
+	{
+		slug: 'link-constraint-message-has-attached-element-reaction',
+		name: 'has attached element',
+		data: {
+			title: 'Reaction',
+			from: 'message',
+			to: 'reaction',
+			inverse: 'link-contraint-reaction-is-attached-to-message',
+		},
+	},
+	{
+		slug: 'link-constraint-reaction-is-attached-to-whisper',
+		name: 'is attached to',
+		data: {
+			title: 'Whisper',
+			from: 'reaction',
+			to: 'whisper',
+			inverse: 'link-constraint-whisper-has-attached-element-reaction',
+		},
+	},
+	{
+		slug: 'link-constraint-whisper-has-attached-element-reaction',
+		name: 'has attached element',
+		data: {
+			title: 'Reaction',
+			from: 'whisper',
+			to: 'reaction',
+			inverse: 'link-constraint-reaction-is-attached-to-whisper',
+		},
+	},
+	{
 		slug: 'link-constraint-product-has-attached-channel',
 		name: 'has attached',
 		data: {
