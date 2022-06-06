@@ -1,4 +1,42 @@
 - commits:
+    - subject: Update external-major (external major bumps)
+      hash: 2c5c88018dcbb40a93a1069bc01ad59e9a5cd101
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.4.8
+  title: "'Update external-major (external major bumps) (major)'"
+  date: 2022-06-05T08:00:28.243Z
+- commits:
+    - subject: Fix anti-pattern link constraints
+      hash: 24d0e101512ec63252e38ac58a11cb0d905578d7
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 10.4.7
+  title: "'Fix anti-pattern link constraints'"
+  date: 2022-06-04T03:29:33.472Z
+- commits:
+    - subject: Update typescript from 4.7.2 to 4.7.3
+      hash: b8c039f9450af6ceff70b713cc52b59612c656f9
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 10.4.6
+  title: "'Update typescript from 4.7.2 to 4.7.3'"
+  date: 2022-06-04T00:50:25.846Z
+- commits:
     - subject: Update typedoc from 0.22.16 to 0.22.17
       hash: 1d21998af8abb9286976ada2e1c23bf3f9bc73d1
       body: ""

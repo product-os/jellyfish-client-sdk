@@ -5,6 +5,18 @@
 
 # v0.0.3
 
+## 10.4.8 - 2022-06-05
+
+* Update external-major (external major bumps) [Renovate Bot]
+
+## 10.4.7 - 2022-06-04
+
+* Fix anti-pattern link constraints [Josh Bowling]
+
+## 10.4.6 - 2022-06-04
+
+* Update typescript from 4.7.2 to 4.7.3 [Renovate Bot]
+
 ## 10.4.5 - 2022-06-01
 
 * Update typedoc from 0.22.16 to 0.22.17 [Renovate Bot]
