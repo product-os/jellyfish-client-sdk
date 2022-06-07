@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 11.0.0 - 2022-06-07
+
+* Normalize commit link constraints [Josh Bowling]
+
 ## 10.4.9 - 2022-06-06
 
 * Revert formatting changes [Josh Bowling]

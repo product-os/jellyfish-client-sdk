@@ -1,4 +1,18 @@
 - commits:
+    - subject: Normalize commit link constraints
+      hash: a20a8c044b99cdbc1c7c12ba130a22a62f849783
+      body: ""
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 11.0.0
+  title: "'Normalize commit link constraints'"
+  date: 2022-06-07T01:02:40.272Z
+- commits:
     - subject: Revert formatting changes
       hash: 48a8deb141d905d46fbec1636a27499855c46270
       body: ""
