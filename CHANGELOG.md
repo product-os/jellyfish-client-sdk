@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 11.0.1 - 2022-06-17
+
+* Update typescript from 4.7.3 to 4.7.4 [renovate[bot]]
+
 ## 11.0.0 - 2022-06-07
 
 * Normalize commit link constraints [Josh Bowling]
