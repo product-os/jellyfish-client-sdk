@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 11.0.2 - 2022-06-19
+
+* Drop @balena/jellyfish-config [Josh Bowling]
+
 ## 11.0.1 - 2022-06-17
 
 * Update typescript from 4.7.3 to 4.7.4 [renovate[bot]]
