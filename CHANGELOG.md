@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 11.0.3 - 2022-06-20
+
+* Drop Makefile [Josh Bowling]
+
 ## 11.0.2 - 2022-06-19
 
 * Drop @balena/jellyfish-config [Josh Bowling]
