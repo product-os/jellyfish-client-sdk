@@ -1817,6 +1817,46 @@ export const constraints: LinkConstraint[] = [
 			inverse: 'link-constraint-user-has-settings-agent-settings',
 		},
 	},
+	{
+		slug: 'link-constraint-user-has-settings-working-hours',
+		name: 'has settings',
+		data: {
+			title: 'Working hour settings',
+			from: 'user',
+			to: 'working-hours',
+			inverse: 'link-constraint-working-hours-are-settings-for-user',
+		},
+	},
+	{
+		slug: 'link-constraint-working-hours-are-settings-for-user',
+		name: 'are settings for',
+		data: {
+			title: 'Working hours for a user',
+			from: 'working-hours',
+			to: 'user',
+			inverse: 'link-constraint-user-has-settings-working-hours',
+		},
+	},
+	{
+		slug: 'link-constraint-user-has-settings-working-hours-override',
+		name: 'has settings',
+		data: {
+			title: 'Working hour settings override',
+			from: 'user',
+			to: 'working-hours-override',
+			inverse: 'link-constraint-working-hours-override-are-settings-for-user',
+		},
+	},
+	{
+		slug: 'link-constraint-working-hours-override-are-settings-for-user',
+		name: 'are settings for',
+		data: {
+			title: 'Working hours override for a user',
+			from: 'working-hours-override',
+			to: 'user',
+			inverse: 'link-constraint-user-has-settings-working-hours-override',
+		},
+	},
 ];
 
 /**
