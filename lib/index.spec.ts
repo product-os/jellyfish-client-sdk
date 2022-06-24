@@ -14,10 +14,33 @@ let context: {
 };
 
 const API_URL = 'https://test.ly.fish';
+const mockRelationships = [
+	{
+		data: {
+			from: {
+				type: 'foo',
+			},
+			to: {
+				type: 'bar',
+			},
+			title: 'Foo',
+			inverseName: 'has attached element',
+			inverseTitle: 'Bar',
+		},
+		name: 'is attached to',
+		slug: 'relationship-foo-is-attached-to-bar',
+		type: 'relationship@1.0.0',
+	},
+];
 
 beforeAll(async () => {
+	const server = nock(API_URL);
+	server.get(new RegExp(`type/relationship@1.0.0`)).reply(() => {
+		return [200, mockRelationships];
+	});
+
 	context = {
-		sdk: getSdk({
+		sdk: await getSdk({
 			apiPrefix: 'api/v2',
 			apiUrl: API_URL,
 		}),
@@ -435,4 +458,23 @@ test('.view() should query using a view template', async () => {
 	);
 
 	expect(results[0]).toEqual(mockData);
+});
+
+describe('supportsLink()', () => {
+	test("returns true for foo and the 'is attached to' link name", () => {
+		const { sdk } = context;
+		expect(sdk.supportsLink('foo', 'is attached to')).toBe(true);
+	});
+
+	test("returns false for buz and the 'is baz to' link name", () => {
+		const { sdk } = context;
+		expect(sdk.supportsLink('buz', 'is baz to')).toBe(false);
+	});
+});
+
+describe('relationships', () => {
+	test('instance list is populated', async () => {
+		const { sdk } = context;
+		expect(sdk.relationships).toEqual(mockRelationships);
+	});
 });

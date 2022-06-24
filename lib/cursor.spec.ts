@@ -6,27 +6,15 @@
 
 import type { JsonSchema } from '@balena/jellyfish-types';
 import EventEmitter from 'events';
+import nock from 'nock';
 import sinon from 'sinon';
-import { getSdk } from '.';
+import { getSdk, JellyfishSDK } from '.';
 import { JellyfishCursor } from './cursor';
 
 const API_URL = 'https://test.ly.fish';
 
 const sandbox = sinon.createSandbox();
-
-const sdk = getSdk({
-	apiPrefix: 'api/v2',
-	apiUrl: API_URL,
-});
-sdk.globalQueryMask = {
-	type: 'object',
-	required: ['loop'],
-	properties: {
-		loop: {
-			const: 'l/product-os',
-		},
-	},
-};
+let sdk: JellyfishSDK;
 
 const makeSocketStub = () => {
 	const socket = new EventEmitter();
@@ -54,6 +42,27 @@ const optionsWithLimit = {
 	...optionsWithoutLimit,
 	limit: 10,
 };
+
+beforeAll(async () => {
+	const server = nock(API_URL);
+	server.get(new RegExp(`type/relationship@1.0.0`)).reply(() => {
+		return [200, []];
+	});
+
+	sdk = await getSdk({
+		apiPrefix: 'api/v2',
+		apiUrl: API_URL,
+	});
+	sdk.globalQueryMask = {
+		type: 'object',
+		required: ['loop'],
+		properties: {
+			loop: {
+				const: 'l/product-os',
+			},
+		},
+	};
+});
 
 describe('JellyfishCursor', () => {
 	afterEach(() => {

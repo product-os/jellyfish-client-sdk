@@ -1,13 +1,16 @@
 /* global FormData */
-import type { QueryOptions } from 'autumndb';
+import type { QueryOptions, RelationshipContract } from 'autumndb';
 import type { JsonSchema } from '@balena/jellyfish-types';
 import type { Contract } from '@balena/jellyfish-types/build/core';
 import axios, { AxiosRequestConfig, CancelTokenSource } from 'axios';
 import {
+	find,
+	findIndex,
 	forEach,
 	isBoolean,
 	isPlainObject,
 	isString,
+	memoize,
 	merge,
 	omit,
 	trim,
@@ -18,25 +21,11 @@ import { JellyfishCursor } from './cursor';
 import { SDKRequestCancelledError } from './errors';
 import { EventSdk } from './event';
 import { IntegrationsSdk } from './integrations';
-import {
-	constraints,
-	getReverseConstraint,
-	supportsLink,
-} from './link-constraints';
 import { JellyfishStreamManager } from './stream';
-import { ExtendedSocket, LinkConstraint, SdkQueryOptions } from './types';
+import { ExtendedSocket, SdkQueryOptions } from './types';
 
 const trimSlash = (text: string) => {
 	return trim(text, '/');
-};
-
-const LINKS = constraints;
-
-export {
-	constraints as linkConstraints,
-	LinkConstraint,
-	supportsLink,
-	getReverseConstraint,
 };
 
 /**
@@ -119,7 +108,6 @@ type ApiResponse<TData> =
  * @namespace JellyfishSDK
  */
 export class JellyfishSDK {
-	public readonly LINKS: typeof LINKS;
 	public readonly auth: AuthSdk;
 	public readonly card: CardSdk;
 	public readonly event: EventSdk;
@@ -127,6 +115,7 @@ export class JellyfishSDK {
 	public readonly streamManager: JellyfishStreamManager;
 	private API_BASE: string = '';
 	private cancelTokenSources: CancelTokenSource[] = [];
+	public relationships: RelationshipContract[] = [];
 	/**
 	 * A JSON schema filter that will be applied to all queries
 	 */
@@ -146,7 +135,6 @@ export class JellyfishSDK {
 		private readonly API_PREFIX: string,
 		private authToken?: string | null,
 	) {
-		this.LINKS = LINKS;
 		this.auth = new AuthSdk(this);
 
 		/**
@@ -158,6 +146,36 @@ export class JellyfishSDK {
 		this.cancelTokenSources = [];
 		this.setApiBase(API_URL, API_PREFIX);
 		this.streamManager = new JellyfishStreamManager(this);
+	}
+
+	public async init(): Promise<void> {
+		// Get relationships from backend, keep up-to-date with a stream
+		this.relationships = await this.getByType('relationship@1.0.0');
+		this.stream({
+			type: 'object',
+			required: ['type'],
+			properties: {
+				type: {
+					const: 'relationship@1.0.0',
+				},
+			},
+		}).on('update', (update) => {
+			const after = update.data.after as RelationshipContract;
+			if (update.data.type === 'insert' && after.active) {
+				this.relationships.push(after);
+			} else if (update.data.type === 'update') {
+				const index = findIndex(this.relationships, {
+					id: after.id,
+				});
+				if (index !== -1) {
+					if (!after.active) {
+						this.relationships.splice(index, 1);
+					} else {
+						this.relationships[index] = after;
+					}
+				}
+			}
+		});
 	}
 
 	public get globalQueryMask(): JsonSchema | null {
@@ -870,6 +888,62 @@ export class JellyfishSDK {
 		const socket = this.streamManager.stream(query, options);
 		return new JellyfishCursor(socket, query, options);
 	}
+
+	/**
+	 * @description Check if a link name exists for a given type
+	 *
+	 * @param contractType - contrac type
+	 * @param linkName - link name
+	 *
+	 * @returns {Boolean} - true if link name exists; otherwise false
+	 *
+	 * @example
+	 * const isSupported = sdk.supportsLink('foo', 'is attached to');
+	 */
+	supportsLink = memoize(
+		(contractType: string, linkName: string) => {
+			return Boolean(
+				find(this.relationships, (relationship) => {
+					return (
+						relationship.name === linkName &&
+						relationship.data.from.type === contractType.split('@')[0]
+					);
+				}),
+			);
+		},
+		(contractType, linkName) => {
+			// Create a unique cache key from the link name and contract type
+			return `${contractType}-${linkName}`;
+		},
+	);
+
+	/**
+	 * @description Attempt to find a relationship based on criteria
+	 *
+	 * @param from - from contract type
+	 * @param to - to contract type
+	 * @param name - relationship name
+	 *
+	 * @returns {RelationshipContract | undefined} - relationship if found, else undefined
+	 *
+	 * @example
+	 * const relationship = sdk.findRelationship('foo', 'bar', 'is attached to');
+	 */
+	findRelationship(
+		from: string,
+		to: string,
+		name: string,
+	): RelationshipContract | undefined {
+		return find(this.relationships, (relationship) => {
+			return (
+				relationship.name === name &&
+				(relationship.data.from.type === '*' ||
+					relationship.data.from.type === from.split('@')[0]) &&
+				(relationship.data.to.type === '*' ||
+					relationship.data.to.type === to.split('@')[0])
+			);
+		});
+	}
 }
 
 /**
@@ -892,7 +966,7 @@ export class JellyfishSDK {
  * 	authToken: '799de256-31bb-4399-b2d2-3c2a2483ddd8'
  * })
  */
-export const getSdk = ({
+export const getSdk = async ({
 	apiUrl,
 	apiPrefix,
 	authToken,
@@ -900,6 +974,8 @@ export const getSdk = ({
 	apiUrl: string;
 	apiPrefix: string;
 	authToken?: string;
-}): JellyfishSDK => {
-	return new JellyfishSDK(apiUrl, apiPrefix, authToken);
+}): Promise<JellyfishSDK> => {
+	const sdk = new JellyfishSDK(apiUrl, apiPrefix, authToken);
+	await sdk.init();
+	return sdk;
 };

@@ -2,7 +2,7 @@ import { isEqual } from 'lodash';
 import nock from 'nock';
 import sinon from 'sinon';
 import { v4 as uuid } from 'uuid';
-import { getSdk, JellyfishSDK, linkConstraints } from '.';
+import { getSdk, JellyfishSDK } from '.';
 import { CardSdk, isMentionedInMessage } from './card';
 import type { Message } from './types';
 
@@ -14,6 +14,41 @@ let context: {
 const sandbox = sinon.createSandbox();
 
 const API_URL = 'https://test.ly.fish';
+
+const mockRelationships = [
+	{
+		data: {
+			from: {
+				type: 'foo',
+			},
+			to: {
+				type: 'bar',
+			},
+			title: 'Foo',
+			inverseName: 'has attached',
+			inverseTitle: 'Bar',
+		},
+		name: 'is attached to',
+		slug: 'relationship-foo-is-attached-to-bar',
+		type: 'relationship@1.0.0',
+	},
+	{
+		data: {
+			from: {
+				type: 'opportunity',
+			},
+			to: {
+				type: 'account',
+			},
+			title: 'Opportunity',
+			inverseName: 'has attached',
+			inverseTitle: 'Account',
+		},
+		name: 'is attached to',
+		slug: 'relationship-opportunity-is-attached-to-account',
+		type: 'relationship@1.0.0',
+	},
+];
 
 const makeMessageCard = (message: string) => {
 	return {
@@ -99,8 +134,13 @@ afterEach(() => {
 });
 
 beforeAll(async () => {
+	const server = nock(API_URL);
+	server.get(new RegExp(`type/relationship@1.0.0`)).reply(() => {
+		return [200, mockRelationships];
+	});
+
 	context = {
-		sdk: getSdk({
+		sdk: await getSdk({
 			apiPrefix: 'api/v2',
 			apiUrl: API_URL,
 		}),
@@ -690,6 +730,7 @@ test('unlink will unlink all links between two cards with the specified verb', a
 	const sdk = {
 		action: sandbox.stub().resolves(null),
 		query: sandbox.stub().resolves(linkCards),
+		relationships: mockRelationships,
 	};
 
 	const cardSdk = new CardSdk(sdk as any);
@@ -745,7 +786,24 @@ test('link allows links with asterisks', async () => {
 	const sdk = {
 		action: sandbox.stub().resolves(null),
 		query: sandbox.stub().resolves([]),
-		LINKS: linkConstraints,
+		relationships: [
+			{
+				data: {
+					from: {
+						type: '*',
+					},
+					to: {
+						type: '*',
+					},
+					title: 'Any',
+					inverseName: 'was built from',
+					inverseTitle: 'Any',
+				},
+				name: 'was built into',
+				slug: 'relationship-any-was-built-into-any',
+				type: 'relationship@1.0.0',
+			},
+		],
 	};
 
 	const cardSdk = new CardSdk(sdk as any);
@@ -768,19 +826,20 @@ test("unlink will unlink 'reverse' links between two cards with the specified ve
 		},
 	];
 
-	const account1 = {
-		id: 'account1',
-		type: 'account@1.0.0',
-	};
-
 	const opportunity1 = {
 		id: 'opportunity1',
 		type: 'opportunity@1.0.0',
 	};
 
+	const account1 = {
+		id: 'account1',
+		type: 'account@1.0.0',
+	};
+
 	const sdk = {
 		action: sandbox.stub().resolves(null),
 		query: sandbox.stub().resolves(linkCards),
+		relationships: mockRelationships,
 	};
 
 	const cardSdk = new CardSdk(sdk as any);
