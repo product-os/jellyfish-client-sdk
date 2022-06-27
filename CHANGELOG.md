@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 11.0.5 - 2022-06-27
+
+* Update typedoc from 0.22.18 to 0.23.1 [Josh Bowling]
+
 ## 11.0.4 - 2022-06-25
 
 * Update typedoc from 0.22.17 to 0.22.18 [renovate[bot]]
