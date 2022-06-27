@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 11.0.7 - 2022-06-27
+
+* Update: update dependencies (internal patch bumps) [renovate[bot]]
+
 ## 11.0.6 - 2022-06-27
 
 * Update dependencies (external v0 minor bumps) [renovate[bot]]
