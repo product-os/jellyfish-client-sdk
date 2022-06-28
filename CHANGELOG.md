@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 11.0.8 - 2022-06-28
+
+* Add missing support-thread link constraints [Josh Bowling]
+
 ## 11.0.7 - 2022-06-27
 
 * Update: update dependencies (internal patch bumps) [renovate[bot]]

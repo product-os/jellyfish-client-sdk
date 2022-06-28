@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add missing support-thread link constraints
+      hash: 5851e730abfe172342f507d981220256cd95e27a
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 11.0.8
+  title: "'Add missing support-thread link constraints'"
+  date: 2022-06-28T06:04:54.413Z
+- commits:
     - subject: "Update: update dependencies (internal patch bumps)"
       hash: d5d1f9c7f7d58fc3d3cf25d5737d82967937e5f2
       body: ""
