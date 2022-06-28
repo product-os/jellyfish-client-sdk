@@ -1817,6 +1817,46 @@ export const constraints: LinkConstraint[] = [
 			inverse: 'link-constraint-user-has-settings-agent-settings',
 		},
 	},
+	{
+		slug: 'link-constraint-message-is-attached-to-support-thread',
+		name: 'is attached to',
+		data: {
+			title: 'Support thread',
+			from: 'message',
+			to: 'support-thread',
+			inverse: 'link-constraint-support-thread-has-attached-element-message',
+		},
+	},
+	{
+		slug: 'link-constraint-support-thread-has-attached-element-message',
+		name: 'has attached element',
+		data: {
+			title: 'Message',
+			from: 'support-thread',
+			to: 'message',
+			inverse: 'link-constraint-message-is-attached-to-support-thread',
+		},
+	},
+	{
+		slug: 'link-constraint-whisper-is-attached-to-support-thread',
+		name: 'is attached to',
+		data: {
+			title: 'Support thread',
+			from: 'whisper',
+			to: 'support-thread',
+			inverse: 'link-constraint-support-thread-has-attached-element-whisper',
+		},
+	},
+	{
+		slug: 'link-constraint-support-thread-has-attached-element-whisper',
+		name: 'has attached element',
+		data: {
+			title: 'Whisper',
+			from: 'support-thread',
+			to: 'whisper',
+			inverse: 'link-constraint-whisper-is-attached-to-support-thread',
+		},
+	},
 ];
 
 /**
