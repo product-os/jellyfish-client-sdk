@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update typedoc from 0.23.1 to 0.23.2
+      hash: 6a74fd3bc7d5b258180f13ac0d73d9f7c01ac953
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 11.0.9
+  title: "'Update typedoc from 0.23.1 to 0.23.2'"
+  date: 2022-06-29T00:58:49.659Z
+- commits:
     - subject: Add missing support-thread link constraints
       hash: 5851e730abfe172342f507d981220256cd95e27a
       body: ""
