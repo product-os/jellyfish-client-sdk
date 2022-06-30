@@ -3,6 +3,7 @@ import type {
 	ContractSummary,
 	JsonSchema,
 	QueryOptions,
+    RelationshipContract,
 } from 'autumndb';
 import { commaListsOr } from 'common-tags';
 import clone from 'deep-copy';
@@ -11,14 +12,11 @@ import { v4 as isUUID } from 'is-uuid';
 import {
 	castArray,
 	escapeRegExp,
-	filter,
-	find,
 	first,
 	get,
 	includes,
 	intersection,
 	invokeMap,
-	map,
 	merge,
 	omit,
 	set,
@@ -27,7 +25,6 @@ import {
 } from 'lodash';
 import { v4 as uuid } from 'uuid';
 import type { JellyfishSDK } from '.';
-import { getReverseConstraint } from './link-constraints';
 import type { Message } from './types';
 
 const checkLinksExist = async (
@@ -118,22 +115,20 @@ const getLinkQueryOption = (
 };
 
 const getLinkQuery = (
-	verb: string,
+	relationship: RelationshipContract,
 	fromCard: Pick<Contract, 'id' | 'type'>,
 	toCard: Pick<Contract, 'id' | 'type'>,
 ): JsonSchema => {
-	const reverseVerb = getReverseConstraint(fromCard.type, toCard.type, verb);
-
-	if (!reverseVerb) {
-		throw new Error('Reverse constraint not found');
-	}
-
 	return {
 		type: 'object',
 		required: ['type', 'active'],
 		anyOf: [
-			getLinkQueryOption(verb, fromCard.id, toCard.id),
-			getLinkQueryOption(reverseVerb.name, toCard.id, fromCard.id),
+			getLinkQueryOption(relationship.name!, fromCard.id, toCard.id),
+			getLinkQueryOption(
+				relationship.data.inverseName!,
+				toCard.id,
+				fromCard.id,
+			),
 		],
 		properties: {
 			type: {
@@ -626,37 +621,55 @@ export class CardSdk {
 		if (!verb) {
 			throw new Error('No verb provided when creating link');
 		}
-
-		const fromType = fromCard.type.split('@')[0];
-		const toType = toCard.type.split('@')[0];
-		const linkOptions = filter(this.sdk.LINKS, (link) => {
-			return (
-				(link.data.from === '*' || link.data.from === fromType) &&
-				(link.data.to === '*' || link.data.to === toType)
-			);
-		});
-		const option = find(linkOptions, {
-			name: verb,
-		});
-		if (!option) {
-			const opts = map(linkOptions, (opt) => {
-				return `"${opt.name}"`;
-			});
-			throw new Error(`No link definition found between "${
-				fromCard.type
-			}" and "${toCard.type}" using verb "${verb}":
-				Use one of ${commaListsOr`${opts}`} instead`);
-		}
-
-		const inverseOption = find(this.sdk.LINKS, {
-			slug: option.data.inverse,
-		});
-
 		if (!fromCard.id) {
 			throw new Error(`No id in "from" card: ${JSON.stringify(fromCard)}`);
 		}
 		if (!toCard.id) {
 			throw new Error(`No id in "to" card: ${JSON.stringify(toCard)}`);
+		}
+
+		const fromType = fromCard.type.split('@')[0];
+		const toType = toCard.type.split('@')[0];
+		const relationships = await this.sdk.query(
+			{
+				type: 'object',
+				properties: {
+					type: {
+						const: 'relationship@1.0.0',
+					},
+					name: {
+						const: verb,
+					},
+					data: {
+						properties: {
+							from: {
+								type: 'object',
+								properties: {
+									type: {
+										enum: ['*', fromType],
+									},
+								},
+							},
+							to: {
+								type: 'object',
+								properties: {
+									type: {
+										enum: ['*', toType],
+									},
+								},
+							},
+						},
+					},
+				},
+			},
+			{
+				limit: 1,
+			},
+		);
+		if (!relationships[0]) {
+			throw new Error(
+				`Relationship not found: ${fromCard.type} ${verb} ${toCard.type}`,
+			);
 		}
 
 		// Check for existing link with this verb between these two cards
@@ -686,7 +699,7 @@ export class CardSdk {
 					active: true,
 					name: verb,
 					data: {
-						inverseName: inverseOption!.name,
+						inverseName: relationships[0].data.inverseName!,
 						from: {
 							id: fromCard.id,
 							type: fromCard.type,
@@ -739,10 +752,53 @@ export class CardSdk {
 			throw new Error(`No id in "to" card: ${JSON.stringify(toCard)}`);
 		}
 
+		// Get relationship contract
+		const [relationship] = await this.sdk.query<RelationshipContract>(
+			{
+				type: 'object',
+				properties: {
+					type: {
+						const: 'relationship@1.0.0',
+					},
+					name: {
+						const: verb,
+					},
+					data: {
+						properties: {
+							from: {
+								type: 'object',
+								properties: {
+									type: {
+										enum: ['*', fromCard.type],
+									},
+								},
+							},
+							to: {
+								type: 'object',
+								properties: {
+									type: {
+										enum: ['*', toCard.type],
+									},
+								},
+							},
+						},
+					},
+				},
+			},
+			{
+				limit: 1,
+			},
+		);
+		if (!relationship) {
+			throw new Error(
+				`Relationship not found: ${fromCard.type} ${verb} ${toCard.type}`,
+			);
+		}
+
 		// TODO: Find a way to make this more performant for large data sets
 		// First query for link cards
 		return this.sdk
-			.query(getLinkQuery(verb, fromCard, toCard), {
+			.query(getLinkQuery(relationship, fromCard, toCard), {
 				limit: 1,
 				ignoreMask: true,
 			})

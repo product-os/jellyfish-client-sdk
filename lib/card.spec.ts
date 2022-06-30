@@ -2,7 +2,7 @@ import { isEqual } from 'lodash';
 import nock from 'nock';
 import sinon from 'sinon';
 import { v4 as uuid } from 'uuid';
-import { getSdk, JellyfishSDK, linkConstraints } from '.';
+import { getSdk, JellyfishSDK } from '.';
 import { CardSdk, isMentionedInMessage } from './card';
 import type { Message } from './types';
 
@@ -733,80 +733,115 @@ test('link throws on invalid link', async () => {
 });
 
 test('link allows links with asterisks', async () => {
-	const aTask = {
-		id: 'some-task',
-		type: 'task@1.0.0',
+	const foo = {
+		id: uuid(),
+		type: 'foo@1.0.0',
 	};
-	const anOpportunity = {
-		id: 'opportunity1',
-		type: 'opportunity@1.0.0',
+	const bar = {
+		id: uuid(),
+		type: 'bar@1.0.0',
 	};
 
 	const sdk = {
 		action: sandbox.stub().resolves(null),
-		query: sandbox.stub().resolves([]),
-		LINKS: linkConstraints,
+		query: sandbox
+			.stub()
+			.onCall(0)
+			.resolves([
+				{
+					type: 'relationship@1.0.0',
+					name: 'buz',
+					data: {
+						from: {
+							type: '*',
+						},
+						to: {
+							type: '*',
+						},
+						inverseName: 'baz',
+					},
+				},
+			])
+			.onCall(1)
+			.resolves([]),
 	};
 
 	const cardSdk = new CardSdk(sdk as any);
 
-	await expect(
-		cardSdk.link(aTask, anOpportunity, 'was built into'),
-	).resolves.toBeNull();
+	await expect(cardSdk.link(foo, bar, 'buz')).resolves.toBeNull();
 });
 
 test("unlink will unlink 'reverse' links between two cards with the specified verb", async () => {
+	const foo = {
+		id: uuid(),
+		type: 'foo@1.0.0',
+	};
+
+	const bar = {
+		id: uuid(),
+		type: 'bar@1.0.0',
+	};
+
 	const linkCards = [
 		{
-			id: 'link1',
+			id: uuid(),
 			type: 'link@1.0.0',
-			name: 'is attached to',
+			name: 'buz',
 			data: {
-				from: 'opportunity1',
-				to: 'account1',
+				from: foo.id,
+				to: bar.id,
 			},
 		},
 	];
 
-	const account1 = {
-		id: 'account1',
-		type: 'account@1.0.0',
-	};
-
-	const opportunity1 = {
-		id: 'opportunity1',
-		type: 'opportunity@1.0.0',
-	};
-
 	const sdk = {
 		action: sandbox.stub().resolves(null),
-		query: sandbox.stub().resolves(linkCards),
+		query: sandbox
+			.stub()
+			.onCall(0)
+			.resolves([
+				{
+					type: 'relationship@1.0.0',
+					name: 'buz',
+					data: {
+						from: {
+							type: 'foo',
+						},
+						to: {
+							type: 'bar',
+						},
+						inverseName: 'baz',
+					},
+				},
+			])
+			.onCall(1)
+			.resolves(linkCards),
 	};
 
 	const cardSdk = new CardSdk(sdk as any);
 
-	await cardSdk.unlink(account1, opportunity1, 'has attached');
+	await cardSdk.unlink(foo, bar, 'baz');
 
 	expect(sdk.action.callCount).toBe(linkCards.length);
 
-	expect(sdk.query.calledOnce).toBe(true);
-	const query = sdk.query.getCall(0).firstArg;
+	expect(sdk.query.calledTwice).toBe(true);
+	const query = sdk.query.getCall(1).firstArg;
 
 	// The query should contain options for both the 'forward' and 'reverse'
 	// links between these two cards
 	const [firstLinkOption, secondLinkOption] = query.anyOf;
-	expect(firstLinkOption.properties.name.const).toBe('has attached');
+	expect(firstLinkOption.properties.name.const).toBe('buz');
 	expect(
 		firstLinkOption.properties.data.properties.from.properties.id.const,
-	).toBe('account1');
+	).toBe(foo.id);
 	expect(
 		firstLinkOption.properties.data.properties.to.properties.id.const,
-	).toBe('opportunity1');
-	expect(secondLinkOption.properties.name.const).toBe('is attached to');
+	).toBe(bar.id);
+	expect(secondLinkOption.properties.name.const).toBe('baz');
 	expect(
 		secondLinkOption.properties.data.properties.from.properties.id.const,
-	).toBe('opportunity1');
+	).toBe(bar.id);
 	expect(
 		secondLinkOption.properties.data.properties.to.properties.id.const,
-	).toBe('account1');
+	).toBe(foo.id);
 });

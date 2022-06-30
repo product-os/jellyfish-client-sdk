@@ -16,25 +16,11 @@ import { JellyfishCursor } from './cursor';
 import { SDKRequestCancelledError } from './errors';
 import { EventSdk } from './event';
 import { IntegrationsSdk } from './integrations';
-import {
-	constraints,
-	getReverseConstraint,
-	supportsLink,
-} from './link-constraints';
 import { JellyfishStreamManager } from './stream';
-import { ExtendedSocket, LinkConstraint, SdkQueryOptions } from './types';
+import { ExtendedSocket, SdkQueryOptions } from './types';
 
 const trimSlash = (text: string) => {
 	return trim(text, '/');
-};
-
-const LINKS = constraints;
-
-export {
-	constraints as linkConstraints,
-	LinkConstraint,
-	supportsLink,
-	getReverseConstraint,
 };
 
 /**
@@ -117,7 +103,6 @@ type ApiResponse<TData> =
  * @namespace JellyfishSDK
  */
 export class JellyfishSDK {
-	public readonly LINKS: typeof LINKS;
 	public readonly auth: AuthSdk;
 	public readonly card: CardSdk;
 	public readonly event: EventSdk;
@@ -144,7 +129,6 @@ export class JellyfishSDK {
 		private readonly API_PREFIX: string,
 		private authToken?: string | null,
 	) {
-		this.LINKS = LINKS;
 		this.auth = new AuthSdk(this);
 
 		/**
