@@ -130,3 +130,5 @@ package-lock.json
 .balena/secrets/aws_secret_access_key.txt
 .balena/secrets/integration_balena_api_app_id.txt
 .balena/secrets/integration_balena_api_app_secret.txt
+
+.prettierrc

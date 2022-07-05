@@ -3,9 +3,8 @@ import type {
 	ContractSummary,
 	JsonSchema,
 	QueryOptions,
-    RelationshipContract,
+	RelationshipContract,
 } from 'autumndb';
-import { commaListsOr } from 'common-tags';
 import clone from 'deep-copy';
 import jsonpatch, { Operation } from 'fast-json-patch';
 import { v4 as isUUID } from 'is-uuid';
@@ -23,7 +22,6 @@ import {
 	some,
 	without,
 } from 'lodash';
-import { v4 as uuid } from 'uuid';
 import type { JellyfishSDK } from '.';
 import type { Message } from './types';
 
@@ -630,50 +628,88 @@ export class CardSdk {
 
 		const fromType = fromCard.type.split('@')[0];
 		const toType = toCard.type.split('@')[0];
-		const relationships = await this.sdk.query(
+		const [relationship] = await this.sdk.query<RelationshipContract>(
 			{
 				type: 'object',
-				properties: {
-					type: {
-						const: 'relationship@1.0.0',
-					},
-					name: {
-						const: verb,
-					},
-					data: {
+				anyOf: [
+					{
 						properties: {
-							from: {
-								type: 'object',
-								properties: {
-									type: {
-										enum: ['*', fromType],
-									},
-								},
+							type: {
+								const: 'relationship@1.0.0',
 							},
-							to: {
-								type: 'object',
+							name: {
+								const: verb,
+							},
+							data: {
 								properties: {
-									type: {
-										enum: ['*', toType],
+									from: {
+										type: 'object',
+										properties: {
+											type: {
+												enum: ['*', fromType],
+											},
+										},
+									},
+									to: {
+										type: 'object',
+										properties: {
+											type: {
+												enum: ['*', toType],
+											},
+										},
 									},
 								},
 							},
 						},
 					},
-				},
+					{
+						properties: {
+							type: {
+								const: 'relationship@1.0.0',
+							},
+							data: {
+								properties: {
+									inverseName: {
+										const: verb,
+									},
+									from: {
+										type: 'object',
+										properties: {
+											type: {
+												enum: ['*', toType],
+											},
+										},
+									},
+									to: {
+										type: 'object',
+										properties: {
+											type: {
+												enum: ['*', fromType],
+											},
+										},
+									},
+								},
+							},
+						},
+					},
+				],
 			},
 			{
 				limit: 1,
 			},
 		);
-		if (!relationships[0]) {
+		if (!relationship) {
 			throw new Error(
 				`Relationship not found: ${fromCard.type} ${verb} ${toCard.type}`,
 			);
 		}
 
+		const isInverse = relationship.data.inverseName === verb;
+
 		// Check for existing link with this verb between these two cards
-		const links = await checkLinksExist(this.sdk, verb, fromCard, toCard);
+		const links = isInverse
+			? await checkLinksExist(this.sdk, relationship.name!, toCard, fromCard)
+			: await checkLinksExist(this.sdk, verb, fromCard, toCard);
 
 		// If found, just return
 		if (links) {
@@ -688,25 +724,16 @@ export class CardSdk {
 			arguments: {
 				reason: null,
 				properties: {
-					slug: `link-${fromCard.id}-${verb.replace(/\s/g, '-')}-${
-						toCard.id
-					}-${uuid()}`,
-					tags: [],
-					version: '1.0.0',
-					links: {},
-					requires: [],
-					capabilities: [],
-					active: true,
-					name: verb,
+					name: relationship.name,
 					data: {
-						inverseName: relationships[0].data.inverseName!,
+						inverseName: relationship.data.inverseName!,
 						from: {
-							id: fromCard.id,
-							type: fromCard.type,
+							id: isInverse ? toCard.id : fromCard.id,
+							type: isInverse ? toCard.type : fromCard.type,
 						},
 						to: {
-							id: toCard.id,
-							type: toCard.type,
+							id: isInverse ? fromCard.id : toCard.id,
+							type: isInverse ? fromCard.type : toCard.type,
 						},
 					},
 				},
@@ -714,10 +741,7 @@ export class CardSdk {
 		};
 
 		return this.sdk.action<ContractSummary>(payload).catch((error) => {
-			console.error(
-				`Failed to create link ${payload.arguments.properties.slug}`,
-				error,
-			);
+			console.error('Failed to create link', error);
 			throw error;
 		});
 	}
