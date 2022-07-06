@@ -1,4 +1,18 @@
 - commits:
+    - subject: Drop jellyfish-types
+      hash: 7ce7522bb14c26e505a4016b2210a2e8b07aaf7f
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 11.0.13
+  title: "'Drop jellyfish-types'"
+  date: 2022-07-06T09:02:47.252Z
+- commits:
     - subject: Update autumndb from 20.2.0 to 20.3.0
       hash: f402b04b662d7522a5b9b87cf2fc65848308abd7
       body: ""

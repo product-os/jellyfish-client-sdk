@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 11.0.13 - 2022-07-06
+
+* Drop jellyfish-types [Josh Bowling]
+
 ## 11.0.12 - 2022-07-05
 
 * Update autumndb from 20.2.0 to 20.3.0 [renovate[bot]]
