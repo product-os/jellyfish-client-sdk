@@ -4,7 +4,7 @@
  * Proprietary and confidential.
  */
 
-import type { JsonSchema } from '@balena/jellyfish-types';
+import type { JsonSchema } from 'autumndb';
 import EventEmitter from 'events';
 import sinon from 'sinon';
 import { getSdk } from '.';

@@ -1,9 +1,9 @@
-import type { QueryOptions } from 'autumndb';
-import type { JsonSchema } from '@balena/jellyfish-types';
 import type {
 	Contract,
 	ContractSummary,
-} from '@balena/jellyfish-types/build/core';
+	JsonSchema,
+	QueryOptions,
+} from 'autumndb';
 import { commaListsOr } from 'common-tags';
 import clone from 'deep-copy';
 import jsonpatch, { Operation } from 'fast-json-patch';

@@ -1,7 +1,5 @@
 /* global FormData */
-import type { QueryOptions } from 'autumndb';
-import type { JsonSchema } from '@balena/jellyfish-types';
-import type { Contract } from '@balena/jellyfish-types/build/core';
+import type { Contract, JsonSchema, QueryOptions } from 'autumndb';
 import axios, { AxiosRequestConfig, CancelTokenSource } from 'axios';
 import {
 	forEach,

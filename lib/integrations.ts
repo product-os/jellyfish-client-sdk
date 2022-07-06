@@ -1,4 +1,4 @@
-import type { Contract } from '@balena/jellyfish-types/build/core';
+import type { Contract } from 'autumndb';
 import type { JellyfishSDK } from '.';
 
 /**

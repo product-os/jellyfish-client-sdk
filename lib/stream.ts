@@ -1,4 +1,4 @@
-import type { JsonSchema } from '@balena/jellyfish-types';
+import type { JsonSchema } from 'autumndb';
 import { forEach, omit, set } from 'lodash';
 import io, { Socket } from 'socket.io-client';
 import { v4 as uuid } from 'uuid';
