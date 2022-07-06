@@ -43,7 +43,7 @@
   "author": "Balena.io. <hello@balena.io>",
   "license": "Apache-2.0",
   "dependencies": {
-    "autumndb": "^20.3.0",
+    "autumndb": "^20.3.3",
     "axios": "^0.27.2",
     "common-tags": "^1.8.2",
     "deep-copy": "^1.4.2",
@@ -54,7 +54,6 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@balena/jellyfish-types": "^2.0.4",
     "@balena/lint": "^6.2.0",
     "@types/common-tags": "^1.8.1",
     "@types/is-uuid": "^1.0.0",

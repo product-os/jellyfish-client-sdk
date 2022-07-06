@@ -1,4 +1,4 @@
-import type { Contract } from '@balena/jellyfish-types/build/core';
+import type { Contract } from 'autumndb';
 import { find, memoize } from 'lodash';
 import type { LinkConstraint } from './types';
 
