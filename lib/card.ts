@@ -793,7 +793,7 @@ export class CardSdk {
 								type: 'object',
 								properties: {
 									type: {
-										enum: ['*', fromCard.type],
+										enum: ['*', fromCard.type.split('@')[0]],
 									},
 								},
 							},
@@ -801,7 +801,7 @@ export class CardSdk {
 								type: 'object',
 								properties: {
 									type: {
-										enum: ['*', toCard.type],
+										enum: ['*', toCard.type.split('@')[0]],
 									},
 								},
 							},
