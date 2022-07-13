@@ -1,4 +1,40 @@
 - commits:
+    - subject: Use type slugs in unlink relationship query
+      hash: 20b7c08457607863f5c3daad5f3a5ee8b38946cf
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+    - subject: Handle calls to `.link` using an inverse relationship
+      hash: 18e032ee288844ce4cbc8e91824198acb280abfc
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+    - subject: Drop link constraints
+      hash: 255895b3fc9134d9fa1cf9857ddec53ccdda67c7
+      body: |
+        Remove link constraints as we now perform backend relationship
+        validation and no longer need to in the sdk.
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 12.0.0
+  title: "'Drop link constraints'"
+  date: 2022-07-11T03:35:46.839Z
+- commits:
     - subject: Update typedoc from 0.23.6 to 0.23.7
       hash: 369cc72c3ba34c1d56024d9413c0b01576b94253
       body: ""

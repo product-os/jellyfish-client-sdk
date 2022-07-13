@@ -5,6 +5,12 @@
 
 # v0.0.3
 
+## 12.0.0 - 2022-07-11
+
+* Use type slugs in unlink relationship query [Josh Bowling]
+* Handle calls to `.link` using an inverse relationship [Lucian Buzzo]
+* Drop link constraints [Josh Bowling]
+
 ## 11.0.15 - 2022-07-09
 
 * Update typedoc from 0.23.6 to 0.23.7 [renovate[bot]]
