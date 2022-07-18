@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 12.0.1 - 2022-07-17
+
+* Update typedoc from 0.23.7 to 0.23.8 [renovate[bot]]
+
 ## 12.0.0 - 2022-07-11
 
 * Use type slugs in unlink relationship query [Josh Bowling]
