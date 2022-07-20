@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.0 - 2022-07-19
+
+* Upgrade to AutumnDB v21.x [Lucian Buzzo]
+
 ## 12.0.1 - 2022-07-17
 
 * Update typedoc from 0.23.7 to 0.23.8 [renovate[bot]]

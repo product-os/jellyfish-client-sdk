@@ -1,4 +1,23 @@
 - commits:
+    - subject: Upgrade to AutumnDB v21.x
+      hash: 431c340211a9d4244210702024d7936db657add7
+      body: |
+        This brings in a major change to how AutumnDB handles sessions and
+        although it isn't a breaking change for the client SDK it is technically
+        incompatible with previous server versions.
+
+        See product-os/autumndb#1363
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 13.0.0
+  title: "'Upgrade to AutumnDB v21.x'"
+  date: 2022-07-19T17:41:23.042Z
+- commits:
     - subject: Update typedoc from 0.23.7 to 0.23.8
       hash: 1c0e2584b332af4307f1e63e772f4a12cdfb96d2
       body: ""
