@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.3 - 2022-07-24
+
+* Update typedoc from 0.23.8 to 0.23.9 [renovate[bot]]
+
 ## 13.0.2 - 2022-07-24
 
 * Move autumndb to dev deps [Josh Bowling]
