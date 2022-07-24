@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.2 - 2022-07-24
+
+* Move autumndb to dev deps [Josh Bowling]
+
 ## 13.0.1 - 2022-07-21
 
 * Update autumndb from 21.0.0 to 21.1.3 [renovate[bot]]
