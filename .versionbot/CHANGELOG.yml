@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 21.1.4 to 21.2.0
+      hash: ead3d6a4ce437ec9fb3f55d7cbf871a1288a1a69
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.4
+  title: "'Update autumndb from 21.1.4 to 21.2.0'"
+  date: 2022-07-25T19:11:35.510Z
+- commits:
     - subject: Update typedoc from 0.23.8 to 0.23.9
       hash: b463326ae784123c96dd312b5202f14d419f64fd
       body: ""
