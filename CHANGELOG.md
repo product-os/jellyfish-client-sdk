@@ -5,6 +5,11 @@
 
 # v0.0.3
 
+## 13.0.7 - 2022-07-31
+
+* Update lint-staged from 13.0.0 to 13.0.3 [renovate[bot]]
+* Update nock from 13.2.4 to 13.2.9 [renovate[bot]]
+
 ## 13.0.6 - 2022-07-31
 
 * Update @types/sinon from 10.0.11 to 10.0.13 [renovate[bot]]
