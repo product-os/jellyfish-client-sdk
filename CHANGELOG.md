@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.15 - 2022-07-31
+
+* Update simple-git-hooks from 2.7.0 to 2.8.0 [renovate[bot]]
+
 ## 13.0.14 - 2022-07-31
 
 * Update autumndb from 21.3.7 to 21.3.8 [renovate[bot]]

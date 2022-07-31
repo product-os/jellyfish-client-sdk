@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update simple-git-hooks from 2.7.0 to 2.8.0
+      hash: d24ba6cde82ddfaf6aca23c75c250b420714b666
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.15
+  title: "'Update simple-git-hooks from 2.7.0 to 2.8.0'"
+  date: 2022-07-31T21:15:21.512Z
+- commits:
     - subject: Update autumndb from 21.3.7 to 21.3.8
       hash: 78e79c68c19e09aa38223350980f936abe9fd732
       body: ""
