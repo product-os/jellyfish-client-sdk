@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.6 - 2022-07-31
+
+* Update @types/sinon from 10.0.11 to 10.0.13 [renovate[bot]]
+
 ## 13.0.5 - 2022-07-31
 
 * Update jest monorepo [renovate[bot]]

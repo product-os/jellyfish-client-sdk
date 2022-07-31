@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @types/sinon from 10.0.11 to 10.0.13
+      hash: 807ba787c884738a705ecce11435e20a9147a740
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.6
+  title: "'Update @types/sinon from 10.0.11 to 10.0.13'"
+  date: 2022-07-31T10:40:15.102Z
+- commits:
     - subject: Update jest monorepo
       hash: 8ce39e61a5afa3ad03e5b404543e90e87c80a493
       body: ""
