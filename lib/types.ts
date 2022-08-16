@@ -2,7 +2,7 @@ import type { Contract, QueryOptions } from 'autumndb';
 import type { Socket } from 'socket.io-client';
 
 export type ExtendedSocket = Socket & {
-	type?: ((user: Contract, card: Contract) => void) | undefined;
+	type?: ((userSlug: string, card: Contract) => void) | undefined;
 };
 
 export interface Message extends Contract {
