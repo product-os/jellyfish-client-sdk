@@ -1,4 +1,18 @@
 - commits:
+    - subject: Fix incorrect type annotation for stream.type
+      hash: 946e8c569d5b75035bed82ab220868194c05c2c9
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 13.0.33
+  title: "'Fix incorrect type annotation for stream.type'"
+  date: 2022-08-16T15:45:00.262Z
+- commits:
     - subject: Update autumndb from 22.1.9 to 22.1.11
       hash: a99f514b02efb02c8e40351c1a42a593cbf470e3
       body: ""
