@@ -1,4 +1,18 @@
 - commits:
+    - subject: Remove secrets from gitignore
+      hash: 5a0b85d862c8164b6857115c0ead26d80388e774
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 13.0.30
+  title: "'Remove secrets from gitignore'"
+  date: 2022-08-16T05:41:22.931Z
+- commits:
     - subject: Update autumndb from 22.1.6 to 22.1.8
       hash: 862b6294ce31e5c26a88822baf27c70cc9fde777
       body: ""

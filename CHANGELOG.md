@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.30 - 2022-08-16
+
+* Remove secrets from gitignore [Josh Bowling]
+
 ## 13.0.29 - 2022-08-13
 
 * Update autumndb from 22.1.6 to 22.1.8 [renovate[bot]]
