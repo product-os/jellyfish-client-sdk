@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 22.1.8 to 22.1.9
+      hash: 8e8e485d27716c5bb5e94d8b88b3bbc5548460e5
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.31
+  title: "'Update autumndb from 22.1.8 to 22.1.9'"
+  date: 2022-08-16T12:01:02.306Z
+- commits:
     - subject: Remove secrets from gitignore
       hash: 5a0b85d862c8164b6857115c0ead26d80388e774
       body: ""
