@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.34 - 2022-08-17
+
+* Update autumndb from 22.1.11 to 22.1.13 [renovate[bot]]
+
 ## 13.0.33 - 2022-08-16
 
 * Fix incorrect type annotation for stream.type [Lucian Buzzo]

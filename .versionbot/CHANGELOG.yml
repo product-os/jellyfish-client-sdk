@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 22.1.11 to 22.1.13
+      hash: f879ee8559c574ebecbd7588cf560ba405ace2f1
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.34
+  title: "'Update autumndb from 22.1.11 to 22.1.13'"
+  date: 2022-08-17T14:26:33.636Z
+- commits:
     - subject: Fix incorrect type annotation for stream.type
       hash: 946e8c569d5b75035bed82ab220868194c05c2c9
       body: ""
