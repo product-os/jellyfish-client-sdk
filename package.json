@@ -1,6 +1,6 @@
 {
   "name": "@balena/jellyfish-client-sdk",
-  "version": "13.0.35",
+  "version": "13.0.36",
   "repository": {
     "type": "git",
     "url": "https://github.com/product-os/jellyfish-client-sdk.git"
@@ -75,6 +75,6 @@
     "pre-commit": "npx lint-staged"
   },
   "versionist": {
-    "publishedAt": "2022-08-18T22:40:59.952Z"
+    "publishedAt": "2022-08-20T01:06:26.323Z"
   }
 }
