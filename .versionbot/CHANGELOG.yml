@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update typescript from 4.7.4 to 4.8.2
+      hash: cf2de1abf3966e5765a7a1afa66a9115b4a0de9e
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.49
+  title: "'Update typescript from 4.7.4 to 4.8.2'"
+  date: 2022-08-28T05:57:56.845Z
+- commits:
     - subject: Update typedoc from 0.23.10 to 0.23.11
       hash: 6963569b62f87d3f753f7958b67a75ca8d0f174c
       body: ""

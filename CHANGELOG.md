@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.49 - 2022-08-28
+
+* Update typescript from 4.7.4 to 4.8.2 [renovate[bot]]
+
 ## 13.0.48 - 2022-08-28
 
 * Update typedoc from 0.23.10 to 0.23.11 [renovate[bot]]
