@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.47 - 2022-08-28
+
+* Update @types/jest from 28.1.7 to 28.1.8 [renovate[bot]]
+
 ## 13.0.46 - 2022-08-23
 
 * Update autumndb from 22.1.27 to 22.1.28 [renovate[bot]]
