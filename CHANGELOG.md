@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.51 - 2022-09-01
+
+* Update typedoc from 0.23.12 to 0.23.13 [renovate[bot]]
+
 ## 13.0.50 - 2022-08-31
 
 * Update typedoc from 0.23.11 to 0.23.12 [renovate[bot]]
