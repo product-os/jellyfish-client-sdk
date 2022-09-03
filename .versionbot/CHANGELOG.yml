@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update typedoc from 0.23.13 to 0.23.14
+      hash: 82aa301e2c81e0e2dc075ba350aa8bc8c4c48a0b
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.53
+  title: "'Update typedoc from 0.23.13 to 0.23.14'"
+  date: 2022-09-03T15:53:16.692Z
+- commits:
     - subject: Update socket.io-client from 4.5.1 to 4.5.2
       hash: 4e3f71997f09a49b622d5a7e74abd48c000ead0f
       body: ""
