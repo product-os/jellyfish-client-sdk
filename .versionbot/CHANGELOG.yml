@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update socket.io-client from 4.5.1 to 4.5.2
+      hash: 4e3f71997f09a49b622d5a7e74abd48c000ead0f
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.52
+  title: "'Update socket.io-client from 4.5.1 to 4.5.2'"
+  date: 2022-09-03T03:00:55.015Z
+- commits:
     - subject: Update typedoc from 0.23.12 to 0.23.13
       hash: d2765175e3788ae2528cb38d6c21effcf3df04cb
       body: ""
