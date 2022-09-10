@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.63 - 2022-09-10
+
+* Update autumndb from 22.2.19 to 22.2.22 [renovate[bot]]
+
 ## 13.0.62 - 2022-09-10
 
 * Update jest from 29.0.2 to 29.0.3 [renovate[bot]]
