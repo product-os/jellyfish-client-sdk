@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.57 - 2022-09-10
+
+* Update jest to v29 [Josh Bowling]
+
 ## 13.0.56 - 2022-09-10
 
 * Update typescript from 4.8.2 to 4.8.3 [renovate[bot]]
