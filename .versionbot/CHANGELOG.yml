@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 22.2.38 to 22.2.39
+      hash: 0f8c2dba01e3952d6becd972e3a6df8e1393cc25
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.73
+  title: ""
+  date: 2022-09-13T14:40:09.712Z
+- commits:
     - subject: "CI: Move to Flowzone"
       hash: 1f26eec5baaad3f7803138cff123931102f837e9
       body: ""
