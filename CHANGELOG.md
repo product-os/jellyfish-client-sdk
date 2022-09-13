@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.72 - 2022-09-13
+
+* CI: Move to Flowzone [Josh Bowling]
+
 ## 13.0.71 - 2022-09-12
 
 * Update autumndb from 22.2.35 to 22.2.38 [renovate[bot]]
