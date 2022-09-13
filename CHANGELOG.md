@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.74 - 2022-09-13
+
+* Update autumndb from 22.2.39 to 22.2.44 [renovate[bot]]
+
 ## 13.0.73 - 2022-09-13
 
 * Update autumndb from 22.2.38 to 22.2.39 [renovate[bot]]
