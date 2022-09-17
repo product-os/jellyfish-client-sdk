@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.77 - 2022-09-17
+
+* Update ts-jest from 29.0.0 to 29.0.1 [renovate[bot]]
+
 ## 13.0.76 - 2022-09-17
 
 * Update @types/jest from 29.0.1 to 29.0.3 [renovate[bot]]
