@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.81 - 2022-09-18
+
+* Docs: Add query examples to readme [Josh Bowling]
+
 ## 13.0.80 - 2022-09-17
 
 * Update autumndb from 22.2.49 to 22.2.52 [renovate[bot]]
