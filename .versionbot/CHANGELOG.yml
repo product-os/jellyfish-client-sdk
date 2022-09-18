@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 22.2.52 to 22.2.53
+      hash: 94e78dea9219e43e5987eda4ef4d4fee70d1dc03
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.82
+  title: ""
+  date: 2022-09-18T17:12:53.747Z
+- commits:
     - subject: "Docs: Add query examples to readme"
       hash: 70325a729f668111168d773bcec44cb77c0474bc
       body: ""
