@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.91 - 2022-09-19
+
+* Update autumndb from 22.2.62 to 22.2.65 [renovate[bot]]
+
 ## 13.0.90 - 2022-09-19
 
 * Move CodeQL workflow config [Josh Bowling]
