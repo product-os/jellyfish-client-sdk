@@ -1,4 +1,18 @@
 - commits:
+    - subject: Move CodeQL workflow config
+      hash: 04f8015d3407afc961889e607b24ac4620ad5eb3
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 13.0.90
+  title: ""
+  date: 2022-09-19T08:16:26.761Z
+- commits:
     - subject: Update autumndb from 22.2.59 to 22.2.62
       hash: 8adb8b2068385684869b00af8d09768a1d2eefa7
       body: ""
