@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.103 - 2022-09-27
+
+* Update autumndb from 22.2.85 to 22.2.87 [renovate[bot]]
+
 ## 13.0.102 - 2022-09-27
 
 * Use a flowzone custom finalize job for publishing docs [Pagan Gazzard]
