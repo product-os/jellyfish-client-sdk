@@ -1,4 +1,16 @@
 - commits:
+    - subject: Use a flowzone custom finalize job for publishing docs
+      hash: 05bb81e547cb1992fef9631dd423040b98fc2280
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested: []
+  version: 13.0.102
+  title: ""
+  date: 2022-09-27T11:11:19.289Z
+- commits:
     - subject: Update autumndb from 22.2.84 to 22.2.85
       hash: dcc9a3f905e21e32beeb1e79ce0722777d17ea92
       body: ""
