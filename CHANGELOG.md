@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.107 - 2022-09-28
+
+* Change engines to >=16 to enable node 18 tests/usage [Pagan Gazzard]
+
 ## 13.0.106 - 2022-09-28
 
 * Update autumndb from 22.2.93 to 22.2.95 [renovate[bot]]
