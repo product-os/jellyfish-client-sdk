@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.112 - 2022-10-01
+
+* Update typescript from 4.8.3 to 4.8.4 [renovate[bot]]
+
 ## 13.0.111 - 2022-10-01
 
 * Update ts-jest from 29.0.2 to 29.0.3 [renovate[bot]]
