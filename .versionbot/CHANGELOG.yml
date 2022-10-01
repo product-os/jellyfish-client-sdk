@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 22.2.99 to 22.2.102
+      hash: 4adaee79ac5add726cdaeebb34dea7a4e79ff637
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.113
+  title: ""
+  date: 2022-10-01T06:12:05.085Z
+- commits:
     - subject: Update typescript from 4.8.3 to 4.8.4
       hash: e831f4caf0460c065d37d95457a01554c71024a0
       body: ""
