@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.115 - 2022-10-01
+
+* Update autumndb from 22.2.102 to 22.2.105 [renovate[bot]]
+
 ## 13.0.114 - 2022-10-01
 
 * Update jest monorepo [renovate[bot]]
