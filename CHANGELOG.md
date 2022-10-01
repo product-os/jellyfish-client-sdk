@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.110 - 2022-10-01
+
+* Update @types/lodash from 4.14.185 to 4.14.186 [renovate[bot]]
+
 ## 13.0.109 - 2022-09-28
 
 * Update autumndb from 22.2.98 to 22.2.99 [renovate[bot]]
