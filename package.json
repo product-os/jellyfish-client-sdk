@@ -57,7 +57,7 @@
     "@types/common-tags": "^1.8.1",
     "@types/is-uuid": "^1.0.0",
     "@types/jest": "^29.0.3",
-    "@types/lodash": "^4.14.185",
+    "@types/lodash": "^4.14.186",
     "@types/sinon": "^10.0.13",
     "@types/uuid": "^8.3.4",
     "autumndb": "^22.2.99",
