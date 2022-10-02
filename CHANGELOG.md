@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.121 - 2022-10-02
+
+* Update autumndb from 22.2.114 to 22.2.115 [renovate[bot]]
+
 ## 13.0.120 - 2022-10-02
 
 * Update autumndb from 22.2.112 to 22.2.114 [renovate[bot]]
