@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 22.2.115 to 22.2.117
+      hash: 857cf250883e9fa349f02d2b2cbdd8e6e5d6ab2f
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.123
+  title: ""
+  date: 2022-10-03T14:19:12.591Z
+- commits:
     - subject: "CI: Move tests to test/unit"
       hash: edd0183db8517a958f3c7f482f7d6404e8428dfc
       body: ""

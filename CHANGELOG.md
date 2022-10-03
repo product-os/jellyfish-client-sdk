@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.123 - 2022-10-03
+
+* Update autumndb from 22.2.115 to 22.2.117 [renovate[bot]]
+
 ## 13.0.122 - 2022-10-03
 
 * CI: Move tests to test/unit [Josh Bowling]
