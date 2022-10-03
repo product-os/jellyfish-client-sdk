@@ -2,9 +2,9 @@ import { isEqual } from 'lodash';
 import nock from 'nock';
 import sinon from 'sinon';
 import { v4 as uuid } from 'uuid';
-import { getSdk, JellyfishSDK } from '.';
-import { CardSdk, isMentionedInMessage } from './card';
-import type { Message } from './types';
+import { getSdk, JellyfishSDK } from '../../lib';
+import { CardSdk, isMentionedInMessage } from '../../lib/card';
+import type { Message } from '../../lib/types';
 
 let context: {
 	sdk: JellyfishSDK;
