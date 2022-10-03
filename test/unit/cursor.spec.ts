@@ -1,14 +1,8 @@
-/*
- * Copyright (C) Balena.io - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited.
- * Proprietary and confidential.
- */
-
 import type { JsonSchema } from 'autumndb';
 import EventEmitter from 'events';
 import sinon from 'sinon';
-import { getSdk } from '.';
-import { JellyfishCursor } from './cursor';
+import { getSdk } from '../../lib';
+import { JellyfishCursor } from '../../lib/cursor';
 
 const API_URL = 'https://test.ly.fish';
 
