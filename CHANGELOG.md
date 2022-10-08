@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.130 - 2022-10-08
+
+* Update sinon from 14.0.0 to 14.0.1 [renovate[bot]]
+
 ## 13.0.129 - 2022-10-08
 
 * Update @types/jest from 29.1.1 to 29.1.2 [renovate[bot]]

@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update sinon from 14.0.0 to 14.0.1
+      hash: 368029300d1a9cbbc542ecbe67975d5ff2ec76fa
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.130
+  title: ""
+  date: 2022-10-08T02:57:13.986Z
+- commits:
     - subject: Update @types/jest from 29.1.1 to 29.1.2
       hash: 59d94eaca8a99e90cebfb1c35ff8fb483949d0b0
       body: ""
