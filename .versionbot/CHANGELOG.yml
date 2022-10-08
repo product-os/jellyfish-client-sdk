@@ -1,4 +1,18 @@
 - commits:
+    - subject: "Dev: Remove tsx from lint-staged"
+      hash: 9556dd6f7d7df046c8972d1e010d7662db334f25
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 13.0.132
+  title: ""
+  date: 2022-10-08T13:28:45.258Z
+- commits:
     - subject: "Dev: Use prettier for json/yml"
       hash: fc6b38d89c6a40d143ef8d10402928ab13372cec
       body: ""

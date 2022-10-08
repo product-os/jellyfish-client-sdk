@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.132 - 2022-10-08
+
+* Dev: Remove tsx from lint-staged [Josh Bowling]
+
 ## 13.0.131 - 2022-10-08
 
 * Dev: Use prettier for json/yml [Josh Bowling]
