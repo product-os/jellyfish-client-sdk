@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.131 - 2022-10-08
+
+* Dev: Use prettier for json/yml [Josh Bowling]
+
 ## 13.0.130 - 2022-10-08
 
 * Update sinon from 14.0.0 to 14.0.1 [renovate[bot]]

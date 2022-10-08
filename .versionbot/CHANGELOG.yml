@@ -1,4 +1,18 @@
 - commits:
+    - subject: "Dev: Use prettier for json/yml"
+      hash: fc6b38d89c6a40d143ef8d10402928ab13372cec
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 13.0.131
+  title: ""
+  date: 2022-10-08T10:44:23.993Z
+- commits:
     - subject: Update sinon from 14.0.0 to 14.0.1
       hash: 368029300d1a9cbbc542ecbe67975d5ff2ec76fa
       body: ""
