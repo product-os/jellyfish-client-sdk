@@ -28,13 +28,16 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "balena-lint --fix"
+    ],
+    "*.{json,yml}": [
+      "prettier -w"
     ]
   },
   "scripts": {
     "clean": "rimraf build",
     "build": "npm run clean && tsc -p tsconfig.build.json",
-    "lint": "balena-lint lib test && deplint",
-    "lint:fix": "balena-lint --fix lib test",
+    "lint": "balena-lint lib test && deplint && prettier --check **/*.json **/*.yml",
+    "lint:fix": "balena-lint --fix lib test && prettier -w **/*.json **/*.yml",
     "test": "npm run lint && npm run test:unit",
     "test:unit": "jest test",
     "doc": "typedoc lib/ && touch docs/.nojekyll",
@@ -65,6 +68,7 @@
     "jest": "^29.1.2",
     "lint-staged": "^13.0.3",
     "nock": "^13.2.9",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "simple-git-hooks": "^2.8.0",
     "sinon": "^14.0.1",
