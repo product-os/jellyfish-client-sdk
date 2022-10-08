@@ -26,7 +26,7 @@
     ]
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "*.ts": [
       "balena-lint --fix"
     ],
     "*.{json,yml}": [
