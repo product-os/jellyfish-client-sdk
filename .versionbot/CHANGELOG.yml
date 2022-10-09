@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 22.2.124 to 22.2.129
+      hash: 5e24c93740be69b362e61cc18f583bea9ef53ad7
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.133
+  title: ""
+  date: 2022-10-09T03:02:01.177Z
+- commits:
     - subject: "Dev: Remove tsx from lint-staged"
       hash: 9556dd6f7d7df046c8972d1e010d7662db334f25
       body: ""
