@@ -1,4 +1,18 @@
 - commits:
+    - subject: "CI: Use JSON for Jest config"
+      hash: 2dcd04d377d82efbed4811fe32ab40b1f40e034d
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 13.0.141
+  title: ""
+  date: 2022-10-10T09:07:56.996Z
+- commits:
     - subject: Update autumndb from 22.2.136 to 22.2.138
       hash: c95b569a412e4b54ae41a2172c290fa00cecee23
       body: ""
