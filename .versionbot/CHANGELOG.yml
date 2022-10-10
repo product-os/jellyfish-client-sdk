@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 22.2.138 to 22.2.139
+      hash: 17f3cf4e0a2690cf71f3d150b2789622c7ee97c4
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.142
+  title: ""
+  date: 2022-10-10T12:08:03.195Z
+- commits:
     - subject: "CI: Use JSON for Jest config"
       hash: 2dcd04d377d82efbed4811fe32ab40b1f40e034d
       body: ""
