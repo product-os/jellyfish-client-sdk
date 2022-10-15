@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update socket.io-client from 4.5.2 to 4.5.3
+      hash: 364416a85c06c7fde0abf202dcd3319c33eef37f
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.149
+  title: ""
+  date: 2022-10-15T07:29:19.081Z
+- commits:
     - subject: Update jest from 29.1.2 to 29.2.0
       hash: f4aff236bd3f9cb479b199a0be8a27b26c6b0fcc
       body: ""

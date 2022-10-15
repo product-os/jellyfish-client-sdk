@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.149 - 2022-10-15
+
+* Update socket.io-client from 4.5.2 to 4.5.3 [renovate[bot]]
+
 ## 13.0.148 - 2022-10-15
 
 * Update jest from 29.1.2 to 29.2.0 [renovate[bot]]
