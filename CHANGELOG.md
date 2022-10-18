@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.150 - 2022-10-18
+
+* Update typedoc from 0.23.16 to 0.23.17 [renovate[bot]]
+
 ## 13.0.149 - 2022-10-15
 
 * Update socket.io-client from 4.5.2 to 4.5.3 [renovate[bot]]
