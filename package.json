@@ -70,7 +70,7 @@
     "nock": "^13.2.9",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
-    "simple-git-hooks": "^2.8.0",
+    "simple-git-hooks": "^2.8.1",
     "sinon": "^14.0.1",
     "ts-jest": "^29.0.3",
     "typedoc": "^0.23.17",
