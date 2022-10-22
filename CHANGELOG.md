@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.156 - 2022-10-22
+
+* Update jest monorepo [renovate[bot]]
+
 ## 13.0.155 - 2022-10-22
 
 * Update simple-git-hooks from 2.8.0 to 2.8.1 [renovate[bot]]
