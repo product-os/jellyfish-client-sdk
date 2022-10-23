@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update typedoc from 0.23.17 to 0.23.18
+      hash: 80f781883d5a068b88c852df967601da04e5b88d
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.157
+  title: ""
+  date: 2022-10-23T22:13:32.926Z
+- commits:
     - subject: Update jest monorepo
       hash: 7d7d56779d48733341cd09741d92afe50f046cf9
       body: ""
