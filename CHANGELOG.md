@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.158 - 2022-10-24
+
+* Docs: Remove badge from readme [Josh Bowling]
+
 ## 13.0.157 - 2022-10-23
 
 * Update typedoc from 0.23.17 to 0.23.18 [renovate[bot]]
