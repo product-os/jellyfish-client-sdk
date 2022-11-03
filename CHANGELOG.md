@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.166 - 2022-11-03
+
+* Update typedoc from 0.23.19 to 0.23.20 [renovate[bot]]
+
 ## 13.0.165 - 2022-10-29
 
 * Update jest from 29.2.1 to 29.2.2 [renovate[bot]]
