@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.168 - 2022-11-05
+
+* Update @types/lodash from 4.14.186 to 4.14.188 [renovate[bot]]
+
 ## 13.0.167 - 2022-11-05
 
 * Update @types/jest from 29.2.0 to 29.2.2 [renovate[bot]]
