@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.169 - 2022-11-07
+
+* Update @balena/lint from 6.2.0 to 6.2.1 [renovate[bot]]
+
 ## 13.0.168 - 2022-11-05
 
 * Update @types/lodash from 4.14.186 to 4.14.188 [renovate[bot]]

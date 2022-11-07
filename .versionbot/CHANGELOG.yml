@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/lint from 6.2.0 to 6.2.1
+      hash: 0d79cb592272154420a4748c98177e8b837346d6
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.169
+  title: ""
+  date: 2022-11-07T15:50:15.847Z
+- commits:
     - subject: Update @types/lodash from 4.14.186 to 4.14.188
       hash: aaa39a462327269abe0ed94588e8238ac84a97d3
       body: ""
