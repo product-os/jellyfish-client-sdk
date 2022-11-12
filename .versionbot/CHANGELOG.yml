@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update sinon from 14.0.1 to 14.0.2
+      hash: a3d3f3c2c0ae6741e86ac93daea65ddbcbadf122
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.170
+  title: ""
+  date: 2022-11-12T00:31:14.967Z
+- commits:
     - subject: Update @balena/lint from 6.2.0 to 6.2.1
       hash: 0d79cb592272154420a4748c98177e8b837346d6
       body: ""

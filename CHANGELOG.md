@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.170 - 2022-11-12
+
+* Update sinon from 14.0.1 to 14.0.2 [renovate[bot]]
+
 ## 13.0.169 - 2022-11-07
 
 * Update @balena/lint from 6.2.0 to 6.2.1 [renovate[bot]]
