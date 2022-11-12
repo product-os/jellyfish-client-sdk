@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.171 - 2022-11-12
+
+* Update jest from 29.2.2 to 29.3.1 [renovate[bot]]
+
 ## 13.0.170 - 2022-11-12
 
 * Update sinon from 14.0.1 to 14.0.2 [renovate[bot]]
