@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.173 - 2022-11-19
+
+* Update @types/jest from 29.2.2 to 29.2.3 [renovate[bot]]
+
 ## 13.0.172 - 2022-11-14
 
 * Update typedoc from 0.23.20 to 0.23.21 [renovate[bot]]
