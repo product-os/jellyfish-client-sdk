@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @types/lodash from 4.14.188 to 4.14.189
+      hash: 4ba3d7e98b3d7c54f6cfbe55db1ca8d415a67e0d
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.174
+  title: ""
+  date: 2022-11-19T03:12:18.818Z
+- commits:
     - subject: Update @types/jest from 29.2.2 to 29.2.3
       hash: d3be2218e63d7b87043f2ce9c069fe2c7b2d2631
       body: ""
