@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.176 - 2022-11-24
+
+* Update autumndb from 22.2.167 to 22.2.170 [renovate[bot]]
+
 ## 13.0.175 - 2022-11-19
 
 * Update typescript from 4.8.4 to 4.9.3 [renovate[bot]]
