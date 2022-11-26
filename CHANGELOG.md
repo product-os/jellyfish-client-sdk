@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.185 - 2022-11-26
+
+* Update autumndb from 22.2.180 to 22.2.182 [renovate[bot]]
+
 ## 13.0.184 - 2022-11-26
 
 * Update socket.io-client from 4.5.3 to 4.5.4 [renovate[bot]]

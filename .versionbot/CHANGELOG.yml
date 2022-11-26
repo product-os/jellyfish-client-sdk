@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 22.2.180 to 22.2.182
+      hash: 4c3f84507e7c444349a880debf3cf67fb622de18
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.185
+  title: ""
+  date: 2022-11-26T10:33:57.361Z
+- commits:
     - subject: Update socket.io-client from 4.5.3 to 4.5.4
       hash: 127c18942b2cde417cf1c28fd9f2433afe14f5ae
       body: ""
