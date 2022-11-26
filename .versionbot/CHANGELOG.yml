@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 22.2.178 to 22.2.180
+      hash: 565136fdfa0be028811219d83c7cda2cb76d99e6
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.183
+  title: ""
+  date: 2022-11-26T07:34:14.316Z
+- commits:
     - subject: Update lint-staged from 13.0.3 to 13.0.4
       hash: 794bde1f25c1e8502d423e6a887f0746583a355d
       body: ""

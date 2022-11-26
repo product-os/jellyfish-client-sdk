@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.183 - 2022-11-26
+
+* Update autumndb from 22.2.178 to 22.2.180 [renovate[bot]]
+
 ## 13.0.182 - 2022-11-26
 
 * Update lint-staged from 13.0.3 to 13.0.4 [renovate[bot]]
