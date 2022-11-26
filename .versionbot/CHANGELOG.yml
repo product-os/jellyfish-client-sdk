@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 22.2.173 to 22.2.176
+      hash: 13657ea2b22432d65469cda1912e28ea1baf8a7d
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 13.0.180
+  title: ""
+  date: 2022-11-26T01:28:04.998Z
+- commits:
     - subject: Update @types/lodash from 4.14.189 to 4.14.190
       hash: cc9bb8b921db5ea190d734a7f7fe24f2167ff985
       body: ""
