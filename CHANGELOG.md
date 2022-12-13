@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.0.190 - 2022-12-13
+
+* CI: Stop extending renovate config [Josh Bowling]
+
 ## 13.0.189 - 2022-11-26
 
 * Update autumndb from 22.2.185 to 22.2.186 [renovate[bot]]

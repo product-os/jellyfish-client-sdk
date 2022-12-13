@@ -1,4 +1,18 @@
 - commits:
+    - subject: "CI: Stop extending renovate config"
+      hash: 3337ab023c0caa5433dd41b4c6a63907123a5c8c
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 13.0.190
+  title: ""
+  date: 2022-12-13T00:43:15.377Z
+- commits:
     - subject: Update autumndb from 22.2.185 to 22.2.186
       hash: 0cac137895f13d914f9347b4bce20ea9737855d2
       body: ""
