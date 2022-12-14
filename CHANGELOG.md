@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.2.0 - 2022-12-14
+
+* Update actions/setup-node action to 3 [Renovate Bot]
+
 ## 13.1.0 - 2022-12-13
 
 * Update Node.js to 16.18.1 [Renovate Bot]

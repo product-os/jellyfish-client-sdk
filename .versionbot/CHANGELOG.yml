@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update actions/setup-node action to 3
+      hash: 6386fc9266f71670d96d0598d5c052230e733a05
+      body: |
+        Update actions/setup-node to 3
+
+        Update actions/setup-node from 2 to 3
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 13.2.0
+  title: ""
+  date: 2022-12-14T00:32:50.685Z
+- commits:
     - subject: Update Node.js to 16.18.1
       hash: efb2b33f2d822d0bb3aac5815e027f26f0677124
       body: |
