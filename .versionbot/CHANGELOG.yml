@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency uuid to 9.0.0
+      hash: 69027734ac8578f09bae0c4adef1e752fc3ac060
+      body: |
+        Update uuid to 9.0.0
+
+        Update uuid from 8.3.2 to 9.0.0
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 13.6.0
+  title: ""
+  date: 2022-12-28T11:32:12.337Z
+- commits:
     - subject: Update dependency sinon to 15.0.1
       hash: 80d7adf1e1e699d295700895fd5776e63e8d0fa5
       body: |

@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.6.0 - 2022-12-28
+
+* Update dependency uuid to 9.0.0 [Renovate Bot]
+
 ## 13.5.1 - 2022-12-28
 
 * Update dependency sinon to 15.0.1 [Renovate Bot]
