@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency sinon to 15.0.1
+      hash: 80d7adf1e1e699d295700895fd5776e63e8d0fa5
+      body: |
+        Update sinon to 15.0.1
+
+        Update sinon from 14.0.2 to 15.0.1
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 13.5.1
+  title: ""
+  date: 2022-12-28T08:46:39.053Z
+- commits:
     - subject: Update dependency axios to 1.2.1
       hash: b6d073354c4314a43b46ebbf67e86f24defdbed9
       body: |
