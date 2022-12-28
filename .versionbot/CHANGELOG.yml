@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency axios to 1.2.1
+      hash: b6d073354c4314a43b46ebbf67e86f24defdbed9
+      body: |
+        Update axios to 1.2.1
+
+        Update axios from 0.27.2 to 1.2.1
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 13.5.0
+  title: ""
+  date: 2022-12-28T07:02:35.794Z
+- commits:
     - subject: Pin dependencies
       hash: 7731ed7b5febd1995786a142fb79249bd12de385
       body: |

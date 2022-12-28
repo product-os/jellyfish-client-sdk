@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.5.0 - 2022-12-28
+
+* Update dependency axios to 1.2.1 [Renovate Bot]
+
 ## 13.4.0 - 2022-12-28
 
 * Pin dependencies [Renovate Bot]
