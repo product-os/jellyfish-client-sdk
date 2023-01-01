@@ -1,6 +1,6 @@
 import { isEqual } from 'lodash';
 import nock from 'nock';
-import { v4 as uuid } from 'uuid';
+import { randomUUID } from 'node:crypto';
 import { getSdk, JellyfishSDK } from '../../lib';
 
 let context: {
@@ -55,7 +55,7 @@ afterEach(() => {
 test('.action() should send an action to the server', async () => {
 	const { sdk } = context;
 
-	const name = `test-card-${uuid()}`;
+	const name = `test-card-${randomUUID()}`;
 
 	const server = nock(API_URL);
 
@@ -116,7 +116,7 @@ test('.action() should send an action to the server', async () => {
 test('.query() should send a query to the server', async () => {
 	const { sdk } = context;
 
-	const name = `test-card-${uuid()}`;
+	const name = `test-card-${randomUUID()}`;
 
 	const server = nock(API_URL);
 
@@ -206,7 +206,7 @@ test('.query() should send a query to the server', async () => {
 test('.card.get() should work for ids', async () => {
 	const { sdk } = context;
 
-	const name = `test-card-${uuid()}`;
+	const name = `test-card-${randomUUID()}`;
 	const id = '37a55e52-23fb-4122-8d4e-319827232278';
 
 	const mockData = {
@@ -243,7 +243,7 @@ test('.card.get() should work for ids', async () => {
 test('.card.get() should work for slugs', async () => {
 	const { sdk } = context;
 
-	const name = `test-card-${uuid()}`;
+	const name = `test-card-${randomUUID()}`;
 	const slug = 'test-card-37a55e52-23fb-4122-8d4e-319827232278';
 
 	const mockData = {

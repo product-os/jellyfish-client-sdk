@@ -1,5 +1,5 @@
 import type { Contract } from 'autumndb';
-import { v4 as uuid } from 'uuid';
+import { randomUUID } from 'node:crypto';
 import type { JellyfishSDK } from '.';
 
 /**
@@ -192,7 +192,7 @@ export class AuthSdk {
 				expirationDate.setDate(expirationDate.getDate() + 7);
 
 				return this.sdk.card.create({
-					slug: `session-ui-${user!.slug}-${Date.now()}-${uuid()}`,
+					slug: `session-ui-${user!.slug}-${Date.now()}-${randomUUID()}`,
 					type: 'session',
 					data: {
 						actor: user!.id,

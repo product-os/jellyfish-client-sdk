@@ -1,7 +1,7 @@
 import { isEqual } from 'lodash';
 import nock from 'nock';
+import { randomUUID } from 'node:crypto';
 import sinon from 'sinon';
-import { v4 as uuid } from 'uuid';
 import { getSdk, JellyfishSDK } from '../../lib';
 import { CardSdk, isMentionedInMessage } from '../../lib/card';
 import type { Message } from '../../lib/types';
@@ -121,7 +121,7 @@ afterEach(() => {
 test('getWithTimeline sets the limit to 1 when no queryOptions are supplied', async () => {
 	const { sdk } = context;
 
-	const name = `test-card-${uuid()}`;
+	const name = `test-card-${randomUUID()}`;
 
 	const server = nock(API_URL);
 
@@ -155,7 +155,7 @@ test(
 	async () => {
 		const { sdk } = context;
 
-		const name = `test-card-${uuid()}`;
+		const name = `test-card-${randomUUID()}`;
 
 		const server = nock(API_URL);
 
@@ -201,7 +201,7 @@ test(
 test('getWithTimeline merges the schema options with the default query schema', async () => {
 	const { sdk } = context;
 
-	const name = `test-card-${uuid()}`;
+	const name = `test-card-${randomUUID()}`;
 
 	const server = nock(API_URL);
 
@@ -734,11 +734,11 @@ test('link throws on invalid link', async () => {
 
 test('link allows links with asterisks', async () => {
 	const foo = {
-		id: uuid(),
+		id: randomUUID(),
 		type: 'foo@1.0.0',
 	};
 	const bar = {
-		id: uuid(),
+		id: randomUUID(),
 		type: 'bar@1.0.0',
 	};
 
@@ -773,18 +773,18 @@ test('link allows links with asterisks', async () => {
 
 test("unlink will unlink 'reverse' links between two cards with the specified verb", async () => {
 	const foo = {
-		id: uuid(),
+		id: randomUUID(),
 		type: 'foo@1.0.0',
 	};
 
 	const bar = {
-		id: uuid(),
+		id: randomUUID(),
 		type: 'bar@1.0.0',
 	};
 
 	const linkCards = [
 		{
-			id: uuid(),
+			id: randomUUID(),
 			type: 'link@1.0.0',
 			name: 'buz',
 			data: {

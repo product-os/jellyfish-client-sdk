@@ -1,7 +1,7 @@
 import type { JsonSchema } from 'autumndb';
 import { forEach, omit, set } from 'lodash';
+import { randomUUID } from 'node:crypto';
 import io, { Socket } from 'socket.io-client';
-import { v4 as uuid } from 'uuid';
 import { applyMask, JellyfishSDK } from '.';
 import type { ExtendedSocket, SdkQueryOptions } from './types';
 
@@ -73,7 +73,7 @@ export class JellyfishStreamManager {
 		});
 
 		// Generate a unique identifier for this client
-		socket.id = uuid();
+		socket.id = randomUUID();
 
 		// When the client connects, send the query that should be streamed as well
 		// as an authentication token.
