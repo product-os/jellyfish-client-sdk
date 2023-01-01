@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.6.1 - 2023-01-01
+
+* Drop uuid [Josh Bowling]
+
 ## 13.6.0 - 2022-12-28
 
 * Update dependency uuid to 9.0.0 [Renovate Bot]
