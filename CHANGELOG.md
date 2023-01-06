@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.9.0 - 2023-01-06
+
+* Update Node.js to 18.13.0 [Renovate Bot]
+
 ## 13.8.0 - 2023-01-06
 
 * Update actions/setup-node digest to 64ed1c7 [Renovate Bot]
