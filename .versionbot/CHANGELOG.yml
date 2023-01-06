@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update actions/setup-node digest to 64ed1c7
+      hash: 77315ec83a33e803013a78ddbfd306b8f6d1c4d1
+      body: |
+        Update actions/setup-node to
+
+        Update actions/setup-node from 3 to
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 13.8.0
+  title: ""
+  date: 2023-01-06T01:02:37.297Z
+- commits:
     - subject: Update actions/checkout digest to ac59398
       hash: 4a9edc8bd9e3b847ad462002c3ffda405c927f1f
       body: |

@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.8.0 - 2023-01-06
+
+* Update actions/setup-node digest to 64ed1c7 [Renovate Bot]
+
 ## 13.7.0 - 2023-01-05
 
 * Update actions/checkout digest to ac59398 [Renovate Bot]
