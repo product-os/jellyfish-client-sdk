@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update peaceiris/actions-gh-pages digest to 64b46b4
+      hash: 9c89fff0958d884b234c5289726cc2a52f1e0598
+      body: |
+        Update peaceiris/actions-gh-pages to
+
+        Update peaceiris/actions-gh-pages from 3 to
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 13.10.0
+  title: ""
+  date: 2023-01-07T00:25:47.962Z
+- commits:
     - subject: Update Node.js to 18.13.0
       hash: 449ebc4cd09d5e3a5917c118b96b795505fdf366
       body: |

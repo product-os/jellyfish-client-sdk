@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.10.0 - 2023-01-07
+
+* Update peaceiris/actions-gh-pages digest to 64b46b4 [Renovate Bot]
+
 ## 13.9.0 - 2023-01-06
 
 * Update Node.js to 18.13.0 [Renovate Bot]
