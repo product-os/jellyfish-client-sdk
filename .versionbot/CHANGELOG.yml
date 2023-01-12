@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update github/codeql-action digest to 515828d
+      hash: 0b773db0d8c618a54512baeff7a91174eb85c1ac
+      body: |
+        Update github/codeql-action to
+
+        Update github/codeql-action from 2 to
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 13.11.0
+  title: ""
+  date: 2023-01-12T10:47:33.451Z
+- commits:
     - subject: Update peaceiris/actions-gh-pages digest to 64b46b4
       hash: 9c89fff0958d884b234c5289726cc2a52f1e0598
       body: |

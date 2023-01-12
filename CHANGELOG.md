@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.11.0 - 2023-01-12
+
+* Update github/codeql-action digest to 515828d [Renovate Bot]
+
 ## 13.10.0 - 2023-01-07
 
 * Update peaceiris/actions-gh-pages digest to 64b46b4 [Renovate Bot]
