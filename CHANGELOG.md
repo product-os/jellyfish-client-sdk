@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.11.1 - 2023-03-31
+
+* Fix name in readme [Josh Bowling]
+
 ## 13.11.0 - 2023-03-31
 
 * Update github/codeql-action digest to 39d8d7e [Renovate Bot]
