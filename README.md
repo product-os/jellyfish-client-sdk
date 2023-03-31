@@ -6,7 +6,7 @@ useful functionality to the web UI and any other clients.
 
 # Usage
 
-Below is an example how to use JellyFish:
+Below is an example how to use Jellyfish:
 
 ```typescript
 import { getSdk } from "@balena/jellyfish-client-sdk";
