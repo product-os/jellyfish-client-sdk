@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.11.2 - 2023-03-31
+
+* Update socket.io-client from 4.5.4 to 4.6.1 [Josh Bowling]
+
 ## 13.11.1 - 2023-03-31
 
 * Fix name in readme [Josh Bowling]

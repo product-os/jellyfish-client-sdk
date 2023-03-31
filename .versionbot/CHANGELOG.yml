@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update socket.io-client from 4.5.4 to 4.6.1
+      hash: 2bbba1976cfe2fa47733de691c84c68515dd523f
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Josh Bowling
+      nested: []
+  version: 13.11.2
+  title: ""
+  date: 2023-03-31T23:18:13.142Z
+- commits:
     - subject: Fix name in readme
       hash: b640e44708cf7055f23a07724473408f7654e279
       body: ""
