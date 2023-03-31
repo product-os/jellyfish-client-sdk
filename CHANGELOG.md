@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.10.1 - 2023-03-31
+
+* Bump dev deps [Josh Bowling]
+
 ## 13.10.0 - 2023-01-07
 
 * Update peaceiris/actions-gh-pages digest to 64b46b4 [Renovate Bot]
