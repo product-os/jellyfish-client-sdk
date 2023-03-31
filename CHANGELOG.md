@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.11.0 - 2023-03-31
+
+* Update github/codeql-action digest to 39d8d7e [Renovate Bot]
+
 ## 13.10.1 - 2023-03-31
 
 * Bump dev deps [Josh Bowling]
