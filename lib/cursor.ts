@@ -1,6 +1,6 @@
 import type { Contract, JsonSchema, QueryOptions } from 'autumndb';
 import { cloneDeep } from 'lodash';
-import { randomUUID } from 'node:crypto';
+import { v4 as uuid } from 'uuid';
 import type { ExtendedSocket } from './types';
 
 export type CursorEventName =
@@ -37,7 +37,7 @@ export class JellyfishCursor<T extends Contract = Contract> {
 	}
 
 	async query(): Promise<T[]> {
-		const queryId = randomUUID();
+		const queryId = uuid();
 		return new Promise((resolve) => {
 			const handler = ({ data }) => {
 				if (data.id === queryId) {
