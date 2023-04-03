@@ -1,8 +1,7 @@
 # Jellyfish Client SDK
 
-The SDK is a client side library to interact with the Jellyfish infrastructure
-through its public interfaces (i.e. HTTP). It's meant to provide high level
-useful functionality to the web UI and any other clients.
+This is a client side library to interact with the Jellyfish API.  
+It's meant to provide high level useful functionality to the web UI and any other clients.
 
 # Usage
 
