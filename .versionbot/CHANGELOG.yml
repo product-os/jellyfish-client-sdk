@@ -1,4 +1,40 @@
 - commits:
+    - subject: Downgrade axios to 0.27.2
+      hash: ec20936c8236f8bf780806bc2961c66068169168
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Josh Bowling
+      nested: []
+    - subject: Update autumndb to 26.0.2
+      hash: 525f11b49b7569d8f074407d2e16feea52f72ed6
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Josh Bowling
+      nested: []
+    - subject: Update readme
+      hash: aebb344324fda53af19897094c8ad10b18c0dd65
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Josh Bowling
+      nested: []
+    - subject: Use uuid instead of node:crypto
+      hash: adca59e2db18ace8e5d196fc4dc5e493f20d0301
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Josh Bowling
+      nested: []
+  version: 13.11.3
+  title: ""
+  date: 2023-08-13T01:27:38.009Z
+- commits:
     - subject: Update socket.io-client from 4.5.4 to 4.6.1
       hash: 2bbba1976cfe2fa47733de691c84c68515dd523f
       body: ""
@@ -4309,7 +4345,8 @@
     - subject: Remove link constraints relating to support contribution score
       hash: e0467542779dc71bb000a523fa20e9b967b76b5d
       body: >
-        This type has been removed so the link constraints are no longer relevant.
+        This type has been removed so the link constraints are no longer
+        relevant.
       footer:
         Change-type: patch
         change-type: patch
@@ -5136,11 +5173,11 @@
     - subject: Remove link constraints relating to loops
       hash: d6a012e749a2ee82c5d6ed61d1456e46849560e7
       body: >
-        Loops will not be associated using links but with a top-level 'loop' field
-        on each contract. This commit removes some link constraints that were
-        recently added but are no longer appropriate. Although this constitutes
-        a major bump there should be no problem with removing these link
-        constraints as they were not being used yet.
+        Loops will not be associated using links but with a top-level 'loop'
+        field on each contract. This commit removes some link constraints that
+        were recently added but are no longer appropriate. Although this
+        constitutes a major bump there should be no problem with removing these
+        link constraints as they were not being used yet.
 
 
         Note - there are still link-constraints defined between loops & contract-repository and loops & transformers. These will be removed at a later time once the code that relies on these links has been updated.

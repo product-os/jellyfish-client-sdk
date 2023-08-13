@@ -5,6 +5,13 @@
 
 # v0.0.3
 
+## 13.11.3 - 2023-08-13
+
+* Downgrade axios to 0.27.2 [Josh Bowling]
+* Update autumndb to 26.0.2 [Josh Bowling]
+* Update readme [Josh Bowling]
+* Use uuid instead of node:crypto [Josh Bowling]
+
 ## 13.11.2 - 2023-03-31
 
 * Update socket.io-client from 4.5.4 to 4.6.1 [Josh Bowling]
