@@ -1,6 +1,6 @@
 # Jellyfish Client SDK
 
-This is a client side library to interact with the Jellyfish API.  
+This is a client side library to interact with the Jellyfish API.
 It's meant to provide high level useful functionality to the web UI and any other clients.
 
 # Usage
@@ -65,7 +65,3 @@ const sdk = getSdk({
     }
 })();
 ```
-
-# Documentation
-
-Visit the website for complete documentation: https://product-os.github.io/jellyfish-client-sdk

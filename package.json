@@ -40,7 +40,6 @@
     "lint:fix": "balena-lint --fix lib test && prettier -w **/*.json **/*.yml",
     "test": "npm run lint && npm run test:unit",
     "test:unit": "jest test",
-    "doc": "typedoc lib/ && touch docs/.nojekyll",
     "prepack": "npm run build"
   },
   "author": "Balena.io. <hello@balena.io>",
@@ -74,7 +73,6 @@
     "simple-git-hooks": "^2.8.1",
     "sinon": "^15.0.3",
     "ts-jest": "^29.0.5",
-    "typedoc": "^0.23.28",
     "typescript": "^5.0.3"
   },
   "simple-git-hooks": {
