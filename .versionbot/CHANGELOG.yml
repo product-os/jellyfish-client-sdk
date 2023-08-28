@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update typescript to 5.2.2
+      hash: 4ecb80c071c6869888e93b0a1132ac5db2e8a638
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Josh Bowling
+      nested: []
+  version: 13.11.7
+  title: ""
+  date: 2023-08-28T08:48:07.986Z
+- commits:
     - subject: Update socket.io-client to 4.7.2
       hash: 10941a51c5435293fd61907cdb96ba6ec809d99e
       body: ""
