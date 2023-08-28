@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.11.4 - 2023-08-28
+
+* Remove typedoc [Josh Bowling]
+
 ## 13.11.3 - 2023-08-13
 
 * Downgrade axios to 0.27.2 [Josh Bowling]

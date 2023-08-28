@@ -1,4 +1,16 @@
 - commits:
+    - subject: Remove typedoc
+      hash: 17838ed6b08bc0de6b54b3d1090c928edd537c7e
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Josh Bowling
+      nested: []
+  version: 13.11.4
+  title: ""
+  date: 2023-08-28T08:13:24.125Z
+- commits:
     - subject: Downgrade axios to 0.27.2
       hash: ec20936c8236f8bf780806bc2961c66068169168
       body: ""
