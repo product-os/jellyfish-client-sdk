@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.11.5 - 2023-08-28
+
+* Update dev deps [Josh Bowling]
+
 ## 13.11.4 - 2023-08-28
 
 * Remove typedoc [Josh Bowling]
