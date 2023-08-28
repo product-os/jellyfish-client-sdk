@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.11.6 - 2023-08-28
+
+* Update socket.io-client to 4.7.2 [Josh Bowling]
+
 ## 13.11.5 - 2023-08-28
 
 * Update dev deps [Josh Bowling]
