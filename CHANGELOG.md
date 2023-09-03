@@ -5,6 +5,10 @@
 
 # v0.0.3
 
+## 13.11.8 - 2023-09-03
+
+* Update autumndb to 29.0.18 [Josh Bowling]
+
 ## 13.11.7 - 2023-08-28
 
 * Update typescript to 5.2.2 [Josh Bowling]

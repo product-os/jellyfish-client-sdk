@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb to 29.0.18
+      hash: e93ad4794cdeedd821f2d7ad89d07065a7472332
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Josh Bowling
+      nested: []
+  version: 13.11.8
+  title: ""
+  date: 2023-09-03T02:12:30.819Z
+- commits:
     - subject: Update typescript to 5.2.2
       hash: 4ecb80c071c6869888e93b0a1132ac5db2e8a638
       body: ""
